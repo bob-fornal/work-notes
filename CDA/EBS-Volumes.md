@@ -1,19 +1,19 @@
-# EBS Volume
+# EBS Volumes: Elastic Block Store
 
 * An EC2 machine loses its root volume (main drive) when it is manually terminated.
-* Unexpected terminations might happen from time to time (AWS would email you)
-* Sometimes, you need a way to store your instance data somewhere
-* An EBS (Elastic Block Store) Volume is a network drive you can attach to your instances while they run
-* It allows your instances to persist data
+* Unexpected terminations might happen from time to time.
+* Sometimes, need a way to store instance data.
+* An EBS (Elastic Block Store) Volume is a network drive that can be attached to instances while they run.
+* It allows instances to persist data.
 
 ## EBS Volume
 
-* It’s a network drive (Not a physical drive)
+* It is a network drive (not a physical drive)
 
 > It uses the network to communicate the instance, which means there might be a bit of latency
 
 * It can be detached from an EC2 instance and attached to another one quickly
-It’s locked to an Availability Zone (AZ)
+* It is locked to an Availability Zone (AZ)
 
 > An EBS Volume in us-east-1a cannot be attached to us-east-1b
 
@@ -21,9 +21,9 @@ It’s locked to an Availability Zone (AZ)
 
 * Have a provisioned capacity (size in GBs and IOPs)
 
-> You get billed for all the provisioned capacity
+> Billed for all the provisioned capacity
 
-> You can increase the capacity of the drive over time
+> The capacity of the drive can be increased over time
 
 ## EBS Volume Types
 

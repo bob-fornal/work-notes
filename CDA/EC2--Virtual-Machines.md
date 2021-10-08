@@ -1,11 +1,6 @@
-# EC2: Virtual Machines
+# Amazon EC2: Elastic Compute Cloud
 
-* EC2 User Data
-* EC2 Meta Data
-* EC2 Instance Launch Types
-* EC2 Pricing
-* AMIs
-* EC2 Instances Overview
+Virtual Machines
 
 By default, your EC2 machine comes with:
 
@@ -14,10 +9,10 @@ By default, your EC2 machine comes with:
 
 When you SSH into your EC2 machine:
 
-* We can’t use a private IP, because we are not in the same network
-* We can only use the public IP
+* We can’t use a private IP, because we are not in the same network.
+* We can only use the public IP.
 
-If your machine is stopped and then restarted, the public IP will change
+If your machine is stopped and then restarted, the public IP will change.
 
 ## EC2 User Data
 
@@ -42,7 +37,46 @@ If your machine is stopped and then restarted, the public IP will change
 * You can retrieve IAM roles from the metadata but not IAM policies
 * URL: `169.254.169.254/latest/meta-data`
 
-## EC2 Instance Launch Types
+## EC2 Instance Types
+
+https://aws.amazon.com/ec2/instance-types
+
+i.e. m5.2xlarge
+
+* m: Instance Class
+* 5: Generation
+* 2xlarge: Size with Instance Class
+
+### General Purpose
+
+* Diverse workloads
+* Balances Compute, Memory, and Networking
+
+### Compute Optimized
+
+* Computer Intensive
+* High-Performance Processors
+
+### Storage Optimized
+
+* High Sequential Read and Write access for large data-sets on local storage.
+
+## Security Groups
+
+* Fundamental to network security.
+* Traffic allowed into our out of EC2.
+* Acts as a *firewall* on the EC2.
+* Lives *outside* the EC2, blocked traffic is not seen by the EC2.
+* Good to maintain separate security group for SSH access.
+* Application Timeout is usually a Security Group issue, while "Connection Refused" error is generally an application error.
+
+**INBOUND**: Blocked by default.
+
+**OUTBOUND**: Authorized by default.
+
+* Security Groups can reference other Security Groups
+
+## Purchasing EC2 Instances
 
 * On Demand Instances: short workload, predictable pricing
 * Reserved Instances: long workloads (>= 1 year)
@@ -121,6 +155,7 @@ EC2 instances prices (per hour) varies based on these parameters:
 * You also pay for other factors such as storage, data transfer, fixed IP public addresses, load balancing
 * You do not pay for the instance if the instance is stopped
 
+
 ## Example
 
 * t2.small in US-EAST-1 (VIRGINIA), cost $0.023 per Hour
@@ -169,6 +204,19 @@ AMI are built for a specific AWS region (!)
 
 ## EC2 Instances Overview
 
+1. OS: Linux, Windows, Mac OS
+2. Compute Power and Cores (CPU)
+3. Memory (RAM)
+4. Storage Space (see note)
+5. Network: Speed, Public IP
+6. Firewall Rules (Security Group)
+7. Bootstrap Script: EC2 User Data
+
+NOTE
+
+* Network Attached (EBS and EFS)
+* Hardware (EC2 Instance Store)
+
 Instances have 5 distinct characteristics advertised on the website:
 
 1. The RAM(type,amount,generation)
@@ -196,4 +244,3 @@ Instances have 5 distinct characteristics advertised on the website:
 * Nov 2017: It is possible to have an “unlimited burst credit balance
 * You pay extra money if you go over your credit balance, but you don’t lose in performance
 * Overall, it is a new offering, so be careful, costs could go high if you’re not monitoring the health of your instances
-
