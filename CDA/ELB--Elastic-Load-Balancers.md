@@ -5,10 +5,10 @@ Load balancers are servers that forward internet traffic to multiple servers (EC
 ## Why use a load balancer?
 
 * Spread load across multiple downstream instances
-* Expose a single point of access (DNS) to your application
+* Expose a single point of access (DNS) to an application
 * Seamlessly handle failures of downstream instances
-* Do regular health checks to your instances
-* Provide SSL termination (HTTPS) for your websites
+* Do regular health checks of instances
+* Provide SSL termination (HTTPS) for websites
 * Enforce stickiness with cookies
 * High availability across zones
 * Separate public traffic from private traffic
@@ -19,14 +19,15 @@ Load balancers are servers that forward internet traffic to multiple servers (EC
 * AWS takes care of upgrades, maintenance, high availability
 * AWS provides only a few configuration knobs
 
-It costs less to setup your own load balancer but it will be a lot more effort on your end. It is integrated with many AWS offerings / services
+It costs less to setup a load balancer manually but it takes a lot more effort. It is integrated with many AWS offerings / services
 
 ## Types of load balancers on AWS
 
-* Classic Load Balancer (v1 - older generation - 2009)
-* Application Load Balancer (v2 - new generation - 2016)
-* Network Load Balancer (v2 - new generation - 2017)
-* You can setup internal or external ELBs
+1. Classic Load Balancer (v1 - older generation - 2009): HTTP, HTTPS, TCP, SSL (Secure TCP)
+2. Application Load Balancer (v2 - new generation - 2016): HTTP, HTTPS. WebSocket
+3. Network Load Balancer (v2 - new generation - 2017): TCP, TLS (Secure TCP), UDP
+4. Gateway Load Balancer (operates at Layer 3, Network Layer): IP Protocol
+5. Setup internal or external ELBs
 
 ## Health Checks
 
