@@ -1,6 +1,6 @@
 # AWS Certified Developer Associate
 
-& [Amazon Cognito](Amazon-Cognito.md)
+* [Amazon Cognito](Amazon-Cognito.md)
 * [API Gateway](API-Gateway.md)
 * [Auto Scaling Groups](ASG--Auto-Scaling-Groups.md) (ASG)
 * [AWS Lambda](AWS-Lambda.md)
