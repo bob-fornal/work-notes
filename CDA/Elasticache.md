@@ -1,6 +1,6 @@
 # ElastiCache
 
-The same way RDS is to get managed Relational Databases, ElastiCache is to get managed Redis or Memcached. Caches are in-memory databases with really high performance, low latency. They help reduce loads off of databases for read intensive workloads. They help make your application stateless.
+The same way RDS manages Relational Databases, ElastiCache manages using Redis and Memcached. Caches are in-memory databases with really high performance, low latency. They help reduce loads off of databases for read intensive workloads. They help make the application stateless.
 
 * Write scaling using shading.
 * Read scaling using Read Replicas
@@ -22,19 +22,18 @@ The same way RDS is to get managed Relational Databases, ElastiCache is to get m
 * Redis is an in-memory key-value store
 * Super low latency (sub ms)
 * Cache survive reboots by default (it’s called persistence)
-* Great to host
 
-> User sessions
+Great to host
 
-> Leaderboards (for gaming)
+* User sessions
+* Leaderboards (for gaming)
+* Distributed states
+* Relieve pressure on databases (such as RDS)
+* Pub / Sub capability for messaging
 
-> Distributed states
+Additionally
 
-> Relieve pressure on databases (such as RDS)
-
-> Pub / Sub capability for messaging
-
-* Multi AZ with Automatic failover for Disaster Recovery if you don’t want to lose your cache data
+* Multi AZ with Automatic failover for Disaster Recovery so that cache data is not lost
 * Support for Read Replicas
 
 ## Memcached Overview
@@ -47,5 +46,5 @@ Use cases:
 * Quick retrieval of objects from memory
 * Cache often accessed objects
 * Overall, Redis has largely grown in popularity and has better feature sets than memcached
-* Most likely, you’d probably only want to use Redis for caching needs
+* Most likely, probably only want to use Redis for caching needs
 

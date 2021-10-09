@@ -1,8 +1,8 @@
 # RDS: Relational Database Service
 
-A managed DB service for DB use SQL a query
+A managed DB service for databased using SQL to query the data.
 
-It allows you to create databases in the cloud that are
+It allows creation of databases in the cloud that are:
 
 * Postgres
 * Oracle
@@ -21,43 +21,40 @@ It allows you to create databases in the cloud that are
 * Multi AZ setup for DR (Disaster Recovery)
 * Maintenance windows for upgrades
 * Scaling capability (vertical and horizontal)
-* But you can’t SSH into your instances (amazon manages them for you)
+* Cannot SSH into instances (amazon manages them)
 
 ## RDS Read replicas for read scalability
 
 * Up to 5 read replicas
-* Within AZ, Cross AZ or Cross region
-* Replication is Async, so reads are eventually consistent
+* Within AZ, Cross AZ, or Cross region
+* Replication is ASYNC, so reads are eventually consistent
 * Replicas can be promoted to their own DB
 * Applications must update the connection string to leverage read replicas
 
 ## RDS Multi AZ (Disaster Recovery)
 
-* SYNC replication
+* SYNC Replication
 * One DNS name - automatic app failover to standby
 * Increase availability
-* Failover in case of loss of AZ, loss of network, instance or storage failure
+* Failover in case of loss of AZ, loss of network, instance, or storage failure
 * No manual intervention in apps
 * Not used for scaling (only disaster recovery)
 
 ## RDS Backups
 
-* Backups are automatically enabled in RDS
-* Automated backups:
+Backups are automatically enabled in RDS
 
-> Daily full snapshot of the database
+Automated backups:
 
-> Capture transaction logs in real time
+* Daily full snapshot of the database
+* Capture transaction logs in real time
+* Ability to restore to any point in time
+* 7 days retention (can be increased to 35 days)
 
-> Ability to restore to any point in time
+DB Snapshots:
 
-> 7 days retention (can be increased to 35 days)
-
-* DB Snapshots:
-
-> Manually triggered by the user
-
-> Retention of backup for as long as you want
+* Manually triggered by the user
+* Retention of backup for as is necessary
 
 ## RDS Encryption
 
@@ -84,7 +81,7 @@ TO connect using SSL:
 ## RDS vs. Aurora
 
 * Aurora is a proprietary technology from AWS (not open sourced)
-* Postgres and MySQL are both supported as Aurora DB (that means you r drivers will work as if Aurora was a Postgres or MySQL database)
+* Postgres and MySQL are both supported as Aurora DB (that means drivers will work as if Aurora was a Postgres or MySQL database)
 * Aurora is “AWS cloud optimized” and claims 5x performance improvements over MySQL on RDS, over 3x the performance of Postgres on RDS
 * Aurora storage automatically grows in increments of 10GB, up to 64 TB
 * Aurora can have 15 replicas while MySQL has 5, and the replication process is faster (sub 10 ms replica lag)

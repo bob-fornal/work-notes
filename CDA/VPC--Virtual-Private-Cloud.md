@@ -1,6 +1,11 @@
 # VPC: Virtual Private Cloud
 
-Within a region, you’re able to create VPCs. Each VPC contain subnets (networks). Each subnet must be mapped to an AZ. It’s common to have a public ip and private ip subnet. It’s common to have many subnets per AZ.
+VPCs can be created within a region.
+
+* Each VPC contain subnets (networks).
+* Each subnet must be mapped to an AZ.
+* It is common to have a public IP and private IP subnet.
+* It is common to have many subnets per AZ.
 
 ## Public Subnets usually contain:
 
@@ -14,15 +19,14 @@ Within a region, you’re able to create VPCs. Each VPC contain subnets (network
 * Web application servers
 * Databases
 
-Public and Private subnets can communicate if they’re in the same VPC
+Public and Private subnets can communicate if they are in the same VPC.
 
 ## AWS VPC Summary
 
-* VPC & Regions aren’t much asked at the developer associate exam
-* All new accounts come with a default VPC
-* It’s possible to use a VPN to connect to a VPC
-* VPC flow logs allow you to monitor the traffic within, in and out of your VPC (useful for security, performance, audit)
-* VPC are per Account per Region
-* Subnets are per VPC per AZ
-* Some AWS resources can be deployed in VPC while others can’t
-* You can peer VPC (within or across accounts) to make it look like they’re part of the same network
+* All new accounts come with a default VPC.
+* It is possible to use a VPN to connect to a VPC.
+* VPC flow logs allow monitoring of the traffic within, in and out of a VPC (useful for security, performance, audit).
+* VPC are per Account per Region.
+* Subnets are per VPC per AZ.
+* Some AWS resources can be deployed in VPC while others cannot.
+* VPC can be set up as peer networks (within or across accounts) to make it look like they are part of the same network.
