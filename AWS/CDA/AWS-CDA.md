@@ -2,6 +2,7 @@
 
 * [RAF DONE] [Amazon Aurora](Amazon-Aurora.md)
 * [Amazon Cognito](Amazon-Cognito.md)
+* [Amazon Kinesis](Amazon-Kinesis.md)
 * [API Gateway](API-Gateway.md)
 * [RAF DONE] [Auto Scaling Groups](ASG--Auto-Scaling-Groups.md) (ASG)
 * [AWS Lambda](AWS-Lambda.md)
@@ -18,7 +19,7 @@
 * [RAF DONE] [Elastic Load Balancers](ELB--Elastic-Load-Balancers.md) (ELB)
 * [RAF DONE] [Elasticache](Elasticache.md)
 * [RAF DONE] [Identity and Access Management](IAM--Identity-and-Access-Management.md) (IAM)
-* [] [Integration and Messaging](Integration-and-Messaging.md): [SQS](Integration-and-Messaging.md#amazon-sqs)
+* [RAF DONE] [Integration and Messaging](Integration-and-Messaging.md): [SQS](Integration-and-Messaging.md#amazon-sqs)
 * [RAF DONE] [Monitoring and Auditing](AWS-Monitoring-and-Auditing.md):  [CloudWatch](AWS-Monitoring-and-Auditing.md#aws-cloudwatch), [X-Ray](AWS-Monitoring-and-Auditing.md#aws-x-ray), and [CloudTrail](AWS-Monitoring-and-Auditing.md#aws-cloudtrail)
 * [RAF DONE] [Relational Database Service](RDS--Relational-Database-Service.md) (RDS)
 * [RAF DONE] [Route 53](Route-53.md)
