@@ -8,6 +8,7 @@
 * [Auto Scaling Groups](ASG--Auto-Scaling-Groups.md) (ASG)
 * [AWS Cloud Development Kit](AWS-Cloud-Development-Kit.md) (CDK)
 * [AWS Lambda](AWS-Lambda.md)
+* [AWS Other Services](AWS-Other-Services.md)
 * [AWS Security](AWS-Security.md)
 * [AWS Step Functions](AWS-Step-Functions.md)
 * [CI/CD](CICD.md)
