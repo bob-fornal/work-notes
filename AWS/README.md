@@ -2,7 +2,7 @@
 
 ## Notes
 
-* [Certified Developer Associate](CDA/AWS-CDA.md)
+* [Certified Developer Associate](CDA/README.md)
 
 ## Training
 
