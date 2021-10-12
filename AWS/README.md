@@ -1,6 +1,6 @@
 # Amazon Certification Notes
 
-* [Certified Developer Associate](AWS/CDA/aws-cda.md)
+* [Certified Developer Associate](CDA/aws-cda.md)
 
 ## Training
 
