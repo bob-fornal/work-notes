@@ -1,8 +1,10 @@
-# CloudWatch
+# AWS Monitoring and Auditing
 
-CloudWatch is used for monitoring.
+Importance
 
-Why is monitoring important?
+* Latency
+* Outages
+* Troubleshooting and Maintenance
 
 ## To deploy applications
 
@@ -13,7 +15,7 @@ Why is monitoring important?
 
 Because applications are deployed, and users don’t care what services we've used
 
-Users only care that the application is working!
+Users only care that the application is working.
 
 * Application latency: will it increase over time?
 * Application outages: customer experience should not be degraded
@@ -33,19 +35,10 @@ Users only care that the application is working!
 
 * Metrics: Collect and track key metrics
 * Logs: Collect, monitor, analyze and store log files
-* Events: Send notifications when certain events happen in your AWS • Alarms: React in real-time to metrics / events
+* Events: Send notifications when certain events happen in AWS
+* Alarms: React in real-time to metrics / events
 
-### AWS X-Ray:
-
-* Troubleshooting application performance and errors
-* Distributed tracing of microservices
-
-### AWS CloudTrail:
-
-* Internal monitoring of API calls being made
-* Audit changes to AWS Resources by your users
-
-## CloudWatch Metrics
+#### CloudWatch Metrics
 
 * CloudWatch provides metrics for every services in AWS
 * Metric is a variable to monitor (CPUUtilization, NetworkIn...)
@@ -55,19 +48,19 @@ Users only care that the application is working!
 * Metrics have timestamps
 * Can create CloudWatch dashboards of metrics
 
-## CloudWatch EC2 Detailed monitoring
+#### CloudWatch EC2 Detailed monitoring
 
 * EC2 instance metrics have metrics “every 5 minutes”
-* With detailed monitoring (for a cost), you get data “every 1 minute”
-* Use detailed monitoring if you want to more prompt scale your ASG!
+* With detailed monitoring (for a cost), get data “every 1 minute”
+* Use detailed monitoring to promptly scale ASG.
 * The AWS Free Tier allows us to have 10 detailed monitoring metrics
 * **Note:** EC2 Memory usage is by default not pushed (must be pushed from inside the instance as a custom metric)
 
-## AWS CloudWatch Custom Metrics
+#### AWS CloudWatch Custom Metrics
 
-Possibility to define and send your own custom metrics to CloudWatch
+Possibility to define and send custom metrics to CloudWatch.
 
-Ability to use dimensions (attributes) to segment metrics
+Ability to use dimensions (attributes) to segment metrics.
 
 * Instance.id
 * Environment.name
@@ -83,23 +76,21 @@ Use exponential back off in case of throttle errors
 
 ## Alarms are used to trigger notifications for any metric
 
-* Alarms can go to Auto Scaling, EC2 Actions, SNS notifications
-* Various options (sampling, %, max, min, etc...)
-* Alarm States:
+* Alarms can go to Auto Scaling, EC2 Actions, SNS notifications.
+* Various options (sampling, %, max, min, etc...).
 
-> OK
-  
-> INSUFFICIENT_DATA
-  
-> ALARM
+Alarm States:
+
+* OK
+* INSUFFICIENT_DATA
+* ALARM
 
 Period:
 
-> Length of time in seconds to evaluate the metric
+* Length of time in seconds to evaluate the metric.
+* High resolution custom metrics: can only choose 10 sec or 30 sec.
 
-> High resolution custom metrics: can only choose 10 sec or 30 sec
-
-## AWS CloudWatch Logs
+#### AWS CloudWatch Logs
 
 Applications can send logs to CloudWatch using the SDK
 
@@ -134,9 +125,39 @@ To send logs to CloudWatch, make sure IAM permissions are correct!
 
 Security: encryption of logs using KMS at the Group Level
 
-## AWS CloudWatch Events
+#### AWS CloudWatch Events
 
 * Schedule: Cron jobs
 * Event Pattern: Event rules to react to a service doing something (e.g. CodePipeline state changes)
 * Triggers to Lambda functions, SQS/SNS/Kinesis Messages
 * CloudWatch Event creates a small JSON document to give information about the change
+
+
+### AWS X-Ray:
+
+* Troubleshooting application performance and errors.
+* Understanding dependencies in a microservices architecture.
+* Prinpoint service issues.
+* Review request behavior.
+* Find errors and exceptions.
+
+Leverages Tracing
+
+### AWS CloudTrail:
+
+Governance, compliance, and auditing.
+
+* Enabled by default.
+* Internal monitoring of API calls being made.
+* Audit changes to AWS Resources by users.
+
+#### Events
+
+1. Management Events (read or write).
+2. Data Events (generally not logged).
+3. CloudTrail Insight Events (tries to detect unusual activity).
+
+#### CloudTrail Event Retention
+
+* Stored 90-days in CloudTrail.
+* Beyond, log into S3 and use Athena.

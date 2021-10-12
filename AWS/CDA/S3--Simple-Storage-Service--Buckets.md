@@ -1,9 +1,10 @@
-# S3 Buckets
+# S3: Simple Storage Service Buckets
 
-* Amazon S3 allows people to store objects (files) fun “buckets” (directories)
-* Buckets must have a globally unique name
+* Amazon S3 allows people to store objects (files) in “buckets” (directories).
+* Each bucket must have a globally unique name.
+* Buckets are defined at the Region level.
 
-Naming convention:
+## Naming Conventions
 
 * No uppercase
 * No underscore
@@ -11,37 +12,37 @@ Naming convention:
 * Not an IP
 * Must start with lowercase letter or number
 
-Objects
+## Objects
 
 * Objects (files) have a Key. The key is the FULL path:
 
-> &lt;mybucket&gt;/myfile.txt
+    ```script
+    <mybucket>/myfile.txt
+    <mybucket>/myfolder/anotherfolder/myfile.txt
+    ```
 
-> &lt;mybucket&gt;/myfolder/anotherfolder/myfile.txt
-
-* There’s no concept of “directories” within buckets (although the UI will trick you to think otherwise)
-* Just keys with very long names that contain slashes (“/“)
+* There is no concept of “directories” within buckets
+* There are keys with very long names that contain slashes (“/“)
 * Object Values are the content of the body:
 
-> Max Size is 5TB
-
-> If uploading more than 5GB, must use “multi-part upload”
+    * Max Size is 5TB
+    * If uploading more than 5GB, must use “multi-part upload”
 
 * Metadata (list of text key / value pairs - system or user metadata)
 * Tags (Unicode key / value pair - up to 10) - useful for security / lifecycle
-* Version ID (if versioning
+* Version ID, if enabled.
 
 ## AWS S3 - Versioning
 
-* It is enabled at the bucket level
+* Is enabled at the bucket level
 * Same key overwrite will increment the “version”: 1, 2, 3
-* It is best practice to version your buckets
 
-> Protect against unintended deletes (ability to restore a version)
+It is best practice to version buckets
 
-> Easy roll back to previous versions
+* Protect against unintended deletes (ability to restore a version)
+*  Easy roll back to previous versions
 
-* Any file that is not version prior to enabling versioning will have the version “null”
+Any file that is not version prior to enabling versioning will have the version “null”
 
 ## S3 Encryption for Objects
 
@@ -63,7 +64,7 @@ There are 4 methods of encrypt objects in S3
 
 3. SSE-C: server-side encryption using data keys fully managed by the customer outside of AWS
 
-* Amazon S3 does not store the encryption key you provide
+* Amazon S3 does not store the encryption key provided
 * HTTPS must be used
 * Encryption key must provided in HTTP headers, for every HTTP request made
 
@@ -80,34 +81,31 @@ AWS S3 exposes:
 
 * HTTP endpoint: non encrypted
 * HTTPS endpoint: encryption in flight
-
-You’re free to use the endpoint your ant, but HTTPS is recommended
-
 * HTTPS is mandatory for SSE-C
 * Encryption in flight is also called SSL / TLS
 
 ## S3 Security
 
-User based
+### User based
 
 * IAM policies - which API calls should be allowed for a specific user from IAM console
 
-Resource based
+### Resource based
 
 * Bucket policies - bucket wide rules from the S3 console - allows cross account
 * Object Access Control List (ACL) - finer grain
 * Bucket Access Control List (ACL) - less common
 
-Networking
+## Networking
 
 * Support VPC endpoints (for instances in VPC without www internet)
 
-Logging and Audit
+## Logging and Audit
 
 * S3 access logs can be stored in other S3 buckets
 * API calls can be logged in AWS CloudTrail
 
-User Security
+## User Security
 
 * MFA (multi factor authentication) can be required in versioned buckets to delete objects
 * Signed URLs: URLS that are valid only for a limited time (ex: premium video services for logged in users)
@@ -127,6 +125,11 @@ Use S3 bucket for policy to:
 * Force objects to be encrypted at upload
 * Grant access to another account (Cross Account)
 
+Policies can be verified via:
+
+* AWS Policy Simulator
+* AWS CLI `--dry-run`
+
 ## S3 Websites
 
 S3 can host static website sand have them accessible on the world wide web
@@ -136,13 +139,12 @@ The website URL will be:
 * .s3-website..amzonaws.com -OR-
 * .s3-website..amazonaws.com
 
-If you get a 403 (forbidden) error, make sure the bucket policy allows public reads!
+A 403 (forbidden) error, make sure the bucket policy allows public reads!
 
 ## S3 CORS
 
-* If you request data from another S3 bucket, you need to enable CORS
-* Cross Origin Resource Sharing allows you to limit the number of websites that can request your files in S3 (and limit your costs)
-* This is a popular exam question
+* When request data from another S3 bucket, enable CORS.
+* Cross Origin Resource Sharing limits the number of websites that can request the files in S3 (and limit costs).
 
 ## AWS S3 - Consistency Model
 
@@ -166,17 +168,69 @@ S3 can send notifications on changes to
 
 S3 has a cross region replication feature (managed)
 
-## AWS S3 Performance
+## S3 MFA Delete
 
-* Faster upload of large objects (>5GB), use multipart upload
+* Only the ROOT account can enable or disable MFA Delete.
+* MFA Delete can only be enabled via CLI.
 
-> Parallelizes PUTs for greater throughput
+## S3 Default Encryption
 
-> Maximize your network bandwidth
+Policies are applied before "Default Encryption."
 
-> Decrease time to retry in case a part fails
+## S3 Access Logs
 
-* Use CloudFront to ache S3 objects around the world (improves reads)
-* S3 Transfer Acceleration (uses edge locations) - just need to change the endpoint you write to, not the code
-* If using SSE-KMS encryption, you may be limited to your AWS limits for KMS usage (~100s - 1000s downloads / uploads per second)
+* Any request can be logged to another S3 bucket.
+* Analyze via analysis tools or Amazon Athena.
+
+DO NOT set logging bucket to be the monitoring bucket.
+
+## S3 Replication
+
+**CRR**: Cross-Region Replication
+
+**SRR**: Same-Region Replication
+
+* Versioning must be enabled in source and destination.
+* Buckets can be in different accounts.
+* Copying is asynchronous.
+* Proper IAM Role needs to be attached to the S3.
+
+## S3 Presigned URLs
+
+* Can be generated using SDK or CLI.
+* Expiration default: 3,600-seconds.
+
+## S3 Storage Classes
+
+* Amazon S3 Standard - General Purpose
+* Amazon S3 Standard Infrequent-Access
+* Amazon S3 One-Zone Infrequent-Access
+* Amazon S3 Intelligent Tiering
+* Amazon Glacier
+* Amazon Glacier Deep Archive
+* Amazon S3 Reduced Redundancy Storage (deprecated)
+
+## S3 Lifecycle Rules
+
+* Transition Actions - define when objects are transitioned to another storage class.
+* Expiration Actions - configure objects to expire (delete) after some time.
+
+Rules:
+
+* Rules can be created for a specific prefix.
+* Rules can be created for specific object tags.
+
+## S3 Performance
+
+Faster upload of large objects (>5GB), use multipart upload
+
+* Parallelizes PUTs for greater throughput
+* Maximize network bandwidth
+* Decrease time to retry in case a part fails
+
+More:
+
+* Use CloudFront to access S3 objects around the world (improves reads).
+* S3 Transfer Acceleration (uses edge locations) - just need to change the endpoint, not the code.
+* If using SSE-KMS encryption, may be limited to AWS limits for KMS usage (~100s - 1000s downloads / uploads per second).
 

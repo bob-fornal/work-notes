@@ -1,16 +1,20 @@
-# ECS: Elastic Container Software
+# ECS: Elastic Container Service
 
 ## Docker
 
-* Docker is a software development platform to deploy apps
-* Apps are packaged in containers that can be run on any OS
-* Apps run the same, regardless of where they’re run
-* Any machine
-* No compatibility issues
-* Predictable behavior
-* Less work
-* Easier to maintain and deploy
-* Works with any language, any OS, any technology
+* Docker is a software development platform to deploy applications.
+* Applications are packaged in containers that can be run on any OS.
+* Applications run the same, regardless of where they are run.
+* Any machine.
+* No compatibility issues.
+* Predictable behavior.
+* Less work.
+* Easier to maintain and deploy.
+* Works with any language, any OS, any technology.
+
+## Docker in AWS
+
+Docker images are stored in repositories.
 
 ## Docker Containers Management
 
@@ -18,20 +22,20 @@
 
 Three choices:
 
-1. ECS: Amazon’s own platform
-2. Fargate: Amazon’s own Serverless platform
-3. EKS: Amazon’s managed Kubernetes (open source)
+1. ECS: Amazon’s own platform.
+2. Fargate: Amazon’s own Serverless platform.
+3. EKS: Amazon’s managed Kubernetes (open source).
 
 ## ECS Clusters
 
-* ECS Clusters are logical grouping of EC2 instances
-* EC2 instances run the ECS agent (Docker container)
-* The ECS agents registers the instance to the ECS cluster
-* The EC2 instances run a special AMI, made specifically for ECS
+* ECS Clusters are logical grouping of EC2 instances.
+* EC2 instances run the ECS agent (Docker container).
+* The ECS agents registers the instance to the ECS cluster.
+* The EC2 instances run a special AMI, made specifically for ECS.
 
 ## ECS Task Definitions
 
-Tasks definitions are metadata in JSON form to tell ECS how to run a Docker Container
+Tasks definitions are metadata in JSON form to tell ECS how to run a Docker Container.
 
 It contains crucial information around:
 
@@ -45,23 +49,21 @@ It contains crucial information around:
 
 ## ECR: Docker Container Registry
 
-So far we’ve been using Docker images from Docker Hub (public)
-
 * ECR is a private Docker image repository
 * Access is controlled through IAM (permission errors => policy)
 * AWS CLI v1 login command (may be asked at the exam)
 
-> `$(aws ecr get-login --no-include-email --region eu-west-1)`
+  `$(aws ecr get-login --no-include-email --region eu-west-1)`
 
 * AWS CLI v2 login command (newer, may also be asked at the exam - pipe)
 
-> `aws ecr get-login-password --region eu-west-1 | docker login --username AWS -- password-stdin 1234567890.dkr.ecr.eu-west-1.amazonaws.com`
+  `aws ecr get-login-password --region eu-west-1 | docker login --username AWS -- password-stdin 1234567890.dkr.ecr.eu-west-1.amazonaws.com`
 
 * Docker Push & Pull:
 
-> `docker push 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest`
+  `docker push 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest`
 
-> `docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest`
+  `docker pull 1234567890.dkr.ecr.eu-west-1.amazonaws.com/demo:latest`
 
 ## Fargate
 
@@ -100,7 +102,7 @@ When Amazon ECS places tasks, it uses the following process to select container 
 * Place the task evenly based on the specified value
 * Example: instanceId, attribute:ecs.availability-zone
 
-## ECS – Service Auto Scaling
+## ECS – Auto Scaling
 
 * CPU and RAM is tracked in CloudWatch at the ECS service level
 * Target Tracking: target a specific average CloudWatch metric
