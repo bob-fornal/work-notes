@@ -10,14 +10,12 @@ The intent here is to develop a working space where various work related notes c
 
 * [Amazon Certification Notes](AWS/README.md)
 
+### Okta
+
+* [Okta Notes](OKTA/README.md)
+
 ## Front-End
 
 ### Angular
 
 * [Angular Developer Notes](Angular/README.md)
-
-## Security
-
-### Okta
-
-* [Okta Notes](OKTA/README.md)
