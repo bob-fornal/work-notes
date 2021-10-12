@@ -1,30 +1,28 @@
 # DynamoDB (No-SQL)
 
-* Non Relational DB (No-SQL), comprised of collections (tables), of documents (rows), with each document consisting of key/value pairs (fields)
-* Document oriented DB
-* Offers push button scaling, meaning that you can scale your db on the fly without any downtime
-* RDS is not so easy, you usually have to use a bigger instance size or add read replicas
-* Stored on SSD Storage
-* Spread across 3 geographically distinct data centers
-* Eventual Consistent Reads (Default)
+* Non-Relational Database (No-SQL), comprised of collections (tables), of documents (rows), with each document consisting of key/value pairs (fields).
+* Document oriented database.
+* Offers push button scaling, it can scale the database on the fly without any downtime.
+* RDS is not as easy to manage, usually have to use a larger instance size or add read replicas.
+* Stored on SSD Storage.
+* Spread across 3 geographically distinct data centers.
+* Eventual Consistent Reads (Default).
 
-> Consistency across all copies of data is usually reached within 1 second
+Notes
 
-> Repeating a read after a short time should return updated data
+* Consistency across all copies of data is usually reached within 1 second.
+* Repeating a read after a short time should return updated data.
+* Best Read Performance.
+* Strongly Consistent Reads.
+* Returns a result that reflects all writes that received a successful response prior to the read.
 
-> Best Read Performance
+Structure
 
-* Strongly Consistent Reads
+* Tables
+* Items (Think rows in a traditional table)
+* Attributes (Think columns of data in a table)
 
-> Returns a result that reflects all writes that received a successful response prior to the read
-
-* Structure:
-
-> Tables
-
-> Items (Think rows in a traditional table)
-
-> Attributes (Think columns of data in a table)
+Functionality
 
 * Provisioned throughput capacity
 * Write throughput 0.0065 per hour for every 10 units
@@ -36,20 +34,20 @@
 
 ### Developer Associate Specific Topics
 
-* Supports attribute nesting up to 35 levels
-* Conditional writes are idempotent, you can send the same conditional write request multiple times, but it will have no further effect on the item after the first time DynamoDB performs the update
-* Supports atomic counters, using the `UpdateItem` operation to increment or decrement the value of an existing attribute without interfering with other write requests
-* Atomic counter updates are not idempotent, the counter will increment each time you call `UpdateItem`
-* If you can have a small margin of error in your data, then use atomic counters
-* If your application needs to read multiple items, you can use the `BatchGetItem` API endpoint; A single request can retrieve up to 1MB of data with as many as 100 items
-* A single `BatchGetItem` request can retrieve items from multiple tables
-* All write requests are applied in the order in which they are received
+* Supports attribute nesting up to 35 levels.
+* Conditional writes are idempotent, can send the same conditional write request multiple times, but it will have no further effect on the item after the first time DynamoDB performs the update.
+* Supports atomic counters, using the `UpdateItem` operation to increment or decrement the value of an existing attribute without interfering with other write requests.
+* Atomic counter updates are not idempotent, the counter will increment each time `UpdateItem` is called.
+* If a small margin of error in the data is acceptable, then use atomic counters.
+* If the application needs to read multiple items, can use the `BatchGetItem` API endpoint; A single request can retrieve up to 1MB of data with as many as 100 items.
+* A single `BatchGetItem` request can retrieve items from multiple tables.
+* All write requests are applied in the order in which they are received.
 
 #### Pricing (calculate the amount of writes and reads per second):
 
-* Divide total number of writes per day / 25 (hours) / 60 (minutes) / 60 (seconds) = No. writes per second
-* A write or read capacity unit can handle 1 write/read per second
-* Individual items or the entire table can be exported to CSV
+* Divide total number of writes per day / 25 (hours) / 60 (minutes) / 60 (seconds) = number writes per second.
+* A write or read capacity unit can handle 1 write/read per second.
+* Individual items or the entire table can be exported to CSV.
 
 Example:
 
@@ -79,7 +77,7 @@ Single attribute (unique ID):
 * Partition Key's value is used as input to an internal hash function which output determines the partition (physical location in which the data is stored)
 * No 2 items in a table can have the same partition key value
 
-Composite (unique ID and date range):
+Composite (unique ID and date range)
 
 * Partition Key & Sort Key (Hash and Range) composed of two attributes
 * Partition Key's value is used as input to an internal hash function which output determines the partition (physical location in which the data is stored)
@@ -101,43 +99,43 @@ Composite (unique ID and date range):
 
 ### Streams
 
-* Used to capture any kind of modification of the DynamoDB tables
-* If new item is added to the table, the stream captures an image of the entire item, including all of its attributes
-* If an item is updated, the stream captures the before and after image of any attributes that were modified in the item
-* If an item is deleted from the table, the stream captures an image of the entire item before it was deleted
-* Streams are stored for 24 hours and then is lost
-* Streams can trigger functions with Lambda that will perform actions based on the instantiation of a stream event
+* Used to capture any kind of modification of the DynamoDB tables.
+* If new item is added to the table, the stream captures an image of the entire item, including all of its attributes.
+* If an item is updated, the stream captures the before and after image of any attributes that were modified in the item.
+* If an item is deleted from the table, the stream captures an image of the entire item before it was deleted.
+* Streams are stored for 24 hours and then is lost.
+* Streams can trigger functions with Lambda that will perform actions based on the instantiation of a stream event.
 
 ### Querys
 
-* Operation that finds items in a table using only the primary key attribute value
-* Must provide a partition attribute name and distinct value to search for
-* Optionally can provide a sort key attribute name and value and use comparison operator to refine the search results
-* By default a query returns all of the data attributes for items with the specified primary key(s)
-* The ProjectionExpression parameter can be used to only return some of the attributes from a query as opposed to the default all
-* Results are always sorted by the sort key
-* If the data type of the sort key is a number, the results are returned in numeric order
-* If the data type of the sort key is a string, the results are returned in order of ASCII character code values
-* Sort order is ascending, the ScanIndexForward parameter can be set to false to sort in descending order
-* By default queries are eventually consistent but can be changed to strongly consistent
-* More efficient then a scan operation
-* For quicker response times, design your tables in a way that can use the query, GET, or `BatchGetItem` API
+* Operation that finds items in a table using only the primary key attribute value.
+* Must provide a partition attribute name and distinct value to search for.
+* Optionally can provide a sort key attribute name and value and use comparison operator to refine the search results.
+* By default a query returns all of the data attributes for items with the specified primary key(s).
+* The ProjectionExpression parameter can be used to only return some of the attributes from a query as opposed to the default all.
+* Results are always sorted by the sort key.
+* If the data type of the sort key is a number, the results are returned in numeric order.
+* If the data type of the sort key is a string, the results are returned in order of ASCII character code values.
+* Sort order is ascending, the ScanIndexForward parameter can be set to false to sort in descending order.
+* By default queries are eventually consistent but can be changed to strongly consistent.
+* More efficient then a scan operation.
+* For quicker response times, design the tables in a way that can use the query, GET, or `BatchGetItem` API.
 
 ### Scans
 
-* Examines every item in the table
-* By default, a scan returns all of the data attributes for every item
-* Can use the `ProjectionExpression` parameter so that the scan only returns some of the attributes, instead of all
-* Always scans the entire table, then filters out values to provide the desired result (added step of removing data from initial dataset)
-* Should be avoided on a large table with a filter that removes many results
-* As table grows, the scan operation slows
-* Examines every item for the requested values, and can use up provisioned throughput for a large table in a single operation
+* Examines every item in the table.
+* By default, a scan returns all of the data attributes for every item.
+* Can use the `ProjectionExpression` parameter so that the scan only returns some of the attributes, instead of all.
+* Always scans the entire table, then filters out values to provide the desired result (added step of removing data from initial dataset).
+* Should be avoided on a large table with a filter that removes many results.
+* As table grows, the scan operation slows.
+* Examines every item for the requested values, and can use up provisioned throughput for a large table in a single operation.
 
 ### Provisioned Throughput
 
-400 HTTP status code - `ProvisionedThroughputExceededException` error will indicate that you exceeded your max allowed provisioned throughput for a table or for one or more GSI's
+400 HTTP status code - `ProvisionedThroughputExceededException` error will indicate that the maximum allowed provisioned throughput for a table or for one or more GSIs.
 
-Unit of read provisioned throughput:
+Unit of read provisioned throughput
 
 * All reads are rounded up to increments of 4 KB
 * Eventual consistent reads (default) consist of 2 reads per second
@@ -192,11 +190,13 @@ Example 2:
 
 Process:
 
-* User authentication request sent and received with the identity provider such as Facebook, Google, etc..
+* User authentication request sent and received with the identity provider such as Facebook, Google, etc.
 * Web Identity token returned from provider
 * Token, App ID of provider, and ARN of IAM Role sent to `AssumeRoleWithIdentity` API endpoint
 * AWS issues temporary security credentials back to the user allowing the user to access resources (1 hour default)
-* Temporary security credentials response consist of 4 things:
+
+
+Temporary security credentials response consist of 4 things:
 
 1. AccessKeyID, SecretAccessKey, SessionToken
 2. Expiration (time limit, 1 hour by default)
