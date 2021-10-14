@@ -20,6 +20,10 @@ The intent here is to develop a working space where various work related notes c
 
 * [Angular Developer Notes](Angular/README.md)
 
+### React
+
+* [React Developer Notes](React/README.md)
+
 ### TypeScript
 
 * [TypeScript Developer Notes](TypeScript/README.md)
@@ -28,3 +32,7 @@ The intent here is to develop a working space where various work related notes c
 
 * [Development Developer Notes](Development/README.md)
 * [Clean Code](Development/Clean-Code.md)
+
+### GitHub
+
+* [GitHub Developer Notes](GitHub/README.md)
