@@ -19,3 +19,12 @@ The intent here is to develop a working space where various work related notes c
 ### Angular
 
 * [Angular Developer Notes](Angular/README.md)
+
+### TypeScript
+
+* [TypeScript Developer Notes](TypeScript/README.md)
+
+## Development
+
+* [Development Developer Notes](Development/README.md)
+* [Clean Code](Development/Clean-Code.md)
