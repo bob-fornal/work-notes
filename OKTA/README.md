@@ -1,5 +1,9 @@
 # OKTA
 
+## Developer Notes
+
+* [Getting Started with Okta](Getting-Started-with-Okta-Course.md)
+
 ## Certification
 
 * [Certification Information](https://www.okta.com/services/certification/)
