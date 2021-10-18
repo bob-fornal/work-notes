@@ -2,7 +2,7 @@
 
 ## Intent
 
-The intent here is to develop a working space where various work related notes can be generated and maintained over time.
+The intent here is to develop a working space where various work related notes can be stored and maintained over time.
 
 ## Certification
 
@@ -12,7 +12,7 @@ The intent here is to develop a working space where various work related notes c
 
 ### Okta
 
-* [Okta Notes](OKTA/README.md)
+* [Okta Notes](Okta/README.md)
 
 ## Front-End
 
