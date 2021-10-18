@@ -42,3 +42,24 @@ This problem arises from a choice to use neither problem domain terms nor soluti
 
 Classes and objects should have noun or noun phrase names.
 
+## Method Names
+
+Methods should have a verb or verb phrase names.
+
+Accessors, mutators, and predicates should be named for their value and prefixed with get, set, and is.
+
+## Don't Be Cute
+
+Say what you mean. Mean what you say.
+
+## Pick One Word per Concept
+
+A consistent lexicon is a great boon to the programmers who must use your code.
+
+## Don't Pun
+
+Avoid using the same word for two purposes.
+
+## Use Solution Domain Names
+
+Use computer science terms, algorithm names, pattern names, math terms, and so forth.
