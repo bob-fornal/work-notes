@@ -10,6 +10,7 @@
 
 * [Easiest way to setup your GitHub Profile Page](https://dev.to/alekswritescode/easiest-way-to-set-up-your-github-profile-page-3gn8)
 
-## Cheat Sheets
+## Git Cheat Sheets
 
 * [Git Cheat Sheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
+* [Dynamic Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html)
