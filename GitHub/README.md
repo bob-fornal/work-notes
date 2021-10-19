@@ -5,6 +5,7 @@
 ### Pages
 
 * [How to Host a Static Website on GitHub](https://dev.to/medaminefh/how-to-host-your-static-website-with-github-85i)
+* [shields.io](https://shields.io/)
 
 ### Profile Page
 
