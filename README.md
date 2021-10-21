@@ -24,6 +24,10 @@ The intent here is to develop a working space where various work related notes c
 
 * [React Developer Notes](React/README.md)
 
+### SVG
+
+* [Scalable Vector Graphics (SVG)](SVG/README.md)
+
 ### TypeScript
 
 * [TypeScript Developer Notes](TypeScript/README.md)
