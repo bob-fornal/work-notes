@@ -9,6 +9,10 @@
 * [Introduction](Clean-Code--Introduction.md)
 * [Meaningful Names](Clean-Code--Meaningful-Names.md)
 
+## Disaster Recovery
+
+* [Disaster Recovery](Disaster-Recovery.md)
+
 ## Hyper Lightweight Websites
 
 * [Hyper Lightweight Websites](Hyper-Lightweight-Websites.md)
