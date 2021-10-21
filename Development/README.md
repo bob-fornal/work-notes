@@ -8,6 +8,7 @@
 
 * [Introduction](Clean-Code--Introduction.md)
 * [Meaningful Names](Clean-Code--Meaningful-Names.md)
+* [Functions](Clean-Code--Functions.md)
 
 ## Disaster Recovery
 

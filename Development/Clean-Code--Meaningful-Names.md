@@ -63,3 +63,15 @@ Avoid using the same word for two purposes.
 ## Use Solution Domain Names
 
 Use computer science terms, algorithm names, pattern names, math terms, and so forth.
+
+## Use Problem Domain Names
+
+The code that has more to do with problem domain concepts should have names drawn from the problem domain.
+
+## Add Meaningful Context
+
+There are few names which are meaningful in and of themselves - most are not. Instead, place names in context for readers by enclosing them in well-named classes, functions, or namespaces.
+
+## Don't Add Gratuitous Context
+
+Shorter names are generally better than longer ones, so long as they are clear. Add no more context to a name than is necessary.
