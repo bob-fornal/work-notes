@@ -33,6 +33,10 @@ The intent here is to develop a working space where various work related notes c
 * [Development Developer Notes](Development/README.md)
 * [Clean Code](Development/Clean-Code.md)
 
+### Articles
+
+* [Password Rules](https://gizmodo.com/the-guy-who-invented-those-annoying-password-rules-now-1797643987)
+
 ### GitHub
 
 * [GitHub Developer Notes](GitHub/README.md)
