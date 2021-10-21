@@ -2,6 +2,7 @@
 
 ## Development Notes
 
+* [Async Pipe, Handling Errors](Async-Pipe--Handling-Errors.md)
 * [Structure and Scalability](Structure-And-Scalability.md)
 
 ## Observables
