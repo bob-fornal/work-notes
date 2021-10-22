@@ -6,4 +6,4 @@
 
 ## Articles
 
-* [Toxic Optionals](https://dev.to/latobibor/toxic-optionals-typescript-55bj)
+* [Toxic Optionals](https://dev.to/latobibor/toxic-optionals-typescript-55bj) ![Link](../foreign.png)

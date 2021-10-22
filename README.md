@@ -39,8 +39,12 @@ The intent here is to develop a working space where various work related notes c
 
 ### Articles
 
-* [Password Rules](https://gizmodo.com/the-guy-who-invented-those-annoying-password-rules-now-1797643987)
+* [Password Rules](https://gizmodo.com/the-guy-who-invented-those-annoying-password-rules-now-1797643987) ![Link](foreign.png)
 
 ### GitHub
 
 * [GitHub Developer Notes](GitHub/README.md)
+
+## Icon Attributions
+
+Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>  ![Link](foreign.png)

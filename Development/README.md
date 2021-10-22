@@ -26,4 +26,4 @@
 
 ### Articles
 
-* [How to Deal with an Insufferable Code Reviewer](https://daedtech.com/insufferable-code-reviewer/)
+* [How to Deal with an Insufferable Code Reviewer](https://daedtech.com/insufferable-code-reviewer/) ![Link](../foreign.png)
