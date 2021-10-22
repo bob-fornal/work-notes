@@ -1,9 +1,5 @@
 # Work Notes
 
-## Intent
-
-The intent here is to develop a working space where various work related notes can be stored and maintained over time.
-
 ## Certification
 
 ### Amazon
@@ -18,23 +14,23 @@ The intent here is to develop a working space where various work related notes c
 
 ### Angular
 
-* [Angular Developer Notes](Angular/README.md)
+* [Angular Notes](Angular/README.md)
 
 ### React
 
-* [React Developer Notes](React/README.md)
+* [React Notes](React/README.md)
 
 ### SVG
 
-* [Scalable Vector Graphics (SVG)](SVG/README.md)
+* [Scalable Vector Graphics (SVG) Notes](SVG/README.md)
 
 ### TypeScript
 
-* [TypeScript Developer Notes](TypeScript/README.md)
+* [TypeScript Notes](TypeScript/README.md)
 
 ## Development
 
-* [Development Developer Notes](Development/README.md)
+* [Development Notes](Development/README.md)
 * [Clean Code](Development/Clean-Code.md)
 
 ### Articles
@@ -43,7 +39,11 @@ The intent here is to develop a working space where various work related notes c
 
 ### GitHub
 
-* [GitHub Developer Notes](GitHub/README.md)
+* [GitHub Notes](GitHub/README.md)
+
+## Intent
+
+The intent here is to develop a working space where various work related notes can be stored and maintained over time.
 
 ## Icon Attributions
 
