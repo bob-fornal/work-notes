@@ -6,9 +6,7 @@
 
 ## Clean Code
 
-* [Introduction](Clean-Code--Introduction.md)
-* [Meaningful Names](Clean-Code--Meaningful-Names.md)
-* [Functions](Clean-Code--Functions.md)
+* [Clean Code](Clean-Code/README.md)
 
 ## Disaster Recovery
 
