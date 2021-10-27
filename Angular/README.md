@@ -5,6 +5,12 @@
 * [Async Pipe, Handling Errors](Async-Pipe--Handling-Errors.md)
 * [Structure and Scalability](Structure-And-Scalability.md)
 
+## Interceptors
+
+### Articles
+
+* [Handle HTTP Errors using Interceptors](https://javascript.plainenglish.io/angular-handle-http-errors-using-interceptors-5cc483103740) ![Link](../foreign.png)
+
 ## Observables
 
 ### Articles
