@@ -18,3 +18,4 @@
 ## Cheat Sheets
 
 * [The Most Powerful ReactJS Cheat Sheet](https://dev.to/bricourse/the-most-powerful-react-js-cheat-sheet-4ipd) ![Link](../foreign.png)
+* [React Cheat Sheet](http://www.developer-cheatsheets.com/react)
