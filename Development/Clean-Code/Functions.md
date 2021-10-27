@@ -66,4 +66,26 @@ Functions that take three arguments are significantly harder to understand than 
 
 When a function seems to need more than two or three arguments, it is likely that some of those arguments ought to be wrapped into a class of their own.
 
+## Argument Lists
+
+Sometimes a variable number of arguments need to be passed into a function. All the same rules apply.
+
+## Verbs and Keywords
+
+Choosing good names for a function can go a long way toward explaining the intent of the function and the order and intent of the arguments.
+
+Keyword naming, or encoding the names of the arguments into the function name, strongly mitigates the problem of having to remember the ordering of the arguments.
+
+## Have No Side Effects
+
+Side effects are lies. The function promises to do one thing, but it also does other *hidden* things, that often result in strange temporal couplings and order dependencies.
+
+## Output Arguments
+
+Arguments are most naturally interpreted as *inputs* to a function. In general output arguments should be avoided. If the function must change the state of something, have it change the state of its owning object.
+
+## Command Query Separation
+
+Functions should euther do something or answer something, but not both.
+
 
