@@ -13,6 +13,7 @@
 
 ## Presentations
 
+* [Advanced GitHub Actions](Advanced-GitHub-Actions.md)
 * [GitHub Actions](GitHub-Actions.md)
 
 ## Git Cheat Sheets
