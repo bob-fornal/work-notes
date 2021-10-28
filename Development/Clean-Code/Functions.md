@@ -88,4 +88,26 @@ Arguments are most naturally interpreted as *inputs* to a function. In general o
 
 Functions should euther do something or answer something, but not both.
 
+## Prefer Exceptions to Returning Error Codes
 
+This can lead to deeply nested structures.
+
+Extract Try/Catch Blocks: Thye confuse the structure of the code and mix error processing with normal processing, so it is better to extract the bodies of the try and catch blocks out into functions of their own.
+
+## Error Handling is One Thing
+
+Functions do one thing. Error handling is one thing. Thus, a function that handles errors should do nothing else.
+
+## Do Not Repeat Yourself
+
+Duplication may be the root of all evil in software. Since the invention of the subroutine, innovation of software development has been an ongoing attempt to eliminate duplication from source code.
+
+## Structured Programming
+
+Every function should have one entry and one exit. There should only be one RETURN statement in a function, no BREAK or CONTINUE statements in a loop, and never any GOTO statements.
+
+These rules serve little benefit when functions are very small.
+
+## FINALLY
+
+The art of programming is, and has always been, the art of language design.
