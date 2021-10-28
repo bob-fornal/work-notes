@@ -1,6 +1,6 @@
 # Development
 
-## Developer Notes
+## Notes
 
 * [Beyond the Page Fold](Page-Fold.md)
 * [Clean Code](Clean-Code/README.md)
