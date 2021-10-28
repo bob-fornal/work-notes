@@ -3,6 +3,7 @@
 ## Developer Notes
 
 * [Getting Started with TypeScript](Getting-Started.md)
+* [TypeScript](TypeScript.md)
 
 ## Articles
 
