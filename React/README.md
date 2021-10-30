@@ -2,6 +2,10 @@
 
 ## Articles
 
+### Error Handling
+
+* [Error Handling in React Applications](https://hackernoon.com/error-handling-in-react-applications)
+
 ### Routing
 
 * [Modular Routing in React](https://dev.to/projectkenneth/modular-routing-in-react-2ab1) ![Link](../foreign.png)
