@@ -46,6 +46,7 @@ a.push(4); // valid
 
 ## Notes
 
+* [Compiler Options and Project Configuration](Compiler-Options-and-Project-Configuration.md)
 * [Enumerations](Enumerations.md)
 * [Arrays](Arrays.md)
 * [Functions](Functions.md)
@@ -53,3 +54,7 @@ a.push(4); // valid
 * [Classes](Classes.md)
 * [Inheritance](Inheritance.md)
 * [Modules and Namespaces](Modules-and-Namespaces.md)
+* [Generics](Generics.md)
+* [Destructuring Arrays and Objects](Destructuring-Arrays-and-Objects.md)
+* [Union and Intersection Types](Union-and-Intersection-Types.md)
+* [Type Guards](Type-Guards.md)

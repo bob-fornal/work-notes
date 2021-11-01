@@ -266,7 +266,7 @@ interface Person {
 }
 
 var p: Person = {
-    name: "Colleen',
+    name: 'Colleen',
     age: 40,
     kids: 4,
     calcPets: function () {
@@ -483,7 +483,7 @@ namespace Shapes {
 - **require.js**
 
 ```typescript
-require(["bootstrapper"],
+require(['bootstrapper'],
     (bootstrapper) => {
     bootstrapper.run();
 });
