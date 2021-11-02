@@ -6,7 +6,8 @@ A selector is simply the element to be styled. But as you write more CSS code, y
 
 * Universal Selector (*)
 * Element Selectors
-* Classes and IDs
+* Classes (multiple elements)
+* IDs (single elements)
 * Descendant Selectors
 * Pseudo-Classes
 
