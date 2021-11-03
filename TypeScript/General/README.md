@@ -58,3 +58,4 @@ a.push(4); // valid
 * [Destructuring Arrays and Objects](Destructuring-Arrays-and-Objects.md)
 * [Union and Intersection Types](Union-and-Intersection-Types.md)
 * [Type Guards](Type-Guards.md)
+* [Freezing Objects](Freezing-Objects.md)

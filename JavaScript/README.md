@@ -4,6 +4,7 @@
 
 * [Array Destructuring](Array-Destructuring.md)
 * [Arrow Functions](Arrow-Functions.md)
+* [Dates](Dates.md)
 * [Closures](Closures.md)
 * [Explicit Semicolons](Explicit-Semicolons.md)
 * [Object Comparison](Object-Comparison.md)
