@@ -3,6 +3,7 @@
 ## Developer Notes
 
 * [Getting Started with TypeScript](Getting-Started/README.md)
+* [Introducing TypeScript](Introducing/README.md)
 * [Migrating from JavaScript to TypeScript](Migrating/README.md)
 * [TypeScript](General/README.md)
 
