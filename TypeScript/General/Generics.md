@@ -2,6 +2,8 @@
 
 Code that works with multiple types.
 
+> Generic programming is a style of computer programming in which algorithms are written in terms of ***types to be specified later*** that are then instantiated when needed for specific types provided as parameters. — Wikipedia.
+
 * Accept "type parameters" for each instance or invocation.
 * Apply to functions, interfaces, and classes.
 
