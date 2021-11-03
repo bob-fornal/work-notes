@@ -12,6 +12,7 @@
 * [Background Images](Background-Images.md)
 * [Display](Display.md)
 * [Page Layout](Page-Layout.md)
+* [Prefers Color Scheme](Perfers-Color-Scheme.md)
 
 ## LESS Notes
 
