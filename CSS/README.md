@@ -1,5 +1,7 @@
 # CSS
 
+[Practical Functionality](Practical-Functionality/README.md)
+
 ## Notes
 
 * [Applying CSS](Applying-CSS.md)
@@ -14,11 +16,3 @@
 * [Selectors, Properties, and Values](Selectors-Properties-and-Values.md)
 * [Specificity](Specificity.md)
 * [Text](Text.md)
-
-## LESS Notes
-
-* [LESS](LESS/README.md)
-
-## SASS Notes
-
-* [SASS](SASS/README.md)

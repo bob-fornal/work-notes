@@ -2,35 +2,19 @@
 
 ## Certification
 
-### Amazon
-
 * [Amazon Certification Notes](AWS/README.md)
-
-### Okta
-
 * [Okta Notes](Okta/README.md)
 
 ## Front-End
 
-### Angular
-
 * [Angular Notes](Angular/README.md)
-
-### React
-
+* [CSS Notes](CSS/README.md)
+* [LESS Notes](LESS/README.md)
 * [React Notes](React/README.md)
-
-### SVG
-
+* [SASS Notes](SASS/README.md)
 * [Scalable Vector Graphics (SVG) Notes](SVG/README.md)
-
-### TypeScript
-
 * [TypeScript Notes](TypeScript/README.md)
-
-### Service Workers
-
-* [Service-Workers](Service-Workers/README.md)
+* [Service-Worker Notes](Service-Workers/README.md)
 
 ## Development
 
