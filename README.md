@@ -1,14 +1,15 @@
 # Work Notes
 
-## Certification
+## Certification Notes
 
 * [Amazon Certification Notes](AWS/README.md)
 * [Okta Notes](Okta/README.md)
 
-## Front-End
+## Front-End Notes
 
 * [Angular Notes](Angular/README.md)
 * [CSS Notes](CSS/README.md)
+* [JSON Notes](JSON/README.md)
 * [LESS Notes](LESS/README.md)
 * [React Notes](React/README.md)
 * [SASS Notes](SASS/README.md)
@@ -16,10 +17,10 @@
 * [TypeScript Notes](TypeScript/README.md)
 * [Service-Worker Notes](Service-Workers/README.md)
 
-## Development
+## General Development Notes
 
 * [Development Notes](Development/README.md)
-* [Clean Code](Development/Clean-Code.md)
+* [Clean Code Notes](Development/Clean-Code.md)
 
 ### Articles
 
