@@ -11,6 +11,34 @@ A selector is simply the element to be styled. But as you write more CSS code, y
 * Descendant Selectors
 * Pseudo-Classes
 
+### Universal Selector (*)
+
+Asterisk (*) targets everything. Can be used solo, or as a descendant.
+
+### Child Selectors
+
+Greater than symbol (>) can be used to specify something that is an immediate child of something else.
+
+### Adjacent Selectors
+
+Plus sign (+) is used to target an adjacent subling (immediately following).
+
+### Attribute Selectors
+
+Attribute selectors allow the styling of an element based on the presence of an HTML element attribute or of an attribute's value.
+
+Append an attribute name in square brackets (`[]`) to specify that it contains the attribute.
+
+Include `=VALUE` to be more specific.
+
+Inexact matching
+
+```css
+[attribute^=something] /* begins with something */
+[attribute$=something] /* ends with something */
+[attribute*=something] /* contains with something */
+```
+
 ## **CSS Properties**
 
 CSS properties are the styles used on specified selectors. They are written before values in the CSS ruleset and are separated from property values by a colon. Different HTML selectors and elements have different properties. Some properties are universal and can be used on every selector. Others work only on specific selectors and under particular conditions.
