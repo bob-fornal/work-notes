@@ -7,6 +7,7 @@
 * [Disaster Recovery](Disaster-Recovery.md)
 * [Hyper Lightweight Websites](Hyper-Lightweight-Websites.md)
 * [Single Sign-On](Single-Sign-On.md)
+* [Technical Debt](Technical-Debt.md)
 
 ### Articles
 

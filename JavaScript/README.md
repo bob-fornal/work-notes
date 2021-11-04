@@ -2,7 +2,7 @@
 
 ## Notes
 
-* [Array Destructuring](Array-Destructuring.md)
+* [Arrays](Arrays.md)
 * [Arrow Functions](Arrow-Functions.md)
 * [Dates](Dates.md)
 * [Closures](Closures.md)
