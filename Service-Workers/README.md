@@ -1,6 +1,18 @@
 # Service Workers
 
-Cache-first strategy
+A JavaScript script that gets registered with the browser.
+
+* Stays registered, even when offline.
+* Can load content event with no connection.
+* Cannot directly access DOM.
+* Programmable network proxy.
+* Terminated when not used.
+* Uses promises.
+* Requires HTTPS unless localhost.
+
+**REFERENCE**: [Functional Code](Functional-Code.md)
+
+## Cache-first Strategy
 
 * Offline
 * Online Performance
@@ -14,4 +26,4 @@ Cache-first strategy
 ## Notes
 
 * [Application to PWA](Application-to-PWA.md)
-* [Going Offline](Going-Offline.md)
+* [Going Offline](Going-Offline/README.md)

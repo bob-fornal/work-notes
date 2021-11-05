@@ -1,5 +1,7 @@
 # TypeScript
 
+> TypeScript allows a developer to better express their intent to other developers. - Eric Potter
+
 ## Developer Notes
 
 * [Getting Started with TypeScript](Getting-Started/README.md)
