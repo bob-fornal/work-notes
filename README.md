@@ -35,7 +35,7 @@
 
 ## Intent
 
-The intent here is to develop a working space where various work related notes can be stored and maintained over time.
+The intent here is to develop a space to store various work related notes and maintain them over time.
 
 ## Icon Attributions
 
