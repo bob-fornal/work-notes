@@ -1,0 +1,3 @@
+# Publishing
+
+* [Courses](Courses.md)

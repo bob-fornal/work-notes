@@ -33,6 +33,10 @@
 
 * [GitHub Notes](GitHub/README.md)
 
+## Publishing
+
+* [Publishing](Publishing/README.md)
+
 ## Intent
 
 The intent here is to develop a space to store various work related notes and maintain them over time.
