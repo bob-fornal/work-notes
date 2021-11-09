@@ -24,6 +24,7 @@
 
 * [Development Notes](Development/README.md)
 * [Clean Code Notes](Development/Clean-Code.md)
+* [General Quotes](Quotes/README.md)
 
 ### Articles
 

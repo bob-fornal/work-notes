@@ -7,6 +7,7 @@
 * [Dates](Dates.md)
 * [Closures](Closures.md)
 * [Explicit Semicolons](Explicit-Semicolons.md)
+* [Immediately Invoked Function Expression](IIFE.md)
 * [Object Comparison](Object-Comparison.md)
 * [Object Destructuring](Object-Destructuring.md)
 
