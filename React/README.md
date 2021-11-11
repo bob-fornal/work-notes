@@ -1,5 +1,9 @@
 # React
 
+## Notes
+
+* [Anti-Patterns](Anti-Patterns/README.md)
+
 ## Articles
 
 ### Error Handling
