@@ -12,6 +12,7 @@
 * [Immediately Invoked Function Expression](IIFE.md)
 * [Object Comparison](Object-Comparison.md)
 * [Object Destructuring](Object-Destructuring.md)
+* [Variable Declaration](Variable-Declaration.md)
 
 ## Videos
 

@@ -9,6 +9,7 @@
 * [Migrating from JavaScript to TypeScript](Migrating/README.md)
 * [Practical Examples](Practical-Examples/README.md)
 * [TypeScript](General/README.md)
+* [Why Use TypeScript](Why-Use/README.md)
 
 ## Articles
 
