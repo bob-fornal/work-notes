@@ -1,6 +1,7 @@
 # JavaScript
 
 * [Clean Code](Clean-Code/README.md)
+* [Math](Math/README.md)
 
 ## Notes
 
