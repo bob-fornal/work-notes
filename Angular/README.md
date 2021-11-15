@@ -29,6 +29,7 @@
 
 ### Notes
 
+* [Angular verus React](Angular-versus-React/README.md)
 * [Mocking Dependencies in Unit Tests](Mocking-Dependencies-in-Unit-Tests.md)
 
 ### Articles
