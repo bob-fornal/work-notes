@@ -7,13 +7,16 @@
 
 * [Arrays](Arrays.md)
 * [Arrow Functions](Arrow-Functions.md)
+* [Async / Await](Async-Await.md)
 * [Dates](Dates.md)
+* [Callbacks](Callbacks.md)
 * [Closures](Closures.md)
 * [Explicit Semicolons](Explicit-Semicolons.md)
 * [Hoisting](Hoisting.md)
 * [Immediately Invoked Function Expression](IIFE.md)
 * [Object Comparison](Object-Comparison.md)
 * [Object Destructuring](Object-Destructuring.md)
+* [Promises](Promises.md)
 * [Scope](Scope.md)
 * [Variable Declaration](Variable-Declaration.md)
 
