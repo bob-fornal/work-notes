@@ -2,6 +2,8 @@
 
 This is a function that is defined as an expression and executed immediately after its creation. It is therefore also know as a Self Executing Anonymous Function.
 
+Variables that are declared within an IIFE are unable to be accessed externally, thus avoiding global scope pollution. As such, the primary reason to incorporate IIFE is immediate code execution and the resulting data privacy.
+
 Before creating an IIFE, it is important to note that it contains two parts  ...
 
 1. The anonymous function with lexical scope enclosed in Grouping operators.
