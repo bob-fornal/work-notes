@@ -2,6 +2,7 @@
 
 ## Notes
 
+* [Before Releasing Software](Before-Releasing-Software.md)
 * [Beyond the Page Fold](Page-Fold.md)
 * [Clean Code](Clean-Code/README.md)
 * [Disaster Recovery](Disaster-Recovery.md)
