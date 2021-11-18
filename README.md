@@ -1,5 +1,7 @@
 # Work Notes
 
+![Lines of Code Count](https://github.com/bob-fornal/work-notes/blob/images-branch/count-badge.svg)
+
 ## Certification Notes
 
 * [Amazon Certification Notes](AWS/README.md)
