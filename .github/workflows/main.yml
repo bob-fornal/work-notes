@@ -16,7 +16,7 @@ jobs:
         with:
           debug: true
           directory: ./
-          badge: ./count-badge.svg
+          badge: ./images/badge.svg
           badge_label: Lines
 
       - name: Print the output
