@@ -1,0 +1,23 @@
+on: [push]
+name: Run Line Count
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Test Run
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Launch the local action
+        uses: shadowmoose/GHA-LoC-Badge@1.0.0
+        id: badge
+        with:
+          debug: true
+          directory: ./
+          badge: ./count-badge.svg
+
+      - name: Print the output
+        run: |
+          echo "Scanned: ${{ steps.badge.outputs.counted_files }}";
+          echo "Line Count: ${{ steps.badge.outputs.total_lines }}";
