@@ -29,8 +29,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           publish_dir: ./output
-          publish_branch: main
-          destination_dir: ./images
+          publish_branch: images-branch
           github_token: ${{ secrets.GITHUB_TOKEN }}
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
