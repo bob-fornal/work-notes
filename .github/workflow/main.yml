@@ -1,21 +1,23 @@
-on: [push]
 name: Run Line Count
+on:
+  push:
+    branches: [ main ]
 
 jobs:
-  hello_world_job:
+  count:
     runs-on: ubuntu-latest
-    name: Test Run
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
-      - name: Launch the local action
+      - name: Make Code Badge 
         uses: shadowmoose/GHA-LoC-Badge@1.0.0
         id: badge
         with:
           debug: true
           directory: ./
           badge: ./count-badge.svg
+          badge_label: Lines
 
       - name: Print the output
         run: |
