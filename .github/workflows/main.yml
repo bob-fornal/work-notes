@@ -16,7 +16,7 @@ jobs:
         with:
           debug: true
           directory: ./
-          badge: ./images/badge.svg
+          badge: ./output/count-badge.svg
           badge_label: Lines
           ignore: '**/*.png'
 
@@ -24,3 +24,11 @@ jobs:
         run: |
           echo "Scanned: ${{ steps.badge.outputs.counted_files }}";
           echo "Line Count: ${{ steps.badge.outputs.total_lines }}";
+
+      - name: Deploy to image-data branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./output
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
