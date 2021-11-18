@@ -18,6 +18,7 @@ jobs:
           directory: ./
           badge: ./images/badge.svg
           badge_label: Lines
+          ignore: '**/*.png'
 
       - name: Print the output
         run: |
