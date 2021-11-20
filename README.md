@@ -9,18 +9,7 @@
 
 ## Front-End Notes
 
-* [Angular Notes](Angular/README.md)
-* [CSS Notes](CSS/README.md)
-* [Event-Loop](Event-Loop/README.md)
-* [JSON Notes](JSON/README.md)
-* [LESS Notes](LESS/README.md)
-* [Performance](Performance/README.md)
-* [Progressive Web Application Notes](PWA/README.md)
-* [React Notes](React/README.md)
-* [SASS Notes](SASS/README.md)
-* [Scalable Vector Graphics (SVG) Notes](SVG/README.md)
-* [TypeScript Notes](TypeScript/README.md)
-* [Service-Worker Notes](Service-Workers/README.md)
+[Front-End](Front-End/README.md)
 
 ## General Development Notes
 
