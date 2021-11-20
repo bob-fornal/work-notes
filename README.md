@@ -4,8 +4,8 @@
 
 ## Certification Notes
 
-* [Amazon Certification Notes](AWS/README.md)
-* [Okta Notes](Okta/README.md)
+* [Amazon Certification Notes](Cloud/AWS/README.md)
+* [Okta Notes](Security/Okta/README.md)
 
 ## Front-End Notes
 
@@ -21,13 +21,15 @@
 
 * [Password Rules](https://gizmodo.com/the-guy-who-invented-those-annoying-password-rules-now-1797643987) ![Link](foreign.png)
 
-### GitHub
+### Tooling
 
-* [GitHub Notes](GitHub/README.md)
+* [GitHub Notes](Tooling/GitHub/README.md)
 
-## Publishing
+## Media
 
-* [Publishing](Publishing/README.md)
+* [Quotes](Media/Quotes/README.md)
+* [Social](Media/Social/README.md)
+* [Publishing](Media/Publishing/README.md)
 
 ## Intent
 

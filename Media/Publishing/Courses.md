@@ -8,7 +8,7 @@
 4. Create the course outline.
 4. Script the course.
 
-REFERENCE: [Official Udemy: How to Create an Online Course](https://www.udemy.com/course/official-udemy-create-course/)
+REFERENCE: [Official Udemy: How to Create an Online Course](https://www.udemy.com/course/official-udemy-create-course/) ![Link](../../foreign.png)
 
 ## Recording Course Content
 
