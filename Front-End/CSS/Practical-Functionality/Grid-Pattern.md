@@ -34,7 +34,7 @@ grid-template-columns: repeat(4, minmax(250px, 1fr));
 
 This sets the minimum size of each grid column to 250px with a maximum of 1fr. The problem is that there will always be four columns.
 
-That’s where the `auto-fill` keyword comes in. [Sara Soueidan wrote a great piece about this](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/) a while back and gives an example like this:
+That’s where the `auto-fill` keyword comes in. [Sara Soueidan wrote a great piece about this](https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/) ![Link](../../../foreign.png) a while back and gives an example like this:
 
 ```css
 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

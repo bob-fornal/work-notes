@@ -5,4 +5,4 @@
 
 ## The Box Model
 
-![The Box Model](../images/the-box-model.png)
+![The Box Model](../../images/the-box-model.png)
