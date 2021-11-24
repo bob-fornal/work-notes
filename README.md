@@ -13,8 +13,9 @@
 
 ## General Development Notes
 
+* [Automate Everything](Development/Automate-Everything/README.md)
 * [Development Notes](Development/README.md)
-* [Clean Code Notes](Development/Clean-Code.md)
+* [Clean Code Notes](Development/Clean-Code/README.md)
 
 ### Articles
 
