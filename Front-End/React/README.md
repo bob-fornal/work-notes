@@ -10,6 +10,11 @@
 
 * [Error Handling in React Applications](https://hackernoon.com/error-handling-in-react-applications)
 
+### Fetching Data
+
+* [React Hooks Fetch Data](https://www.robinwieruch.de/react-hooks-fetch-data/)
+* [React Hooks Handbook: Fetching Data From an API](https://designcode.io/react-hooks-handbook-fetch-data-from-an-api)
+
 ### Routing
 
 * [Modular Routing in React](https://dev.to/projectkenneth/modular-routing-in-react-2ab1) ![Link](../../foreign.png)
