@@ -2,6 +2,7 @@
 
 * [CODE EXAMPLES](CODE-EXAMPLES/README.md)
 * [Clean Code](Clean-Code/README.md)
+* [Learning Games](Learning-Games/README.md)
 * [Math](Math/README.md)
 * [Practical Code](Practical-Code/README.md)
 * [Working Offline](Working-Offline/README.md)
