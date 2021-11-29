@@ -19,6 +19,7 @@
 
 ### Articles
 
+* [File Not Found (Changing Mental Model)](https://www.theverge.com/22684730/students-file-folder-directory-structure-education-gen-z) ![Link](foreign.png)
 * [Password Rules](https://gizmodo.com/the-guy-who-invented-those-annoying-password-rules-now-1797643987) ![Link](foreign.png)
 
 ### Tooling
