@@ -2,6 +2,12 @@
 
 ## Engagement
 
+### Build Credibility
+
+* People will only listen if you have credibility.
+* Do something interesting and describe it.
+* Don't try to imaging the target audience.
+
 ### Share Relavant and Useful Content
 
 Leverate [Twitter Analytics](https://business.twitter.com/en/advertising/analytics.html).
