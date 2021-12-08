@@ -16,3 +16,7 @@
 * [Service-Worker Notes](Service-Workers/README.md)
 * [Scalable Vector Graphics (SVG) Notes](SVG/README.md)
 * [TypeScript Notes](TypeScript/README.md)
+
+## Caution
+
+* [WARNING](WARNING/README.md)
