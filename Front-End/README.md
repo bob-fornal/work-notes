@@ -4,6 +4,7 @@
 
 * [Angular](Angular/README.md)
 * [CSS Notes](CSS/README.md)
+* [DOM](DOM/README.md)
 * [Event-Loop](Event-Loop/README.md)
 * [HTML](HTML/README.md)
 * [JavaScript](JavaScript/README.md)
