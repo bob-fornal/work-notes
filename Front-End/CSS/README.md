@@ -22,3 +22,7 @@
 ## Articles
 
 * [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) ![Link](../../foreign.png)
+
+## Videos
+
+* [Kevin Powell: CSS Weekly](https://www.youtube.com/kevinpowell)
