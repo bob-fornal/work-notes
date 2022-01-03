@@ -24,6 +24,10 @@
 
 ## Programs
 
+## #JavaScript30
+
+* [#JavaScript30](https://javascript30.com/) ![Link](../foreign.png)
+
 ### freeCodeCamp
 
 * [Conquering freeCodeCamp - JavaScript Intermediate Algorithm Scripting (Part 1) - Florin Pop](https://www.youtube.com/watch?v=jSWT8myUYEY) ![Link](../foreign.png)

@@ -4,6 +4,10 @@ Performance Budgets set standards for the performance of a site.
 
 * It is a LIFESTYLE, not a thought exercise.
 
+## Developer Notes
+
+* [JavaScript](JavaScript.md)
+
 ## Tooling
 
 | Budgets   | + Measurement | + Feedback     |
