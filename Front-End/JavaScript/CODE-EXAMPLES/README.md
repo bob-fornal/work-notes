@@ -7,4 +7,5 @@
 * [Destructuring Assignment](Destructuring-Assignment.js)
 * [Nested Ternary Options](Nested-Ternary-Options.js)
 * [Promise Handling](Promise-Handling.js)
+* [Sum of Array](Sum-Of-Array.js)
 * [Toggle Class](Toggle-Class.js)

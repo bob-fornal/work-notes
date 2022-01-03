@@ -11,6 +11,10 @@
 
 [Front-End](Front-End/README.md)
 
+## Training Resources
+
+[Training](TRAINING/README.md)
+
 ## General Development Notes
 
 * [Automate Everything](Development/Automate-Everything/README.md)

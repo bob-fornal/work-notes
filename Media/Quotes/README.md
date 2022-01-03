@@ -9,3 +9,5 @@
 * [Concepts](Concepts.md)
 * [Fear](Fear.md)
 * [Normality](Normality.md)
+* [Soft Skills](Soft-Skills.md)
+* [Strength](Strength.md)
