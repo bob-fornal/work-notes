@@ -6,6 +6,10 @@
 
 ## Courses
 
+### Computer Science
+
+* [CS50 - Harvard University YouTube Channel](https://www.youtube.com/channel/UCcabW7890RKJzL968QWEykA) ![Link](../foreign.png)
+
 ### HTML and CSS
 
 * [Master the Basics of HTML5 & CSS3: Beginner Web Development](https://www.udemy.com/course/master-the-basics-of-html5-css3-beginner-web-development/) ![Link](../foreign.png)
