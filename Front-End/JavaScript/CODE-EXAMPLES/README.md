@@ -7,5 +7,6 @@
 * [Destructuring Assignment](Destructuring-Assignment.js)
 * [Nested Ternary Options](Nested-Ternary-Options.js)
 * [Promise Handling](Promise-Handling.js)
+* [String Split into Array](String-Split-Into-Array.js)
 * [Sum of Array](Sum-Of-Array.js)
 * [Toggle Class](Toggle-Class.js)

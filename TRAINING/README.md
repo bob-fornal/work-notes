@@ -24,6 +24,7 @@
 * [React JS Crash Course - Traversy Media](https://www.youtube.com/watch?v=w7ejDZ8SWv8) ![Link](../foreign.png)
 * [React JS Tutorial for Beginners - Full Course in 12 Hours (2021)](https://www.youtube.com/watch?v=-cMqr9HpZ-Y) ![Link](../foreign.png)
 * [ReactJS Full Course in 7 Hours | Learn React js | React.js Training | Edureka](https://www.youtube.com/watch?v=VyeA0tVreYw) ![Link](../foreign.png)
+* [ReactJS Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html) ![Link](../foreign.png)
 
 ### JavaScript
 
@@ -39,6 +40,12 @@
 * [#JavaScript30](https://javascript30.com/) ![Link](../foreign.png)
 
 ### freeCodeCamp
+
+#### Site
+
+* [freeCodeCamp](https://www.freecodecamp.org/) ![Link](../foreign.png)
+
+#### Notes
 
 * [Conquering freeCodeCamp - JavaScript Intermediate Algorithm Scripting (Part 1) - Florin Pop](https://www.youtube.com/watch?v=jSWT8myUYEY) ![Link](../foreign.png)
 * [Conquering freeCodeCamp - JavaScript Intermediate Algorithm Scripting (Part 2) - Florin Pop](https://www.youtube.com/watch?v=M94XFUfu2zk) ![Link](../foreign.png)
