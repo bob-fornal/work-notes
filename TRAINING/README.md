@@ -17,6 +17,7 @@
 
 ### React
 
+* [50 Projects For React & The Static Web](https://50reactprojects.com/) ![Link](../foreign.png)
 * [Full Modern React Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) ![Link](../foreign.png)
 * [React - The Complete Guide (incl Hooks, React Router, Redux)](https://www.youtube.com/watch?v=5R-Y3bdRIzw) ![Link](../foreign.png)
 * [React JS Course for Beginners - 2021 Tutorial](https://www.youtube.com/watch?v=nTeuhbP7wdE) ![Link](../foreign.png)
