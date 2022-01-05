@@ -13,6 +13,8 @@
 
 ## Playlists (YouTube)
 
+* [Coding Math](https://www.youtube.com/user/codingmath/playlists) ![Link](../foreign.png)
+
 ## Videos (YouTube)
 
 * [Asynchronous Events in JavaScript](https://www.youtube.com/watch?v=G3edxhIZPbw&t=55s) ![Link](../foreign.png)
