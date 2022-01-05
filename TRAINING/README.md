@@ -45,7 +45,11 @@
 
 ## Programs
 
-## #JavaScript30
+### General Programming
+
+* [Exercism](https://exercism.org/) ![Link](../foreign.png)
+
+### #JavaScript30
 
 * [#JavaScript30](https://javascript30.com/) ![Link](../foreign.png)
 

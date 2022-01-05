@@ -10,3 +10,4 @@
 * [String Split into Array](String-Split-Into-Array.js)
 * [Sum of Array](Sum-Of-Array.js)
 * [Toggle Class](Toggle-Class.js)
+* [Using Semicolons](Using-Semicolons.js)
