@@ -4,6 +4,7 @@
 
 * [DEV.to](Dev-To.md)
 * [Twitter](Twitter.md)
+* [Twitter: Thoughts and Ideas](Twitter--Thoughts-and-Ideas.md)
 
 ### Detail
 
