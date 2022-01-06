@@ -12,6 +12,7 @@
 
 ### HTML and CSS
 
+* [30 Day Beginner HTML & CSS Coding Calendar - Bree Hall](https://github.com/breehall/30-Day-HTML-CSS-Coding-Calendar) ![Link](../foreign.png)
 * [Master the Basics of HTML5 & CSS3: Beginner Web Development](https://www.udemy.com/course/master-the-basics-of-html5-css3-beginner-web-development/) ![Link](../foreign.png)
 
 ### HTML, CSS, and JavaScript
