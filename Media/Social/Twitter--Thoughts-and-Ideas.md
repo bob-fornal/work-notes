@@ -65,3 +65,9 @@ Draft one and show yourself off as an authority of your niche.
 * 5 of my favourite creators on Twitter
 
 Pro tip - End with "What about you?" or "What else?" to get some replies and engagement.
+
+### Write a Quote
+
+Be strategic with it.
+
+Find something that goes BAM and you can easily go viral with it.
