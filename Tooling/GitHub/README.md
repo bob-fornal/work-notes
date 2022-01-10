@@ -21,3 +21,8 @@
 * [Git Cheat Sheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) ![Link](../../foreign.png)
 * [GitExplorer](https://gitexplorer.com/) ![Link](../../foreign.png)
 * [Dynamic Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html) ![Link](../../foreign.png)
+
+## Videos
+
+* [Git and GitHub for Beginners - Crash Course - freeCodeCamp](https://www.youtube.com/watch?v=RGOj5yH7evk) ![Link](../../foreign.png)
+* [Git & GitHub Tutorial for Beginners #1 - Why Use Git? - The Net Ninja](https://www.youtube.com/watch?v=3RjQznt-8kE) ![Link](../../foreign.png)

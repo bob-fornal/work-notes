@@ -25,4 +25,5 @@
 
 ## Videos
 
-* [Kevin Powell: CSS Weekly](https://www.youtube.com/kevinpowell)
+* [Kevin Powell: CSS Weekly](https://www.youtube.com/kevinpowell) ![Link](../../foreign.png)
+* [CSS Padding and Margin Confusion](https://twitter.com/DThompsonDev/status/147941177361 ![Link](../../foreign.png)0598406)
