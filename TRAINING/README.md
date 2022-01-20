@@ -6,6 +6,10 @@
 
 ## Courses
 
+### Burnout
+
+* [You're Not Just Tired: The Psychology of Burnout](https://www.youtube.com/watch?v=-XYK8ulQId0) ![Link](../foreign.png)
+
 ### Computer Science
 
 * [CS50 - Harvard University YouTube Channel](https://www.youtube.com/channel/UCcabW7890RKJzL968QWEykA) ![Link](../foreign.png)
