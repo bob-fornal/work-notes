@@ -22,6 +22,7 @@
 ## Articles
 
 * [CSS-Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) ![Link](../../foreign.png)
+* [Modern Fluid Typography Using CSS Clamp](https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/) ![Link](../../foreign.png)
 * [Writing Better CSS](https://www.aleksandrhovhannisyan.com/blog/writing-better-css/) ![Link](../../foreign.png)
 
 ## Videos

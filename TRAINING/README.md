@@ -14,6 +14,10 @@
 
 * [CS50 - Harvard University YouTube Channel](https://www.youtube.com/channel/UCcabW7890RKJzL968QWEykA) ![Link](../foreign.png)
 
+### CSS
+
+[CSS Training](CSS-Training.md)
+
 ### HTML and CSS
 
 * [30 Day Beginner HTML & CSS Coding Calendar - Bree Hall](https://github.com/breehall/30-Day-HTML-CSS-Coding-Calendar) ![Link](../foreign.png)
