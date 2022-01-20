@@ -1,3 +1,4 @@
 # AWS Certified Solutions Architect Associate
 
-* [Identity and Access Management](Identity-and-Access-Management.md)
+* [IAM - Identity and Access Management](IAM--Identity-and-Access-Management.md)
+* [EC2 - Fundamentals](EC2--Fundamentals.md)
