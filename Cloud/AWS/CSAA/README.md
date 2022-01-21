@@ -1,6 +1,6 @@
 # AWS Certified Solutions Architect Associate
 
-## Overview
+## Training Overview
 
 I've had a lot of questions on my (personal) training plan for the AWS CSAA. I put this plan together for [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?f=live) after doing a 6-week preparation for and passing the [AWS Certified Developer Associate (CDA)](../CDA/README.md) exam.
 
