@@ -45,4 +45,5 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 
 * [IAM - Identity and Access Management](IAM--Identity-and-Access-Management.md)
 * [EC2 - Fundamentals](EC2--Fundamentals.md)
-* [EC2 - Solutions Architect Associate Level](EC2--SSA-Level)
+* [EC2 - Solutions Architect Associate Level](EC2--SSA-Level.md)
+* [EC2 - Instance Storage](EC2--Instance-Storage.md)
