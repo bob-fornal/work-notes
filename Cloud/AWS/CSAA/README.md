@@ -49,3 +49,4 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [EC2 - Instance Storage](EC2--Instance-Storage.md)
 * [ELB & ASG - High Availability and Scalability](ELB-ASG--High-Availability-and-Scalability.md)
 * [RDS, Aurora, and ElastiCache](RDS-Aurora-and-ElastiCache.md)
+* [Route 53](Route-53.md)
