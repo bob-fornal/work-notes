@@ -51,7 +51,7 @@ Route 53 supports the following DNS record types ...
 
 CNAME Notes
 
-* The target is a domain name whiehc must have an A or AAAA record.
+* The target is a domain name which must have an A or AAAA record.
 * Cannot create a CNAME record for the top node of a DNS name space (Zone Apex).
 
 ### Route 53 - Hosted Zones
@@ -228,6 +228,6 @@ Domain Registrar versus DNS Service
 
 Summary: **If the domain is on a 3rd party registrar, can use Route 53 as the DNS Service Provider**.
 
-1. Create a Hosted Zone in Route 53.
+1. Create a Public Hosted Zone in Route 53.
 2. Update NS (Name Server) Records on 3rd party site to use Route 53 **Name Servers**.
 
