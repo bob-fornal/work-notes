@@ -36,6 +36,12 @@ You can easily start with - "Hey <name> Just wanted to send greetings for the Ne
 
 ## Challenges
 
+### Create Shout-Out List
+
+Accounts from niche, friends, or anyone who provides immense value.
+
+* Honest appreciation for the creator.
+
 ### Send out a Good Morning Tweet
 
 Some formats to help you out:
