@@ -50,3 +50,4 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [ELB & ASG - High Availability and Scalability](ELB-ASG--High-Availability-and-Scalability.md)
 * [RDS, Aurora, and ElastiCache](RDS-Aurora-and-ElastiCache.md)
 * [Route 53](Route-53.md)
+* [Solutions Architecture Discussions](Solutions-Architecture-Discussions.md)
