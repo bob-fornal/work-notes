@@ -1,5 +1,11 @@
 # JavaScript Code Examples
 
+## Demo Code
+
+* [Seat Type](Seat-Type.js)
+
+## Functionality
+
 * [Breaking Comments](Breaking-Comments.js)
 * [Conditions and Ternaries](Conditions-and-Ternaries.js)
 * [Convert Object to Array](Convert-Object-to-Array.js)
