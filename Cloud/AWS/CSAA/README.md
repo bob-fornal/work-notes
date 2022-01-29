@@ -54,3 +54,4 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [S3 - Simple Storage Service](S3--Simple-Storage-Service.md)
 * [AWS SDK, IAM Roles and Policies](AWS-SDK--IAM-Roles-and-Policies.md)
 * [Advanced S3 and Athena](Advanced-S3-and-Athena.md)
+* [CloudFront and AWS Global Accelerator](CloudFront-and-AWS-Global-Accelerator.md)
