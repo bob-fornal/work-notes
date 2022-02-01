@@ -2,28 +2,28 @@
 
 ## Training Overview
 
-I've had a lot of questions on my (personal) training plan for the AWS CSAA. I put this plan together for [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?f=live) after doing a 6-week preparation for and passing the [AWS Certified Developer Associate (CDA)](../CDA/README.md) exam.
+I've had a lot of questions about my (personal) training plan for the AWS CSAA. I put this plan together for [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?f=live) after doing a 6-week preparation for and passing the [AWS Certified Developer Associate (CDA)](../CDA/README.md) exam.
 
 I am always suggesting that people have a plan. Here's my plan:
 
 1. Training: There's an awesome course I will use.
-2. Hands on: I have access to hands-on material.
+2. Hands-on: I have access to hands-on material.
 3. Practice Tests
 4. Take and Pass the Test
 
-I plan to do these four things, in order.
+I plan to do these four things in order.
 
 * The training should take an estimated 30-days.
-* I am not completely sure how long the hands on will take, but I will assume about 30-40 days.
+* I am not completely sure how long the hands-on will take, but I will assume about 30-40 days.
 * Then, I should have 30-days or so to run through the practice tests to get to the level I want.
 
 ### Training
 
-I used this same instructor's course for the CDA Exam and loved it. The courses are about 400 sections each very small allowing for quick updates as services change at AWS.
+I used this same instructor's course for the CDA Exam and loved it. The courses are about 400 sections (each, very small), allowing for quick updates as services change at AWS.
 
 > [Ultimate AWS Certified Solutions Architect Associate 2022](https://udemy.com/course/aws-certified-solutions-architect-associate-saa-c02/) by [@StephaneMaarek](https://twitter.com/StephaneMaarek).
 
-### Hands On
+### Hands-On
 
 I had a few co-workers recommend this course for the hands-on portions. So, unlike the CDA, I will have a much deeper understanding of the components of this certification.
 
@@ -31,7 +31,7 @@ I had a few co-workers recommend this course for the hands-on portions. So, unli
 
 ### Practice Tests
 
-I used this and one other set of practice tests for the CDA Exam and found this one to be just a bit better than the other, so I will stick with the same company.
+I used this and one other set of practice tests for the CDA Exam and found this one to be just a bit better than the other. Given that, I will stick with the same company.
 
 > [AWS Certified Developer Associate Practice Exams 2022](https://portal.tutorialsdojo.com/courses/aws-certified-developer-associate-practice-exams/) at [@tutorialsdojo](https://twitter.com/tutorialsdojo) ... by [@jonbonso](https://twitter.com/jonbonso).
 
@@ -57,3 +57,5 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [CloudFront and AWS Global Accelerator](CloudFront-and-AWS-Global-Accelerator.md)
 * [AWS Storage Extras](AWS-Storage-Extras.md)
 * [Decoupling Applications: SQS, SNS, Kinesis, ActiveMQ](Decoupling-Applications--SQS-SNS-Kinesis-ActiveMQ.md)
+* [Containers on AWS: ECS, Fargate, ECR, and EKS](Containers-on-AWS--ECS-Fargate-ECR-EKS.md)
+* [Serverless Overviews from a Solution Architect Perspective](Serverless-Overviews-from-a-Solution-Architect-Perspective.md)
