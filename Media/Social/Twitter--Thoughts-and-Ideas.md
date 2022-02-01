@@ -14,6 +14,13 @@ This framework by Alex Garcia will help you structure a good thread:
 2. Body = Context/Story
 3. CTA = CTA to follow/click
 
+## Niche and Content Buckets
+
+Read your top 50 tweets.
+
+* ​Use this search on Twitter - `from:<yourusername> min_faves:50`
+* See what broad buckets they are in and choose 3 buckets you want to be known for.
+
 ## Leverage the Timeline
 
 I know we're asked to "get away from the herd" but sometimes being a part of the herd delivers.
