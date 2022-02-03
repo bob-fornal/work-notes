@@ -2,10 +2,10 @@
 
 ## What is a DNS?
 
-DNS = Domain Name System which translates the human friendly hostnames into the machine IP addresses.
+DNS = Domain Name System which translates the human-friendly hostnames into the machine IP addresses.
 
 * DNS is the backbone of the Internet.
-* DNS uses hierarchical naming structure.
+* DNS uses a hierarchical naming structure.
 
 ### Terminologies
 
@@ -20,7 +20,7 @@ DNS = Domain Name System which translates the human friendly hostnames into the 
 
 Authoritative = The customer can update the DNS records.
 
-* A highly available, scalable, fully managed and *Authoritative* DNS.
+* A highly available, scalable, fully managed, and *Authoritative* DNS.
 * Route 53 is also a Domain Registrar.
 * Ability to check the health of resources.
 * The only AWS service which provides 100% availability SLA.
@@ -51,8 +51,8 @@ Route 53 supports the following DNS record types ...
 
 CNAME Notes
 
-* The target is a domain name which must have an A or AAAA record.
-* Cannot create a CNAME record for the top node of a DNS name space (Zone Apex).
+* The target is a domain name that must have an A or AAAA record.
+* Cannot create a CNAME record for the top node of a DNS namespace (Zone Apex).
 
 ### Route 53 - Hosted Zones
 
@@ -130,7 +130,7 @@ Define how Route 53 responds to DNS queries. Route 53 supports ...
 * Typically, route traffic to a single resource.
 * Can specify multiple values in the same record.
 * **If multiple values are returned, a random one is selected by the client**.
-* When Alias enabled, specify only one AWS resource.
+* When Alias is enabled, specify only one AWS resource.
 * Cannot be associated with Health Checks.
 
 ## Routing Policy - Weighted
@@ -162,7 +162,7 @@ Health Check => Automated DNS Failover ...
 
 * Health Checks are integrated with CloudWatch metrics.
 * Health Checks pass only when the endpoint responds with the 2xx and 3xx status codes.
-* Health Checks can be setup to pass or fail based on the contents in the first 5,120 bytes of the response.
+* Health Checks can be set up to pass or fail based on the contents in the first 5,120 bytes of the response.
 * Configure the router/firewall to allow incoming requests from Route 53 Health Checkers.
 
 ### Calculated Health Checks
@@ -188,7 +188,7 @@ Health Check => Automated DNS Failover ...
 
 **This routing is based on user location**.
 
-* Specify location by Continent, Country, or by US State (if there's overlapping, most precise location is selected).
+* Specify location by Continent, Country, or by US State (if there's overlapping, the most precise location is selected).
 * Should create a "**Default**" record (in case there is no match on location).
 * Use cases: Website localization, restrict content distribution, load balancing, ...
 * Can be associated with Health Checks.
@@ -208,9 +208,9 @@ To change the size of the geographic region, specify **bias** values ...
 Resources can be ...
 
 * AWS resources (specify AWS region).
-* Non-AWS resources (specify Latitiude and Longitude).
+* Non-AWS resources (specify Latitude and Longitude).
 
-## Routing Policy - Multi Value
+## Routing Policy - MultiValue
 
 * Use when routing traffic to multiple resources.
 * Route 53 returns multiple values/resources.
@@ -218,7 +218,7 @@ Resources can be ...
 * Up to 8 healthy records are returned for each Multi-Value query.
 * **Multi-Value is not a substitute for having an ELB**.
 
-## Third Party Domains and Route 53
+## Third-Party Domains and Route 53
 
 Domain Registrar versus DNS Service
 

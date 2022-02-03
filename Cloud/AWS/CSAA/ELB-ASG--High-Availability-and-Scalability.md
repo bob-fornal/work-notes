@@ -11,7 +11,7 @@ Scalability means that an application/system can handle greater loads by adaptin
 
 ### Vertical Scalability
 
-Means that the size of the instance is increased.
+This means that the size of the instance is increased.
 
 * Vertical scalability is very common for non-distributed systems, such as a database.
 * RDS and Elasticache are services that can scale vertically.
@@ -28,8 +28,8 @@ Means increasing the number of instances/systems for the application.
 * High Availability usually goes hand-in-hand with horizontal scaling.
 * This means running an application/system in at least two data centers (=== Availability Zones)
 * The goal is to survive a data center loss.
-* It can be passive (for RDS Multi AZ, for example).
-* It can be active (fro horizontal scaling).
+* It can be passive (for RDS Multi-AZ, for example).
+* It can be active (for horizontal scaling).
 
 ## Elastic Load Balancing (ELB) Overview
 
@@ -59,7 +59,7 @@ An Elastic Load Balancer is a **managed load balancer**.
 * Health Checks are crucial for Load Balancers.
 * They enable the load balancer to know if an instance that it forwards traffic to is available to reply to requests.
 * The health check is done on a port and a route (```/health``` is common).
-* If response is not ```200 (OK)```, then the instance is unhealthy.
+* If the response is not ```200 (OK)```, then the instance is unhealthy.
 
 ### Four Kinds of Managed Load Balancers
 
@@ -71,7 +71,7 @@ An Elastic Load Balancer is a **managed load balancer**.
 ## Classic Load Balancer (CLB)
 
 * Supports TCP (Layer 4) and HTTP, HTTPS (Layer 7).
-* Health Checks are TCP or HTTP based.
+* Health Checks are TCP or HTTP-based.
 * Fixed hostname: XXX.region.elb.amazonaws.com
 
 ## Application Load Balancer (ALB)
@@ -84,19 +84,19 @@ An Elastic Load Balancer is a **managed load balancer**.
 
 Route tables to different target groups.
 
-* Routing based on path in URL (example.com```/users``` and example.com```/posts```).
+* Routing based on the path in URL (example.com```/users``` and example.com```/posts```).
 * Routing based on hostname in URL (```one.example.com``` and ```other.example.com```).
 * Routing based on Query String, Headers (example.com/users?```id=123&order=false```)
 
-ALBs are a great fit for micro-services and container-based applications.
+ALBs are a great fit for microservices and container-based applications.
 
 ### ALB Target Groups
 
 * EC2 Instances (can be managed by an Auto Scaling Group) - HTTP.
-* ECS tasks (managed by ECS itselt) - HTTP.
+* ECS tasks (managed by ECS itself) - HTTP.
 * Lambda functions - HTTP request is translated into a JSON event.
 * IP Addresses - must be private IPs.
-* ALB can route to multple target groups.
+* ALB can route to multiple target groups.
 * Health checks are done at the target group level.
 
 ### Good to Know
@@ -115,9 +115,9 @@ Network Load Balancers (Layer 4) allow ...
 * Handle millions of requests per second.
 * Less latency ~100md (vs 400ms for ALB).
 
-NLBs have **one static IP per AZ, and support assigning Elastic IP** (helpful for whitelisting specific IPs).
+NLBs have **one static IP per AZ and support assigning Elastic IP** (helpful for whitelisting specific IPs).
 
-* NLBs are used for extreme performance, TCP or UDP traffic.
+* NLBs are used for extreme performance, TCP, or UDP traffic.
 
 ### NLB Target Groups
 
@@ -129,9 +129,9 @@ NLBs have **one static IP per AZ, and support assigning Elastic IP** (helpful fo
 
 Deploy, scale, and manage a fleet of 3rd-party network virtual appliances in AWS.
 
-* Example: Firewalls, Instrusion Detection and Prevention Systems, Deep Packet Inspection Systems, payload manipulation, ...
+* Example: Firewalls, Intrusion Detection and Prevention Systems, Deep Packet Inspection Systems, payload manipulation, ...
 * Operates at Network Layer (Layer 3) - IP Packets.
-* Combines: **Transparent Network Gateway** (single entry/exit for all traffic) and **Load Balancer** (distributes traffic to virtual appliances).
+* Combines **Transparent Network Gateway** (single entry/exit for all traffic) and **Load Balancer** (distributes traffic to virtual appliances).
 * Uses the **GENEVE** protocol on port **6081**.
 
 ## ELB - Sticky Sessions
@@ -168,7 +168,7 @@ Application Cookie
 
 >With **Cross-Zone Load Balancing**: each load balancer instance distributes evenly across all registered instances in all AZs.
 
->Without **Cross-Zone Load Balancing**: requests are distributes in the instances of the node of the Elastic Load Balancer.
+>Without **Cross-Zone Load Balancing**: requests are distributed in the instances of the node of the Elastic Load Balancer.
 
 ### Application Load Balancer
 
@@ -178,7 +178,7 @@ Application Cookie
 ### Network Load Balancer
 
 * Disabled by default.
-* There are charges for inter-AZ data, if enabled.
+* There are charges for inter-AZ data if enabled.
 
 ### Classic Load Balancer
 
@@ -187,7 +187,7 @@ Application Cookie
 
 ## ELB - SSL/TLS Certificates
 
-* An SSL Certificate allows traffic between clients and load balancer to be encrypted in-transit (in-flight encryption).
+* An SSL Certificate allows traffic between clients and load balancer to be encrypted in transit (in-flight encryption).
 * SSL = Secure Socket Layer, used to encrypt connections.
 * TLS = Transport Layer Security, newer version.
 * **TLS Certificates are used in most cases**, but they are referred to as SSL.
@@ -196,7 +196,7 @@ Application Cookie
 
 ### SSL Certificates - Load Balancer
 
-* The load balancer uses and X.509 Certificate (SSL/TLS Server Certificate).
+* The load balancer uses an X.509 Certificate (SSL/TLS Server Certificate).
 * Manage certificates using ACM (AWS Certificate Manager).
 * Upload certificates alternatively.
 
@@ -209,9 +209,9 @@ HTTPS listener ...
 
 ### Server Name Indication
 
-SNI solves the problem of loading **multiple SSL Certificates onto one web server** (to serve multple websites).
+SNI solves the problem of loading **multiple SSL Certificates onto one web server** (to serve multiple websites).
 
-* It is a "newer" protocol, and requires the client to **indicate** the hostname of the target server in the initial SSL handshake.
+* It is a "newer" protocol and requires the client to **indicate** the hostname of the target server in the initial SSL handshake.
 * The server will then find the correct certificate, or return the default one.
 
 Note:
@@ -233,7 +233,7 @@ Note:
 
 ### Network Load Balancer (v2)
 
-* Supports multple listerners with multiple SSL Certificates.
+* Supports multiple listeners with multiple SSL Certificates.
 * Uses Server Name Indication (SNI) to make it work.
 
 ## ELB - Connection Draining
@@ -257,8 +257,8 @@ In real life, the load on websites and applications can change. In the cloud, se
 
 The goal of an Auto Scaling Group (ASG) is to ...
 
-* Scale out (add EC2 Instances) to match an increased load.
-* Scale in (remove EC2 Instances) to match a decreased load.
+* Scale-out (add EC2 Instances) to match an increased load.
+* Scale-in (remove EC2 Instances) to match a decreased load.
 * Ensure we have a minimum and a maximum number of machines running.
 * Automatically register new instances to a load balancer.
 
@@ -272,21 +272,21 @@ The goal of an Auto Scaling Group (ASG) is to ...
 
 ### ASG Alarms
 
-* It is possble to scale an ASG based on CloudWatch Alarms.
+* It is possible to scale an ASG based on CloudWatch Alarms.
 * An Alarm monitors a metric (such as Average CPU).
 * **Metrics are computed for the overall ASG instances**.
 
 ## Auto Scaling Custom Metric
 
-* Auto scale based on a custom metric (example, number of connected users).
+* Auto-scale based on a custom metric (example, number of connected users).
 
 ### ASG General Information
 
 * Scaling policies can be on CPU, Network ... and can even be on custom metrics or based on a schedule.
 * ASGs use Launch Configurations or Launch Templates (newer).
-* To update an ASG, provide a new Launch Configuation or Launch Template.
+* To update an ASG, provide a new Launch Configuration or Launch Template.
 * IAM roles attached to an ASG will get assigned to EC2 Instances.
-* ASG are free. Charges are for the underlying resources being launched.
+* ASGs are free. Charges are for the underlying resources being launched.
 * Having instances under an ASG means that if they get terminates for whatever reason, the ASG will automatically **create new ones as a replacement**.
 * ASG can terminate instances marked as unhealthy by a load balancer.
 
@@ -305,7 +305,7 @@ The goal of an Auto Scaling Group (ASG) is to ...
 ### Scheduled Actions
 
 * Anticipate a scaling based on known usage patterns.
-* Example: Increase the minimum capacity to 10 at 5pm on Fridays.
+* Example: Increase the minimum capacity to 10 at 5 pm on Fridays.
 
 ## ASG - Predictive Scaling
 
@@ -321,7 +321,7 @@ The goal of an Auto Scaling Group (ASG) is to ...
 ## ASG - Scaling Cooldowns
 
 * After a scaling activity occurs, there is a **cooldown period (default of 300 seconds)**.
-* During the cooldown period, the ASG will not launch or terminate additional instances (to allow for metrics to stablize).
+* During the cooldown period, the ASG will not launch or terminate additional instances (to allow for metrics to stabilize).
 * Advice: Use a ready-to-use AMI to reduce configuration time in order to be serving requests faster and reduce the cooldown period.
 
 ## ASG - For Solutions Architects
@@ -336,14 +336,14 @@ The goal of an Auto Scaling Group (ASG) is to ...
 ### ASG Lifecycle Hooks
 
 * By default, as soon as an instance is launched in an ASG it is in service.
-* Extra steps can be performed before the instance goes in service (Pending state).
-* Some actions can be performed before the instance is termated (Terminating state).
+* Extra steps can be performed before the instance goes into service (Pending state).
+* Some actions can be performed before the instance is terminated (Terminating state).
 
 ### Launch Template versus Launch Configuration
 
 Both ...
 
-* Allow specifying ID of the Amazon Maching Image (AMI), the instance type, a key pair, security groups, and the other parameters used to lauch EC2 Instances.
+* Allow specifying ID of the Amazon Matching Image (AMI), the instance type, a key pair, security groups, and the other parameters used to launch EC2 Instances.
 
 Launch Configuration (legacy):
 

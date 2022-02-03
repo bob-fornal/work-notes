@@ -68,9 +68,9 @@
 
 * Shopping cart.
 * Hundreds of simultaneous users.
-* Scale, maintain horizontal scalability, and keep the web application as stateless as possible.
+* Scale, maintain horizontal scalability and keep the web application as stateless as possible.
 * Users should not lose their shopping cart.
-* Users shouls have their details (address, etc.) in a database.
+* Users should have their details (address, etc.) in a database.
 
 ### 1. Start
 
@@ -80,7 +80,7 @@
 
 ### 2. User Cookies
 
-* Rather than contents of card on EC2, **send cart contents in Web Cookies**.
+* Rather than contents of a card on EC2, **send cart contents in Web Cookies**.
 * AZ 1 to 3, Private EC2 Instances, ASG across three AZ.
 * ELB + Health Checks
 * Route 53
@@ -125,7 +125,7 @@ Alternative
 * ELB + Health Checks
 * Route 53
 
-### 6. Multi AZ - Survive Disasters
+### 6. Multi-AZ - Survive Disasters
 
 * Amazon RDS **Multi-AZ**, Master (writes), replication with RDS Read Replicas.
 * **ElastiCache Multi-AZ**.
@@ -164,11 +164,11 @@ Security Groups
 Storing Images with EBS
 
 * **Elastic File System (EFS)** for shared storage.
-* Creates Elastic Network Interface (ENI) for each AZ to that all the EC2 Instances can access the drive.
+* Creates Elastic Network Interface (ENI) for each AZ so that all the EC2 Instances can access the drive.
 
 ## Instantiating Applications Quickly
 
-When launching a full stack (EC2, EBS, RDS), it can take time to ...
+When launching a full-stack (EC2, EBS, RDS), it can take time to ...
 
 * Install applications
 * Insert initial (or recovery) data
@@ -221,11 +221,11 @@ When ...
 
 ### Overview
 
-Elastic Beanstalk is a developer centric view of deploying an application on AWS.
+Elastic Beanstalk is a developer-centric view of deploying an application on AWS.
 
 * It uses components we have seen before: EC2, ASG, ELB, RDS, ...
 * It is a Managed Service that automatically handles capacity provisioning, load balancing, scaling, application health monitoring, instance configuration, and more.
-* The developer's responsiblity is the application code.
+* The developer's responsibility is the application code.
 * The developer still has full control over the configuration.
 
 Components

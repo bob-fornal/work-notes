@@ -39,7 +39,7 @@
 
 ## AWS Policy Simulator
 
-With the IAM policy simulator, can test and troubleshoot identity-based policies, IAM permissions boundaries, Organizations service control policies (SCPs), and resource-based policies.
+With the IAM policy simulator, can test and troubleshoot identity-based policies, IAM permissions boundaries, Organization service control policies (SCPs), and resource-based policies.
 
 Here are some common things you can do with the policy simulator:
 
@@ -57,7 +57,7 @@ Here are some common things you can do with the policy simulator:
 Allows an AWS EC2 Instance to "learn about themselves" **without using an IAM Role for that purpose**.
 
 * The URL is `http://169.254.169.254/latest/meta-data`.
-* Retrieve the IAM Role name from the metadata, CANNOT retrieve the IAM Policy.
+* Retrieve the IAM Role name from the metadata, CAN NOT retrieve the IAM Policy.
 * Metadata = Information about the EC2 Instance.
 * Userdata = Launch script of the EC2 Instance.
 

@@ -4,8 +4,8 @@
 
 * An **Elastic Block Store (EBS)** is a network drive that can be attached to an instance while it is running.
 * It allows instances to persist data, even after termination.
-* **They can only be mounted to one instance at a time; there us a "multi-attach" feature for some EBS**.
-* They are bound to **a specific Availability Zone (AZ)**.
+* **They can only be mounted to one instance at a time; there is a "multi-attach" feature for some EBS**.
+* Bound to **a specific Availability Zone (AZ)**.
 * Has a provisioned capacity (size in BGs and IOPS).
 
 ### EBS - Delete on Termination attribute
@@ -13,7 +13,7 @@
 * Controls the EBS behavior when an EC2 Instance terminates.
 * By default, the root EBS volume is deleted (attribute enabled) and any other attached SBD volume is not deleted (attribute disabled).
 * This can be controlled by the AWS Console or AWS CLI.
-* **Use case: preserve teh root volume when the instance is terminated.**
+* **Use case: preserve the root volume when the instance is terminated.**
 
 ## EBS Snapshots
 
@@ -24,8 +24,8 @@
 ## AMI Overview
 
 * AMI = Amazon Machine Image
-* AMI are a **customization** of an EC2 Instance.
-* AMI are built for a **specific region** (and can be copied across regions).
+* AMIs are a **customization** of an EC2 Instance.
+* AMIs are built for a **specific region** (and can be copied across regions).
 
 AMIs can launch EC2 Instances from ...
 
@@ -41,7 +41,7 @@ AMIs can launch EC2 Instances from ...
 
 * Better I/O performance.
 * EC2 Instance Store lose their storage if they are stopped (ephemeral).
-* Good for buffer, cache, scratch data, and temporary content.
+* Good for a buffer, cache, scratch data, and temporary content.
 * Risk of data loss if hardware fails.
 * Backups and Replication are your responsibility.
 
@@ -49,7 +49,7 @@ AMIs can launch EC2 Instances from ...
 
 * **gp2 / gp3 (SSD)**: General purpose SSD volume that balances price and performance for a wide variety of workloads.
 * **io1 / io2 (SSD)**: Highest performance SSD volume for mission-critical low-latency or high-throughput workloads.
-* **st1 (HDD)**: Low cost HDD volume designed for grequently accessed, throughput-intensive workloads.
+* **st1 (HDD)**: Low-cost HDD volume designed for frequently accessed, throughput-intensive workloads.
 * **sc1 (HDD)**: Lowest cost HSS volume designed for less frequently accessed workloads.
 
 EBS Volumes are characterized in Size, Throughput, IOPS (I/O Operations Per Second).
@@ -74,7 +74,7 @@ EBS Volumes are characterized in Size, Throughput, IOPS (I/O Operations Per Seco
 
 When an encrypted EBS volume is created ...
 
-* Data at-rest is encrypted inside the volume.
+* Data at rest is encrypted inside the volume.
 * All the data in-flight, moving between the instance and the volume is encrypted.
 * All snapshots are encrypted.
 * Encryption and decryption are handled transparently.
@@ -87,7 +87,7 @@ When an encrypted EBS volume is created ...
 
 * Create an EBS snapshot of the volume.
 * Encrypt the EBS snapshot (using copy).
-* Create new EBS Volume from the snapshot (the volume will also be encrypted).
+* Create a new EBS Volume from the snapshot (the volume will also be encrypted).
 * Attach the encrypted volume to the original instance.
 
 ## EFS Overview
@@ -100,7 +100,7 @@ EFS = Elastic File System
 * Use cases: content management, web serving, data sharing, WordPress.
 * Use security group to control access to EFS.
 * **Compatible with Linux-based AMI (not Windows)**.
-* Encryption at-rest using KMS.
+* Encryption at rest using KMS.
 * File system scales automatically, pay-per-use, no capacity planning.
 
 EFS Scale
@@ -119,5 +119,5 @@ EBS Volumes ...
 EFS ...
 
 * Mounting 100s of instances across AZ.
-* EFS share website files (WordPress).
+* EFS shares website files (WordPress).
 

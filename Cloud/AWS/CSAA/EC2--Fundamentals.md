@@ -15,7 +15,7 @@ Consists mainly of ...
 
 ### EC2 Sizing and Configuration Options
 
-* OS: Linux, WIndows, or Mac OS
+* OS: Linux, Windows, or Mac OS
 * CPU: Compute power and Cores
 * RAM: Memory
 * Storage: Network-attached (EDS & EFS)
@@ -36,11 +36,11 @@ EC2 User Data is used to automate boot tasks such as ...
 
 * Installing updates
 * Installing software
-* Downloading common files from the Internet.
+* Download common files from the Internet.
 
 ## EC2 Instance Types - Overview
 
-* Different types of EC2 instances are optimized for difference use-cases: [Instance Types](https://aws.amazon.com/ec2/instance-types/).
+* Different types of EC2 instances are optimized for different use-cases: [Instance Types](https://aws.amazon.com/ec2/instance-types/).
 
 Naming Convention
 
@@ -60,17 +60,17 @@ Compute-intensive tasks.
 
 * Batch processing workloads.
 * Media transcoding.
-* High performance web servers.
-* High perforamnce computing (HPC).
+* High-performance web servers.
+* High-performance computing (HPC).
 * Scientific modeling and machine learning.
 * Dedicated gaming servers.
 
 ### Memory Optimized
 
-Fast perforamnce for workloads that process large data sets in memory
+Fast performance for workloads that process large data sets in memory
 
-* High perforamnce, relational/non-relational databases.
-* Distributed web scale cache stores.
+* High-performance, relational/non-relational databases.
+* Distributed web-scale cache stores.
 * In-memory databases optimized for BI.
 * Applications performing real-time processing of big unstructured data.
 
@@ -78,7 +78,7 @@ Fast perforamnce for workloads that process large data sets in memory
 
 Storage-intensive tasks that require high, sequential read and write access to large data sets on local storage.
 
-* High frequency online transaction processing (OLTP) systems.
+* High-frequency online transaction processing (OLTP) systems.
 * Relational and NoSQL databases.
 * Cache for in-memory databases (for example, Redis).
 * Data warehousing applications.
@@ -89,7 +89,7 @@ Storage-intensive tasks that require high, sequential read and write access to l
 They control how traffic flows into our out of the EC2 Instances.
 
 * Security groups only contain ```allow``` rules.
-* Security groups fules can reference by IP or by security group.
+* Security groups rules can reference by IP or by the security group.
 
 ### Deeper Dive
 
@@ -112,7 +112,7 @@ They regulate ...
 TEST NOTES
 
 * If the application is not accessible (timeout issue), then it is a security group issue.
-* If the application gives "connection refused" error, then it is an application error or it is not launched.
+* If the application gives a "connection refused" error, then it is an application error or it is not launched.
 * All inbound traffic is ```blocked``` by default.
 * All outbound traffic is ```authorized``` by default.
 
@@ -127,7 +127,7 @@ TEST NOTES
 
 ## SSH Overview
 
-SSH allows the user to control a remote from machine from the command line.
+SSH allows the user to control a remote machine from the command line.
 
 | System        | SSH | Putty | EC2 Instance Connect |
 |---------------|-----|-------|----------------------|

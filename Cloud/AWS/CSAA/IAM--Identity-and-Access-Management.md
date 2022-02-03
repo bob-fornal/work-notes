@@ -28,7 +28,7 @@ https://<alias or account number>.signin.aws.amazon.com/console
 * Id: an identifier for the policy (optional)
 * Statement: one or more individual statements (required)
 
-Statement consists of ...
+The statement consists of ...
 
 * Sid: an identifier for the statement (optional)
 * Effect: (Allow, Deny) access
@@ -41,11 +41,11 @@ Statement consists of ...
 
 Strong passwords equal higher security for the account.
 
-* Set minimum password length
-* Require specific character types
-* Allow all IAM Users to change their own passwords
-* Require users to change their passwords after some time (password expiration)
-* Prevent password re-use
+* Set minimum password length.
+* Require specific character types.
+* Allow all IAM users to change their passwords.
+* Require users to change their passwords after some time (password expiration).
+* Prevent password re-use.
 
 ## Multifactor-Authentication (MFA)
 
@@ -97,7 +97,7 @@ Supports ...
 
 * SDKs: JavaScript, Python, PHP, .NET, Ruby, Java, Go, NodeJS, C++.
 * Mobile SDKs: Android, iOS.
-* IoT Device SDK: Embedded C, Ardiuno.
+* IoT Device SDK: Embedded C, Arduino.
 
 ## AWS CloudShell
 
@@ -106,7 +106,7 @@ It may not be available in all regions. Terminal (CLI) in the cloud.
 ## IAM Roles for AWS Services
 
 * Some AWS services will need to perform actions on our behalf.
-* Assign **permissions** to AWS serivices with **IAM Roles**.
+* Assign **permissions** to AWS services with **IAM Roles**.
 
 Common Roles:
 

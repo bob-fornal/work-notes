@@ -2,7 +2,7 @@
 
 ## AWS Snow Family
 
-* Highly-secure, portable devices to **collect and process data at the edge** and **migrate data into and out of AWS**.
+* Highly secure, portable devices to **collect and process data at the edge** and **migrate data into and out of AWS**.
 * Data Migration: Snowcone, Snowball Edge, Snowmobile
 * Edge computing: Snowcone, Snowball Edge
 
@@ -32,7 +32,7 @@ Challenges
 * Provide block storage and Amazon S3-compatible object storage.
 * **Snowball Edge Storage Optimized**:  *80 TB of HDD Capacity* for block volume and S3-compatible object storage.
 * **Snowball Edge Compute Optimized**:  *42 TB of HDD Capacity* for block volume and S3-compatible object storage.
-* **Use-cases**: Large data cloud migrations, DC decommision, disaster recovery.
+* **Use-cases**: Large data cloud migrations, DC decommission, disaster recovery.
 
 ### AWS Snowcone
 
@@ -46,7 +46,7 @@ Challenges
 
 ### AWS Snowmobile
 
-![AWS Snowmobile Tractor Trailer](./snowmobile.png)
+![AWS Snowmobile Tractor Trailer](./images/snowmobile.png)
 
 * Transfer exabytes of data (1 EB = 1,000 PB = 1,000,000 TBs).
 * Each Snowmobile has 100 PB of capacity (use multiple in parallel).
@@ -99,7 +99,7 @@ Long-term deployment options: 1 and 3-year discounted pricing.
 ### AWS OpsHub
 
 * Historically, to use Snow Family Devices, needed a CLI (Command Line Interface) tool.
-* Today, use **AWS OpsHub** (sofware installed on computer or laptop) to manage Show Family Device.
+* Today, use **AWS OpsHub** (software installed on computer or laptop) to manage Show Family Device.
 
 ## Architecture: Snowball into Glacier
 
@@ -131,11 +131,11 @@ Lustre is a type of parallel distributed file system, for large-scale computing.
 
 The name Lustre is derived from "Linux" and "cluster."
 
-* Machine Learning, **High Performance Computing (HPC)**.
+* Machine Learning, **High-Performance Computing (HPC)**.
 * Video Processing, Financial Modeling, Electronic Design Automation.
 * Scales up to 100s GB/s, millions of IOPS, sub-ms latencies.
 * **Seamless integration with S3**.
-* Can be used form on-premise servers.
+* Can be used for on-premise servers.
 
 ### FSx File System Deployment Options
 
@@ -155,13 +155,13 @@ Persistent File System
 
 ## Storage Gateway Overview
 
-AWS is pushing for "hybrid cloud" where part of the infrastructure is on the cloud and part is on-premises.
+AWS is pushing for a "hybrid cloud" where part of the infrastructure is on the cloud and part is on-premises.
 
 This can be due to ...
 
 * Long cloud migrations.
 * Security requirements.
-* Compliance requrements.
+* Compliance requirements.
 * IT strategy.
 
 S3 is a proprietary storage technology (unlike EFS, NFS) that uses **AWS Storage Gateway** to expose the S3 data on-premises.
@@ -169,7 +169,7 @@ S3 is a proprietary storage technology (unlike EFS, NFS) that uses **AWS Storage
 ### AWS Storage Gateway
 
 * Bridge between on-premises data and cloud data in S3.
-* **Use-cases**: Disaster recovery, backup and restore, tiered storage.
+* **Use-cases**: Disaster recovery, backup and restore, and tiered storage.
 
 Three types of Storage Gateway ...
 
@@ -206,7 +206,7 @@ Three types of Storage Gateway ...
 * Using Storage Gateway means a need for on-premises virtualization.
 * Otherwise, use a **Storage Gateway Hardware Appliance**.
 * Works with File Gateway, Volume Gateway, and Tape Gateway.
-* Has the required CPU, memory, networ, SSD cache resources.
+* Has the required CPU, memory, network, SSD cache resources.
 * Helpful for daily NFS backups in small data centers.
 
 ## Amazon FSx File Gateway

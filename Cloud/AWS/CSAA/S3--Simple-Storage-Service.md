@@ -49,11 +49,11 @@ File versioning is enabled at the **bucket level**.
 It is a best practice to version the buckets.
 
 * Protection against unintended deletion (ability to restore a version).
-* Easy roll back to previous version.
+* Easy roll back to the previous version.
 
 **Note**:
 
-* Any file that is not versioned prior to enabling versioning will have a version: "null."
+* Any file that is not versioned before enabling versioning will have a version: "null."
 * Suspending versioning does not delete the previous versions.
 
 ## S3 Encryption for Objects
@@ -62,22 +62,22 @@ There are four (4) methods of encrypting objects in S3.
 
 * SSE-S3: Encrypts S3 objects using keys handled and managed by AWS.
 * SSE-KMS: Leverages AWS Key Management Service (KMS) to manage encryption keys.
-* SSE-C: When user manages their own encryption keys.
-* Client Side Encryption
+* SSE-C: When user manages their encryption keys.
+* Client-Side Encryption
 
 ### SSE-S3
 
 * Encryption using keys handled and managed by Amazon S3.
-* Object is encrypted server side.
+* Object is encrypted server-side.
 * AES-256 encryption type.
-* Must set header: **"x-amz-server-side-encryption": "AES256"**.
+* Must set header: `"x-aws-server-side-encryption": "AES256"`.
 
 ### SSE-KMS
 
 * Encryption using keys handled and managed by KMS.
 * KMS Advantages: User control and audit trail.
-* Object is encrypted server side.
-* Must set header: **"x-amz-server-side-encryption": "aws:kms"**.
+* Object is encrypted server-side.
+* Must set header: `"x-aws-server-side-encryption": "aws:kms"`.
 
 ### SSE-C
 
@@ -89,7 +89,7 @@ There are four (4) methods of encrypting objects in S3.
 ### Client Side Encryption
 
 * Client library such as the Amazon S3 Encryption Client.
-* Clients must encrypt data themselves before sending to S3.
+* Clients must encrypt data themselves before sending it to S3.
 * Clients must decrypt data themselves when retrieving from S3.
 * Customer fully manages the keys and encryption cycle.
 
@@ -101,22 +101,22 @@ There are four (4) methods of encrypting objects in S3.
 
 ### User Based
 
-* IAM Policies - which API calls should be allowed for a specific user from IAM console.
+* IAM Policies - which API calls should be allowed for a specific user from the IAM console.
 
-### Resource Based
+### Resource-Based
 
-* Bucket Policies  - bucket wide rules from the S3 console - allows cross account access.
+* Bucket Policies  - bucket-wide rules from the S3 console - allows cross-account access.
 * Object Access Control List (ACL) - finer grain.
 * Bucket Access Control List (ACL) - less common.
 
 **Note**: An IAM principal can access an S3 object if ...
 
-* The user IAM permissions allow it *OR* the resource pollicy ALLOWS it
+* The user IAM permissions allow it *OR* the resource policy ALLOWS it
 * *AND* there is no explicit DENY.
 
 ## S3 Bucket Policies
 
-JSON based policies.
+JSON-based policies.
 
 * Resources: Buckets and objects.
 * Actions: Set of API to Allow or Deny.
@@ -141,8 +141,8 @@ The website URL will be ...
 
 * An **origin** is a scheme (protocol), host (domain), and port.
 * CORS = Cross-Origin Resource Sharing
-* **Web Browser** based mechanism to allow requrests to other origins while visiting the main origin.
-* Same origin: `http://example.com/app1` and `http://example.com/app2`.
+* **Web Browser** based mechanism to allow requests to other origins while visiting the main origin.
+* Same-origin: `http://example.com/app1` and `http://example.com/app2`.
 * Different origin: `http://www.example.com` and `http://other.example.com`.
 * The requests will not be fulfilled unless the other origin allows for the request, using **CORS Headers (example: Access-Control-Allow-Origin)**.
 
@@ -157,10 +157,10 @@ More ...
 
 After a ...
 
-* Successful write of a new object (new PUT).
+* Successful writing of a new object (new PUT).
 * An overwrite or delete of an existing object (overwrite PUT or DELETE).
 
 ... any ...
 
 * Subsequent read request immediately receives the latest version of the object (read after write consistency).
-* Subsequest list request immediately reflects changes.
+* Subsequent list request immediately reflects changes.

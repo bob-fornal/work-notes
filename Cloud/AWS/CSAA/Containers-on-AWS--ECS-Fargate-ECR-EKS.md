@@ -116,7 +116,7 @@ EKS = Elastic **Kubernetes** Service.
 
 * It is a way to launch **managed Kubernetes clusters on AWS**.
 * Kubernetes is an open-source system for automatic deployment, scaling, and management of containerized (usually Docker) applications.
-* It is an alternative to ECS, with a similar goal but different API.
+* It is an alternative to ECS, with a similar goal but a different API.
 * EKS supports **EC2** to deploy worker nodes or **Fargate** to deploy serverless containers.
 * **Use-case**: Already using Kubernetes on-premises or in another cloud, and wants to migrate to AWS using Kubernetes.
 * **Kubernetes is cloud-agnostic** (can be used on any cloud service - Azure, GCP, ...).

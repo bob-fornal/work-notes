@@ -39,13 +39,13 @@ For control over the EC2 Instance placement strategy use Placement Groups.
 
 When a placement group is created, the following strategies can be used:
 
-* *Cluster* - clusters instances into a low-latency group in a single Availablility Zone (AZ).
+* *Cluster* - clusters instances into a low-latency group in a single Availability Zone (AZ).
 * *Spread* - spreads instances across underlying hardware (max of 7 instances per group per AZ) - critical applications.
 * *Partition* - spreads instances across many different partitions (which rely on different sets of racks) within an AZ. Scales to 100s of EC2 Instances per group (Hadoop, Cassandra, Kafka).
 
 ## Elastic Network Interfaces (ENI)
 
-Logical component in a VPC that represents a **virtual network card**.
+The logical component in a VPC represents a **virtual network card**.
 
 The ENI can have the following attributes:
 
@@ -68,18 +68,18 @@ ENIs can be created independently and attached on the fly (move them) on EC2 Ins
 ### Stopped or Terminated
 
 * Stop: the data on disk (EBS) is kept intact in the next start.
-* Terminate: any EBS volumns (root) also setup to be destroyed is lost.
+* Terminate: any EBS volumes (root) also set up to be destroyed is lost.
 
 ### Started
 
 * First start: the OS boots and the EC2 User Data script is run.
-* Following starts: the OS boots.
+* Following starts the OS boots.
 * Then any application starts, caches get warmed up ... takes time.
 
 ### Hibernated
 
 * The in-memory (RAM) state is preserved.
-* The instance boot is much faster (the OS is not stopped / restarted).
+* The instance boot is much faster (the OS is not stopped and restarted).
 * Under the hood, the RAM state is written to a file in the root EBS volume.
 * The root EBS volume must be encrypted.
 
@@ -92,7 +92,7 @@ Use Cases:
 Good to Know:
 
 * Not supported on all instance families.
-* Instance RAM size - less that 150GB.
+* Instance RAM size - less than 150GB.
 * Instance size - not supported on bare metal instances.
 * AMI: Amazon Linux 2, Linux AMI, Ubuntu, Windows.
 * Root Volumn: must be EBS, encrypted; not instance store and large.
@@ -119,8 +119,8 @@ Underlying platform for the next generation of EC2 Instances. New virtualization
 ### Capacity Reservations
 
 * Capacity Reservations ensure EC2 Capacity when needed.
-* Manual or planned end-date for the reservation.
-* No need for 1 or 3-year committment.
-* Capacity access is immediate, billed at start.
-* Specify: the AZ, number of instances, and instance attributes.
-* Comibine with Reserved Instances and Savings Plans to do cost savings.
+* Manual or planned end date for the reservation.
+* No need for a 1 or 3-year commitment.
+* Capacity access is immediate, billed at the start.
+* Specify the AZ, number of instances, and instance attributes.
+* Combine with Reserved Instances and Savings Plans to do cost savings.

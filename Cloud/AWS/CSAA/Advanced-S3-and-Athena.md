@@ -71,7 +71,7 @@ One way to "force encryption" is to use a Bucket Policy and refuse any API call 
 
 ## S3 Replication
 
-CRR and SRR = Cross Region Replication and Same Region Replication
+CRR and SRR = Cross-Region Replication and Same Region Replication
 
 * **Must enable versioning** in source and destination.
 * Buckets can be in different accounts.
@@ -104,14 +104,14 @@ Can generate pre-signed URLs using SDK or CLI ...
 * For downloads (easy, can use the CLI).
 * For uploads (harder, must use the SDK).
 
-Valid for a default of 3,600 seconds. Can change timeout with `expires-in [TIME_IN_SECONDS]` argument.
+Valid for default of 3,600 seconds. Can change timeout with `expires-in [TIME_IN_SECONDS]` argument.
 
 * Users given a pre-signed URL inherit the permissions of the person who generated the URL for GET/PUT.
 
 Examples ...
 
 * Allow only logged-in users to download a premium video on the S3 bucket.
-* Allows an ever changing list of users to download files by generating URLs dynamically.
+* Allows an ever-changing list of users to download files by generating URLs dynamically.
 * Allow a user to temporarily upload a file to a precise location in the bucket.
 
 ## S3 Storage Classes
@@ -121,7 +121,7 @@ Examples ...
 ### Amazon S3 Standard - General Purpose
 
 * High durability 99.999999999% of objects across multiple AZ.
-* 99.99% Availabiity over a given year.
+* 99.99% Availability over a given year.
 * Sustain two (2) concurrent facility failures.
 
 #### Use Cases
@@ -132,7 +132,7 @@ Big Data analytics, mobile and gaming applications, content distribution.
 
 * Suitable for data that is less frequently accessed, but requires rapid access when needed.
 * High durability 99.999999999% of objects across multiple AZ.
-* 99.9% Availabiity over a given year.
+* 99.9% Availability over a given year.
 * Lower cost compared to Amazon S3 Standard.
 * Sustain two (2) concurrent facility failures.
 
@@ -144,14 +144,14 @@ As a data store for disaster recovery, backups.
 
 * Same as IA but data is stored in a single AZ.
 * High durability 99.999999999% of objects in a single AZ; data is lost if AZ is destroyed.
-* 99.5% Availabiity over a given year.
-* Low latency and high thoughput performance.
-* Supports SSL for data in-transit and encryption-at-rest.
+* 99.5% Availability over a given year.
+* Low latency and high throughput performance.
+* Supports SSL for data-in-transit and encryption-at-rest.
 * Lower cost compared to IA (by 20%).
 
 #### Use Cases
 
-Storing secondary backup copies of on-premise data, or storing data that can be recreated.
+Storing secondary backup copies of on-premises data, or storing data that can be recreated.
 
 ### Amazon S3 Intelligent Tiering
 
@@ -160,11 +160,11 @@ Storing secondary backup copies of on-premise data, or storing data that can be 
 * Automatically moves objects between two access tiers based on changing access patterns.
 * Designed for durability of 99.999999999% of objects across multiple AZ.
 * Resilient against events that impact an entire AZ.
-* 99.9% Availabiity over a given year.
+* 99.9% Availability over a given year.
 
 ### Amazon Glacier
 
-* Low cost object storage meant for archiving/backup.
+* Low-cost object storage meant for archiving/backup.
 * Data is retained for longer terms (10s of years).
 * Alternative to on-premise magnetic tape storage.
 * Designed for durability of 99.999999999%.
@@ -182,7 +182,7 @@ Minimum storage duration of 90-days.
 
 ### Amazon Glacier Deep Archive
 
-* Long term storage - cheaper.
+* Long-term storage - cheaper.
 
 #### Retrieval Options
 
@@ -204,7 +204,7 @@ Moving Between Storage Classes
 
 #### Transition Actions
 
-It defined when objects are transitioned to another storage class.
+It defines when objects are transitioned to another storage class.
 
 * Move objects to Standard IA class 60-days after creation.
 * Move to Glacier for archiving after 6-months.
@@ -224,9 +224,9 @@ Notes
 
 ## S3 Analytics
 
-* S3 Analytics can be setup to help determine when to transition objects from Standard to Standard_IA.
+* S3 Analytics can be set up to help determine when to transition objects from Standard to Standard_IA.
 * This does not work for ONEZONE_IA or GLACIER.
-* The report us updated daily.
+* The report is updated daily.
 * It takes about 24 to 48-hours to first start.
 * It is a good first step to put together (or improve) Lifecycle Rules.
 
@@ -265,7 +265,7 @@ Examples
 ### S3 Transfer Acceleration
 
 * Increase transfer speed by transferring files to an AWS edge location which will forward the data to the S3 bucket in the target region.
-* Compatible with multi-part upload.
+* Compatible with the multi-part upload.
 
 ## S3 Byte Range Fetches
 
@@ -276,7 +276,7 @@ Examples
 
 ## S3 Select and Glacier Select
 
-* Retrieve less data using SQL by performing **server side filtering**.
+* Retrieve less data using SQL by performing **server-side filtering**.
 * Can filter by rows and columns (simple SQL statements).
 * Less network transfer, less CPU cost client-side.
 
@@ -288,7 +288,7 @@ Examples
 * **Can create as many "S3 events" as desired**.
 * S3 event notifications typically deliver events in seconds but can sometimes take a minute or longer.
 * If two writes are made to a single non-versioned object at the same time, it is possible that only a single event notification will be sent.
-* To ensure that an event notificaiton is sent for every successful write, enable versioning on the bucket.
+* To ensure that an event notification is sent for every successful write, enable versioning on the bucket.
 
 ## S3 Requester Pays
 

@@ -5,7 +5,7 @@
 * Content Delivery Network (CDN).
 * Improved read performance, content is cached at the edge.
 * 216 Points of Presence globally (edge locations).
-* DDoS protection, integratino with Shield, AWS Web Application Firewall.
+* DDoS protection, integration with Shield, AWS Web Application Firewall.
 * Can expose external HTTPS and can talk to internal HTTPS backends.
 
 ### CloudFront - Origins
@@ -27,7 +27,7 @@
 
 Can restrict who can access a distribution
 
-* **Whitelist**: Allow users to access content only of they are in one of the countries on a list of approved countries.
+* **Whitelist**: Allow users to access content only if they are in one of the countries on a list of approved countries.
 * **Blacklist**: Prevent users from accessing content if they are in one of the countries on a list of banned countries.
 
 The "country" is determined using a third-party Geo-IP database.
@@ -36,14 +36,14 @@ The "country" is determined using a third-party Geo-IP database.
 
 | CloudFront | S3 Cross-Region Replication |
 |------------|-----------------------------|
-| Global Edge network. | Must be setup for each region where replication will happen. |
+| Global Edge network. | Must be set up for each region where replication will happen. |
 | Files are cached for a TTL. | Files are updated in near real-time. |
-| **Great for static content that must be available everywhere**. | Read only. |
-| | **Great for dynamic content that needs to be available at low-latency in a few regions**.
+| **Great for static content that must be available everywhere**. | Read-only. |
+| | **Great for dynamic content that needs to be available at low latency in a few regions**.
 
 ## CloudFront Signed URL / Cookies
 
-To distributes paid shared content to premium users all over the world.
+To distribute paid shared content to premium users all over the world.
 
 Use CloudFront Signed URL / Cookie. Attach a policy ...
 
@@ -86,7 +86,7 @@ Three price classes ...
 
 ### Multiple Origin
 
-To route to different kinds of origins based on the content-type.
+To route to different kinds of origins based on the content type.
 
 Based on path patterns ...
 
@@ -96,20 +96,20 @@ Based on path patterns ...
 
 ### Origin Groups
 
-* To increase high-availability and do failover.
+* To increase high availability and do failover.
 * Origin Group: One primary and one secondary origin.
 * If the primary origin fails, the second one is used.
 
 ## Field Level Encryption
 
-* Protect user sensitive information through application stack.
-* Adds an additional layer of security along with HTTPS.
-* Sensitive information encrypted at the edge, close ot the user.
+* Protect user-sensitive information through the application stack.
+* Adds another layer of security along with HTTPS.
+* Sensitive information encrypted at the edge, close out the user.
 * Uses asymmetric encryption.
 
 Usage ...
 
-* Specify set of fields in POST requests that should be encrypted (up to 10 fields).
+* Specify a set of fields in POST requests that should be encrypted (up to 10 fields).
 * Specify the public key to encrypt them.
 
 ## AWS Global Accelerator
@@ -121,7 +121,7 @@ How does it work?
 
 * Leverages the AWS internal network to route to an application.
 * **2 Anycast IP** are created for an application.
-* The Anycast IP send traffic directly to Edge Locations.
+* The Anycast IP sends traffic directly to Edge Locations.
 * The Edge Locations send traffic to the application.
 
 What does it work with?
@@ -142,17 +142,17 @@ What does it work with?
 
 ### Security
 
-* Only 2 external IP need to be whitelisted.
+* Only 2 external IPs need to be whitelisted.
 * DDoS protection thanks to AWS Shield.
 
 ## AWS Global Accelerator versus CloudFront
 
-* The both use the AWS global netowrk and its edge locations around the world.
+* They both use the AWS global network and its edge locations around the world.
 * Both services integrate with AWS Shield for DDoS protection.
 
 | CloudFront | Global Accelerator |
 |------------|--------------------|
 | Improves performance for cacheable content (images and video). | Improves performance for a wide range of applications over TCP or UDP. |
-| Improves performance for dynamic content (such as API acceleration and dynamic site delivery). | Proxying packets at the edge to applications runnning in one or more AWS Regions. |
+| Improves performance for dynamic content (such as API acceleration and dynamic site delivery). | Proxying packets at the edge to applications running in one or more AWS Regions. |
 | Content is served at the edge. | Good fit for non-HTTP use-cases, such as gaming (UDP), IoT (MQTT), or Voice over IP. |
 | | Good for HTTP use-cases that require static IP addresses. |

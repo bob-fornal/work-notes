@@ -59,3 +59,5 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [Decoupling Applications: SQS, SNS, Kinesis, ActiveMQ](Decoupling-Applications--SQS-SNS-Kinesis-ActiveMQ.md)
 * [Containers on AWS: ECS, Fargate, ECR, and EKS](Containers-on-AWS--ECS-Fargate-ECR-EKS.md)
 * [Serverless Overviews from a Solution Architect Perspective](Serverless-Overviews-from-a-Solution-Architect-Perspective.md)
+* [Serverless Solution Architecture Discussions](Serverless-Solution-Architecture-Discussions.md)
+* [Databases in AWS](Databases-in-AWS.md)

@@ -128,7 +128,7 @@ Can also generate responses to viewers without ever sending the request to the o
 * Millions of requests per second, trillions of rows, 100s of TB of storage.
 * Fast and consistent in performance (low latency on retrieval).
 * Integrated with IAM for security, authorization, and administration.
-* Enabled event driven programming with DynamoDB Streams.
+* Enabled event-driven programming with DynamoDB Streams.
 * Low cost and auto-scaling capabilities.
 
 ### DynamoDB - Basics
@@ -158,8 +158,8 @@ Control how the table's capacity is managed (read/write throughput).
 
 #### On-Demand Mode
 
-* Read/writes automaticall scale up and down with workloads.
-* No capacity planning needed.
+* Read/writes automatically scale up and down with workloads.
+* No capacity planning is needed.
 * Pay for what is used, more expensive.
 * Great for *unpredictable* workloads.
 
@@ -198,7 +198,7 @@ Use-cases ...
 * Make a DynamoDB table accessible with **low latency** in multiple regions.
 * Active-Active replication.
 * Applications can **READ** and **WRITE** to the table in any region.
-* Must enable DynamoDB Streams as a pre-requisite.
+* Must enable DynamoDB Streams is a pre-requisite.
 
 ### DynamoDB - Time To Live (TTL)
 
@@ -212,7 +212,7 @@ Use-cases ...
 
 ### DynamoDB - Transactions
 
-* A Transaction is written to table(s), or none.
+* A Transaction is written to the table(s), or none.
 
 ## API Gateway Overview
 
@@ -222,7 +222,7 @@ Use-cases ...
 * Handle different environments (dev, test, prod, ...).
 * Handle security (Authentication and Authorization).
 * Create API keys, handle request throttling.
-* Swagger, Open API import to quickly definte APIs.
+* Swagger, Open API import to quickly definite APIs.
 * Transform and validate requests and responses.
 * Generate SDK and API specifications.
 * Cache API responses.
@@ -252,7 +252,7 @@ Use-cases ...
 
 * For global clients.
 * Requests are routed through the CloudFront Edge locations (improves latency).
-* The API Geteway still lives in only one region.
+* The API Gateway still lives in only one region.
 
 #### Regional
 
@@ -268,21 +268,21 @@ Use-cases ...
 
 ### IAM Permissions
 
-* Create an IAM policy authorization and attach to User or Role.
+* Create an IAM policy authorization and attach it to the User or Role.
 * API Gateway verifies IAM permissions passed by the calling application.
 * Good to provide access within an infrastructure.
 * Leverages "Sig v4" capability where IAM credentials are in headers.
 
 ### Lambda Authorizer (formerly Custom Authorizers)
 
-* Uses AWS Lambda to validate the token in header being passed.
+* Uses AWS Lambda to validate the token in the header being passed.
 * Option to cache result of authentication.
 * Helps to use OAuth, SAML, 3rd-party type of authentication.
 * Lambda must return an IAM policy for the user.
 
 ### Cognito User Pools
 
-* Cognito fully manages user lifecycle.
+* Cognito fully manages the user lifecycle.
 * API Gateway verifies identity automatically from AWS Cognito.
 * No custom implementation required.
 * **Cognito only helps with authentication, not authorization**.
@@ -293,12 +293,12 @@ To give users an identity so they can interact with an application.
 
 ### Cognito User Pools
 
-* Sign in functionality for application users.
+* Sign-in functionality for application users.
 * Integrated with API Gateway.
 
 Details ...
 
-* Create a serverless datanase of user for mobile applications.
+* Create a serverless database of the user for mobile applications.
 * Simple login: Username (or email) and password combination.
 * Possibility to verify email, phone numbers, and add MFA.
 * Can enable Federated Identities (Facebook, Google, SAML, ...).
@@ -322,7 +322,7 @@ Details ...
 
 Example ...
 
-* Provide (temporary) access to write to an S3 bucket using Facebook Login.
+* Provide (temporary) access to writing to an S3 bucket using Facebook Login.
 
 ### Cognito Sync
 
