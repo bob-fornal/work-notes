@@ -64,3 +64,4 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [Monitoring and Audit: CloudWatch, CloudTrail, and Configuration](Monitoring-and-Audit--CloudWatch-CloudTrail-and-Configuration.md)
 * [Identity and Access Management (IAM) Advanced](Identity-and-Access-Management--IAM-Advanced.md)
 * [AWS Security and Encryption: KMS, SSM Parameter Store, CloudHSM, Shield, WAG](AWS-Security-and-Encryption--KMS-SSM-Parameter-Store-CloudHSM-Shield-WAG.md)
+* [Networking VPC](Networking-VPC.md)
