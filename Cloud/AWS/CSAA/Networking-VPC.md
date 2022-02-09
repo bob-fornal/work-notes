@@ -316,4 +316,154 @@ Capture information about the IP traffic going into the interfaces.
 * Provide secure communication between multiple sites, if there are multiple VPN connections.
 * Low-cost hub-and-spoke for primary or secondary network connectivity between different locations (VPN only).
 * It is a VPN connection so it goes over the public Internet.
-* To set it up, connect multiple VPN connections on the same VGW, set up dynamic routing, and configure Route Tables.
+* To set it up, connect multiple VPN connections on the same VGW, set up dynamic routing, and configure the Route Tables.
+
+## Direct Connect and Direct Connect Gateway
+
+### Direct Connect (DX)
+
+Provides a dedicated **private** connection from a remote network to a VPC.
+
+* A dedicated connection must be set up between the DC and AWS Direction Connect location.
+* Need to set up a Virtual Private Gateway on the VPC.
+* Access public resources (S3) and private (EC2) on the same connection.
+* Supports both IPv4 and IPv6.
+
+Use-cases ...
+
+* Increased bandwidth throughput; good when working with large data sets and lower cost.
+* More consistent network experience; applications using real-time data feeds.
+* Hybrid Environments (on-premises and cloud).
+
+### Direct Connect Gateway
+
+* **Use a Direct Connect Gateway to set up a Direct Connect to one or more VPCs in many different regions (same account)**.
+
+## Direct Connect - Connection Types
+
+* Lead times are often longer than 1 month to establish a new connection.
+
+**Dedicated Connections**: 1Gbps and 10Gbps capacity.
+
+* Physical ethernet port dedicated to a customer.
+* Request made to AWS first, then completed by AWS Direct Connect Partners.
+
+**Hosted Connections**: 50Mbps, 500Mbps, to 10Gbps.
+
+* Connections requests are made via AWS Direct Connect Partners.
+* Capacity can be **added or removed on-demand**.
+* 1Gbps, 2Gbps, 5Gbps, 10Gbps available at select AWS Direct Connect Partners.
+
+### Direct Connect - Encryption
+
+* Data in transit is **not encrypted** but is private.
+* AWS Direct Connect and VPN provide an IPsec-encrypted private connection.
+* Good for an extra level of security, but slightly more complex to put in place.
+
+### Direct Connect - Resiliency
+
+* High Resiliency for Critical Workloads, one connection through multiple locations.
+* Maximum Resiliency for Critical Workloads, achieved using separate connections terminating on separate devices in more than one location.
+
+## AWS PrivateLink (VPC Endpoint Services)
+
+Exposing services in a VPC to another VPC ...
+
+Option 1: Make it public ...
+
+* Goes through the public Internet.
+* Tough to manage access.
+
+Option 2: VPC Peering ...
+
+* Must create many peering relations.
+* Opens the **whole** network.
+
+### AWS PrivateLink (VPC Endpoint Services)
+
+* Most secure and scalable way to expose a service to 1,000s of VPCs (on individual or many accounts).
+* Does not require VPC Peering, Internet Gateway, NAT, Route Tables, ...
+* Requires a Network Load Balancer (Service VPC) and ENI (Customer VPC) or GWLB.
+* If the NLB is in multiple AZ and the ENIs are in multiple AZ, the solution is fault-tolerant.
+
+## AWS ClassicLink
+
+> **Likely to be distractors on the exam**.
+
+**EC2-Classic and AWS ClassicLink (deprecated)**.
+
+* **EC2-Classic**: Instances run in a single network shared with other customers.
+* **Amazon VPC**: Instances run logically isolated to the AWS account.
+
+**ClassicLink** allows linking EC2-Classic Instances to a VPC in the account.
+
+* Must associate a Security Group.
+* Enables communication using private IPv4 addresses.
+* Removes the need to make use of public IPv4 addresses or Elastic IP addresses.
+
+## Transit Gateway
+
+For having transitive peering between thousands of VPCs and on-premises, hub-and-spoke (star) connections.
+
+* Regional resource, can work cross-region.
+* Share cross-account using Resource Access Manager (RAM).
+* Can peer Transit Gateways across regions.
+* Route Tables limit which VPC can talk to other VPCs.
+* Works with Direct Connect Gateway and VPN connections.
+* Supports **IP Multicast** (not supported by any other AWS service).
+
+### Transit Gateway: Site-to-Site VPN ECMP
+
+**ECMP = Equal-cost multi-path routing**.
+
+* Routing strategy to allow to forward a packet over multiple best-paths.
+* Use-case: Create multiple Site-to-Site VPN connections **to increase the bandwidth of the connection to AWS**.
+
+### Transit Gateway: Throughput with ECMP
+
+| VPN to Virtual Private Gateway | VPN to Transit Gateway                          |
+|--------------------------------|-------------------------------------------------|
+| 1 connection = 1 VPC           | 1 connection  = many VPC                        |
+| 1 connection = 1.25 Gbps       | 1 connection  = 2.5 Gbps (ECMP), 2 tunnels used |
+| VPN connection (2 tunnels)     | 2 connections = 5.0 Gbps (ECMP)                 |
+|                                | 3 connections = 7.5 Gbps (ECMP)                 |
+
+## VPC - Traffic Mirroring
+
+* Allows capturing and inspecing network traffic in a VPC.
+* Route the traffic to security appliances that user manages.
+* Capture all packets or capture the packets of interest (optionally, truncate packets).
+* Source and Target can be in the save VPC or difference VPCs (VPC Peering).
+
+Capture the traffic ...
+
+* **From (Source)** - ENIs.
+* **To (Targets)** - an ENI or a Network Load Balancer.
+
+## IPv6 for VPC
+
+* IPv4 designed to provide 4.3 Billion addresses.
+* IPv6 is the successor to IPv4.
+* IPv6 is designed to provide **3.4 x 10<sup>38</sup>** unique IP addresses.
+* Every IPv6 address is public and Internet-routable (no private range).
+
+**IPv4 cannot be disabled for VPC and subnets**.
+
+* Can enable IPv6 (they are public IP addresses) to operate in dual-stack mode.
+* EC2 Instances will get at least a private internal IPv4 and a public IPv6.
+* The can communicate using either IPv4 or IPv6 to the Internet through an Internet Gateway.
+
+### IPv6 Troubleshooting
+
+If an EC2 Instance cannot be launched in the subnet ...
+
+* It is not because it cannot acquire an IPv6, it is because there are no available IPv4 in the subnet.
+* **Solution**: Create a new IPv4 CIDR in the subnet.
+
+## Egress Only Internet Gateway
+
+Allows instances in VPC outbound connections over IPv6 while preventing the Internet from initiating an IPv6 connection to the Instances.
+
+* **Used only for IPv6**.
+* Similar to a NAT Gateway, but for IPv6.
+* **Must update the Route Tables**.
