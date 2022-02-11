@@ -67,3 +67,5 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [Networking VPC](Networking-VPC.md)
 * [Disaster Recovery and Migrations](Disaster-Recovery-and-Migrations.md)
 * [More Solution Architectures](More-Solution-Architectures.md)
+* [Other Services](Other-Services.md)
+* [Whitepapers and Architectures](Whitepapers-and-Architectures.md)
