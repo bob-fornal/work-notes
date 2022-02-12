@@ -69,3 +69,7 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [More Solution Architectures](More-Solution-Architectures.md)
 * [Other Services](Other-Services.md)
 * [Whitepapers and Architectures](Whitepapers-and-Architectures.md)
+
+Exam Preparation
+
+* [Exam Review and Tips](Exam-Review-and-Tips.md)
