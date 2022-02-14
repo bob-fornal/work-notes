@@ -77,3 +77,4 @@ Exam Preparation
 ## Developer Notes (Adrian Cantrill's Course)
 
 * [Introduction and Scenario](Introduction-and-Scenario.md)
+* [Course Fundamentals and AWS Accounts](Course-Fundamentals-and-AWS-Accounts.md)
