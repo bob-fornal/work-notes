@@ -11,3 +11,4 @@
 * [Normality](Normality.md)
 * [Soft Skills](Soft-Skills.md)
 * [Strength](Strength.md)
+* [Time](Time.md)

@@ -41,7 +41,7 @@ The core to my plan, as I said, is to go through all the training (even the part
 
 Then, and only then, will I sit for the test ... my notes (as I go through the [#100DaysOfCode](https://twitter.com/hashtag/100DaysOfCode?f=live)) are below.
 
-## Developer Notes
+## Developer Notes (Stephane Maarek's Course)
 
 * [IAM - Identity and Access Management](IAM--Identity-and-Access-Management.md)
 * [EC2 - Fundamentals](EC2--Fundamentals.md)
@@ -73,3 +73,7 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 Exam Preparation
 
 * [Exam Review and Tips](Exam-Review-and-Tips.md)
+
+## Developer Notes (Adrian Cantrill's Course)
+
+* [Introduction and Scenario](Introduction-and-Scenario.md)
