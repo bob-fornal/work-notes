@@ -78,3 +78,4 @@ Exam Preparation
 
 * [Introduction and Scenario](Introduction-and-Scenario.md)
 * [Course Fundamentals and AWS Accounts](Course-Fundamentals-and-AWS-Accounts.md)
+* [Cloud Computing Fundamentals](Cloud-Computing-Fundamentals.md)
