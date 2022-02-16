@@ -6,12 +6,12 @@ YAML = Human-readable data-serialization language for all programming languages.
 
 * YAML files can be read into or written out by an application and are commonly used for configuration.
 * A YAML document is an unordered collection of key/value pairs, where each key has a value.
-* Indentation matters in YAML, same level means the same list.
+* Indentation matters in YAML, the same level means the same list.
 
 ### Sequences or Lists
 
 * Comma-separated elements enclosed with brackets `[ ]`, this format is known as inline.
-* The same list separated on each line.
+* The same list is separated on each line.
 * Both patterns are valid, but enclosing can be more precise.
 
 ```yaml
@@ -25,7 +25,7 @@ list2:
 
 ### Dictionary (Structure)
 
-* Three items with one more more key/value pairs.
+* Three items with one or more key/value pairs.
 
 ```yaml
 people:
@@ -69,7 +69,7 @@ An **object** is an unordered set of key/value pairs enclosed by `{ }`.
 
 An **array** is an ordered collection of values, separated by commas and enclosed in `[ ]`.
 
-* The top level is a collection of unordered key/value pairs where the value is a JSON object.
+* The top-level is a collection of unordered key/value pairs where the value is a JSON object.
 * Each nested object is a collection of key/value pairs where the value can be a scalar, a list, or a JSON object.
 
 ### CloudFormation
@@ -77,7 +77,7 @@ An **array** is an ordered collection of values, separated by commas and enclose
 This object references the same S3 Bucket as the example above in YAML.
 
 * This JSON template has a `Resources` key, its value is a JSON object.
-* `s3bucket` is a JSON object that containes `Type` and `Properties` keys.
+* `s3bucket` is a JSON object that contains `Type` and `Properties` keys.
 * `Type` has a string value.
 * `Properties` is a JSON object containing `BucketName`.
 * `BucketName` is a key with a string value.
@@ -118,7 +118,7 @@ The software that does each of these functions is called the networking stack.
 
 ### Layer 1 - Physical
 
-Layer 1 (Physical) specifications defined the transmission and reception of **raw bit streams** between a device and a **shared physical medium**. It defines things like voltage levels, timing, rates, distances, modulation, and connectors.
+Layer 1 (Physical) specifications defined the transmission and reception of **raw bitstreams** between a device and a **shared physical medium**. It defines things like voltage levels, timing, rates, distances, modulation, and connectors.
 
 * Physical Medium can be Copper (electrical), Fiber (light), or WIFI (RF).
 * HUB = Anything received on any port is transmitted on every other port (including errors and collisions).
