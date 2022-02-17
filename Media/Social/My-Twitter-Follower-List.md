@@ -19,6 +19,12 @@
 |------|---------|--------------|
 | Ashlee M Boyer | @AshleeMBoyer | Web Engineer at HashiCorp |
 
+## UI/UX
+
+| Name | Twitter | Content Area |
+|------|---------|--------------|
+| Eric Dahl | @eadahl | UX/Product Consultant |
+
 ## Training
 
 | Name | Twitter | Content Area |
