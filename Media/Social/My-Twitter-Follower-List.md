@@ -6,6 +6,7 @@
 | Jason Alba | @jasonalba | Pluralsight, Soft Skills, and Professional Development |
 | Scott Hanselman | @shanselman | Microsoft, General Development |
 | Dan Vega | @therealdanvega | Spring Developer Advocate at VMware Tanzu |
+| Sam Julien | @samjulien | Professional Gate-Opener, [SITE](https://www.samjulien.com/) |
 
 ## JavaScript
 
