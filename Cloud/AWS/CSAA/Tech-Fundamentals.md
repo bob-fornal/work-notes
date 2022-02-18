@@ -237,3 +237,66 @@ Internet Protocol, important ...
 | Source IP Address | Source IP Address (larger) |
 | Destination IP Address | Destination IP Address (larger) |
 | Data (generally from Layer 4) | Data (generally from Layer 4) |
+
+#### IP Addressing (v4) - IPv4
+
+`133.33.3.7` is Dotted-Decimal Notation (4 x 0-255 x 8-bits, octets).
+
+* All IP Addresses have a **network** and a **host** part.
+* If the **network** part of two IP addresses match, it means they are on the same IP network. If not, they are on different networks.
+* The `/n` prefix indicates the number of bits of the IP address that are the network. The remaining bits are for the hosts.
+* IP Addresses are assigned by machine (DHCP) or by humans.
+
+#### Subnet Mask
+
+The **Subnet Mask** allows a host to determine if an IP address it needs to communicate with is local or remote. This influences if it needs to use a gateway or can communicate locally.
+
+* A subnet mask is configured on a host device in addition to an IP address (example, `255.255.0.0` and this is the same as a `/16` prefix).
+* A subnet mask is a dotted decimal version of a binary number which indicates which part of an IP Address is network (1) and which part is host (0).
+* The starting address of the local network is all 0s in the host part and the ending is all 1s in the host part.
+
+Address: `133.33.3.7`, Subnet Mask: `255.255.0.0` or `/16` ...
+
+|         | `133`     | `33`      | `3`       | `7`       |
+|---------|-----------|-----------|-----------|-----------|
+| Address | 1000 0101 | 0010 0001 | 0000 0011 | 0000 0111 |
+| Mask    | 1111 1111 | 1111 1111 | 0000 0000 | 0000 0000 |
+
+#### Route Tables and Routes
+
+Packets are routed, hop by hop across the internet from source to destination.
+
+1. Default route `0.0.0.0/0` sends all packets to ISP.
+2. ISP Router has multiple interfaces. The Route Table is used for selection.
+3. Router compares packet destination IP and Route Table for matching destinations. The more specific prefixes are preferred (0 lowest, 32 highest). Packet is forwarded to the **next hop/target**.
+
+#### Address Resolution Protocol (ARP)
+
+ARP runs between L2 and L3.
+
+Within a local network, data is moved via L2 Frames over L1. ARP discovers which MAC relates to a given IP.
+
+* L2 Broadcasts to all Fs. Who has the address I am looking for?
+
+When handling addresses outside the local netowrk ...
+
+1. Subnet mask and destination IP show it isn't a local address.
+2. ARP is used to find the MAC address of the default Gateway.
+3. Packet with destination MAC address from Step 2.
+4. Gateway Router removes the Frame and reviews the IP destination.
+5. Gateway Router has a route for the next network. It creates a Frame with the next Router (the next IP hop) as the destination MAC. The payload is unchanged and is in the Frame payload.
+6. Frame sent to the next Router.
+7. Next Router remove the Frame from the packet.
+8. Next Router confirms the destination IP address on the same network and uses ARP to get the MAC address of the device. It creates a Frame with the new destination MAC and encapsulates the packet.
+9. The Frame is sent to the packet's final destination.
+
+Network Layer adds ...
+
+* IP Addresses (IPv4 or iPv6) - **cross network addressing**.
+* **ARP** - finds the MAC address for an IP.
+* **Route** - where to forward a packet.
+* **Route** Tables - Multiple Routes.
+* **Router** - moves packets from Source to Destination - encapsulating in L2 on the way.
+* **Device-to-device** communication over the Internet.
+* **NO** Method for **channels** of communications, Source IP to Destination IP Only.
+* **Packets can be delivered out of order**.
