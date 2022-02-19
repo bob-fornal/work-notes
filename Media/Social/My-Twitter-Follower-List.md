@@ -32,7 +32,7 @@
 |------|---------|--------------|
 | Flavio Copes | @flaviocopes | Frontend Development |
 | Francesco Cuilla | @FrancescoCiull4 | Web3 and DevOps |
-| Anua Kubów | @ania_kubow | JavaScript Videos |
+| Ania Kubów | @ania_kubow | JavaScript Videos |
 | Catalin Pit | @catalinmpit | Web Development Newsletter |
 | Kadi Kraman | @kadikraman | Principal Engineer at Formidable Labs |
 | Florin Pop | @florinpop1705 | Web Development Newsletter |
