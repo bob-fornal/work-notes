@@ -3,6 +3,7 @@
 ## General
 | Name | Twitter | Content Area |
 |------|---------|--------------|
+| John Papa | @john_papa | Pluralsight, Leading Education Cloud Advocacy at Microsoft |
 | Jason Alba | @jasonalba | Pluralsight, Soft Skills, and Professional Development |
 | Scott Hanselman | @shanselman | Microsoft, General Development |
 | Dan Vega | @therealdanvega | Spring Developer Advocate at VMware Tanzu |
