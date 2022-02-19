@@ -243,7 +243,7 @@ Internet Protocol, important ...
 `133.33.3.7` is Dotted-Decimal Notation (4 x 0-255 x 8-bits, octets).
 
 * All IP Addresses have a **network** and a **host** part.
-* If the **network** part of two IP addresses match, it means they are on the same IP network. If not, they are on different networks.
+* If the **network** part of two IP addresses matches, it means they are on the same IP network. If not, they are on different networks.
 * The `/n` prefix indicates the number of bits of the IP address that are the network. The remaining bits are for the hosts.
 * IP Addresses are assigned by machine (DHCP) or by humans.
 
@@ -252,7 +252,7 @@ Internet Protocol, important ...
 The **Subnet Mask** allows a host to determine if an IP address it needs to communicate with is local or remote. This influences if it needs to use a gateway or can communicate locally.
 
 * A subnet mask is configured on a host device in addition to an IP address (example, `255.255.0.0` and this is the same as a `/16` prefix).
-* A subnet mask is a dotted decimal version of a binary number which indicates which part of an IP Address is network (1) and which part is host (0).
+* A subnet mask is a dotted-decimal version of a binary number that indicates which part of an IP Address is a network (1) and which part is a host (0).
 * The starting address of the local network is all 0s in the host part and the ending is all 1s in the host part.
 
 Address: `133.33.3.7`, Subnet Mask: `255.255.0.0` or `/16` ...
@@ -264,11 +264,11 @@ Address: `133.33.3.7`, Subnet Mask: `255.255.0.0` or `/16` ...
 
 #### Route Tables and Routes
 
-Packets are routed, hop by hop across the internet from source to destination.
+Packets are routed, hop-by-hop across the internet from source to destination.
 
 1. Default route `0.0.0.0/0` sends all packets to ISP.
 2. ISP Router has multiple interfaces. The Route Table is used for selection.
-3. Router compares packet destination IP and Route Table for matching destinations. The more specific prefixes are preferred (0 lowest, 32 highest). Packet is forwarded to the **next hop/target**.
+3. Router compares packet destination IP and Route Table for matching destinations. The more specific prefixes are preferred (0 lowest, 32 highest). The packet is forwarded to the **next-hop/target**.
 
 #### Address Resolution Protocol (ARP)
 
@@ -278,21 +278,21 @@ Within a local network, data is moved via L2 Frames over L1. ARP discovers which
 
 * L2 Broadcasts to all Fs. Who has the address I am looking for?
 
-When handling addresses outside the local netowrk ...
+When handling addresses outside the local network ...
 
 1. Subnet mask and destination IP show it isn't a local address.
-2. ARP is used to find the MAC address of the default Gateway.
+2. ARP is used to find the MAC address of the Default Gateway.
 3. Packet with destination MAC address from Step 2.
 4. Gateway Router removes the Frame and reviews the IP destination.
 5. Gateway Router has a route for the next network. It creates a Frame with the next Router (the next IP hop) as the destination MAC. The payload is unchanged and is in the Frame payload.
 6. Frame sent to the next Router.
-7. Next Router remove the Frame from the packet.
+7. Next Router removes the Frame from the packet.
 8. Next Router confirms the destination IP address on the same network and uses ARP to get the MAC address of the device. It creates a Frame with the new destination MAC and encapsulates the packet.
 9. The Frame is sent to the packet's final destination.
 
 Network Layer adds ...
 
-* IP Addresses (IPv4 or iPv6) - **cross network addressing**.
+* IP Addresses (IPv4 or iPv6) - **cross-network addressing**.
 * **ARP** - finds the MAC address for an IP.
 * **Route** - where to forward a packet.
 * **Route** Tables - Multiple Routes.
@@ -300,3 +300,94 @@ Network Layer adds ...
 * **Device-to-device** communication over the Internet.
 * **NO** Method for **channels** of communications, Source IP to Destination IP Only.
 * **Packets can be delivered out of order**.
+
+### Layer 4 - Transport
+
+Layer 3 Problems ...
+
+Each Packet is routed independently.
+
+* Routing decisions are done "per packet." Different routes could result in **out of order packets** when they arrive at the destination. L3 provides no mechanism for ordering.
+* Layer 3 communication is not guaranteed to be reliable. Packets can be lost en route.
+* Per packet routing can introduce delays to packets en route. Difference packets can experience different delays.
+* With Layer 3, there are no communication channels. Packets have a Source and Destination IP but no method of splitting by Application or Channel.
+* There is no flow control. If the source transmits faster than the destination can receive it can saturate the destination causing packet loss.
+
+Layer 4 - TCP and USP ...
+
+> I'd tell you a UDP joke, but you might not get it. #DadJoke
+
+* Layer 4 - TCP (Slower protocol, reliable)
+* Layer 4 - UDP (Faster protocol, less reliable)
+* Layer 3 - Network
+* Layer 2 - Data Link
+* Layer 1 - Physical
+
+#### Transmission Control Protocol (TCP)
+
+TCP is a connection-based protocol. A connection is established between two devices using a random port on a client and a known port on the server. Once established the connection is bi-directional. The "connection" is a reliable connection, provided via the segments encapsulated in the IP Packets.
+
+* Layer 3 Packets provide no error checking, ordering, or association.
+* Segments are linked to a connection, providing error checking, ordering, and retransmission.
+
+TCP Ports ...
+
+* Server, tcp/443 (Well-Known Port).
+* Client, tcp/23060 (random higher number, Ephemeral Port).
+
+TCP Segments ...
+
+* TCP Segments are encapsulated within IP Packets.
+* Segments **do not have Source and Destination IPs**, the packets provide device addressing.
+
+TCP Header ...
+
+* Source Port and Destination Port.
+* Sequence Number (for ordering and error correction).
+* Acknowledgements (both sides can be used to make observations about the packet).
+* Flags 'n' Things (*) ... flags plus extra fields.
+* Window (number of bytes the receiver is willing to receive between Acknowledgements).
+* Checksum.
+* Urgent Pointer (control traffic).
+* Options and Padding.
+
+TCP Connection - 3-Way Handshake ...
+
+Flags can be set to alter the connection.
+
+* **FIN** can be used to close the connection.
+* **ACK** for acknowledgements.
+* **SYN** to synchronise the sequence number.
+
+1. `SYN`, Client sends a segment with SYN sequence setting `Client Sequence Number (CS)` to a random value.
+2. `SYN-ACK`, Increments `CS` = CS + 1. The server then picks a random sequence number `Server Sequence NUmber (SS)`. It then sends a Segment - `SYN` and `ACK` with the sequence number set to `SS` and acknowledge set to `CS + 1`.
+3. `ACK`, Client increments `SS` = SS + 1 and `CS` = CS + 2. It then sends a Segment with `ACK`, sequence set to `CS + 2` and acknowledge set to `SS + 1`.
+4. Connection Established and Client can send data.
+
+TCP Sessions and States ...
+
+* A **Stateless Firewall** would see two things. An Outbound connection (client to server) and a Response connection (server to client). In AWS (Network ACL), **two rules will be required, OUT and IN).
+* A **Stateful Firewall** sees the traffic as one thing. An Outbound connection between the client and server. This allows the outbound traffic to implicity allow the inbound response. In AWS, this is how a Security Group works.
+
+## Network Address Translation (NAT)
+
+* NAT is designed to overcome the **IPv4 Address shortages**.
+* NAT also provides some **security benefits**.
+* Translates Private IPv4 addresses to Public Addresses.
+* **Static NAT** - 1 Specific Private Address to 1 Specific (fixed) Public Address (IGW).
+* **Dynamic NAT** - 1 Private Address to 1st available Public Address.
+* Port Address Translation (PAT) - many Private Addresses to 1 Public Address (NATGW).
+* NAT only makes sense for IPv4 ... not with IPv6.
+
+Static Network Address Translation ...
+
+* The Router (NAT Device) maintains a NAT table that maps Private IP to Public IP (1:1).
+
+Dynamic Network Address Translation ...
+
+* The Router (NAT Device) maintains a NAT table that maps Private IP to Public IP. Public IP allocations are *temporary allocations from a Public IP Pool*.
+
+Port Address Translation (PAT) ...
+
+* In AWS this is how the NAT Gateway (NATGW) functions, a (MANY:1) Private IP to Public IP Architecture.
+* The NAT Device records the Source (Private) IP and Source Port. It replaces the source IP with the single **Public IP** and a **public source port** allocated from a pool which allows IP Overloading (many-to-one).
