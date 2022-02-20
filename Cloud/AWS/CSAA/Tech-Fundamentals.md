@@ -391,3 +391,92 @@ Port Address Translation (PAT) ...
 
 * In AWS this is how the NAT Gateway (NATGW) functions, a (MANY:1) Private IP to Public IP Architecture.
 * The NAT Device records the Source (Private) IP and Source Port. It replaces the source IP with the single **Public IP** and a **public source port** allocated from a pool which allows IP Overloading (many-to-one).
+
+## Subnetting
+
+* IPv4 Standard was created in 1981, [RFC791](https://tools.ietf.org/html/rfc791).
+* 0.0.0.0 to 255.255.255.255 is about 4,294,967,296 Addresses.
+* Originally these addresses were directly managed by the Internet Assigned Numbers Authority (IANA), parts are now delegated to regional authorities.
+* All Public IPv4 Addressing is allocated, it must be assigned for use.
+* Part of the address space is Private, and can be used and reused freely.
+
+IPv4 Address Space ...
+
+| Class | Start | End | Usage |
+|-------|-------|-----|-|
+| A     | 0.0.0.0 | 127.255.255.255 | 128 Networks with 16,777,216 IPs each. Massive Businesses, Early Internet |
+| B     | 128.0.0.0 | 191.255.255.255 | 16,389 Networks, 65,536 IPs each. |
+| C     | 192.0.0.0 | 223.255.255.255 | 2,097,152 Networks, 256 IPs each. |
+| D | | | Multicast |
+| E | | | (Reserved) |
+
+IPv4 Addressing and Subnetting ...
+
+* Private Addressing is defined by a Standard [RFC1918](https://tools.ietf.org/html/rfc1918).
+
+| Class | Start | End | IPv4 Addresses |
+|-------|-------|-----|-|
+| 1 x Class A | 10.0.0.0 | 10.255.255.255 | 16,777,216 |
+| 16 x Class B | 172.16.0.0 | 172.31.255.255 | 16 x 65,536 |
+| 256 x Class C | 192.168.0.0 | 192.168.255.255 | 256 x 256 |
+
+IPv4 versus IPv6 Address Space ...
+
+* IPv4 = 4.29497 x 10<sup>9</sup>
+* IPv6 = 2.40282 × 10<sup>22</sup>
+
+IPv4 Subnetting ...
+
+* 10.16.0.0/16 can be split into two networks.
+* Becomes ... 10.16.0.0/17 and 10.16.128.0/17.
+* 10.16.0.0/17 can be split into two networks.
+* Becomes ... 10.10.0.0/18 and 10.16.64.0/18.
+* 10.16.128.0/17 can be split into two networks.
+* Becomes ... 10.16.128.0/18 and 10.16.192.0/18.
+
+Networks are usually split into 2, 4, 6, ... subnets. While unusual, odd number splits are valid.
+
+* Subnetting is the process of taking a larger network and breaking it into smaller networks (with a higher prefix).
+
+## Distributed Denial of Service (DDoS)
+
+* Attacks designed to overload websites.
+* Compete against "legitimate connections."
+* The attacks are **distributed**, therefore hard to block individual IPs and Ranges.
+
+Three Types of Attacks ...
+
+* **Application Layer** - HTTP Flood.
+* **Protocol Attack** - SYN Flood.
+* **Volumetric Attack** - DNS Amplification.
+
+DDoS attacks often involve large armies of compromised machines (botnets).
+
+## Secure Socket Layer (SSL) and Transport Layer Security (TLS)
+
+Provide Privacy and Data Integrity between a client and server.
+
+* Privacy - communications are encrypted. With TLS this starts with asymmetric and then move to symmetric encryption.
+* TLS provides Identity Verification (server or client/server).
+* Reliable connection - protects against the alteration of the data in transit.
+
+Three Main Phases to Initiate Secure Communication ...
+
+These three phases start at the point that a TCP Connection is active between the client and the server (Layer 4). At the end of the three phases there is an encrypted communication channel between the client and the server.
+
+1. Cipher Suites
+
+   TLS begins with an established TCP connection. Client and server have to agree on the method of communications, the "Cipher Suite."
+
+2. Authentication
+
+   Ensure that the server certificate is authentic, verifying that the server is legitimate. The client trusts the Public CA: It makes sure that the certificate is valid (date, and has not been revoked) and that the DNS name matches the name or names on the certificate.
+
+3. Key Exchange
+
+   Move from Asymmetric to Symmetric keys in a secure way and begin the encryption process.
+
+**Public trusted Certificate Authority** (CA) - the OS and Browser trust them.
+
+* At some point in the past, the server generated a Public/Private Key Pair and a Certificate Signing Request (CSR). The Public CA generates a signed certificate.
+
