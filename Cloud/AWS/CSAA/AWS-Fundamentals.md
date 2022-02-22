@@ -90,3 +90,80 @@ Permissions ...
   1. Public - Everyone allowed.
   2. Owner - Implicit allow.
   3. Explicit - Specific AWS Accounts allowed.
+
+## DEMO: Creating an EC2 Instance
+
+1. Login and navigate to the EC2 Dashboard.
+2. Select **Key Pairs**, Create Key Pair.
+3. Select PEM if not using Putty.
+4. Save the `.CER` file
+5. Select EC2 Dashboard, then Launch, and Launch Instance.
+6. Select "Amazon Linux 2 AMI (HVM)," the first one **Free Tier Eligible**.
+7. Select **t2.micro** Type, **Free Tier Eligible**, then Next (Configure Instance Details). Network, Subnet, and Auto-Assign Public IP can be selected here.
+8. Select Next (Add Storage).
+9. Select Next (Add Tags).
+10. Select Next (Configure Security Groups), set to "My IP Address."
+12. Review and Launch, then Launch.
+13. Select an existing key pair or create a new key pair. Select the key pair created above.
+14. Launch Instance, then View Instances.
+
+Connecting ...
+
+1. Right-click on the instance and select Connect.
+2. Select the SSH Tab.
+3. Copy the example `SSH` Command (may need to run the `chmod` command to fix permissions).
+
+Exercise ...
+
+1. Click Instances at the top.
+2. Select the running Instance, then on the Instance State dropdown choose **Stop Instance**.
+2. Select the stopped Instance, then on the Instance State dropdown choose **Start Instance**.
+
+## Simple Storage Service (S3) Basics
+
+* **Global Storage Platform** that is regional-based and regional-resilient.
+* **Public service**, unlimited data and multi-user.
+* Can handle massive amounts of data (movies, audio, photos, text, large data sets, etc.).
+* Economical and accessed via UI, CLI, API, HTTP.
+* Delivers Objects and Buckets.
+
+Objects ...
+
+* Key: e.g. `koala.jpg`.
+* Value: Content being stored (0-bytes to 5 TB).
+* Version ID.
+* Metadata.
+* Access Control.
+* Subresources.
+
+Buckets ...
+
+**Blast Radius** in case of failure or corruption = Region.
+
+* In a specific AWS Region.
+* Data inside a bucket has a primary home region; it never leaves the region unless it is configured to leave.
+* **Bucket name is Globally Unique**.
+* Can hold unlimited Objects.
+* Flat Structure, all Objects stored at the same level (root).
+* `/old/koala.jpg` is the complete Key; the UI displays the `old` as a file, even though it is actually a part of the Key (or name).
+
+### Summary
+
+* Bucket Limits: 100 is a soft limit, 1,000 hard limit per Account.
+* Unlimited Objects in a Bucket, **0-bytes to 5 TB**.
+* Key/Value Structure = Name/Data.
+
+**Bucket names** ...
+
+* **Are Globally Unique**.
+* 2-63 characters, all lowercase, and no underscores.
+* Start with a lowercase letter or a number.
+* Cannot be IP formatted (example, 1.1.1.1).
+
+### Patterns and Anti-Patterns
+
+* S3 is an Object store. It is not a file or block storage system.
+* **Cannot mount** an S3 Bucket (`k:\` or `/images`).
+* Great for large-scale data storage, distribution, or uploads.
+* Great for *offloading* things.
+* Input and/or Output to many AWS products.
