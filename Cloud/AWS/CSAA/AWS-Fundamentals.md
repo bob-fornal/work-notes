@@ -168,12 +168,12 @@ Buckets ...
 * Great for *offloading* things.
 * Input and/or Output to many AWS products.
 
-## DEMO: Creating and S3 Bucket
+## DEMO: Creating an S3 Bucket
 
 1. Go to the S3 Console.
 2. Click the **Create Bucket** button.
 3. Select *Globally Unique Name* and *Region*.
-4. Uncheck **Block *all* Public Access** and associated acknowledgement.
+4. Uncheck **Block *all* Public Access** and associated acknowledgment.
 5. Click **Create Bucket** at the bottom of the page.
 
 Once created ...
@@ -181,7 +181,7 @@ Once created ...
 1. Click the Bucket Name to see what's inside it.
 
    * Properties Tab, Amazon Resource Name (ARN) - unique resource identifier.
-   * Overview Tab, overview of all the Objects in this bucket.
+   * Overview Tab, an overview of all the Objects in this bucket.
 
 2. Click the **Upload** button.
 3. Click the **Add Files** button, select files, and open.
@@ -192,7 +192,7 @@ Once created ...
    * Storage class: Standard.
 
 4. Click the **Upload** button.
-5. Once the are all uploaded click the **Close** button to close the dialog.
+5. Once they are all uploaded click the **Close** button to close the dialog.
 
 Folders ...
 
@@ -205,7 +205,7 @@ Technically, there are no folders. This creates an object that allows the UI to 
 5. Click the **Upload** button.
 6. Click the **Add Files** button, select a file, and open.
 7. Click the **Upload** button.
-8. Once the are all uploaded click the **Close** button to close the dialog.
+8. Once they are all uploaded click the **Close** button to close the dialog.
 
 Open an Object ...
 
