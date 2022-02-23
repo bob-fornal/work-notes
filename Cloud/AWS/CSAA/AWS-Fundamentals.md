@@ -167,3 +167,61 @@ Buckets ...
 * Great for large-scale data storage, distribution, or uploads.
 * Great for *offloading* things.
 * Input and/or Output to many AWS products.
+
+## DEMO: Creating and S3 Bucket
+
+1. Go to the S3 Console.
+2. Click the **Create Bucket** button.
+3. Select *Globally Unique Name* and *Region*.
+4. Uncheck **Block *all* Public Access** and associated acknowledgement.
+5. Click **Create Bucket** at the bottom of the page.
+
+Once created ...
+
+1. Click the Bucket Name to see what's inside it.
+
+   * Properties Tab, Amazon Resource Name (ARN) - unique resource identifier.
+   * Overview Tab, overview of all the Objects in this bucket.
+
+2. Click the **Upload** button.
+3. Click the **Add Files** button, select files, and open.
+
+   * The system will show the files and size estimates.
+   * Destination will be unique to each bucket.
+   * Versioning is not enabled at this point.
+   * Storage class: Standard.
+
+4. Click the **Upload** button.
+5. Once the are all uploaded click the **Close** button to close the dialog.
+
+Folders ...
+
+Technically, there are no folders. This creates an object that allows the UI to display it as a folder. This process creates a file with a "name" that includes the `<foldername>`/`<filename>`.
+
+1. Click the **Create Folder** button.
+2. Provide a name for the folder.
+3. Click the **Create Folder** button.
+4. Click the named folder.
+5. Click the **Upload** button.
+6. Click the **Add Files** button, select a file, and open.
+7. Click the **Upload** button.
+8. Once the are all uploaded click the **Close** button to close the dialog.
+
+Open an Object ...
+
+1. Click the name of one of the files. This opens an overview with an **Object URL**.
+2. Right-Click and Open in New Tab. This presents an `AccessDenied` Error (private by default).
+3. Close the tab.
+4. Click the **Open** button (authentication included in the URL).
+
+Delete the Bucket ...
+
+1. Return to the S3 Console.
+2. Select the Bucket.
+3. Click the **Empty** button.
+4. Type in *permanently delete* into the input.
+5. Click the **Empty** button.
+6. Click the **Exit** button.
+7. With the Bucket still selected, click the **Delete** button.
+8. Enter the name of the bucket in the input.
+9. Click the **Delete bucket** button.
