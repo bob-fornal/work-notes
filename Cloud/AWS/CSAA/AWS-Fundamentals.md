@@ -375,6 +375,8 @@ Clean up ...
 
 This is how AWS provides clarity around which areas of system security are theirs, and which are owned by the customer.
 
+![Shared Responsibility Model Image](./images/Shared-Responsibility-Model.png)
+
 |             | AWS          | Customer     |
 |-------------|--------------|--------------|
 | Responsible | Of the Cloud | In the Cloud |
