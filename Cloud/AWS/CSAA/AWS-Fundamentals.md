@@ -228,7 +228,7 @@ Delete the Bucket ...
 
 ## CloudFormation (CFN) Basics
 
-CloudFormation is a tool which lets you create, update, and delete infrastructure at AWS in a consistent and repeatable way using templates.
+CloudFormation is a tool that lets you create, update, and delete infrastructure at AWS in a consistent and repeatable way using templates.
 
 [CloudFormation Resource Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
 
@@ -241,7 +241,7 @@ Templates ...
 * `Metadata`: Controls how different things in the template are presented in the UI.
 * `Parameters`: Fields to be entered when used.
 * `Mappings`: Look-up Tables
-* `Conditions`: Decision making in the template. Create and use the condition.
+* `Conditions`: Decision-making in the template. Create and use the condition.
 * `Outputs`: When finished, presented output.
 
 Basics ...
@@ -255,7 +255,7 @@ Basics ...
 1. Go to the CloudFormation Console.
 2. Click the **Create Stack** button.
 3. Select "Template is ready" and "Upload a template file."
-4. Click the **Choose file** button, select the template file, and click Open. This uploads this to an S3 Bucket created for ths purpose.
+4. Click the **Choose file** button, select the template file, and click Open. This uploads this to an S3 Bucket created for this purpose.
 5. Go to the EC2 Console in a new tab.
 6. Select **Key Pair** and create click the **Create Key Pair** button.
 7. Name it `A4L` for this demo, click the **Create Key Pair** button, and save the `.cer` file.
@@ -277,9 +277,9 @@ Connecting (Session Manager) ...
 
 Deleting ...
 
-All logical, then all physical, resources deleted.
+All logical resources then all physical resources deleted.
 
 1. Go to the CloudFormation console.
 2. Select the Stack.
 3. Click the **Delete** button.
-4. 
+4. Click the **Delete** button on the modal.
