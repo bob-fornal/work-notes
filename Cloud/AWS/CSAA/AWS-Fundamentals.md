@@ -225,3 +225,61 @@ Delete the Bucket ...
 7. With the Bucket still selected, click the **Delete** button.
 8. Enter the name of the bucket in the input.
 9. Click the **Delete bucket** button.
+
+## CloudFormation (CFN) Basics
+
+CloudFormation is a tool which lets you create, update, and delete infrastructure at AWS in a consistent and repeatable way using templates.
+
+[CloudFormation Resource Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html)
+
+* YAML or JSON Templates
+
+Templates ...
+
+* `Resources`: (only MANDATORY PART) CloudFormation adds, updates, or deletes resources.
+* `Description`: String, free text. Must immediately follow the `AWSTemplateFormatVersion`.
+* `Metadata`: Controls how different things in the template are presented in the UI.
+* `Parameters`: Fields to be entered when used.
+* `Mappings`: Look-up Tables
+* `Conditions`: Decision making in the template. Create and use the condition.
+* `Outputs`: When finished, presented output.
+
+Basics ...
+
+* When a template is used in any way, CloudFormation creates a Stack.
+* The Stack contains all Logical Resources from the template.
+* The Stack creates corresponding Physical Resources in the AWS Account.
+
+## DEMO: Simple Automation with CFN
+
+1. Go to the CloudFormation Console.
+2. Click the **Create Stack** button.
+3. Select "Template is ready" and "Upload a template file."
+4. Click the **Choose file** button, select the template file, and click Open. This uploads this to an S3 Bucket created for ths purpose.
+5. Go to the EC2 Console in a new tab.
+6. Select **Key Pair** and create click the **Create Key Pair** button.
+7. Name it `A4L` for this demo, click the **Create Key Pair** button, and save the `.cer` file.
+8. In the CloudFormation tab, click Next.
+9. Name the stack, parameters are presented from the template.
+10. Select the `myfirstec2instance` key and click the **Next** button.
+11. Click the **Next** button again.
+12. Scroll to the bottom and *acknowledge* that resources might be created.
+13. Click on the **Create stack** button and the Stack creation process will begin.
+14. WAIT for the process to complete.
+
+Connecting (Session Manager) ...
+
+1. Go to the EC2 tab.
+2. Right-click on the Instance, select **Connect**.
+3. Select the **Session Manager** tab.
+4. A new tab is opened with a Session.
+5. Enter `bash` for a more familiar interface.
+
+Deleting ...
+
+All logical, then all physical, resources deleted.
+
+1. Go to the CloudFormation console.
+2. Select the Stack.
+3. Click the **Delete** button.
+4. 
