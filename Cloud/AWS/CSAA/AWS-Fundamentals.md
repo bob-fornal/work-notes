@@ -283,3 +283,104 @@ All logical resources then all physical resources deleted.
 2. Select the Stack.
 3. Click the **Delete** button.
 4. Click the **Delete** button on the modal.
+
+## CloudWatch Basics
+
+Collects and manages operational data.
+
+* **Metrics** - AWS Products, applications, or on-premises. A metric is a time-ordered set of data points.
+* CloudWatch **Logs** - AWS Products, applications, or on-premises.
+* CloudWatch **Events** - AWS Services and Schedules.
+
+Namespace ...
+
+* Basically a container.
+* `AWS/<service>` is reserved, example `AWS/EC2`.
+
+Datapoints ...
+
+* Each measurement is called a datapoint, timestamp and value.
+
+Dimensions ...
+
+* Dimensions separate datapoints for different things or perspectives within the same metric.
+
+Alarms ...
+
+* Created and linked to a particular metric.
+* `OK`, `ALARM`, or `INSUFFICIENT_DATA`.
+* `ALARM` triggers an action.
+
+## DEMO: Simple Monitoring with CloudWatch
+
+1. Go to the EC2 Console.
+2. Select Launch Instance.
+3. Click the **Select** button for the *Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type*.
+4. `t2.micro` (Free tier eligible) will be selected.
+5. Click the **Next: Configure Instance Details** button.
+6. Find and select **Enable ClousWatch Monitoring**.
+7. Click the **Next: Add Storage** button.
+8. Click the **Next: Add Tags** button.
+9. Click the **Add Tag** button and enter a Tag (Key/Value Pair) to be used for Monitoring.
+10. Click the **Next: Configure Security Group** button.
+11. Click the **View and Launch** button.
+12. Click the **Launch** button.
+13. Choose "Proceed without a key pair," acknowledge, and click the **Launch Instances** button.
+14. Click on the **Instance ID** to go to the Instances Console.
+
+Monitoring Tab ...
+
+1. Click the Instance row, then select the Monitoring tab at the bottom.
+
+CloudWatch ...
+
+1. Go to the CloudWatch Conole.
+2. Select Alarms.
+3. Click the **Create Alarm** button.
+4. Click the **Select metric** button.
+5. Click the **EC2** card.
+6. Find the `CPUUtilization` Metric Name, select it, and click the **Select metric** button.
+7. Change the Period to "1 minute."
+8. In Conditions, set Static, Greater, and 15 (which is percent).
+9. Click the **Next** button.
+10. Click the **Remove** button to not have a notification.
+11. Click the **Next** button.
+12. Name the Alarm "CPUUsageOver15Percent."
+13. Click the **Next** button.
+14. Click the **Create alarm** button.
+
+* It will be in the `Insufficient Data` initially.
+
+Next Steps ...
+
+1. Go to the EC2 Console.
+2. Connect to the EC2 Instance.
+3. Run `sudo amazon-linux-extras install epel -y` at the command line.
+4. Run `sudo yum install stress -y` at the command line (stress utility).
+5. Verify that the Alarm is in `OK` state, click to see the graph.
+6. Run `stress -c 2` at the command line.
+7. Check the Console to see the stress.
+8. Press `CTRL-C` at the command line to stop the stress.
+9. Verify that the Alarm returns to the `OK` state.
+
+Clean up ...
+
+1. Click on **All Alarms**, select the `CPUUsageOver15PercentAlarm`, then Actions > Delete.
+2. Click on the **Delete** button.
+3. Go to the EC2 Console, then Dashboard, and click on **Instances Running**.
+4. Right-click on the EC2 Instance and select Terminate.
+5. Click on the **Terminate** button.
+
+## Shared Responsibility Model
+
+This is how AWS provides clarity around which areas of system security are theirs, and which are owned by the customer.
+
+|             | AWS          | Customer     |
+|-------------|--------------|--------------|
+| Responsible | Of the Cloud | In the Cloud |
+| | Regions, AZ, Edge Locations | Client-side data (encryption, integrity, and authentication) |
+| | Hardware, AWS Global Infrastructure | Server-side encryption (file system and/or data) |
+| | Compute, Storage, Databases, Networking | Networking traffic protection (encryption, integrity, and identity) |
+| | Software | Operating system, network, and firewall configuration |
+| | | Platform, applications, identity, and access management |
+| | | Customer Data |
