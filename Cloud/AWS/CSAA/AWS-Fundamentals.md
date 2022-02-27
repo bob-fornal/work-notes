@@ -386,3 +386,25 @@ This is how AWS provides clarity around which areas of system security are their
 | | Software | Operating system, network, and firewall configuration |
 | | | Platform, applications, identity, and access management |
 | | | Customer Data |
+
+## High Availability, Fault-Tolerance, and Disaster Recovery
+
+* HA = High Availability
+* FT = Fault Tolerance
+* DR = Disaster Recovery
+
+### High Availability (HA)
+
+Aims to **ensure** an agreed level of operational **performance**, usually uptime, for a **higher than normal period**.
+
+* Generally listed in a percent of uptime.
+* Example: 99.9%, three 9s = 8.77 hours per year of downtime.
+* Example: 99.999%, five 9s = 5.26 minutes per year of downtime.
+
+### Fault-Tolerance (FT)
+
+Is the property that enables a system to **continue operating properly** in the event of the **failure of some** (one or more faults within) of its **components**.
+
+### Disaster Recovery (DR)
+
+A set of policies, tools, and procedures to **enable the recovery** or **continuation** of **vital** technology infrastructure and systems **following a natural or human-induced disaster**.
