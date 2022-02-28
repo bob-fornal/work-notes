@@ -52,7 +52,7 @@ Default VPC Notes ...
 * **One Default VPC per Region**, it can be removed and recreated.
 * Default VPC CIDR is always `127.31.0.0/16`.
 * `/20` Subnet in each AZ in the Region.
-* Comes with and Internet Gateway (IGW), Security Group (SG), and NACL preconfigured.
+* Comes with an Internet Gateway (IGW), Security Group (SG), and NACL preconfigured.
 * Subnets assign public IPv4 addresses.
 
 ## Elastic Compute Cloud (EC2)
@@ -60,7 +60,7 @@ Default VPC Notes ...
 IaaS = Infrastructure as a Service.
 
 * EC2 Provides Virtual Machines, Instances.
-* **Private** service by-default, uses VPC networking.
+* **Private** service by default, uses VPC networking.
 * AZ Resilient, Instance fails if an AZ fails.
 * Different instance sizes and capabilities.
 * On-Demand Billing, per second or per hour.
@@ -110,7 +110,7 @@ Permissions ...
 Connecting ...
 
 1. Right-click on the instance and select Connect.
-2. Select the SSH Tab.
+2. Select the SSH tab.
 3. Copy the example `SSH` Command (may need to run the `chmod` command to fix permissions).
 
 Exercise ...
@@ -122,7 +122,7 @@ Exercise ...
 ## Simple Storage Service (S3) Basics
 
 * **Global Storage Platform** that is regional-based and regional-resilient.
-* **Public service**, unlimited data and multi-user.
+* **Public service**: unlimited data and multi-user.
 * Can handle massive amounts of data (movies, audio, photos, text, large data sets, etc.).
 * Economical and accessed via UI, CLI, API, HTTP.
 * Delivers Objects and Buckets.
@@ -145,11 +145,11 @@ Buckets ...
 * **Bucket name is Globally Unique**.
 * Can hold unlimited Objects.
 * Flat Structure, all Objects stored at the same level (root).
-* `/old/koala.jpg` is the complete Key; the UI displays the `old` as a file, even though it is actually a part of the Key (or name).
+* `/old/koala.jpg` is the complete Key; the UI displays the `old` as a file, even though it is a part of the Key (or name).
 
 ### Summary
 
-* Bucket Limits: 100 is a soft limit, 1,000 hard limit per Account.
+* Bucket Limits: 100 is a soft limit, 1,000 hard limits per Account.
 * Unlimited Objects in a Bucket, **0-bytes to 5 TB**.
 * Key/Value Structure = Name/Data.
 
@@ -295,15 +295,15 @@ Collects and manages operational data.
 Namespace ...
 
 * Basically a container.
-* `AWS/<service>` is reserved, example `AWS/EC2`.
+* `AWS/<service>` is reserved, for example, `AWS/EC2`.
 
 Datapoints ...
 
-* Each measurement is called a datapoint, timestamp and value.
+* Each measurement is called a datapoint, timestamp, and value.
 
 Dimensions ...
 
-* Dimensions separate datapoints for different things or perspectives within the same metric.
+* Dimensions separate data points for different things or perspectives within the same metric.
 
 Alarms ...
 
@@ -408,3 +408,100 @@ Is the property that enables a system to **continue operating properly** in the 
 ### Disaster Recovery (DR)
 
 A set of policies, tools, and procedures to **enable the recovery** or **continuation** of **vital** technology infrastructure and systems **following a natural or human-induced disaster**.
+
+## Domain Name System (DNS)
+
+DNS is a **discovery service**.
+
+* Translate machine naming into human and vice-versa (example, 104.98.34.131 to www.amazon.com).
+* It is huge and has to be distributed, global, and resilient.
+* All IPv4 and IPv6 Addresses have to be accounted for.
+
+DNS Zone ...
+
+* Somewhere on the Internet is one Zone File for (www.amazon.com), with a DNS Record inside it and the IP Address to connect to the site. It is hosted by a Nameserver (NS).
+* Query, get the IP Address then connect to the site.
+
+Notes ...
+
+* **DNS Client**: Any machine (laptop, phone, tablet, PC, etc.).
+* **DNS Resolver**: Software on DNS Client, or a server, which queries the DNS.
+* **DNS Zone**: A part of the DNS database (example, amazon.com).
+* **Zone File**: A physical database for a Zone.
+* **DNS Nameserver**: Where zone files are hosted.
+
+DNS Root ...
+
+* DNS Root and DNS Root Zone; hosted on 13 special servers known as the root servers.
+* These servers are an entry point.
+* The vendor provides a root hints file that links to the root servers.
+* The DNS Root Zone is managed by Internet Assigned Numbers Authority (IANA).
+
+DNS Hierarchy ...
+
+* DNS is based on trust (chain-of-trust).
+* The Root Zone is authoritative.
+* The Root Zone can delegate a part of itself to another entity or zone, passing on the authoritative status.
+
+More Notes ...
+
+* **Root Hints**: This file points at the root server's IPs and addresses.
+* **Root Server**: Hosts the DNS Root Zone.
+* **Root Zone**: Points at top-level domain authoritative servers.
+* **gTLD**: Generic top-level domains.
+* **ccTLD**: Country-code top-level domains.
+
+## Route53 Fundamentals
+
+1. Register Domains
+2. Host Zone ... managed nameservers.
+
+* Global Service, as a single database. Globally resilient service.
+
+Register Domains ...
+
+* Has a relationship with all of the major Domain Registries.
+
+1. Registering. It checks the Registry for availability.
+2. It then generates a Zone File for the domain being registered (Hosted Zone).
+3. Allocates name servers (four servers) for the Zone.
+4. It communicates with the Register and adds the name server records into the Nameservice (NS) top-level domain.
+
+Hosted Zones ...
+
+* Zone files (Hosted Zones) in AWS.
+* Hosted on four managed name servers.
+* Name servers can be public or private, linked to VPC(s).
+* Stores DNS records (recordsets).
+
+## DEMO: Registering a Domain
+
+1. Go to the Route53 Console.
+2. Click **Registered Domains** on the left side.
+3. Click the **Register Domain** button.
+4. Enter a name and click the **Check** button to see availability.
+5. Add the domain to the cart.
+6. Click the **Continue** button.
+7. Three contacts are needed: Registrant, Administrative, and Technical.
+8. Choose to enable or disable Privacy Protection.
+9. Click the **Continue** button.
+10. Agree to the terms and click the **Complete Order** button.
+11. Finally, click the **Close** button.
+
+Under **Rending requests** on the left-side, the site is pending registration.
+
+* Name servers get allocated.
+
+## DNS Record Types
+
+FQDN = Fully Qualified Domain Name.
+
+* Nameservers (NS) are how delegation works end-to-end.
+* **A and AAAA** Records map hostnames to IP address (A = IPv4, AAAA = IPv6).
+* **CNAME** Records (canonical name) allow the creation of the equivalent of DNS shortcuts (host to host). They are used to reduce admin overhead.
+* **MX** Records are used to find a mail server (SMTP) for a domain. There are two values, priority and value options; lower values are higher priority.
+* **TXT** Records (also known as a text records) are a means to add arbitrary text to a domain. One common usage is to prove domain ownership.
+
+More ...
+
+* DNS **Time To Live (TTL)** can be set on DNS Records, it is a numeric value in seconds.
