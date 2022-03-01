@@ -14,7 +14,7 @@ Cloud Computing is not a buzzword - it is a unique type of computing that has a 
 
 | Platform     | AWS | Azure | Google | Implementation |
 |--------------|-----|-------|--------|----------------|
-| Public Cloud | ![AWS Logo](./images/aws-small.jpeg) | ![Azure](./images/azure-small.jpeg) | ![Google](./images/google-small.png) | Multi-Cloud |
+| Public Cloud | ![AWS Logo](./../images/aws-small.jpeg) | ![Azure](./../images/azure-small.jpeg) | ![Google](./../images/google-small.png) | Multi-Cloud |
 | | Hybrid Cloud | Hybrid Cloud | Hybrid Cloud | |
 | On-Premises | AWS Outposts | Azure Stack | Anthos | Private Cloud |
 

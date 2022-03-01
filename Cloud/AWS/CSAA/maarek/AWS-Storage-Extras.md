@@ -46,7 +46,7 @@ Challenges
 
 ### AWS Snowmobile
 
-![AWS Snowmobile Tractor Trailer](./images/snowmobile.png)
+![AWS Snowmobile Tractor Trailer](./../images/snowmobile.png)
 
 * Transfer exabytes of data (1 EB = 1,000 PB = 1,000,000 TBs).
 * Each Snowmobile has 100 PB of capacity (use multiple in parallel).
