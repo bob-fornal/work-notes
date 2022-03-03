@@ -140,3 +140,66 @@ Examples ...
 * Existing identities (i.e. Active Directory) with a company that has more than 5,000 identities. External accounts cannot be used in AWS directly. The Role is assumed and temporary credentials are generated for access.
 * Application with unknown number of users. The application uses Web Identity Federation that uses IAM Roles. No AWS Credentials are stored within the application. Uses existing customer logins. Can scale, as needed.
 * Cross Account access. Use a Role in the partner account that original account can assume.
+
+## AWS Organizations
+
+Take a single AWS Account (Standard AWS Account) that is not within an Organization.
+
+* Standard Account creates an Organization, this becomes a Management Account (or Master Account).
+* Can invite other existing Standard Accounts. They need to approve joining the Organization. They become Member Accounts.
+* One Management Account and zero or more Member Accounts.
+* There is an Organization Root, just a container that can contain AWS Accounts and Organizational Units. It can also contain other Organizational Units.
+* Consolidated billing; Member Accounts pass their bills through to the Management Account (or Payer Account). Consolidation of reservations and volume discounts.
+* Management Account can also create new Accounts directly within it. Need a unique email address; there is no invitation process.
+
+Best Practice ...
+
+* Single login to access all Member Accounts via Roles (Role Switch).
+* Account separate from Management Account should be used.
+
+## DEMO: AWS Organizations
+
+Accounts will be created within the AWS Organization. UI Role Switching or CLI Roles will be used to access Member Accounts. The Management Account is the store of identities.
+
+Create an Organization ...
+
+1. Go to AWS Organizations Console.
+2. Click the **Create an organization** button.
+3. Go to the associated Email and **Verify your email address**, following the associated steps.
+
+Add an Account to an Organization ...
+
+1. Obtain the Account ID from the account to be added.
+2. Click on the **Add an AWS Account** button.
+3. Select "Invite an existing AWS Account", paste the Account ID, and click the **Send Invitation** button.
+4. In the invited account, go to AWS Organizations Conole.
+5. Click the **View 1 invitation** button.
+6. Click the **Accept invitation** button and the account is now joined to the organization.
+
+Add Role to the Account for Role Switching ...
+
+1. Go to the IAM Console.
+2. Click on Roles on the left side.
+3. Click on the **Create role** button.
+4. Select **AWS Account** as a trusted entity.
+5. 
+
+Create an Account within an Organization ...
+
+1. Obtain the Account ID from the original account.
+2. Click on the **Add an AWS Account** button.
+3. Select "Create an AWS account", add an account name and Email address, and click the **Send Invitation** button.
+4. Click the **Create AWS Account** button.
+5. Select "Another Account" and paste the Account ID.
+6. Click the **Next** button.
+7. Select "AdministratorAccess" and then click the **Next** button.
+8. Enter "OrganizationAccountAccessRole" for the Role name.
+9. Click the **Create role** button.
+
+Set Up Role Switching ...
+
+1. Obtain the Account ID for Development or Production.
+2. Click the **Switch Roles** button on the account menu.
+3. Click the **Switch Role** button.
+4. Enter Account ID, Role, Display Name, and Color.
+5. Click the **Switch role** button.

@@ -8,6 +8,12 @@
 | Scott Hanselman | @shanselman | Microsoft, General Development |
 | Dan Vega | @therealdanvega | Spring Developer Advocate at VMware Tanzu |
 | Sam Julien | @samjulien | Professional Gate-Opener, [SITE](https://www.samjulien.com/) |
+| Ali Spittel | @aspittel | Leads Developer Advocacy @awsamplify, Podcasts, Blogging
+| Jen Gentleman | @jenmsft | Microsoft |
+| Chris Coyier | @chriscoyier | Co-founder CodePen |
+| Ale | @pokecoder | At Hashnode |
+| Eleftheria Batsou | @batsouelef | Community Manageer at Hashnode |
+| Lucy Mac | @codingwithlucy | Developer |
 
 ## JavaScript
 
@@ -37,6 +43,7 @@
 | Catalin Pit | @catalinmpit | Web Development Newsletter |
 | Kadi Kraman | @kadikraman | Principal Engineer at Formidable Labs |
 | Florin Pop | @florinpop1705 | Web Development Newsletter |
+| Claudio Bernasconi | @chbernaconic | .NET Development |
 
 ## Fun
 
@@ -52,6 +59,7 @@
 
 | Name | Twitter | Content Area |
 |------|---------|--------------|
+| Bekah | @bekahhw | Bootcamp grad, Podcast |
 | Sarah Dutkiewicz | @sadukie | Data Adventurer, Developer Technologies |
 | Cassandra Faris | @cassandrafaris | Tech Community Manager |
 | Matt Eland | @integerman | Bootcamp Instructor, Data Science |
