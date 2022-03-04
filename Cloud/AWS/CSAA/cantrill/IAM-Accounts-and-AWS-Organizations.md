@@ -8,7 +8,7 @@ They are a type of policy that gets attached to AWS identities and either `ALLOW
 
 Statement ...
 
-Action and Resource must match.
+Action and Resources must match.
 
 * Sid: Statement ID (optional field) to describe what it does.
 * Effect
@@ -23,14 +23,14 @@ Action and Resource must match.
 
 Policy Types ...
 
-* **Inline Policies**: Policy applied to each account individually (change needs applied to each). Special or exceptional need to `ALLOW` or `DENY`.
+* **Inline Policies**: Policy applied to each account individually (change needs to be applied to each). Special or exceptional need to `ALLOW` or `DENY`.
 * **Managed Policy**: Attached to any identities that should get the rights. They are reusable with low management overhead.
 
 ## IAM Users and ARNs
 
 ### IAM Users
 
-**IAM Users** are an identity used for anything requiring **long-term** AWS access (example, humans, applications, or service accounts).
+**IAM Users** are an identity used for anything requiring **long-term** AWS access (for example, humans, applications, or service accounts).
 
 * Principal makes requests to IAM to interact with resources.
 * Principal needs to **Authenticate** against an identity within IAM. Username/Password or Access Keys are used.
@@ -41,16 +41,16 @@ Notes ...
 * 5,000 IAM Users per Account.
 * IAM Users can be a member of 10 groups.
 
-These factors can have system design impact ...
+These factors can have a system design impact ...
 
-* Internet scale applications.
+* Internet-scale applications.
 * Large organizations or when organizations merge
 
 IAM Roles and Identity Federation fix the system design impact issues.
 
 ### Amazon Resource Name
 
-**Amazon Resource Name (ARN)** are used to uniquely identify resources within any AWS accounts.
+**Amazon Resource Name (ARN)** is used to uniquely identify resources within any AWS accounts.
 
 ```script
 arn:partition:service:region:account-id:resource-id
@@ -88,7 +88,7 @@ IAM Users ...
 2. Click the **Users** link on the left side.
 3. Click "Sally" ...
 4. Click the **Dashboard** link on the left side.
-5. Copy the signin link and open a Private Browser Tab or now Browser.
+5. Copy the sign in link and open a Private Browser Tab or now Browser.
 6. Enter the username from the Stack Outputs.
 7. Enter the password entered previously.
 8. Change the password when asked.
@@ -104,7 +104,7 @@ IAM Groups are not a true identity. They cannot be referenced as a principal in 
 * No nesting of groups.
 
 1. Effective administrative style of groups of users.
-2. Groups can actually have policies attached (inline and managed).
+2. Groups can have policies attached (inline and managed).
 
 ## DEMO: Permission control using IAM Groups
 
@@ -127,7 +127,7 @@ Types of Policies that can be attached ...
 * Trust Policy
 * Permissions Policy
 
-Temporary Security Credential allow a role to be assumed: `sts:AssumeRole`.
+Temporary Security Credential allows a role to be assumed: `sts:AssumeRole`.
 
 ## IAM Roles - When to Use
 
@@ -138,8 +138,8 @@ Examples ...
 * Lambda Execution Role trusts AWS Lambda and provides permission via `sts:AssumeRole` to access resources.
 * Emergency our unusual situations (Break Glass Situation). Emergency Role is assumed by a User (access is logged).
 * Existing identities (i.e. Active Directory) with a company that has more than 5,000 identities. External accounts cannot be used in AWS directly. The Role is assumed and temporary credentials are generated for access.
-* Application with unknown number of users. The application uses Web Identity Federation that uses IAM Roles. No AWS Credentials are stored within the application. Uses existing customer logins. Can scale, as needed.
-* Cross Account access. Use a Role in the partner account that original account can assume.
+* Application with an unknown number of users. The application uses Web Identity Federation that uses IAM Roles. No AWS Credentials are stored within the application. Uses existing customer logins. Can scale, as needed.
+* Cross-Account access. Use a Role in the partner account that the original account can assume.
 
 ## AWS Organizations
 
@@ -208,7 +208,7 @@ Set Up Role Switching ...
 
 * SCPs can be applied to the organization, Organizational Units, or individual accounts.
 * Member Accounts can be affected; the Management Account cannot.
-* SCPs do not GRANT any permissions. They just control what an account CAN and CANNOT grant via identity policies.
+* SCPs do not GRANT any permissions. They just control what an account CAN and CAN NOT grant via identity policies.
 
 Allow List and Deny List ...
 
@@ -266,3 +266,39 @@ Allow List and Deny List ...
 3. Name the Organizational Unit (OU), then click the **Create organizational unit** button.
 4. Check the Account to place into the OU, then click the **Actions** button, and **Move** from the menu.
 5. Select the OU, then click the **Move AWS account** button.
+
+## CloudWatch Logs
+
+A **Public Service** and is usable from AWS or on-premises.
+
+* Store, monitor, and access logging data.
+* **AWS Integrations** with EC2, VPC Flow Logs, Lambda, CloudTrail, Route53, and more.
+* Can generate metrics based on logs; called a **metric filter**.
+
+## CloudTrail
+
+A product that logs API actions that affect an AWS Account.
+
+* Logs API calls or account activities as a **CloudTrail Event**.
+* Stored the last 90-days by default in the **Event History**.
+* Enabled by default, not cost for 90-days of history.
+* To customize the service create one or more Trails.
+* There are two types of trails, Management Events, and Data Events.
+
+Notes ...
+
+* CloudTrail is enabled by default, only 90-days of Event History and no S3 storage.
+* Trails are how you configure storage in S3 or CloudWatch Logs.
+* Management Events only, by default.
+* IAM, STS, and CloudFront log their data as Global Service Events.
+* It is **not real-time**, there is a delay.
+
+## DEMO: Implementing an Organizational Trail
+
+1. Go to the CloudTrail Console.
+2. Click the **Trails** option on the left menu.
+3. Click the **Create trail** button.
+4. Enter a name for the trail and enable it for all accounts.
+5. Click the **Next** button.
+6. Click the **Next** button.
+7. Click the **Create trail** button.
