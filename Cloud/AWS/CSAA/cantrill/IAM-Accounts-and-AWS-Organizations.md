@@ -203,3 +203,66 @@ Set Up Role Switching ...
 3. Click the **Switch Role** button.
 4. Enter Account ID, Role, Display Name, and Color.
 5. Click the **Switch role** button.
+
+## Service Control Policies (SCPs)
+
+* SCPs can be applied to the organization, Organizational Units, or individual accounts.
+* Member Accounts can be affected; the Management Account cannot.
+* SCPs do not GRANT any permissions. They just control what an account CAN and CANNOT grant via identity policies.
+
+Allow List and Deny List ...
+
+`FullAWSAccess`
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+`DenyS3`
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": "s3:*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+1. Remove `FullAWSAccess`.
+2. `AllowS3EC2`
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:*",
+        "ec2:*",
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+* Where Identity Policies and SCP overlap are the allowed accesses.
+
+## DEMO: Using Service Control Policies
+
+1. Go to Organizations Console.
+2. Check the **Root**, then click the **Actions** button, and **Create new** from the menu.
+3. Name the Organizational Unit (OU), then click the **Create organizational unit** button.
+4. Check the Account to place into the OU, then click the **Actions** button, and **Move** from the menu.
+5. Select the OU, then click the **Move AWS account** button.
