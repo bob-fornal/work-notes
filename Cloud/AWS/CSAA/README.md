@@ -81,4 +81,5 @@ Exam Preparation
 * [Cloud Computing Fundamentals](cantrill/Cloud-Computing-Fundamentals.md)
 * [Tech Fundamentals](cantrill/Tech-Fundamentals.md)
 * [AWS Fundamentals](cantrill/AWS-Fundamentals.md)
-* [IAM, Accounts, and AWS Organizations](IAM-Accounts-and-AWS-Organizations.md)
+* [IAM, Accounts, and AWS Organizations](cantrill/IAM-Accounts-and-AWS-Organizations.md)
+* [Simple Storage Service (S3)](cantrill/Simple-Storage-Service.md)
