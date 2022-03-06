@@ -82,3 +82,50 @@ Website URL ...
 10. Under Value/Route traffic to, select Alias to S3 website endpoint, the region, and the S3 Bucket from above.
 11. Click on the **Define simple record** button.
 12. Click on the **Create records** button.
+
+## Object Versioning and MFA Delete
+
+### Object Versioning
+
+* Versioning is Disabled by default.
+* Versioning can be Enabled, but cannot then be Disabled again.
+* Versioning can be Suspended and Enabled again.
+
+Versioning ...
+
+Versioning allows storage of **multiple versions** of objects within a bucket. Operations which would modify objects **generate a new version**.
+
+* The Key is the name of the file.
+* IDs are used to version objects.
+* Deletion places a Delete Marker, hides the previous versions. The Delete Maker can be removed.
+* Version Deletion actually removes the object.
+
+Notes ...
+
+* Space is consumed by all versions.
+* Billing is applied to all versions.
+* The only way to zero costs is to delete the bucket.
+
+MFA Delete ...
+
+* Enabling in versioning configuration.
+* MFA is required to change bucket **versioning state**.
+* MFA is required to **delete versions**.
+* Serial number (MFA), as well as the generated code, is passed to any API calls.
+
+## DEMO: S3 Versioning
+
+1. Go to the S3 Console.
+2. Click on the **Create bucket** button.
+3. Name the bucket, uncheck "block all public access," acknowledge, enabled "Bucket Versioning," and click the **Create bucket** button.
+4. Click on the name of the bucket.
+5. Select the Properties tab, find "Static website hosting," and click the **Edit** button.
+6. Select Enable, set the Index and Error documents, and click the **Save changes** button.
+7. Select the Permissions tab, find "Bucket policy," and click the **Edit** button.
+8. Replace the policy with an `ALLOW` policy.
+9. Click the **Save changes** button.
+10. Select the Objects tab, add the files and folders, and click the **Upload** button.
+11. Click the **Close** button.
+12. Click the **Show versions** toggle.
+
+
