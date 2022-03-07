@@ -128,4 +128,83 @@ MFA Delete ...
 11. Click the **Close** button.
 12. Click the **Show versions** toggle.
 
+## S3 Performance Optimization
 
+Single PUT Upload ...
+
+* By default, when data is uploaded it is done on a single data stream to S3.
+* If the stream fails, the **upload fails**.
+* Requires a full restart.
+* Speed and reliability are limited due to the single stream.
+* Any upload up to 5GB of data.
+
+Multipart Upload ...
+
+* Data is broken up.
+* Minimum data size of 100MB for multipart upload.
+* 10,000 maximum number of parts, 5MB ... 5GB.
+* Last part can be smaller than 5MB.
+* Transfer rate is the speed of all the parts.
+
+S3 Transfer Acceleration ...
+
+* Uses the network of AWS Edge Locations (closest, best performing Edge Location).
+* S3 bucket must be enabled, default is off.
+* Faster with lower consistent latency.
+
+## DEMO: S3 Performance
+
+TOOL TO COMPARE PERFORMANCE: [HERE](http://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html)
+
+1. Go to the S3 Console.
+2. Create a Bucket, accepting defaults.
+3. Select the Properties tab.
+4. Find "Transfer acceleration" and enabled it.
+5. Use the **Accelerated endpoint** for better performance.
+
+## Encryption 101
+
+### Encryption Approaches
+
+| Encryption At Rest | Encryption In Transit |
+|--------------------|-----------------------|
+| Designed to protect against physical theft and tampering. | Protecting data while it is being transferred between two places. |
+| One entity involved. | Encryption wrapper (a tunnel). |
+| | Multiple entities involved. |
+
+### Concepts
+
+* Plaintext: Unencrypted data.
+* Algorithm: Takes plaintext and an encryption key and returns encrypted data.
+* Key: At its simplest is a password.
+* Ciphertext: Encrypted data.
+
+### Symmetric Encryption
+
+Symmetric Keys are used in the Symmetric Encryption process.
+
+1. Both sides agree on an algorithm.
+2. Party one generates a Symmetric Encryption Key and using the algorithm encrypts the plaintext, outputting ciphertext.
+3. Ciphertext sent to party two. Party two does not have the Key.
+4. Sent electronically, in-person, transfer encrypted ... all have issues. Transit of the key is the issue.
+5. Algorithm with the key can decrypt the ciphertext.
+
+### Asymmetric
+
+Computationally much more difficult to do than Symmetric Encryption.
+
+1. Both sides agree on an algorithm. Public and private keys are generated for both sides. The public keys are sent to the other side.
+2. The public key can only be used to encrypt.
+3. The private key can only be used to decrypt.
+
+### Signing
+
+* Uses Asymmetric Keys.
+* A message can be signed with the Private Key.
+* The Public Key then decrypts the Signed Document and verifies that it was signed by the second party.
+
+### Steganography
+
+Sometimes encryption is not enough.
+
+* This is a method of hiding something inside something else.
