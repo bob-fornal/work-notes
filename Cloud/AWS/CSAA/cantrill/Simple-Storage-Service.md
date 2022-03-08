@@ -208,3 +208,87 @@ Computationally much more difficult to do than Symmetric Encryption.
 Sometimes encryption is not enough.
 
 * This is a method of hiding something inside something else.
+
+## Key Management Service (KMS)
+
+* Regional and Public Service.
+* Create, Store, and Manage Cryptographic Keys.
+* Symmetric and Asymmetric Keys.
+* Cryptographic operations (encrypt, decrypt, and more).
+* **Keys never leave KMS** - provides FIPS 104-2 Service (L2).
+
+Customer Master Keys (CMKs) ...
+
+* CMKs are logical. They contain ID, date, policy, description, and state.
+* They are backed by **physical** key material.
+* They are Generated or Imported.
+* They can be used for up to **4KB of data**.
+
+Data Encryption Keys (DEKs) ...
+
+* `GenerateDataKey` - works on more than 4KB.
+* Encrypt data using the plaintext key.
+* Discard the plaintext key.
+* Store encrypted key with the encrypted data.
+
+Key Concepts ...
+
+* CMKs are isolated to a region and never leave.
+* **AWS Managed** or **Customer Managed** CMKs.
+* Customer-managed keys are more configurable.
+* CMKs support rotation.
+* Backing key (and **previous** backing keys).
+* Aliases.
+
+Key Policies and Security ...
+
+* Key Policies (Resource).
+* Every CMK has a policy.
+* Key Policies and IAM Policies.
+
+## DEMO: KMS - Encrypting the Battleplans with KMS
+
+1. Go to the Key Management Service Console.
+2. Click the **Create a key** button.
+3. With "Symmetric" selected, click the **Next** button.
+4. Enter an alias and click the **Next** button.
+5. Specify the "Key administrators" that can manage the key.
+6. Click the **Next** button.
+7. Specify who can use this key.
+8. Click the **Next** button.
+9. Check the "Key policy" generated then click the **Finish** button.
+
+In CloudShell ...
+
+1. Enter each of the following.
+
+   ```script
+   $ echo "Find all the doggos, distract them with the yumz." > battleplans.txt
+   $ aws kms encrypt \
+       --key-id alias/catrobot \
+       --plaintext fileb://battleplans.txt \
+       --output text \
+       --query CiphertextBlob \
+       | base64 -- decode > not_battleplans.enc
+   ```
+
+   The encrypted file looks like ...
+
+   ```script
+   $ cat not_battleplans.enc
+   ```
+
+   To decrypt this file ...
+
+   ```script
+   # aws kms decrypt \
+       --cyphertext-blob fileb://not_battleplans.enc \
+       --output text \
+       --query Plaintext | base64 --decode > decryptedplans.txt
+   ```
+
+   To view the decrypted file ...
+
+   ```script
+   cat decryptedplans.txt
+   ```
