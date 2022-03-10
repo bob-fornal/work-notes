@@ -66,3 +66,4 @@
 | Matthew D. Groves | @mgroves | Product Marketing Manager at Couchbase |
 | Calvin Allen | @_CalvinAllen | Lead Software Engineer, Microsoft MVP |
 | Baskar Rao | @baskarmib | JavaScript and Friends |
+| Guy Royse | @guyroyse | Developer Advocate Redis |
