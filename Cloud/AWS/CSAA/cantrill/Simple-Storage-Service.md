@@ -352,3 +352,138 @@ Default Bucket Encryption ...
 12. Click the **Review policy** button.
 13. Name the policy "denyKMS:/
 14. Click the **Create policy** button.
+
+## S3 Object Storage Classes
+
+### S3 Standard
+
+* Objects are replicated across **at least 3 AZs** in the AWS Region.
+* 11-9s of durability (for 10,000,000 objects, there will be one object loss per 10,000 years).
+* Replication over 3 AZs, Content-MD5 Checksums, and Cyclic Redundancy Checks (CRCs) are used to detect and fix any data corruption.
+* When objects are stored, an **HTTP/1.1 200 OK** response is provided by the S3 API Endpoint.
+* Billed a GB/month fee for data stored. A per GB change for transfer OUT (IN is free) and a price per 1,000 requests. **No specific retrieval fee, no minimum duration, no minimum size**.
+* It has a 'milliseconds' first-byte latency and objects can be made publicly available.
+* Should be used for Frequently Accessed Data which is important and Non-Replaceable.
+
+### S3 Standard-IA (Infrequent Access)
+
+* Objects are replicated across **at least 3 AZs** in the AWS Region.
+* 11-9s of durability (for 10,000,000 objects, there will be one object loss per 10,000 years).
+* Replication over 3 AZs, Content-MD5 Checksums, and Cyclic Redundancy Checks (CRCs) are used to detect and fix any data corruption.
+* When objects are stored, an **HTTP/1.1 200 OK** response is provided by the S3 API Endpoint.
+* Billed a GB/month fee for data stored. A per GB change for transfer OUT (IN is free) and a price per 1,000 requests. **No specific retrieval fee, no minimum duration, no minimum size**.
+* Retrieval Fee; it has a per GB data retrieval fee, overall cost increases with frequent data access.
+* There is a **minimum duration charge of 30 days** - objects can be stored for less, but the minimum billing always applies.
+* Minimum capacity change of 128KB per object.
+* Should be used for long-lived data, which is important but where access is infrequent.
+
+### S3 One Zone-IA (Infrequent Access)
+
+* **It does not provide the multi-AZ resilience model of Standard or Standard-IA. Instead, only one AZ is used within the Region**.
+* 11-9s of durability (for 10,000,000 objects, there will be one object loss per 10,000 years), **ASSUMING the AZ does not fail**.
+* Billed a GB/month fee for data stored. A per GB change for transfer OUT (IN is free) and a price per 1,000 requests. **No specific retrieval fee, no minimum duration, no minimum size**.
+* Retrieval Fee; it has a per GB data retrieval fee, overall cost increases with frequent data access.
+* There is a **minimum duration charge of 30 days** - objects can be stored for less, but the minimum billing always applies.
+* Minimum capacity change of 128KB per object.
+* Should be used for long-lived data, which is NON-CRITICAL and REPLACEABLE and where access is infrequent.
+
+### S3 Glacier
+
+* Objects are replicated across **at least 3 AZs** in the AWS Region.
+* 11-9s of durability (for 10,000,000 objects, there will be one object loss per 10,000 years).
+* Replication over 3 AZs, Content-MD5 Checksums, and Cyclic Redundancy Checks (CRCs) are used to detect and fix any data corruption.
+* Objects **cannot be made publicly accessible**. Any access of data (beyond object metadata) requires a **retrieval process**.
+* 40KB minimum size and 90 days minimum duration.
+* First-byte latency is minutes or hours.
+* For **archival data where frequent or real-time access is not needed**. Minutes to hours to retrieve data.
+
+Data in Glacier is retrieved to S3 Standard-IA temporarily.
+
+| Type | Time Frame |
+|------|------------|
+| Expedited | 1-5 minutes |
+| Standard | 3-5 hours |
+| Bulk | 5-12 hours |
+
+### S3 Glacier Deep Archive
+
+* Objects are replicated across **at least 3 AZs** in the AWS Region.
+* 11-9s of durability (for 10,000,000 objects, there will be one object loss per 10,000 years).
+* Replication over 3 AZs, Content-MD5 Checksums, and Cyclic Redundancy Checks (CRCs) are used to detect and fix any data corruption.
+* Objects **cannot be made publicly accessible**. Any access of data (beyond object metadata) requires a **retrieval process**.
+* 40KB minimum size and 180 days minimum duration.
+
+Data in Glacier Deep Archive is retrieved to S3 Standard-IA temporarily.
+
+| Type | Time Frame |
+|------|------------|
+| Standard | 12 hours |
+| Bulk | up to 48 hours |
+
+### Intelligent-Tiering
+
+It contains four different tiers of storage. The intelligent tiering system manages where the objects are stored.
+
+* Frequent Access
+* Infrequent Access
+* Archive
+* Deep Archive
+
+Notes ...
+
+* Intelligent-Tiering monitors and automatically moves any objects not accessed for 30 days to a low-cost infrequent access tier and eventually to archive or deep archive tiers.
+* If objects are accessed, they are moved back to the frequent access tier. There are no retrieval fees for accessing objects, only a 30-day minimum duration.
+* It had a **monitoring and automation cost per 1,000 objects**. The frequent access tier costs the same as S3 Standard and the infrequent the same as Standard-IA. Archive and Deep Archive are comparable to their Glacier equivalents.
+* Should be used for long-lived data, with changing or unknown patterns.
+
+## S3 Lifecycle Configuration
+
+* A Lifecycle Configuration is a **set of rules**.
+* Rules consist of actions on a Bucket or group of objects.
+* Transition Actions
+* Expiration Actions
+
+Transitions ...
+
+* Downward direction only.
+* Smaller objects can **cost more** (minimum size).
+* **Minimum of 30 days before** transition.
+* A **single rule** cannot transition to Standard-IA, Intelligent-Tiering, or One Zone-IA and THEN to either Glacier type ... within 30 days (duration minimums).
+
+1. S3 Standard
+2. S3 Standard-IA
+3. S3 Intelligent Tiering
+4. S3 One Zone-IA
+5. S3 Glacier
+6. S3 Glacier Deep Archive
+
+## S3 Replication
+
+This replication can occur within the same account or different accounts.
+
+* Cross-Region Replication (CRR).
+* Same-Region Replication (SRR).
+
+Replication Options ...
+
+* All objects or a subset of objects.
+* Storage Class: The default is to maintain the same class.
+* Ownership: The default is the source account.
+* Replication Time Control (RTC).
+
+Considerations ...
+
+* **Not retroactive and Versioning needs to be ON**.
+* One-way replication only, from Source to Destination.
+* Unencrypted, SS3-S3, and SSE-KMS (with extra configuration).
+* Source bucket owner needs permissions to objects.
+* **No system events, Glacier, or Glacier Deep Archive**.
+* **NO DELETES**.
+
+Why use replication?
+
+* SRR - Log Aggregation.
+* SRR - PROD and TEST synchronization.
+* SRR - Resilience with strict sovereignty.
+* CRR - Global Resilience Improvements.
+* CRR - Latency Reduction.
