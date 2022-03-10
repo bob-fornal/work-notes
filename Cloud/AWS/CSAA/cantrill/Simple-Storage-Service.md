@@ -292,3 +292,63 @@ In CloudShell ...
    ```script
    cat decryptedplans.txt
    ```
+
+## Object Encryption
+
+**Buckets themselves are not encrypted, objects are**.
+
+* Client-Side Encryption (at-rest).
+* Server-Side Encryption (at-rest).
+
+S3 Encryption ...
+
+* Client-Side Encryption with Customer Provided Keys (SSE-C).
+* Server-side Encryption with Amazon S3-Managed Keys (SSE-S3), AES256.
+* Server-Side Encryption with Customer Master Keys (CMKs) Stored in AWS Key Management Service (SSE-KMS).
+
+Summary ...
+
+| Method | Key Management | Encryption Processing | Extras |
+|--------|----------------|-----------------------|--------|
+| Client-Side | Client | Client |  |
+| SSE-C | Client | S3 |  |
+| SSE-S3 | S3 | S3 |  |
+| SSE-KMS | S3 and KMS | S3 | Rotation Control and Role Separation |
+
+Default Bucket Encryption ...
+
+* Specifying this header: `x-ams-server-side-encryption`.
+* AES256 (SSE-S3) and `aws:kms`.
+* Default encryption on the bucket is AES256.
+
+## DEMO: Object Encryption
+
+1. Go to the S3 Console.
+2. Create a bucket.
+3. Go to the Key Management Service Console.
+4. Create a Symmetric KMS Key with an alias and no administrators.
+5. Go to the S3 Console.
+6. Upload files: Unencrypted, SSE-S3, SSE-KMS (default), and SSE-KMS (using the aliased key above).
+7. Go to the IAM Console.
+8. Click the **Users** link on the left side.
+9. Select the iamadmin user.
+10. Click the **Add inline policy** link.
+11. Add in the JSON ...
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Deny",
+                "Action": "kms:*",
+                "Resource": "*"
+            }
+        ]
+    }
+    ```
+
+12. Click the **Review policy** button.
+13. Name the policy "denyKMS:/
+14. Click the **Create policy** button.
