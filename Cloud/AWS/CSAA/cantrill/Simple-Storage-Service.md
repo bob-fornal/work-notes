@@ -487,3 +487,85 @@ Why use replication?
 * SRR - Resilience with strict sovereignty.
 * CRR - Global Resilience Improvements.
 * CRR - Latency Reduction.
+
+## DEMO: Cross-Region Replication of an S3 Static Website
+
+1. Go to the S3 Console.
+2. Create a bucket, source-bucket, `us-east-1`.
+3. Click on the bucket name, the Properties tab, then click the "Edit static website hosting."
+4. Specify the files and click the **Save changes** button.
+5. Go to Permissions, then click the **Edit Block public access (bucket settings)** button, uncheck access, save changes, and confirm.
+6. In "Bucket policy," click the **Edit** button and add the policy with updated ARN.
+
+    ```json
+    {
+        "Version":"2012-10-17",
+        "Statement":[
+            {
+                "Sid":"PublicRead",
+                "Effect":"Allow",
+                "Principal": "*",
+                "Action":["s3:GetObject"],
+                "Resource":["arn:aws:s3:::examplebucket/*"]
+            }
+        ]
+    }
+    ```
+
+7. Click the **Save changes** button.
+8. Go to the S3 Console.
+9. Create a bucket, destination-bucket, `us-west-1`.
+10. Click on the bucket name, the Properties tab, then click the "Edit static website hosting."
+11. Specify the files and click the **Save changes** button.
+12. Go to Permissions, then click the **Edit Block public access (bucket settings)** button, uncheck access, save changes, and confirm.
+13. In "Bucket policy," click the **Edit** button and add the policy with updated ARN.
+
+    ```json
+    {
+        "Version":"2012-10-17",
+        "Statement":[
+            {
+                "Sid":"PublicRead",
+                "Effect":"Allow",
+                "Principal": "*",
+                "Action":["s3:GetObject"],
+                "Resource":["arn:aws:s3:::examplebucket/*"]
+            }
+        ]
+    }
+    ```
+
+14. Click the **Save changes** button.
+
+Enable Cross-Region Replication ...
+
+1. Click on the source-bucket name, then go to the Management tab.
+2. Click on the **Create replication rule** button.
+3. Click on the **Enable Bucket Versioning** button.
+4. Enter a rule name (`staticwebsiteDR`, disaster recovery).
+5. Select "This rule applies to *all* objects in the bucket."
+6. Select a destination.
+7. Click on the **Enable Bucket Versioning** button.
+8. Within IAM role, select "Create new role." 
+9. Click the **Save** button and then the **Submit** button.
+
+## S3 PreSigned URLs
+
+* An identity can create a URL for an object it **does not have access to**.
+* When using the URL, the permissions match the **identity that generated it**.
+* Access denied could mean that the identity that generated the URL **never had access or does not now**.
+* **Don't generate with a role** since the URL stops working when temporary credentials expire.
+
+## DEMO: Creating and using PreSigned URLs
+
+1. Go to the S3 Console.
+2. Create an S3 Bucket.
+3. Upload an image.
+4. Select the image that was uploaded.
+5. Click the **Open** button, examine the URL (has authentication information).
+6. Copy the URL and enter it into a new tab (no authentication information), Access Denied.
+
+Generating a Time Limited URL ...
+
+1. Click on the CloudShell Icon.
+2. `aws s3 presign <URI> --expires-in <seconds>`
