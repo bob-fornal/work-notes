@@ -83,3 +83,4 @@ Exam Preparation
 * [AWS Fundamentals](cantrill/AWS-Fundamentals.md)
 * [IAM, Accounts, and AWS Organizations](cantrill/IAM-Accounts-and-AWS-Organizations.md)
 * [Simple Storage Service (S3)](cantrill/Simple-Storage-Service.md)
+* [Virtual Private Cloud (VPC) Basics](cantrill/Virtual-Private-Cloud-Basics.md)

@@ -79,7 +79,7 @@ Website URL ...
 7. Select Simple routing and click the **Next** button.
 8. Click on the **Define simple record** button.
 9. Enter the record name as defined above.
-10. Under Value/Route traffic to, select Alias to S3 website endpoint, the region, and the S3 Bucket from above.
+10. Under Value/Route traffic, select Alias to S3 website endpoint, the region, and the S3 Bucket from above.
 11. Click on the **Define simple record** button.
 12. Click on the **Create records** button.
 
@@ -569,3 +569,35 @@ Generating a Time Limited URL ...
 
 1. Click on the CloudShell Icon.
 2. `aws s3 presign <URI> --expires-in <seconds>`
+
+## S3 Select and Glacier Select
+
+S3 can store large objects (up to 5TB) ...
+
+* Users often want to retrieve the **entire object**.
+* Retrieving a 5TB object takes time and uses 5TB of transfer.
+* Can filter client-side **doesn't reduce anything here**.
+
+S3 Select and Glacier Select allow the use of SQL-like statements to select part of the object, **pre-filtered by S3**.
+
+* File formats: CSV, JSON, and Parquet. BZIP2 compression for CSV and JSON.
+
+## S3 Events
+
+* Notifications are generated when events occur in a bucket.
+* These notifications can be delivered to SNS, SQS, and Lambda Functions.
+
+Notifications can occur when ...
+
+* Objects are Created (`Put`, `Post`, `Copy`, and `CompleteMultiPartUpload`).
+* Objects are Deleted (`*`, `Delete`, and `DeleteMarkerCreated`).
+* Objects are Restored (`Post` (initiated) and `Completed`).
+* Replication (`OperationsMissedThreshold`, `OperationReplicatedAfterThreshold`, `OperationNotTracked`, and `OperationFailedReplication`).
+
+## S3 Access Logs
+
+* Bucket and Object Access of a Source Bucket with the results going to a Target Bucket.
+* Access Logging can be enabled via the Console UI or via `PUT Bucket Logging`.
+* Best Effort log delivery, access to the Source Bucket is usually logged into the Target Bucket within a few hours.
+* Bucket ACL Allows "S3 Log Delivery Group" on the Target Bucket.
+* Log Files consist of Log Records. Records are newline-delimited. Attributes are space-delimited.
