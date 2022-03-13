@@ -53,3 +53,35 @@ DNS in a VPC ...
 * VPC **Base IP +2** Address.
 * `enableDNSHostnames` - gives instances DNS names.
 * `enableDNSSupport` - enabled DNS resolution in the VPC.
+
+## VPC Subnets
+
+* **AZ Resilient**.
+* A subnetwork of a VPC - **within a particular AZ**.
+* 1 Subnet is created in one AZ, 1 AZ can have zero or more Subnets.
+* IPv4 CIDR is a subnet of the VPC CIDR.
+* Cannot overlap with other subnets.
+* Optional IPv6 CIDR (`/64` subnet of the `/56` VPC - space for 256).
+* Subnets can communicate with other subnets within the VPC.
+
+Subnet IP addressing ...
+
+* Reserved IP addresses (5 in total).
+
+Example, 10.16.16.0/20 (10.16.16.0 to 10.16.31.255) ...
+
+* Network Address (10.16.16.0).
+* "Network +1" (10.16.16.1) - VPC Router.
+* "Network +2" (10.16.16.2) - Reserved (DNS*).
+* "Network +3" (10.16.16.3) - Reserved for Future Use.
+* Broadcast Address (10.16.31.255) - Last IP in the subnet.
+
+## DEMO: Implement Multi-Tier VPC Subnets
+
+1. Go to the VPC Console.
+2. Click on the **Subnets** link on the left side.
+3. Click on the **Create subnets** button.
+4. Select the previously created VPC in "VPC ID."
+5. Add subnets (name, AZ, CIDR block, IPv6), use the **Add new subnet** button to add in batches.
+6. Click the **Create subnet** button.
+7. For each created subnet ... select, **Edit subnet settings**, and check "Enabled auto-assign IPv6 address," then click the **Save** button.
