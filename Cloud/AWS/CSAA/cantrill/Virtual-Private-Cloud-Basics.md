@@ -152,3 +152,80 @@ Bastion Host ...
 
 1. Launch an EC2 Instance, tag Name: BASTION (select free-tier).
 2. Connect to the EC2 Instance.
+
+## Stateful versus Stateless Firewalls
+
+Transmission Control Protocol (TCP) ...
+
+* Layer 4 Protocol.
+* TCP is a connection-based protocol.
+* A connection is established between two devices using a random port (ephemeral port) on a client and a (well-known port) known port on the server.
+* Once established, the connection is bi-directional.
+* The **connection** is reliable, provided via the segments encapsulated in IP packets.
+* Segments are linked to a connection, error checking, ordering, and retransmission.
+
+### Stateless Firewalls
+
+What most people imagine ...
+
+* Is a **SINGLE OUTBOUND** connection, via HTTPS which is `tcp/443`.
+* Every "connection" has two parts, **REQUEST** (initiation) and **RESPONSE**.
+
+What actually happens ...
+
+1. The client picks a temporary (ephemeral) source port, `1024-65535` (depends on the OS).
+2. The client initiates a connection to the server on a well-known destination port HTTPS `tcp/443`.
+3. The server responds using the source port of `tcp/443` and the destination ephemeral port picked by the client.
+
+* Directionality ... **INBOUND** or **OUTBOUND** depends on (CLIENT/SERVER) perspective.
+* With Stateless Firewalls remember that it uses the **response ephemeral ports**, not the well-known application port.
+
+### Stateful Firewalls
+
+* Stateful Firewalls mean lower administrative overhead.
+* A stateful firewall is intelligent enough to identify that the **REQUEST** and **RESPONSE** components of a connection are related.
+* Allowing the **REQUEST** (INBOUND or OUTBOUND) means the **RESPONSE** (INBOUND or OUTBOUND) is automatically allowed.
+
+## Network Access Control Lists (NACLs)
+
+* NACLs are Stateless, both the REQUEST and RESPONSE parts need individual rules (1 x INBOUND and 1 x OUTBOUND).
+* NACLs filter traffic crossing the subnet boundary (INBOUND or OUTBOUND).
+* Connections within a subnet are not impacted by NACLs.
+* NACLs contain rules grouped into INBOUND and OUTBOUND. Inbound rules match traffic ENTERING the subnet. Outbound rules match traffic LEAVING the subnet.
+* Rules match the DESTINATION IP/Range, DESTINATION Port, and Protocol, and ALLOW or DENY based on that match.
+* Rules are processed **in order**, lowest rule number first. Once a match occurs, processing STOPS. `*` is an **implicit DENY** if nothing else matches.
+
+Default NACL ...
+
+* A VPC is created with a Default NACL.
+* Inbound and outbound rules have **implicit deny (`*`)** and in ALLOW ALL rule.
+* The result is all traffic is **allowed**, the NACL has no effect.
+
+Custom NACLs ...
+
+* Custom NACLs can be created for a specific VPC and are initially associated **with NO subnets**.
+* They only have 1 x INBOUND and 1 x OUTBOUND rule, the explicit (`*`) DENY.
+* The result is that **ALL traffic is DENIED**.
+
+## Security Groups (SG)
+
+* VPC Security Groups are **STATEFUL**, they detect response traffic automatically.
+* When an INBOUND or OUTBOUND request is allowed, the response is automatically allowed.
+* **NO EXPLICIT DENY**,  only ALLOW or Implicit DENY.
+* **They cannot be used to block specific bad actors**.
+* Support IP and CIFR based rules, and logical resources, including other **security groups** AND ITSELF.
+* Attached to ENIs, not Instances (even if the UI shows it this way).
+
+Security Group (SG) Logical References ...
+
+* Source can be another Security Group.
+* Logical referencing scales; any new Instances which use the Security Group referenced are allowed to communicate with any Instances using the referencing Security Group.
+
+Security Group (SG) Self References ...
+
+* Within a Security Group (SG), an "SG source" is the same as "anything with the SG attached."
+* Using a "self-reference" means "anything with this SG attached."
+* This scales with ADDS and REMOVES from the SG.
+* IP changes are automatically handled.
+
+
