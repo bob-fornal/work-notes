@@ -228,4 +228,59 @@ Security Group (SG) Self References ...
 * This scales with ADDS and REMOVES from the SG.
 * IP changes are automatically handled.
 
+## Network Address Translation (NAT) and NAT Gateway
 
+Network Address Translation (NAT) ...
+
+* A set of prepoccesses that remap SOURCE or DESTINATION IPs.
+* **IP Masquerading** hiding CODR Blocks behind one IP.
+* Gives Private CIDR range **outgoing** Internet access.
+
+NAT Gateway ...
+
+* Runs from a **public subnet**.
+* Uses **Elastic IPs** (Static IPv4 Public)
+* **AZ Resilient Service** (HA within the AZ).
+* For regional resilience, deploy a NATGW in each AZ and have a Route Table (RT) in each AZ with the NATGW as the target.
+* Managed, scales to 45 Gbps. Billed for duration and data volume.
+
+NAT Instance versus NAT Gateway ...
+
+| Attribute |	NAT Gateway |	NAT Instance |
+|-----------|-------------|--------------|
+| Availability | Highly available. NAT gateways in each Availability Zone are implemented with redundancy. Create a NAT gateway in each Availability Zone to ensure zone-independent architecture. | Use a script to manage failover between instances. |
+| Bandwidth | Scale up to 45 Gbps. | Depends on the bandwidth of the instance type. |
+| Maintenance | Managed by AWS. You do not need to perform any maintenance. | Managed by you, for example, by installing software updates or operating system patches on the instance. |
+| Performance | Software is optimized for handling NAT traffic. | A generic AMI that's configured to perform NAT. |
+| Cost | Charged depending on the number of NAT gateways you use, duration of usage, and amount of data that you send through the NAT gateways. | Charged depending on the number of NAT instances that you use, duration of usage, and instance type and size. |
+| Type and size | Uniform offering; you don’t need to decide on the type or size. | Choose a suitable instance type and size, according to your predicted workload. |
+| Security groups | Cannot associate security groups with NAT gateways. You can associate them with the resources behind the NAT gateway to control inbound and outbound traffic. | Associate with your NAT instance and the resources behind your NAT instance to control inbound and outbound traffic. |
+| Network ACLs | Use a network ACL to control the traffic to and from the subnet in which your NAT gateway resides. | Use a network ACL to control the traffic to and from the subnet in which your NAT instance resides. |
+| Flow logs | Use flow logs to capture the traffic. | Use flow logs to capture the traffic. |
+| Port forwarding | Not supported. | Manually customize the configuration to support port forwarding. |
+| Bastion servers | Not supported. | Use as a bastion server. |
+
+* NAT Instance, "Disable Source/Destination Checks."
+
+What about IPv6?
+
+* NAT is not required for IPv6.
+* All IPv6 addresses in AWS are publicly routable.
+* The Internet Gateway works with ALL IPv6 IPs directly.
+* NAT Gateways **do not work with IPv6**.
+* `::/0` Route and IGW for bi-directional connectivity.
+*  `::/0` Route and Egress-Only Internet Gateway, Outbound Only.
+
+## DEMO: Implementing Private Internet Access Using NAT Gateways
+
+1. Use CloudFormation to redo the previous demo.
+2. Create a private-only EC2 Instance.
+
+SSH Agent Forwarding ...
+
+* Public and Private SSH Keys are created. The private part is stored securely on the SSH client (laptop).
+* The client begins a connection to the Bastion Host. The Bastion asks the user to prove its identity, which it can do using the **Private Key**.
+* The public part is added as an "authorized key" on the SSH servers.
+* ssh-agent service on the laptop. `ssh-add` adds the private key into the agent for authentication.
+* SSH Client connects with "-A" (Agent Forwarding), `client ssh-agent` can be used to prove identity.
+* The Private Key remains on the client at all times, authentication requests are forwarded. The same "identity" is used to connect to the BASTION and then through to InternalTest.
