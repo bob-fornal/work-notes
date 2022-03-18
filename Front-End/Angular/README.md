@@ -2,22 +2,18 @@
 
 ## Development Notes
 
-* [Angular verus React](Angular-versus-React/README.md)
 * [Async Pipe, Handling Errors](Async-Pipe--Handling-Errors.md)
-* [New Projects](New-Projects/README.md)
-* [NgRx](NgRx/README.md)
 * [Structure and Scalability](Structure-And-Scalability.md)
-* [Upgrading Angular](Upgrading-Angular/README.md)
 
 ## Interceptors
 
-### Interceptor Articles
+### Articles
 
 * [Handle HTTP Errors using Interceptors](https://javascript.plainenglish.io/angular-handle-http-errors-using-interceptors-5cc483103740) ![Link](../../foreign.png)
 
 ## Observables
 
-### Observable Articles
+### Articles
 
 * [When Use RxJS Subject, BehaviourSubject, ReplaySubject, AsyncSubject, or Void Subject in Angular](https://dev.to/devbyrayray/when-use-rxjs-subject-behavioursubject-replaysubject-asyncsubject-or-void-subject-in-angular-4pn9) ![Link](../../foreign.png)
 * [The Only 2 Ways, You Ever Need To Unsubscribe Angular Observables](https://dev.to/devbyrayray/the-only-2-ways-you-ever-need-to-unsubscribe-angular-observables-4bpp) ![Link](../../foreign.png)
@@ -31,10 +27,14 @@
 
 ## Testing
 
-### Testing Notes
+### Notes
 
+* [Angular verus React](Angular-versus-React/README.md)
 * [Mocking Dependencies in Unit Tests](Mocking-Dependencies-in-Unit-Tests.md)
+* [New Projects](New-Projects/README.md)
+* [NgRx](NgRx/README.md)
+* [Upgrading](Upgrading/README.md)
 
-### Testing Articles
+### Articles
 
 * [Improving Angular tests by enabling Angular testing module teardown](https://dev.to/this-is-angular/improving-angular-tests-by-enabling-angular-testing-module-teardown-38kh) ![Link](../../foreign.png)
