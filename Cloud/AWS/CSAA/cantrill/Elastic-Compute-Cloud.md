@@ -223,3 +223,33 @@ Snapshot Consumption and Billing ...
 * Uses a Gigabyte-month metric.
 * Used, **NOT** allocated data.
 * Incremental.
+
+## DEMO: EBS Volumes
+
+1. Go to the EC2 Console.
+2. Go to the **Volumes** link on the left.
+3. Click the **Create volume** button.
+4. Select `gp2`, size (100 GB), and `us-east-1a`.
+5. Click the **Create volume** button.
+6. Right-click the volume, then **Attach volume**.
+7. Select the Instance, then click the **Attach volume** button.
+8. Go to the **Instances** link on the left.
+9. Select the Instance.
+10. Click the **Connect** button and connect.
+
+## EBS Encryption
+
+* At-Rest Encryption.
+* Without EBS Encryption Enabled, system can be encrypting data-at-rest.
+* EBS uses KMS and a Customer Master Key (CMK), aws/ebs or customer managed key.
+* **Data Encryption Key (DEK)** stored on physical media with the volume; has to be decrypted by KMS initially and loaded into the EC2 Host while it is being used.
+* Used for all cryptographic operations (read or write). Ciphertext stored at-rest.
+
+Details ...
+
+* Accounts can be set to **encrypt by default** - default CMK.
+* Otherwise choose a CMK to use.
+* Each volume uses **1 unique DEK**.
+* Snapshots and future volumes use the **same DEK**.
+* Cannot change a volume to NOT be encrypted.
+* The OS is not aware of the encryption; no performance loss.
