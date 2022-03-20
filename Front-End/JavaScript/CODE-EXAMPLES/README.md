@@ -1,5 +1,12 @@
 # JavaScript Code Examples
 
+```javascript
+// Minimum Code (Smallest)
+// Fastest Code (Optimal)
+// Readability (Developer)
+// Testability
+```
+
 ## Demo Code
 
 * [Seat Type](Seat-Type.js)
@@ -14,6 +21,7 @@
 * [DMY to Ninety Year Old](DMY-To-Ninety.js)
 * [Nested Ternary Options](Nested-Ternary-Options.js)
 * [Promise Handling](Promise-Handling.js)
+* [Reverse Strings in Array](Reverse-Strings-in-Array.js)
 * [String Split into Array](String-Split-Into-Array.js)
 * [Sum of Array](Sum-Of-Array.js)
 * [Toggle Class](Toggle-Class.js)

@@ -253,3 +253,50 @@ Details ...
 * Snapshots and future volumes use the **same DEK**.
 * Cannot change a volume to NOT be encrypted.
 * The OS is not aware of the encryption; no performance loss.
+
+## Network Interfaces, Instance IPs, and DNS
+
+* Each EC2 Instance has one Primary Elastic Network Interface (ENI) and one or more Secondary ENIs.
+
+Network Interfaces have ...
+
+* A MAC Address
+* A Primary IPv4 Private IP
+* 0 or more Secondary IPs
+* 0 or 1 Public IPv4 Address
+* 1 Elastic IP per Private IPv4 Address
+* 0 or more IPv6 Addresses
+* Security Groups
+* Enabled or Disabled Source/Destination Check
+
+Details ...
+
+* Secondary ENI and their MAC Address, **Licensed using MAC Address**. The License can be moved with the ENI.
+* Multi-homed (subnets) Management and Data.
+* Different Security Groups associated with **multiple interfaces**.
+* OS **DOES NOT see the Public IPv4 Address**.
+* IPv4 Public IPs are **DYNAMIC**, Stopping and Starting the Instance **Changes the Address**.
+* Public DNS given to the Instance resolves to the **Private IP in the VPC**, Public IP everywhere else.
+
+## Amazon Machine Images (AMI)
+
+* AMIs can be used to **launch EC2** Instances.
+* AWS or Community Provided.
+* Marketplace (can incluse **commercial software**).
+* **Regional, unique ID**.
+* Permissions (Public, Account, Specific Accounts).
+
+AMI Lifecycle ...
+
+1. Launch
+2. Configure
+3. Create Image
+4. Launch
+
+Details ...
+
+* AMI are in one region and only works in that **One Region**.
+* **AMI Baking**, creating an AMI from a configured instance and an application.
+* An AMI **cannot be edited**: launch an Instance, update the configuration, and make a new AMI.
+* Can be copied between **between regions** (includes the snapshots).
+* Remember permissions, default are account-based.
