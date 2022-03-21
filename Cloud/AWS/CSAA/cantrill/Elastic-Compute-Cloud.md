@@ -240,10 +240,10 @@ Snapshot Consumption and Billing ...
 ## EBS Encryption
 
 * At-Rest Encryption.
-* Without EBS Encryption Enabled, system can be encrypting data-at-rest.
-* EBS uses KMS and a Customer Master Key (CMK), aws/ebs or customer managed key.
+* Without EBS Encryption Enabled, the system can encrypt data-at-rest.
+* EBS uses KMS and a Customer Master Key (CMK), AWS/EBS, or customer-managed key.
 * **Data Encryption Key (DEK)** stored on physical media with the volume; has to be decrypted by KMS initially and loaded into the EC2 Host while it is being used.
-* Used for all cryptographic operations (read or write). Ciphertext stored at-rest.
+* Used for all cryptographic operations (read or write). Ciphertext stored at rest.
 
 Details ...
 
@@ -282,7 +282,7 @@ Details ...
 
 * AMIs can be used to **launch EC2** Instances.
 * AWS or Community Provided.
-* Marketplace (can incluse **commercial software**).
+* Marketplace (can include **commercial software**).
 * **Regional, unique ID**.
 * Permissions (Public, Account, Specific Accounts).
 
@@ -295,8 +295,67 @@ AMI Lifecycle ...
 
 Details ...
 
-* AMI are in one region and only works in that **One Region**.
+* AMIs are in one region and only work in that **One Region**.
 * **AMI Baking**, creating an AMI from a configured instance and an application.
 * An AMI **cannot be edited**: launch an Instance, update the configuration, and make a new AMI.
 * Can be copied between **between regions** (includes the snapshots).
 * Remember permissions, default are account-based.
+
+## EC2 Purchase Options (Launch Types)
+
+Instances of **different sizes** run on the same EC2 Hosts, consuming a **defined allocation of resources**.
+
+### On-Demand (Default) Instances
+
+* On-Demand Instances are **isolated** with multiple customer instances running on shared hardware.
+* Uses **Per-second billing** while an instance is running. Associated resources such as storage **consume capacity**, so bill **regardless of instance state**.
+
+It is the **default** purchase option ...
+
+* No interruption.
+* No capacity reservation.
+* Predictable pricing.
+* No upfront costs.
+* No discount.
+* Short-term workloads.
+* Unknown workloads.
+* Applications that cannot be interrupted.
+
+### Spot Instances
+
+* This is AWS selling unused EC2 Host capacity for up to a 90% discount. The spot price is based on the **spare capacity at a given time**.
+* Never use SPOT for workloads that **cannot tolerate interruptions**.
+
+This option ...
+
+* **Non time-critical**.
+* Burst Capacity needs.
+* Cost-sensitive workloads.
+* Anything which is **stateless**.
+
+### Reserved Instances
+
+* Long-term consistent usage of EC2.
+* Reservations are for 1 or 3-year terms; charged for **the entire term**.
+
+Payment Methods ...
+
+* No-Upfront, some savings for agreeing to the term.
+* All-Upfront, no per-second fee for the instance.
+* Partial-Upfront, reduced per second fee.
+
+### Dedicated Hosts
+
+* No instance charges.
+* Pay for the HOST.
+* Host affinity links instances to hosts.
+
+Why ...
+
+* Licensing that is based on Sockets or Cores.
+
+### Dedicated Instances
+
+* **Default/Shared** - No Host exposure, per second charges. No capacity management is required.
+* **Dedicated Host** - Pay for the host. No instance charges. Capacity management is required.
+* **Dedicated Instances** - Do not own or share the host. Extra charges for instances, but dedicated hardware.
