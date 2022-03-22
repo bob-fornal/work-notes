@@ -135,7 +135,7 @@ General Purpose SSD (GP3) ...
 
 Provisioned IOPS (IO1 and IO2) ...
 
-* Configurable indepenent of the size of the volume.
+* Configurable independent of the size of the volume.
 * Up to 64,000 IOPS per volume (BlockExpress - 256,000).
 * Up to 1,000 Mbps throughput (BlockExpress - 4,000).
 * 4GB to 16TB (BlockExpress - 4GB to 64TB).
@@ -359,3 +359,78 @@ Why ...
 * **Default/Shared** - No Host exposure, per second charges. No capacity management is required.
 * **Dedicated Host** - Pay for the host. No instance charges. Capacity management is required.
 * **Dedicated Instances** - Do not own or share the host. Extra charges for instances, but dedicated hardware.
+
+## Reserved Instances
+
+Scheduled Reserved Instances ...
+
+* Scheduled Reserved is ideal for long-term usage which does not run constantly.
+* Schedule the frequency, duration, and time.
+* **Does not support** all instance types or regions. 1,200 hours per year and 1-year term minimums.
+
+Capacity Reservations ...
+
+* Regional Reservation provides a billing discount for valid instances launched in any AZ in that region.
+* While flexible, they **do not reserve capacity within an AZ**, which is risky during major faults when capacity can be limited.
+* Zonal Reservations only apply to one AZ, providing billing discounts and capacity reservations in that AZ.
+* On-Demand Capacity Reservations can be booked to ensure access to capacity in an AZ when needed, but at the full on-demand price. There are no term limits, but payment is made regardless of consumption.
+
+EC2 Savings Plan ...
+
+* An **hourly commitment** for a one or 3-year term.
+* A reservation for **general compute dollar amounts* ($20 per hour for 3-years).
+* A specific **EC2 Savings Plan** with flexibility on size and OS.
+* Compute products, currently **EC2, Fargate, and Lambda**.
+* Products have an **on-demand rate** and a **savings plan rate**.
+* Resource usage consumes savings plan commitment at the reduced savings plan rate.
+* Beyond that commitment, **on-demand is used**.
+
+## Instance Status Checks and Auto Recovery
+
+System Status Checks ...
+
+* Loss of System Power.
+* Loss of Network Connectivity.
+* Host software issues.
+* Host hardware issues.
+
+Instance Status Checks ...
+
+* Corrupted file system.
+* Incorrect Instance Networking.
+* OS Kernel issues.
+
+## Horizontal and Vertical Scaling
+
+### Vertical Scaling
+
+* Resizing the EC2 Instance.
+* Every time the instance is resized it requires a reboot, **disruption**.
+* Larger instances often carry a premium cost.
+* There is an upper cap on performance, **instance size**.
+* **No application modification required**.
+* Works for all applications, **event Monoliths**.
+
+### Horizontal Scaling
+
+* Adds more EC2 Instances.
+* Sessions are everything.
+* Requires application support OR **off-host sessions**.
+* **No disruptions** when scaling.
+* **No real limits** to scaling.
+* Often less expensive, **no large instance premium**.
+* More granular.
+
+## Instance Metadata
+
+* EC2 Service provides data to Instances.
+* Accessible inside **ALL** instances.
+* `http://169.254.169.254/latest/meta-data`
+
+Data ...
+
+* Environment
+* Networking
+* Authentication
+* User-Data
+* **NOT AUTHENTICATED** or **ENCRYPTED**.
