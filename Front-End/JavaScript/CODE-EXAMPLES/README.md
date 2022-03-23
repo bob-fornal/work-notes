@@ -1,10 +1,10 @@
 # JavaScript Code Examples
 
 ```javascript
-// Minimum Code (Smallest)
+// Minimum Code (Smallest, Shortest)
 // Fastest Code (Optimal)
 // Readability (Developer)
-// Testability
+// Testability (Unit Tests)
 ```
 
 ## Demo Code
@@ -19,6 +19,8 @@
 * [Convert String to Array of Words](Convert-String--Array-of-Words.js)
 * [Destructuring Assignment](Destructuring-Assignment.js)
 * [DMY to Ninety Year Old](DMY-To-Ninety.js)
+* [Hard-Coding (JS)](Hard-Coding.js)
+* [Hard-Coding (TS)](Hard-Coding.ts)
 * [Nested Ternary Options](Nested-Ternary-Options.js)
 * [Promise Handling](Promise-Handling.js)
 * [Reverse Strings in Array](Reverse-Strings-in-Array.js)

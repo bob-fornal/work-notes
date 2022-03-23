@@ -25,3 +25,25 @@ Key Concepts ...
 * Provides much of the isolation that VMs do.
 * Ports are **exposed** to the host and beyond.
 * Application stacks can be multi-container.
+
+## Elastic Container Service (ECS) - Concepts
+
+* **Container Definition** - Defines the image and ports.
+* **Task Definition** - Security (Task Roles), Container(s), and Resources.
+* **Task Role** - IAM Role that the Task assumes.
+* **Service Definition** - How many copies, HA, and restarts.
+
+## ECS - Cluster Mode
+
+ECS Cluster Types ...
+
+* EC2 Mode
+* Fargate Mode
+
+EC2 versus ECS (EC2) versus Fargate ...
+
+* When using containers ... **ECS**.
+* **Large** workloads, **price** conscious ... **EC2 Mode**.
+* **Large** workloads, **overhead** conscious ... **Fargate**.
+* **Small, burst** workload ... **Fargate**.
+* **Batch, periodic** workload ... **Fargate**.

@@ -59,7 +59,7 @@
 
 | Name | Twitter | Content Area |
 |------|---------|--------------|
-| Bekah | @bekahhw | Bootcamp grad, Podcast |
+| Bekah Hawrot Weigel | @bekahhw | Bootcamp grad, Podcast |
 | Sarah Dutkiewicz | @sadukie | Data Adventurer, Developer Technologies |
 | Cassandra Faris | @cassandrafaris | Tech Community Manager |
 | Matt Eland | @integerman | Bootcamp Instructor, Data Science |
