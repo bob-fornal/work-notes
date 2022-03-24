@@ -86,3 +86,4 @@ Exam Preparation
 * [Virtual Private Cloud (VPC) Basics](cantrill/Virtual-Private-Cloud-Basics.md)
 * [Elastic Compute Cloud (EC2) Basics](cantrill/Elastic-Compute-Cloud.md)
 * [Introduction to Containers](cantrill/Introduction-to-Containers.md)
+* [Advanced EC2](cantrill/Advanced-EC2.md)
