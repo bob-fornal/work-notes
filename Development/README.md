@@ -1,5 +1,15 @@
 # Development
 
+## HTML Return Codes Cheat Sheet
+
+```script
+1**. Hold on.
+2**. Here you go.
+3**. Go away.
+4**. You fucked up.
+5**. I fucked up.
+```
+
 ## Notes
 
 * [Before Releasing Software](Before-Releasing-Software.md)
