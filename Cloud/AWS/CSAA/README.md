@@ -87,3 +87,4 @@ Exam Preparation
 * [Elastic Compute Cloud (EC2) Basics](cantrill/Elastic-Compute-Cloud.md)
 * [Introduction to Containers](cantrill/Introduction-to-Containers.md)
 * [Advanced EC2](cantrill/Advanced-EC2.md)
+* [Route 53 - Global DNS](cantrill/Route-53-Global-DNS.md)
