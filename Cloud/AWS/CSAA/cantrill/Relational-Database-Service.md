@@ -68,3 +68,11 @@ Why it should not be done ...
 * EC2 is **ON** or **OFF** - No serverless option, not easy to scale.
 * **Replication** - Skills, setup time, monitoring, and effectiveness.
 * **Performance** - AWS investment in time into optimizations and features.
+
+## Relational Database Service (RDS)
+
+* Database-as-a-Service (DBaas) ... Database Server as a Service.
+* Managed Database Instance (1 more more databases).
+* Multiple engines: MySQL, MariaDB, PostgreSQL, Oracle, or Microsoft SQL Server.
+* Amazon Aurora
+
