@@ -76,3 +76,65 @@ Why it should not be done ...
 * Multiple engines: MySQL, MariaDB, PostgreSQL, Oracle, or Microsoft SQL Server.
 * Amazon Aurora
 
+## RDS High-Availability (Multi AZ)
+
+* Primary - Synchronous Replication - Standby in another AZ.
+* RDS Access **ONLY** via CNAME, points at the Primary Instance.
+* CNAME endpoint can be failed over to Standby Instance from Primary.
+
+1. Writes to Primary.
+2. Disk Write to Primary.
+3. Replicated to Standby.
+4. Disk Write to Secondary.
+
+* **No Free-Tier** - Extra cost for Standby Replica.
+* Standby Replica **cannot be used directly**.
+* Failover takes between 60-120 Seconds.
+* **Same region only** (other AZs in the VPC).
+* Backups taken **from Standby Replica** (removes performance impact).
+* Failovers: AZ Outage, Primary Failure, Manual Failover, Instance type change, and software patching.
+
+## RDS Automatic Backup, RDS Snapshots and Restores
+
+RTO versus RPO ...
+
+* Recovery Time Objective (RTO)
+
+   Time between the Disaster Recovery event and full recovery. Influenced by process, staff, tech, and documentation. Generally lower values cost more.
+
+* Recovery Point Objective (RPO)
+
+   Time between the last backup and the incident. Amount of maximum data loss. Influences technical solution and cost. Generally lower values cost more.
+
+* Automated Backups and Manual Snapshots via AWS Managed S3 Buckets.
+* First Snapshot is FULL, the size of consumed data. From that point it is Incremental.
+* Retention: 0 to 35 Days.
+
+RDS Restores ...
+
+* Creates a **NEW RDS Instance**, new address.
+* Snapshots are a **single point in time**, creation time.
+* Automated ... **any 5 minute point in time**.
+* Backup is restored and transaction logs are "replayed** to bring the database to the desired point in time.
+* Restores **are not fast**, think about RTO.
+
+## RDS Read-Replicas
+
+* Primary - Asynchronous Replication - Read Replica(s).
+
+Performance Improvements (read) ...
+
+* **5x** direct read-replicas per Database Instance.
+* Each provides an **additional instance of read performance**.
+* Read-Replicas can have read-replicas - **but lag starts to become a problem**.
+* **Global** performance improvements.
+
+Availability Improvements ...
+
+* Snapshots and Backups improve RPO.
+* **RTOs are a problem**.
+* Read-Replicas offer a near zero RPO.
+* Read-Replica can be **promoted quickly, low RTO**.
+* **Failure only**, they watch for data corruption.
+* **Read only until promoted**.
+* **Global availability improvements, global resilience**.
