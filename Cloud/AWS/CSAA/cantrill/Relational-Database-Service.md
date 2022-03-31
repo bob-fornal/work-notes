@@ -71,8 +71,8 @@ Why it should not be done ...
 
 ## Relational Database Service (RDS)
 
-* Database-as-a-Service (DBaas) ... Database Server as a Service.
-* Managed Database Instance (1 more more databases).
+* Database-as-a-Service (DBaaS) ... Database Server as a Service.
+* Managed Database Instance (1 or more databases).
 * Multiple engines: MySQL, MariaDB, PostgreSQL, Oracle, or Microsoft SQL Server.
 * Amazon Aurora
 
@@ -138,3 +138,51 @@ Availability Improvements ...
 * **Failure only**, they watch for data corruption.
 * **Read only until promoted**.
 * **Global availability improvements, global resilience**.
+
+## RDS Data Security
+
+* **SSL/TLS (in transit)** is available for RDS, can be **mandatory**.
+* RDS supports EBS volume encryption - KMS.
+* Handled by HOST/EBS.
+* AWS or Customer Managed CMK generated data keys.
+* **Data keys are used for encryption operations**.
+* Storage, Logs, Snapshots, and Replicas are encrypted.
+* Encryption cannot be removed.
+* RDS MySQL and RDS Oracle support **Transparent Data Encruption (TDE)**.
+* Encryption handled within the Database Engine.
+* Much stronger key controls (even from AWS).
+
+IAM Authentication ...
+
+* Policies attached to USers or Roles maps that IAM Identity onto the local RDS USer.
+* **Authorization** is controlled by the Database Engine. Permissions are assigned to the local Database USer. **IAM is NOT used to authorize**, only for authentication.
+
+## Aurora Architecture
+
+* Aurora architecture is VERY different from RDS. It uses a "Cluster."
+* A single **primary** instance plus zero or more replicas.
+* No local storage; it uses a shared **cluster volume**.
+* Faster provisioning, improved availability, and performance.
+* Cluser Volume: Maximum of 128 TB, 6 Replicas, AZs.
+* All SSD-Based: High IOPS and low latency.
+* Storage is billed based on **what is used**.
+* **High water mark**, billed for the most used.
+* Storage which is freed up can be reused.
+* Replicas can be added and removed without requiring storage provisioning.
+* Cluster Endpoint and Reader Endpoint.
+
+Costs ...
+
+* **No free-tier option**.
+* Aurora does not support Micros Instances.
+* Beyond RDS single-AZ (Micro), Aurora offers better value.
+* Compute - hourly charge, per second, 10-minute minimum.
+* Storage - GB-Month consumed, IO cost per request.
+* 100% Database Size in backups are included.
+
+Restore, Clone, and Backtrack ...
+
+* Backups in Aurora work in the same way as RDS.
+* Restores create a **new cluster**.
+* Backtrack can be used which allows **in-place rewinds** to a previous point in time.
+* Fast clones make a new database MUCH faster than copying all the data - **copy-on-write**.
