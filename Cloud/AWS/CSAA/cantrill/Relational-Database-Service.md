@@ -148,7 +148,7 @@ Availability Improvements ...
 * **Data keys are used for encryption operations**.
 * Storage, Logs, Snapshots, and Replicas are encrypted.
 * Encryption cannot be removed.
-* RDS MySQL and RDS Oracle support **Transparent Data Encruption (TDE)**.
+* RDS MS SQL and RDS Oracle support **Transparent Data Encruption (TDE)**.
 * Encryption handled within the Database Engine.
 * Much stronger key controls (even from AWS).
 
@@ -186,3 +186,76 @@ Restore, Clone, and Backtrack ...
 * Restores create a **new cluster**.
 * Backtrack can be used which allows **in-place rewinds** to a previous point in time.
 * Fast clones make a new database MUCH faster than copying all the data - **copy-on-write**.
+
+## Aurora Serverless
+
+* Scalable - **ACUs** - Aurora Capacity Units.
+* Aurora Serverless cluster has a **MINIMUM and MAXIMUM ACU**.
+* Cluster adjusts based on load.
+* Can go to zero and be paused.
+* Consumption billing on a per-second basis.
+* Same resilience as Aurora (6 copies across AZs).
+
+Use Cases ...
+
+* **Infrequently** used applications.
+* **New** applications.
+* **Variable** workloads.
+* **Unpredictable** workloads.
+* **Development** and **test** databases.
+* **Multi-tenant** applications.
+
+## Aurora Global
+
+* **Cross-Region Disaster Recovery (DR) and Business Continuity (BC)**.
+* **Global Read Scaling - low latency performance improvements**.
+* ~1-second or less replication between regions.
+* No impact on database performance.
+* Secondary regions can have 16 replicas that can be promoted to R/W.
+* Currently there is a MAXIMUM of 5 Secondary Regions.
+
+## Multi-Master Writes
+
+* Default Aurora mode is **Single-Master**.
+* One R/W Instance and zero or more Read Only Replicas.
+* Cluster Endpoint is used to write, Read Endpoint is used for load balanced reads.
+* Failover takes time - replica is promoted to R/W.
+* In Multi-Master mode **all instances are R/W**.
+
+## Database Migration Service (DMS)
+
+* A managed database migration service.
+* Runs using a **replication instance**.
+* Source and Destination Endpoints point at Source and Target Databases.
+* **One endpoint MUST be on AWS**.
+
+Notes ...
+
+* Replication instance performs the migration between Source and Destination endpoints which store connection information for source and target databases.
+
+Jobs can be ...
+
+1. **Full Load**: One off migration of all data.
+2. **Full Load + CDC (Change Capture Data)**: For ongoing replication which captures changes.
+3. **CDC Only**: To use an alternative method to transfer the bulk database data, such as native tooling.
+
+Schema Converstion Tool (SCT) ...
+
+* Can assist with Schema Conversion.
+* Is used when converting from one database engine to another.
+* Including database to S3 (Migration using DMS).
+* SCT is **not used when migrating between databases of the same type**.
+* Works with OLTP Type Databases.
+* Works with OLAP Type Databases.
+
+(DMS) and Snowball ...
+
+* Larger migrations might be multi-TB in size.
+* Moving data over networks takes time and consumes capacity.
+
+DMS can utilize Snowball ...
+
+1. Use SCT to extract data locally and move to a Snowball device.
+2. Ship the device back to AWS. They load the data onto an S3 bucket.
+3. DMS migrates from S3 into the target store.
+4. Change Capture Data (CDC) can capture changes, and via S3 intermediary they are also written to the target database.
