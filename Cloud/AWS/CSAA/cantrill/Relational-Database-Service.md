@@ -76,7 +76,7 @@ Why it should not be done ...
 * Multiple engines: MySQL, MariaDB, PostgreSQL, Oracle, or Microsoft SQL Server.
 * Amazon Aurora
 
-## RDS High-Availability (Multi AZ)
+## RDS High-Availability (Multi-AZ)
 
 * Primary - Synchronous Replication - Standby in another AZ.
 * RDS Access **ONLY** via CNAME, points at the Primary Instance.
@@ -91,7 +91,7 @@ Why it should not be done ...
 * Standby Replica **cannot be used directly**.
 * Failover takes between 60-120 Seconds.
 * **Same region only** (other AZs in the VPC).
-* Backups taken **from Standby Replica** (removes performance impact).
+* Backups that are taken **from Standby Replica** (removes performance impact).
 * Failovers: AZ Outage, Primary Failure, Manual Failover, Instance type change, and software patching.
 
 ## RDS Automatic Backup, RDS Snapshots and Restores
@@ -100,11 +100,11 @@ RTO versus RPO ...
 
 * Recovery Time Objective (RTO)
 
-   Time between the Disaster Recovery event and full recovery. Influenced by process, staff, tech, and documentation. Generally lower values cost more.
+   The time between the Disaster Recovery event and full recovery. Influenced by process, staff, tech, and documentation. Generally, lower values cost more.
 
 * Recovery Point Objective (RPO)
 
-   Time between the last backup and the incident. Amount of maximum data loss. Influences technical solution and cost. Generally lower values cost more.
+   The time between the last backup and the incident. Amount of maximum data loss. Influences technical solutions and cost. Generally, lower values cost more.
 
 * Automated Backups and Manual Snapshots via AWS Managed S3 Buckets.
 * First Snapshot is FULL, the size of consumed data. From that point it is Incremental.
@@ -114,7 +114,7 @@ RDS Restores ...
 
 * Creates a **NEW RDS Instance**, new address.
 * Snapshots are a **single point in time**, creation time.
-* Automated ... **any 5 minute point in time**.
+* Automated ... **any 5-minute point in time**.
 * Backup is restored and transaction logs are "replayed** to bring the database to the desired point in time.
 * Restores **are not fast**, think about RTO.
 
@@ -133,7 +133,7 @@ Availability Improvements ...
 
 * Snapshots and Backups improve RPO.
 * **RTOs are a problem**.
-* Read-Replicas offer a near zero RPO.
+* Read-Replicas offer a near-zero RPO.
 * Read-Replica can be **promoted quickly, low RTO**.
 * **Failure only**, they watch for data corruption.
 * **Read only until promoted**.
@@ -148,7 +148,7 @@ Availability Improvements ...
 * **Data keys are used for encryption operations**.
 * Storage, Logs, Snapshots, and Replicas are encrypted.
 * Encryption cannot be removed.
-* RDS MS SQL and RDS Oracle support **Transparent Data Encruption (TDE)**.
+* RDS MS SQL and RDS Oracle support **Transparent Data Encryption (TDE)**.
 * Encryption handled within the Database Engine.
 * Much stronger key controls (even from AWS).
 
@@ -163,11 +163,11 @@ IAM Authentication ...
 * A single **primary** instance plus zero or more replicas.
 * No local storage; it uses a shared **cluster volume**.
 * Faster provisioning, improved availability, and performance.
-* Cluser Volume: Maximum of 128 TB, 6 Replicas, AZs.
+* Cluster Volume: Maximum of 128 TB, 6 Replicas, AZs.
 * All SSD-Based: High IOPS and low latency.
 * Storage is billed based on **what is used**.
-* **High water mark**, billed for the most used.
-* Storage which is freed up can be reused.
+* **High watermark**, billed for the most used.
+* Storage that is freed up can be reused.
 * Replicas can be added and removed without requiring storage provisioning.
 * Cluster Endpoint and Reader Endpoint.
 
@@ -178,7 +178,7 @@ Costs ...
 * Beyond RDS single-AZ (Micro), Aurora offers better value.
 * Compute - hourly charge, per second, 10-minute minimum.
 * Storage - GB-Month consumed, IO cost per request.
-* 100% Database Size in backups are included.
+* 100% Database Size in backups is included.
 
 Restore, Clone, and Backtrack ...
 
@@ -217,8 +217,8 @@ Use Cases ...
 ## Multi-Master Writes
 
 * Default Aurora mode is **Single-Master**.
-* One R/W Instance and zero or more Read Only Replicas.
-* Cluster Endpoint is used to write, Read Endpoint is used for load balanced reads.
+* One R/W Instance and zero or more Read-Only Replicas.
+* Cluster Endpoint is used to write, and Read Endpoint is used for load-balanced reads.
 * Failover takes time - replica is promoted to R/W.
 * In Multi-Master mode **all instances are R/W**.
 
@@ -235,11 +235,11 @@ Notes ...
 
 Jobs can be ...
 
-1. **Full Load**: One off migration of all data.
+1. **Full Load**: One-off migration of all data.
 2. **Full Load + CDC (Change Capture Data)**: For ongoing replication which captures changes.
 3. **CDC Only**: To use an alternative method to transfer the bulk database data, such as native tooling.
 
-Schema Converstion Tool (SCT) ...
+Schema Conversion Tool (SCT) ...
 
 * Can assist with Schema Conversion.
 * Is used when converting from one database engine to another.
@@ -255,7 +255,7 @@ Schema Converstion Tool (SCT) ...
 
 DMS can utilize Snowball ...
 
-1. Use SCT to extract data locally and move to a Snowball device.
+1. Use SCT to extract data locally and move it to a Snowball device.
 2. Ship the device back to AWS. They load the data onto an S3 bucket.
 3. DMS migrates from S3 into the target store.
-4. Change Capture Data (CDC) can capture changes, and via S3 intermediary they are also written to the target database.
+4. Change Capture Data (CDC) can capture changes, and via an S3 intermediary, they are also written to the target database.

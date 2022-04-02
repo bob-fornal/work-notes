@@ -12,7 +12,7 @@
 | Jen Gentleman | @jenmsft | Microsoft |
 | Chris Coyier | @chriscoyier | Co-founder CodePen |
 | Ale | @pokecoder | At Hashnode |
-| Eleftheria Batsou | @batsouelef | Community Manageer at Hashnode |
+| Eleftheria Batsou | @batsouelef | Community Manager at Hashnode |
 | Lucy Mac | @codingwithlucy | Developer |
 
 ## JavaScript

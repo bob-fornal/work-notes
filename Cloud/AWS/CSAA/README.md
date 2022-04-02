@@ -89,3 +89,4 @@ Exam Preparation
 * [Advanced EC2](cantrill/Advanced-EC2.md)
 * [Route 53 - Global DNS](cantrill/Route-53-Global-DNS.md)
 * [Relational Database Service (RDS)](Relational-Database-Service.md)
+* [Network Storage](cantrill/Network-Storage.md)
