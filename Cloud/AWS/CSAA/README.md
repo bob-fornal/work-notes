@@ -90,3 +90,4 @@ Exam Preparation
 * [Route 53 - Global DNS](cantrill/Route-53-Global-DNS.md)
 * [Relational Database Service (RDS)](Relational-Database-Service.md)
 * [Network Storage](cantrill/Network-Storage.md)
+* [High Availability and Scaling](cantrill/High-Availability-and-Scaling.md)
