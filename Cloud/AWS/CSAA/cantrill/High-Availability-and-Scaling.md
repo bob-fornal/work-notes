@@ -50,3 +50,52 @@ Notes ...
 * EC2 **does not need to be public** to work with a Load Balancer.
 * Listener Configuration controls **WHAT** the Load Balancer does.
 * Require eight or more Free IPs per subnet, and `/27` subnets allow scaling.
+
+## Application Load Balancing (ALB) versus Network Load Balancing (NLB)
+
+Load Balancer Consolidation ...
+
+* Classic Load Balancers (CLB) do not scale. Every unique HTTPS name requires an individual CLB because SNI is not supported.
+* v2 Load Balancers support rules and target groups. Host-based rules using SNI and an ALB allows consolidation.
+
+### Application Load Balancer (ALB)
+
+* **Layer 7** Load Balancer that listens on HTTP and/or HTTPS.
+* **No other Layer 7 protocols** (SMTP, SSH, Gaming, ...) are supported.
+* ... and **NO TCP, UDP, or TLS Listeners**.
+* Layer 8 content type, cookes, custom headers, user location, and application behavior.
+* HTTP or HTTPS (SSL/TLS) always terminated on the ALB - **no unbroken SSL** (security teams), a new connection is made to the application.
+* All ALBs must have SSL Certificates if HTTPs is used.
+* ALBs are slower than NLB. More levels of the network stack to process.
+* Health checks **evaluate application health** at Layer 7.
+
+ALB Rules ...
+
+* Rules direct connections which arrive at a listener.
+* Processed in priority order.
+* Default rule.
+* Rule Conditions: host-headers, http-headers, http-request-method, path-pattern, query-string, and source-ip.
+* Actions: forward, redirect, fixed-response, authenticate-oidc, and authenticate-cognito.
+
+### Network Load Balancer (NLB)
+
+* Layer 4 Load Balancer that listens on TCP, TLS, UDP, and TCP_UDP.
+* **No visibility or understanding** of HTTP or HTTPs.
+* **No headers, no cookes, and no session stickiness**.
+* Really Fast (millions of Requests Per Second, 25% of ALB Latency).
+* ... SMTP, SSH, Game Servers, financial applications (**non-HTTP/HTTPs).
+* Health checks **JUST** check ICMP and TCP Handshake, not application aware.
+* NLBs can have static IPs, which is useful for whitelisting.
+* Forward TCP to instances with **unbroken encryption**.
+* Used with private link to provide services to other VPCs.
+
+## Launch Configurations and Launch Templates
+
+Key Concepts ...
+
+* Allow the definition of the configuration of an EC2 Instance to be set in advance.
+* AMI, Instance Type, Storage, and Key Pair.
+* Networking and Security Groups.
+* Userdata and IAM Role.
+* Both are NOT editable, defined once. Launch Templates have versions.
+* Launch Templates provide newer features inclusing T2/T3 Unlimited, Placement Groups, Capacity Reservations, and Elastic Graphics.
