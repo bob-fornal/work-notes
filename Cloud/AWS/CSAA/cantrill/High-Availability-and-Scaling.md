@@ -99,3 +99,59 @@ Key Concepts ...
 * Userdata and IAM Role.
 * Both are NOT editable, defined once. Launch Templates have versions.
 * Launch Templates provide newer features inclusing T2/T3 Unlimited, Placement Groups, Capacity Reservations, and Elastic Graphics.
+
+## EC2 Auto-Scaling Groups
+
+* Automatic Scaling and *Self-Healing* for EC2.
+* Uses Launch Templates or Configurations.
+* Has a Minumum, Desired, and Maximum Size (example, 1:2:4).
+* Keep the number of running instances at the Desired Capacity by provisioning or terminating Instances.
+* Scaling Policies automate based on metrics.
+
+Scaling Policies ...
+
+* Manual Scaling - Manually adjust the desired capacity.
+* Scheduled Scaling - Time-based adjustment (example, Sales).
+* Dynamic Scaling: Simple, Stepped, and Target Tracking
+* Cooldown Periods - Time between changes.
+
+Dynamic Scaling Types ...
+
+   * Simple Scaling - "CPU is above 50% +1", "CPU is below 50% -1"
+   * Stepped Scaling - Bigger +/- based on the difference.
+   * Target Tracking - Desired Aggregate CPU = 40%, let ASG handle the changes needed.
+
+Scaling Processes ...
+
+* `Launch` and `Terminate` - SUSPEND and RESUME.
+* `AddToLoadBalancer` - Add to Load Balancer on launch.
+* `AlarmNotification` - Accept notification from CloudWatch (CW).
+* `AZRebalance` - Balances Instances evenly across all of the AZs.
+* `HealthCheck` -  Instance health checks on or off.
+* `ReplaceUnhealthy` - Terminate unhealthy and replace.
+* `ScheduledActions` - Scheduled on or off.
+* `Standby` - Use this for Instances that are Inservice versus Standby
+
+## Auto-Scaling Groups (ASG) Scaling Policies
+
+* ASGs do not NEED scaling policies - they can have none.
+* Manual - Minimum, Maximum, and Desired - Testing and Urgent situations.
+* Simple Scaling (Rigid).
+* Step Scaling (Step Adjustments).
+* Target Tracking (Predefined set of metrics).
+* Scaling Based on SQS - `ApproximateNumberOfMessagesVisible`.
+
+## Auto-Scaling Groups (ASG) Lifecycle Hooks
+
+* Custom Actions on Instances during ASG actions.
+* **Instance Launch** or **Instance Terminate** transitions.
+* Instances are paused within the flow, they wait until a timeout (then either **CONTINUE** or **ABANDON**) or resume the ASG process `CompleteLifecycleAction`.
+* EventBridge or SNS Notifications.
+
+## Auto-Scaling Groups (ASG) HealthCheck Comparison - EC2 versus ELB
+
+* EC2 (Default), ELB (Can be enabled), and Custom.
+* EC2 - Stopping, Stopped, Terminated, Shutting Down, or Impared is **UNHEALTHY**.
+* ELB - **HEALTHY** is Running and passing ELB health check and can be more application aware (Layer 7).
+* Custom - Instances marked **healthy and unhealthy** by an external system.
+* Health check grace period (Default 300s) - Delay before starting checks allows system launch, bootstrapping, and application start.
