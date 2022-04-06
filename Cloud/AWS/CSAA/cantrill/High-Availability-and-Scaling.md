@@ -155,3 +155,26 @@ Scaling Processes ...
 * ELB - **HEALTHY** is Running and passing ELB health check and can be more application aware (Layer 7).
 * Custom - Instances marked **healthy and unhealthy** by an external system.
 * Health check grace period (Default 300s) - Delay before starting checks allows system launch, bootstrapping, and application start.
+
+## SSL Offload and Session Stickiness
+
+SSL Offload ...
+
+* SSL Bridging
+
+   Listener is configured for HTTPS. Connection is **terminated on the ELB** and **needs a certificate** for the domain name. ELB initiates a new SSL connection to the backend instances. Instances need SSL certificates and the compute required for cryptographic operations.
+
+* SSL Passthrough
+
+   Listener is configured for TCP. **No encryption or decryption happens on the NLB. Connection is passed to the backend Instance. Each Instance needs to have the appropriate SSL certificate installed. With this architecture there is no certificate exposure to AWS, it is all self-managed and secured.
+
+* SSL Offload
+
+   Listener is configured for HTTPS. Connection is **terminated on the ELB** and then backend connections use HTTP. ELB to Instance connections use HTTP. No certificate or cryptographic requirements. 
+
+Connection Stickiness ...
+
+* With no Stickiness connections are distributed across all in-service backend instances. Unless application handles user state, this could cause user logoffs or missing information.
+* Stickiness generates a cookie (`AWSALB`) which locks the device to a signle backend instance for a duration (1-second to seven days). Can cause uneven loads.
+
+
