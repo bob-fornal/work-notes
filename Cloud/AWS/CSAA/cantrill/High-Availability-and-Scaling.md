@@ -18,12 +18,12 @@ Regional ...
 
 ## Evolution of the Elastic Load Balancer
 
-* Three Types of load balancers (ELB) available within AWS.
+* Three types of load balancers (ELB) are available within AWS.
 * Split between v1 (**avoid / migrate**) and v2 (**prefer**).
 * Classic Load Balancer (CLB) - v1 - Introduced in 2009. Not really Layer 7, lacking features, **1 SSL per CLB**.
 * Application Load Balancer (ALB) - v2 - HTTP(s), WebSocket.
 * Network Load Balancer (NLB) - v2 - TCP, TLS, and UDP.
-* v2 is faster, cheaper, and support target groups and rules.
+* v2 is faster, cheaper, and supports target groups and rules.
 
 ## Elastic Load Balancer Architecture (ELB)
 
@@ -56,16 +56,16 @@ Notes ...
 Load Balancer Consolidation ...
 
 * Classic Load Balancers (CLB) do not scale. Every unique HTTPS name requires an individual CLB because SNI is not supported.
-* v2 Load Balancers support rules and target groups. Host-based rules using SNI and an ALB allows consolidation.
+* v2 Load Balancers support rules and target groups. Host-based rules using SNI and an ALB allow consolidation.
 
 ### Application Load Balancer (ALB)
 
 * **Layer 7** Load Balancer that listens on HTTP and/or HTTPS.
 * **No other Layer 7 protocols** (SMTP, SSH, Gaming, ...) are supported.
 * ... and **NO TCP, UDP, or TLS Listeners**.
-* Layer 8 content type, cookes, custom headers, user location, and application behavior.
+* Layer 8 content type, cookies, custom headers, user location, and application behavior.
 * HTTP or HTTPS (SSL/TLS) always terminated on the ALB - **no unbroken SSL** (security teams), a new connection is made to the application.
-* All ALBs must have SSL Certificates if HTTPs is used.
+* All ALBs must have SSL Certificates if HTTP(s) are used.
 * ALBs are slower than NLB. More levels of the network stack to process.
 * Health checks **evaluate application health** at Layer 7.
 
@@ -74,20 +74,20 @@ ALB Rules ...
 * Rules direct connections which arrive at a listener.
 * Processed in priority order.
 * Default rule.
-* Rule Conditions: host-headers, http-headers, http-request-method, path-pattern, query-string, and source-ip.
-* Actions: forward, redirect, fixed-response, authenticate-oidc, and authenticate-cognito.
+* Rule Conditions: `host-headers`, `http-headers`, `http-request-method`, `path-pattern`, `query-string`, and `source-ip`.
+* Actions: `forward`, `redirect`, `fixed-response`, `authenticate-oidc`, and `authenticate-cognito`.
 
 ### Network Load Balancer (NLB)
 
 * Layer 4 Load Balancer that listens on TCP, TLS, UDP, and TCP_UDP.
-* **No visibility or understanding** of HTTP or HTTPs.
-* **No headers, no cookes, and no session stickiness**.
-* Really Fast (millions of Requests Per Second, 25% of ALB Latency).
-* ... SMTP, SSH, Game Servers, financial applications (**non-HTTP/HTTPs).
-* Health checks **JUST** check ICMP and TCP Handshake, not application aware.
+* **No visibility or understanding** of HTTP or HTTP(s).
+* **No headers, no cookies, and no session stickiness**.
+* Fast (millions of Requests Per Second, 25% of ALB Latency).
+* ... SMTP, SSH, Game Servers, financial applications (**non-HTTP/HTTP(s)).
+* Health checks **JUST** check ICMP and TCP Handshake, not application-aware.
 * NLBs can have static IPs, which is useful for whitelisting.
 * Forward TCP to instances with **unbroken encryption**.
-* Used with private link to provide services to other VPCs.
+* Used with a private link to provide services to other VPCs.
 
 ## Launch Configurations and Launch Templates
 
@@ -98,13 +98,13 @@ Key Concepts ...
 * Networking and Security Groups.
 * Userdata and IAM Role.
 * Both are NOT editable, defined once. Launch Templates have versions.
-* Launch Templates provide newer features inclusing T2/T3 Unlimited, Placement Groups, Capacity Reservations, and Elastic Graphics.
+* Launch Templates provide newer features including T2/T3 Unlimited, Placement Groups, Capacity Reservations, and Elastic Graphics.
 
 ## EC2 Auto-Scaling Groups
 
 * Automatic Scaling and *Self-Healing* for EC2.
 * Uses Launch Templates or Configurations.
-* Has a Minumum, Desired, and Maximum Size (example, 1:2:4).
+* Has a Minimum, Desired, and Maximum Size (example, 1:2:4).
 * Keep the number of running instances at the Desired Capacity by provisioning or terminating Instances.
 * Scaling Policies automate based on metrics.
 
@@ -151,8 +151,8 @@ Scaling Processes ...
 ## Auto-Scaling Groups (ASG) HealthCheck Comparison - EC2 versus ELB
 
 * EC2 (Default), ELB (Can be enabled), and Custom.
-* EC2 - Stopping, Stopped, Terminated, Shutting Down, or Impared is **UNHEALTHY**.
-* ELB - **HEALTHY** is Running and passing ELB health check and can be more application aware (Layer 7).
+* EC2 - Stopping, Stopped, Terminated, Shutting Down, or Impaired is **UNHEALTHY**.
+* ELB - **HEALTHY** is Running and passing ELB health check and can be more application-aware (Layer 7).
 * Custom - Instances marked **healthy and unhealthy** by an external system.
 * Health check grace period (Default 300s) - Delay before starting checks allows system launch, bootstrapping, and application start.
 
@@ -162,19 +162,19 @@ SSL Offload ...
 
 * SSL Bridging
 
-   Listener is configured for HTTPS. Connection is **terminated on the ELB** and **needs a certificate** for the domain name. ELB initiates a new SSL connection to the backend instances. Instances need SSL certificates and the compute required for cryptographic operations.
+   The listener is configured for HTTPS. Connection is **terminated on the ELB** and **needs a certificate** for the domain name. ELB initiates a new SSL connection to the backend instances. Instances need SSL certificates and the compute required for cryptographic operations.
 
 * SSL Passthrough
 
-   Listener is configured for TCP. **No encryption or decryption happens on the NLB. Connection is passed to the backend Instance. Each Instance needs to have the appropriate SSL certificate installed. With this architecture there is no certificate exposure to AWS, it is all self-managed and secured.
+   The listener is configured for TCP. **No encryption or decryption happens on the NLB. Connection is passed to the backend Instance. Each Instance needs to have the appropriate SSL certificate installed. With this architecture there is no certificate exposure to AWS, it is all self-managed and secured.
 
 * SSL Offload
 
-   Listener is configured for HTTPS. Connection is **terminated on the ELB** and then backend connections use HTTP. ELB to Instance connections use HTTP. No certificate or cryptographic requirements. 
+   The listener is configured for HTTPS. Connection is **terminated on the ELB** and then backend connections use HTTP. ELB to Instance connections use HTTP. No certificate or cryptographic requirements. 
 
 Connection Stickiness ...
 
-* With no Stickiness connections are distributed across all in-service backend instances. Unless application handles user state, this could cause user logoffs or missing information.
-* Stickiness generates a cookie (`AWSALB`) which locks the device to a signle backend instance for a duration (1-second to seven days). Can cause uneven loads.
+* With no Stickiness connections are distributed across all in-service backend instances. Unless the application handles the user state, this could cause user logoffs or missing information.
+* Stickiness generates a cookie (`AWSALB`) that locks the device to a single backend instance for a duration (1-second to seven days). Can cause uneven loads.
 
-
+fs-0161a74890096840f
