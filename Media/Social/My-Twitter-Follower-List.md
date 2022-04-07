@@ -14,6 +14,7 @@
 | Ale | @pokecoder | At Hashnode |
 | Eleftheria Batsou | @batsouelef | Community Manager at Hashnode |
 | Lucy Mac | @codingwithlucy | Developer |
+| Sarah Drasner | @sarah_edo | Director of Engineering, Web at Google |
 
 ## JavaScript
 
@@ -26,6 +27,7 @@
 | Name | Twitter | Content Area |
 |------|---------|--------------|
 | Ashlee M Boyer | @AshleeMBoyer | Web Engineer at HashiCorp |
+| Sara Soueidan | @SaraSoueidan | Independent Web UI, Design Engineer |
 
 ## UI/UX
 
