@@ -170,11 +170,23 @@ SSL Offload ...
 
 * SSL Offload
 
-   The listener is configured for HTTPS. Connection is **terminated on the ELB** and then backend connections use HTTP. ELB to Instance connections use HTTP. No certificate or cryptographic requirements. 
+   The listener is configured for HTTPS. Connection is **terminated on the ELB** and then backend connections use HTTP. ELB to Instance connections uses HTTP. No certificate or cryptographic requirements. 
 
 Connection Stickiness ...
 
 * With no Stickiness connections are distributed across all in-service backend instances. Unless the application handles the user state, this could cause user logoffs or missing information.
 * Stickiness generates a cookie (`AWSALB`) that locks the device to a single backend instance for a duration (1-second to seven days). Can cause uneven loads.
 
-fs-0161a74890096840f
+## Gateway Load Balancers
+
+Why do we need a GWLB?
+
+* Transparent security appliance scans data **after it leaves and before it enters** the application instance.
+
+What is a GWLB?
+
+* Help run and scale 3rd party appliances, things like **firewalls, intrusion detection and prevention** systems.
+* Inbound and Outbound traffic (transparent inspection and protection) via **GWLB Endpoints**, traffic enters and leaves via these endpoints.
+* The GWLB balances across multiple backend appliances.
+* Traffic and metadata is tunnelled using **GENEVE** protocol.
+* Original packets remain unaltered encapsulated through to the appliance and back.

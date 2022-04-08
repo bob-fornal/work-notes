@@ -91,3 +91,4 @@ Exam Preparation
 * [Relational Database Service (RDS)](Relational-Database-Service.md)
 * [Network Storage](cantrill/Network-Storage.md)
 * [High Availability and Scaling](cantrill/High-Availability-and-Scaling.md)
+* [Serverless and Application Services](cantrill/Serverless-and-Application-Services.md)
