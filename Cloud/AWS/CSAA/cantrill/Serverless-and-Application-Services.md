@@ -119,3 +119,13 @@ Event source mappings ...
 * Future invocations can use a warm start, the same Execution Context can be reused.
 * A Lambda invocation can reuse an Execution Context but has to assume it cannot. If used infrequently, contexts will be removed. Concurrent executions will use multiple (potentially new) contexts.
 * Provisioned concurrency can be used. AWS will create and keep X contexts warm and ready to use, improving start speeds.
+
+## CloudWatch Events and EventBridge
+
+* If something happens, or at whatever time or period, do something.
+* EventBridge is replacing CloudWatch.
+* A default Event bus for the account.
+* In CloudWatch Events there is only one bud (implicit).
+* EventBridge can have additional event buses.
+* Rules match incoming events (or scheduled).
+* Routes the vent to one or more targets (example, Lambda).

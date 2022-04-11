@@ -56,7 +56,7 @@ MFA is a Password (you know) and a security device (you own).
 ### Device Options
 
 * Virtual MFA Device (Google Authenticator, Authy) - support for multiple tokens on a single device
-* Universal 2nd Factor (U2F) Security Key (YubiKey) - supports multiple root and IAM Users using a single security key
+* Universal 2nd Factor (U2F) Security Key (YubiKey) - supports multiple Root and IAM Users using a single security key
 * Hardware Key Fob MFA Device (Gemalto)
 * Hardware Key Fob MFA Device for AWS GovCloud (US) (SurePassID)
 
