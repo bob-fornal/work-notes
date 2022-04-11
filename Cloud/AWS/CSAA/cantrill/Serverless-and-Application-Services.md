@@ -125,7 +125,36 @@ Event source mappings ...
 * If something happens, or at whatever time or period, do something.
 * EventBridge is replacing CloudWatch.
 * A default Event bus for the account.
-* In CloudWatch Events there is only one bud (implicit).
+* In CloudWatch Events there is only one bus (implicit).
 * EventBridge can have additional event buses.
 * Rules match incoming events (or scheduled).
 * Routes the vent to one or more targets (example, Lambda).
+
+## Serverless Architecture
+
+* Serverless **is not one single thing**.
+* Managing few, if any servers - low overhead.
+* Applications are a collection of small and specialized functions.
+* They run in Stateless and Ephemeral environments - duration billing.
+* Event-driven - consumption only when being used.
+* FaaS is used where possible for compute functionality.
+* Managed services are use where possible.
+
+## Simple Notification Service (SNS)
+
+* Public AWS Service - network connectivity with Public Endpoint.
+* Coordinates the sending and delivery of messages.
+* Messages are less than or equal to 256KB payloads.
+* SNS Topcis are the base entity of SNS - permissions and configurations.
+* A Publisher sends messages to a Topic.
+* Topics have Subscribers that receive messages.
+* HTTP(s), Email(-JSON), SQS, Mobile Push, SMS Messages, and Lambda.
+* SNS used across AWS for notifications (example, CloudWatch and CloudFormation).
+
+Notes ...
+
+* Delivery Status - (including HTTP, Lambda, and SQS).
+* Delivery Retries - Reliable Delivery.
+* Highly Available and Scalable (Region).
+* Server Side Encryption (SSE).
+* Cross-Account via Topic Policy.
