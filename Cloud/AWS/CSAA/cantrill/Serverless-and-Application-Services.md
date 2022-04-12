@@ -138,18 +138,18 @@ Event source mappings ...
 * They run in Stateless and Ephemeral environments - duration billing.
 * Event-driven - consumption only when being used.
 * FaaS is used where possible for compute functionality.
-* Managed services are use where possible.
+* Managed services are used where possible.
 
 ## Simple Notification Service (SNS)
 
 * Public AWS Service - network connectivity with Public Endpoint.
 * Coordinates the sending and delivery of messages.
 * Messages are less than or equal to 256KB payloads.
-* SNS Topcis are the base entity of SNS - permissions and configurations.
+* SNS Topics are the base entity of SNS - permissions and configurations.
 * A Publisher sends messages to a Topic.
 * Topics have Subscribers that receive messages.
 * HTTP(s), Email(-JSON), SQS, Mobile Push, SMS Messages, and Lambda.
-* SNS used across AWS for notifications (example, CloudWatch and CloudFormation).
+* SNS used across AWS for notifications (example; CloudWatch and CloudFormation).
 
 Notes ...
 
@@ -158,3 +158,81 @@ Notes ...
 * Highly Available and Scalable (Region).
 * Server Side Encryption (SSE).
 * Cross-Account via Topic Policy.
+
+## AWS Step Functions
+
+Lambda Limitations ...
+
+* Lambda is FaaS.
+* 15-minute maximum execution time.
+* Can be chained together; this gets messy at scale.
+* Runtime environments are stateless.
+
+State Machines ...
+
+* Serverless workflow - START -> STATES -> END.
+* States are THINGS which occur.
+* Maximum Duration is one-year.
+* Standard Workflow and Express Workflow.
+* Started via API Gateway, IOT Rules, EventBridge, Lambda, ...
+* Amazon States Language (ASL) - JSON Template.
+* IAM Role is used for permissions.
+
+States ...
+
+* SUCCEED and FAIL.
+* WAIT.
+* CHOICE.
+* PARALLEL.
+* MAP.
+* TASK - A single unit of work performed by a State Machine. These can be Lambda, Batch, DynamoDB, ECS, SNS, SQS, Glue, SageMaker, EMR, Step Functions.
+
+## API Gateway
+
+* Create and manage APIs.
+* Endpoint/entry-point for applications.
+* Sits between applications and integrations (services).
+* Highly available, scalable, handles authorization, throttling, caching,CORS, transformations, OpenAPI specification, direct integration and more.
+* Can connect to services and/or endpoints in AWS or on-premises.
+* HTTP APIs, REST APIs, and WebSocket APIs.
+
+Phases ...
+
+1. Request: Authorize, validate, and transform.
+2. Integrations
+3. Response: Transforms, prepares, and returns.
+
+Endpoint Types ...
+
+* Edge-Optimized - Routed to the nearest CloudFront POP.
+* Regional - Clients in the same region.
+* Private - Endpoint accessible only within a VPC via interface endpoint.
+
+Stages ...
+
+* APIs are deployed to stages, each stage has one deployment.
+* Stages can be enabled for canary deployments. If done, deployments are made to the canary not the stage.
+* Stages enabled for canary deployments can be configured so that a certain percentage of traffic is sent to the canary. This can be adjusted over time - or the canary can be promoted to make it the new base "stage."
+
+Errors ...
+
+* 4xx - Client Error - Invalid request on the client side.
+* 5xx - Server Error - Valid request, backend issue.
+
+Error Codes ...
+
+* 400 - Bad Request, Generic.
+* 403 - Access Denied - Authorizer denies, WAF Filtered.
+* 429 - API Gateway can throttle, this means exceeded the throttled amount.
+* 502 - Bad Gateway Exception - bad output returned by a Lambda.
+* 503 - Service Unavailable - backing endpoint offline, major service issues.
+* 504 - Integration Failure/Timeout - 29-second limit.
+
+Caching ...
+
+* Configured per stage within API Gateway.
+* Cache TTL default is 300-seconds.
+* Configurable minimum of zero and maximum of 3,600-seconds.
+* Can be encrypted.
+* Cache size 500MB to 237GB.
+* Calls are only made to backend integrations if request is a cache miss.
