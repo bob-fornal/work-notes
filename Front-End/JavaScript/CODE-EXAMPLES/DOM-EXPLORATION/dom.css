@@ -1,0 +1,25 @@
+.item {
+  display: inline-block;
+  padding: 0.25em;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-right: 0.5em;
+}
+
+.remove-item {
+  padding: 0.1em 0.25em;
+  margin-left: 0.5em;
+  border: 1px solid silver;
+  border-radius: 5px;
+  background-color: gray;
+  color: black;
+  cursor: pointer;
+}
+
+.display-wrapper {
+  margin-top: 1em;
+}
+
+#prev, #next {
+  cursor: pointer;
+}
