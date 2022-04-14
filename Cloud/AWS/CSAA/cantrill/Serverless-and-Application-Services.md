@@ -236,3 +236,20 @@ Caching ...
 * Can be encrypted.
 * Cache size 500MB to 237GB.
 * Calls are only made to backend integrations if request is a cache miss.
+
+## Simple Queue Service (SQS)
+
+* Public, Fully Managed, Highly-Available Queues - Standard or FIFO.
+* Messages up to 256KB in size - link to large data.
+* Received messages are hidden (`VisibilityTimeout`), then either reappear (retry) or are explicitly deleted.
+* Dead-Letter queues can be used for problem messages.
+* ASGs can scale and Lambdas invoke based on queue length.
+
+Notes ...
+
+* Standard - at-least-once.
+* FIFO - exactly-once: (Performance) 3,000 messages per second with batching, or up to 300 messages per second without.
+* Billed based on "requests."
+* 1 request is 1-10 messages up to 256KB total.
+* Short (immediate) versus Long (`waitTimeSeconds`) Polling.
+* Encryption at rest (KMS) and in-transit.
