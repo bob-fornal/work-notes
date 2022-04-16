@@ -253,3 +253,81 @@ Notes ...
 * 1 request is 1-10 messages up to 256KB total.
 * Short (immediate) versus Long (`waitTimeSeconds`) Polling.
 * Encryption at rest (KMS) and in-transit.
+
+## Kinesis Data Streams
+
+Concepts ...
+
+* Kinesis is a scalable streaming service.
+* Producers send data into a kinesis stream.
+* Streams can scale from low to near infinite data rates.
+* Public service and highly available by design.
+* Streams store a 24-hour moving window of data.
+* Multiple consumers can access data from the moving window.
+
+Kinesis Stream ...
+
+* Shards: 1MB Ingestion, 2MB Consumption
+* 24-hour window, can be increased to 7-days.
+* Kinesis Data Record (1MB).
+
+Kinesis Data Firehose ...
+
+* Connects to a Kinesis Stream.
+* Can move the data that arrives en-masse into another AWS service.
+
+SQS versus Kinesis ...
+
+| SQS | Kinesis |
+|-----|---------|
+| 1 Production Group | Large Scale Ingestion |
+| 1 Consumption Group | Multiple Consumers |
+| Decoupling and Asynchronous Communication | Data Ingestion, Analytics, Monitoring, App Clicks |
+| **No persistence** of messages, **no window** | Some persistance, rolling window |
+
+## Kinesis Data Firehose
+
+* Fully managed service to load data for data lakes, data stores, and analytics services.
+* Automatic scaling, fully serverless, and resilient.
+* **Near Real Time delivery** (~60-seconds).
+* Supports transformation of the data on the fly (Lambda).
+* Billing - volume through firehose.
+
+Delivery to ...
+
+* HTTP
+* Splunk
+* Redshift
+* ElasticSearch
+* Destination Bucket
+
+## Kinesis Data Analytics
+
+* Real time processing of data using Structured Query Language (SQL).
+* Ingests from Kinesis Data Streams or Firehose.
+* Destinations.
+* Firehose (S3, Redhsift, ELasticSearch, and Splunk).
+* AWS Lambda.
+* Kinesis Data Streams.
+
+When and Where ...
+
+* Streaming data needing real-time SQL processing.
+* Time-series analytics: elections or e-sports.
+* Real-time dashboard - leaderboards for games.
+* Real-time metrics - Security and Response teams.
+
+## Amazon Cognito
+
+* Provides Authentication, Authorization, and user management for web or mobile applications.
+
+USER POOLS ...
+
+* Sign-in and get a JSON Web Token (JWT).
+* User directory management and profiles, sign-up, and sign-in (customizable web UI), MFA, and other security features.
+
+IDENTITY POOLS ...
+
+* Offering access to Temporary AWS Credentials.
+* Unauthenticated Identities - Guest Users.
+* Federated Identities - SWAP - Google, Facebook, Twitter, SAML2.0, and User Pool for short-term AWS Credentials to access AWS Resources.
