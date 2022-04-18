@@ -76,3 +76,46 @@ Cache Invalidations ...
 * `/images/*`
 * `/*`
 * Versioned file names ... `whiskers1_v1.jpg` ...
+
+## AWS Certificate Manager (ACM)
+
+* HTTP - Simple and Insecure.
+* HTTPS - SSL/TLS Layer of Encryption added to HTTP.
+* Data is encrypted **in-transit**.
+* Certificates **prove identity**.
+* Signed by a **trusted authority**.
+* Create, renew, and deploy certificates with ACM.
+* Supported AWS Services **ONLY** (example, CloudFront and ALBs, not **EC2**).
+
+## CloudFront and SSL/TLS
+
+* CloudFront Default Domain Name (CNAME).
+* SSL supported by default, `*.cloudfront.net` certificate.
+* Alternate Domain Names (CNAMES).
+* Verify Ownership (optionally HTTPS) using a matching certificate.
+* Generate or import and ACM in the same region (CloudFront always in `us-east-1`).
+* HTTP or HTTPS, HTTP redirected to HTTPS, HTTPS Only.
+* Two SSL Connections: Viewer redirects to CloudFront and CloudFront redirects to Origin.
+* Both need valid public certificates (and intermediate certificates).
+
+CloudFront and SNI ...
+
+* Pre-2003, every SSL-enabled site needed its **own IP**.
+* Encryption starts at the TCP connection.
+* Host header happens after the connection has been established, Layer 7 - Application.
+* 2003, SNI is aadded as a TLS extension, allowing a **host to be included**.
+* Resulting in **many SSL Certificates/Hosts** using a shared IP.
+* **Old browsers do not support SNI**, CloudFront charges extra for dedicated IP.
+
+## Origin Types and Architecture
+
+Origin Types ...
+
+* Amazon S3 Buckets
+* AWS Media Package Channel Endpoints
+* AWS Media Store Container Endpoints
+* (Everything Else) Web Servers
+
+Origin Architecture ...
+
+
