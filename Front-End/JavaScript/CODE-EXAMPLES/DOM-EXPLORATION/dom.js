@@ -126,6 +126,51 @@ class Nodes {
   
 }
 
+// const nodes = new Nodes(outerData);
+
+class IndividualNode {
+
+  element = null;
+
+  constructor(index, container, title, bgcolor = 'white', fgcolor = 'black') {
+    this.generate(index, container, bgcolor, fgcolor, title);
+    this.display();
+  }
+
+  generate = (index, container, bgcolor, fgcolor, title = `${ this.index }`) => {
+    const id = `item-${ index }`;
+
+    const item = document.createElement('div');
+    item.classList.add('item', 'hidden');
+    item.setAttribute('id', id);
+
+    item.innerText = title;
+    item.style.backgroundColor = bgcolor;
+    item.style.color = fgcolor;
+
+    container.append(item);
+    this.element = document.getElementById(id);
+    this.generateClickEvents();
+  };
+
+  display = () => {
+    this.element.classList.remove('hidden');
+  };
+  hide = () => {
+    this.element.classList.add('hidden');
+  };
+
+  generateClickEvents = () => {
+    this.element.addEventListener('click', () => {
+      this.hide();
+      setTimeout(() => {
+        this.display();
+      }, 5000);
+    });
+  };
+
+}
+
 const outerData = [
   { title: "One", bgcolor: 'red', fgcolor: 'white' },
   { title: "Two", bgcolor: 'green', fgcolor: 'white' },
@@ -135,4 +180,24 @@ const outerData = [
   { title: "Six", bgcolor: 'pink' }
 ];
 
-const nodes = new Nodes(outerData);
+class UseIndividualNodes {
+
+  data = [];
+  container = null;
+  nodeHandler = IndividualNode;
+
+  constructor(data) {
+    this.data = data;
+    this.container = document.getElementById('container');
+    this.generateNodes();
+  }
+
+  generateNodes = () => {
+    this.data.forEach((item, index) => {
+      item.node = new IndividualNode(index, this.container, item.title, item.bgcolor, item.fgcolor || 'black');
+    });
+  };
+
+}
+
+const usingNodes = new UseIndividualNodes(outerData);

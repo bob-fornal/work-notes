@@ -21,6 +21,8 @@
 * [DMY to Ninety Year Old](DMY-To-Ninety.js)
 * [Hard-Coding (JS)](Hard-Coding.js)
 * [Hard-Coding (TS)](Hard-Coding.ts)
+* [Image-Validation (JS)](Image-Validation-v1.js)
+* [Image-Validation (TS)](Image-Validation-v2.ts)
 * [Nested Ternary Options](Nested-Ternary-Options.js)
 * [Promise Handling](Promise-Handling.js)
 * [Reverse Strings in Array](Reverse-Strings-in-Array.js)
