@@ -8,7 +8,7 @@ Attached to ...
 
 1. A VPC - All ENIs in that VPC
 2. A Subnet - All ENIs in that subnet
-3.  ENIs directly.
+3. ENIs directly.
 
 * Flow Logs are **NOT realtime**.
 * Log Destinations, S3 or CloudWatch Logs.
@@ -36,7 +36,7 @@ Attached to ...
 ## VPC Endpoints (Interface)
 
 * Provide private access to AWS Public Services.
-* Historically - anything NOT S2 and DynamoDB, but S3 is now supported.
+* Historically - anything NOT S3 and DynamoDB, but S3 is now supported.
 * Add to specific subnets - an ENI. Not Highly Available (HA).
 * For HA, add one endpoint to one subnet, per AZ used in the VPC.
 * Network access controlled via Security Groups.
@@ -50,3 +50,15 @@ Notes ...
 * Endpoint Regional DNS.
 * Endpoint Zonal DNS.
 * Applications can optionally use these or PrivateDNS overrides the default DNS for services.
+
+# VPC Peering
+
+* Direct encrypted network link between **two VPCs**.
+* Works in the same or cross-region and in the same or cross-accounts.
+* (optional) Public Hostnames resolve to private IPs.
+* Same region Security Groups (SGs) can reference peer SGs.
+* VPC Peering **does NOT support transitive peering**.
+* Routing Configuration is needed, SGs and NACLs can filter.
+* Route tables on both sides of the peering connection are needed, directing traffic flow for the remote CIRD at the peer gateway object.
+* VPC Peering connections **cannot be created** where there is and overlap in the VPC CIDRs - ideally **NEVER** use the same address ranges in multiple VPCs.
+* Communication is encrypted and transits over the AWS Global Network when using cross-region peering connections.
