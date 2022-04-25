@@ -94,3 +94,4 @@ Exam Preparation
 * [Serverless and Application Services](cantrill/Serverless-and-Application-Services.md)
 * [Global Content Delivery and Optimization](cantrill/Global-Content-Delivery-and-Optimization.md)
 * [Advanced VPC Networking](cantrill/Advanced-VPC-Networking.md)
+* [Hybrid Environments and Migration](cantrill/Hybrid-Environments-and-Migration.md)
