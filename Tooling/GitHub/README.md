@@ -22,6 +22,10 @@
 * [GitExplorer](https://gitexplorer.com/) ![Link](../../foreign.png)
 * [Dynamic Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html) ![Link](../../foreign.png)
 
+## Git Setup
+
+* [Git and GitHub Setup from Zero](https://flaviocopes.com/github-setup-from-zero/) ![Link](../../foreign.png)
+
 ## Videos
 
 * [Git and GitHub for Beginners - Crash Course - freeCodeCamp](https://www.youtube.com/watch?v=RGOj5yH7evk) ![Link](../../foreign.png)
