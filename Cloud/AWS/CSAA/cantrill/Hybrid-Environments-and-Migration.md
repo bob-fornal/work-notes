@@ -96,3 +96,49 @@ Considerations ...
 * Share between accounts using AWS RAM.
 * Peer with different regions in the same or cross-account.
 * Less complexity.
+
+## Storage Gateway
+
+* Hybrid Storage Virtual Appliance (On-Premises).
+* Extension of File and Volume Storage in AWS.
+* Volume storage backup into AWS.
+* Tape Backups into AWS.
+* Migration of existing infrastructure into AWS.
+
+Main Modes ...
+
+1. Tape Gateway (VTL) Mode, virtual tapes stored on S3 and Glacier.
+2. File Mode - SMB and NFS, File Storage backed by S3 Objects.
+3. Volume Mode (Gateway Cache and Stored) - iSCSI, block storage backed by S3 and EBS Snapshots.
+
+File Gateway ...
+
+* HTTPS to Public Endpoint.
+* Files are stored to shares using NFS or SMB.
+* Mapped directly 1:1 as S3 objects.
+* Lifecycle Policies can automatically control Storage Classes.
+* SMB shares can integrate with Active Directory for file authorization.
+
+Tape Gateway ...
+
+* Pretends to be an iSCSI tape library, changer, and drive.
+* HTTP via Public Endpoint.
+* Active tapes are stored in S3, archived/exported takes are stored in VTS in Glacier.
+* Virtual tape 100 GiB to 5 TiB. 1 PB total storage across 1,500 virtual tapes.
+* Unlimited VTS (Archive) Storage.
+
+Volume Gateway (Stored) ...
+
+* 16 TB per volume, 32 Volumes (MAX), 512 TB total capacity.
+* Primary data is stored on-premises. Backup data is asynchronously replicated to AWS.
+* Volumes are made available via iSCSI for network-based servers to access (single connection per volume unless servers are clustered).
+* AWS side creates EBS Snapshots from backup data. Can be used to creat standard EBS volumes.
+* Ideal for migrations to AWS. Assists with Disaster Recovery.
+
+Volume Gateway (Cached) ...
+
+* HTTP via Public Endpoint.
+* Volumes are made available via iSCSI for network-based servers to access (single connection per volume unless servers are clustered).
+* Primary Data is stored in AWS. Data which is accessed frequently is cached locally. Ideal for extending storage into AWS.
+* Primary data is stored on a S3-Backed volume (AWS Managed Bucket). Snapshots are stored as standard EBS Snapshots.
+* 32 TB per volume, 32 Volumes (MAX), 1 PB total capacity.
