@@ -142,3 +142,88 @@ Volume Gateway (Cached) ...
 * Primary Data is stored in AWS. Data which is accessed frequently is cached locally. Ideal for extending storage into AWS.
 * Primary data is stored on a S3-Backed volume (AWS Managed Bucket). Snapshots are stored as standard EBS Snapshots.
 * 32 TB per volume, 32 Volumes (MAX), 1 PB total capacity.
+
+## Snowball and Snowmobile
+
+Key Concepts ...
+
+* Move large amounts of data IN or OUT of AWS.
+* Physical storage, suitcase or truck.
+* Ordered from AWS empty, load up, and return.
+* Ordered from AWS with data, empty, and return.
+
+Snowball ...
+
+* Ordered from AWS, log a job, and device delivered (not instantly).
+* Data Encryption uses KMS.
+* 50 TB or 80 TB Capacity.
+* 1 Gbps (RJ45 1GBase-TX) or 10 Gbps (LR/SR) Network.
+* 10 TB to 10 PB economical range (multiple devices).
+* Multiple devices can be sent to multiple premises.
+* Only storage.
+
+Snowball Edge ...
+
+* Both Storage and Compute.
+* Larger capacity than Snowball.
+* 10 Gbps (RJ45), 10/25 (SFP), or 40/50/100 Gbps (QSFP+).
+* Storage Optimized (with EC2) - 80 TB, 24 vCPU, and 32 GiB RAM, **1 TB SSD**.
+* Compute Optimized - 100 TB, 7,68 NVME, 52 vCPU, and 208 GiB RAM.
+* Compute Optimized (with GPU).
+* Ideal for remote sites or where data processing on ingestion is needed.
+
+Snowmobile ...
+
+* Portable Data Center within a shipping container on a truck.
+* Special order.
+* Ideal for a single location when 10 PB+ is required.
+* Up to 100 PB per Snowmobile.
+* Not economical for multi-site (**unless huge**) or sub 10 PB.
+
+## AWS Directory Service
+
+What is a Directory?
+
+* Stores objects (example, Users, Groups, Compters, Servers, File Shares) with a structure (domain/tree).
+* Multiple trees can be grouped into a forest.
+* Commonly used in Windows Environments.
+* Sign-in to multiple devices with the same username/password provides centralized management for assets.
+* ... Microsoft Active Directory Domain Services (AD DS).
+* AD DS is the most popular, open-source alternatives (SAMBA).
+
+Directory Service ...
+
+* AWS Managed implementation.
+* Runs within a VPC.
+* To implement High Availability, deploys into multiple AZs.
+* Some AWS service **NEED** a directory. Example, Amazon Workspaces.
+* Can be isolated.
+* Can be integrated with an existing on-premises system.
+* Can act as a "proxy" back to on-premises.
+
+Simple AD Mode ...
+
+* Standalone directory which uses Samba 4.
+* Up to 500 users (Small) or 5,000 users (Large).
+* Integrates with AWS Services - EC2 Instances can join SimpleAD and Workspaces can use it for logins and management.
+* Not designed to integrate with any existing on-premises directory system such as Microsoft AD.
+
+AWS Managed Microsoft AD Mode ...
+
+* Primary running location is AWS. Trust relationships can be created between AWS and on-premises directory systems.
+* Resilient if the VPN fails. Services in AWS will still be able to access the local directory running in Directory Service.
+* Full Microsoft AD DS running in 2012 R2 Mode. Microsoft AD aware applications running in AWS.
+* Supports applications which require MS AD Specific schema or schema updates.
+
+AD Connector Mode ...
+
+* Allows AWS services which NEED a directory to use an existing on-premises directory.
+* ONLY a proxy, no local functionality.
+* Primary Directory is located on-premises. Requests from AWS are proxied back to the existing directory.
+* If private connectivity fails, the AD proxy will not function, interrupting services on the AWS side.
+
+Notes ...
+
+* Simple AD - the default. Simple requirements, a directory in AWS.
+* Microsoft AD - applications in AWS which need MS AD DS, or there is a need to TRUST AD DS.
+* AD Connector - use AWS services which need a directory **without storing any directory information in the cloud**, proxy to an on-premises Directory.
