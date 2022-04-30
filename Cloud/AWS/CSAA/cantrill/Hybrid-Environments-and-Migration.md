@@ -227,3 +227,81 @@ Notes ...
 * Simple AD - the default. Simple requirements, a directory in AWS.
 * Microsoft AD - applications in AWS which need MS AD DS, or there is a need to TRUST AD DS.
 * AD Connector - use AWS services which need a directory **without storing any directory information in the cloud**, proxy to an on-premises Directory.
+
+## AWS DataSync
+
+* Data Transfer service TO and FROM AWS.
+* Migrations, Data Processing Transfers, Archival/Cost Effective Storage, or DR/BC.
+* Designed to work at large scale.
+* Keeps metadata (example, permissions or timestamps).
+* Built-in data validation.
+
+Key Features ...
+
+* Scalable - 10 Gbps per agent (~200 TB per day).
+* Bandwidth Limiters (avoid link saturation).
+* Incremental and scheduled transfer options.
+* Compression and encryption.
+* Automatic recovery from transit errors.
+* AWS Service integration - S3, EFS, FSx.
+* Pay for use - per GB cost for data moved.
+
+DataSync Components ...
+
+* Task - a "job" within DataSync, defines what is being synced, how quickly, FROM where and TO where.
+* Agent - software used to read or write to on-premises data stores using NFS or SMB.
+* Location - every task has two locations, FROM and TO. Example, Network (NFS), Server Message Block (SMB), Amazon EFS, Amazon FSx, and Amazon S3.
+
+## FSx for Windows File Server
+
+* Fully managed native Windows file servers/shares.
+* Designed for integration with Windows environments.
+* Integrates with Directory Service or Self-Managed AD.
+* Single or Multi-AZ within a VPC.
+* On-demand and Scheduled Backups.
+* Accessible using VPC, Peering, VPN, and Direct Connect.
+
+Key Features and Benefits ...
+
+* VSS - User-Driven Restores.
+* Native file system accessible over SMB.
+* Windows permission model.
+* Supports DFS, scale-out file share structure.
+* Managed - no file server admin.
+* Integrated with DS AND individual directory.
+
+## FSx for Lustre
+
+* Manage Lustre - Designed for HPC - LINUX Clients (POSIX).
+* Machine Learning, Big Data, and Financial Modelling.
+* 100s GB/s throughput and sub millisecond latency.
+* Deployment types - Persistent or Scratch.
+* Scratch - Highly optimized for Short-term, no replication, and fast.
+* Persistent - Longer-term, HA (in one AZ), self-healing.
+* Accessible over VPN or Direct Connect.
+
+Key Points ...
+
+* Metadata is stored on Metadata Targets (MDTs).
+* Objects are stored on called object storage targets (OSTs)(1.17 TiB).
+* Baseline performance based on size.
+* Size - minimum 1.2 TiB then incremenets of 2.4 TiB.
+* For Scratch - Base 200 MB/s per TiB of storage.
+* For Persistent - Base 50 MB/s, 100 MB/s, and 200 MB/s per TiB of storage.
+* Burst up to 1,300 MB/s per TiB (Credit System).
+
+Key Features ...
+
+* Backup to S3 with both (Manual or Automatic 0-35 day retention).
+
+Scratch ...
+
+* Scratch is designed for pure performance.
+* Short-term or temporary workloads.
+* **No High Availability and No Replication**.
+* Larger file systems means more servers, more diskss, and **more chance of failure**.
+
+Persistent ...
+
+* Persistent has replication within ONE AZ only.
+* Auto-heals when hardware failure occurs.
