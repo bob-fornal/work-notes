@@ -102,7 +102,7 @@ Considerations ...
 * Hybrid Storage Virtual Appliance (On-Premises).
 * Extension of File and Volume Storage in AWS.
 * Volume storage backup into AWS.
-* Tape Backups into AWS.
+* Tape Backup into AWS.
 * Migration of existing infrastructure into AWS.
 
 Main Modes ...
