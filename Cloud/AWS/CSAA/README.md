@@ -96,3 +96,4 @@ Exam Preparation
 * [Advanced VPC Networking](cantrill/Advanced-VPC-Networking.md)
 * [Hybrid Environments and Migration](cantrill/Hybrid-Environments-and-Migration.md)
 * [Security, Deployment, and Operations](cantrill/Security-Deployment-and-Operations.md)
+* [Infrastructure as Code (CloudFormation)](cantrill/Infrastructure-as-Code--CloudFormation.md)
