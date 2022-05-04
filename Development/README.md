@@ -1,5 +1,9 @@
 # Development
 
+## Courses
+
+* [Introduction to Computer Science, Harvard CS50](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x) ![Link](../foreign.png)
+
 ## HTML Return Codes Cheat Sheet
 
 ```script
