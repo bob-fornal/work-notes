@@ -5,7 +5,7 @@
 * CloudFormation Template - YAML or JSON.
 * Templates contain **logical resources** - the "WHAT."
 * Templates are used to create Stacks: 1 stack, 100 stacks in different regions.
-* Stacks create **physical resources** from the logical.
+* Stacks create **physical resources** from the logical resources.
 * If a stack template is changed, physical resources are changed.
 * If a stack is deleted, normally the physical resources are deleted.
 
@@ -39,9 +39,9 @@ Resources:
 ## CloudFormation Template Parameters and Pseudo Parameters
 
 * Template Parameters accept input via console, CLI, or API when a stack is created or updated.
-* Can be referenced fromwithin Logical Resources and influence physical resources and/or configuration.
+* Can be referenced from within Logical Resources and influence physical resources and/or configuration.
 * Can be configured with Defaults, AllowedValues, Minimum and Maximum length, AllowedPatterns, NoEcho, and Type.
-* Pseoudo Parameters are similar to Template Parameters. They are provided by AWS based on the environment when creating the stack.
+* Pseudo Parameters are similar to Template Parameters. They are provided by AWS based on the environment when creating the stack.
 
 ## CloudFormation Intrinsic Functions
 
@@ -56,8 +56,8 @@ Resources:
 `Ref` and `Fn::GetAtt` ...
 
 * Physical attributes can be references in the template. The attributes depend on the resource type.
-* `!Ref Instance`: Using `!Ref` on template or pseuso parameters returns their value. When used with logical resouces, the physical ID is usually returned.
-* `!GetAtt LogicalResource.Attribute`: `!GetAtt` can be used to retrieve any attribute associated with the resource. Most logical resources return detailed configuration of the physical resource.
+* `!Ref Instance`: Using `!Ref` on a template or pseudo parameters returns their value. When used with logical resources, the physical ID is usually returned.
+* `!GetAtt LogicalResource.Attribute`: `!GetAtt` can be used to retrieve any attribute associated with the resource. Most logical resources return a detailed configuration of the physical resource.
 
 `Fn::GetAZs` and `Fn::Select` ...
 
@@ -82,7 +82,7 @@ Resources:
 
 `Fn::Cidr` ...
 
-* `Fn::Cidr` is used to generate a number of smaller CIDR ranges for subnets, from a larger VPC range.
+* `Fn::Cidr` is used to generate several smaller CIDR ranges for subnets, from a larger VPC range.
 
 ```yaml
 VPC:
@@ -110,7 +110,7 @@ Templates can contain a Mappings object ...
 
 Notes ...
 
-* Can have one key, or Top and Second Level.
+* Can have one key or Top and Second Level.
 * Mappings use the `!FindInMap` intrinsic function.
 * Common use-case: Retrieve AMI for given region and architecture.
 * Improve Template Portability.
