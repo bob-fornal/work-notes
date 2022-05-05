@@ -129,3 +129,36 @@ Values can be declared in this section ...
 * Visible as outputs in the console UI.
 * Accessible from a parent stack when using nesting.
 * Can be exported, allowing cross-stack references.
+
+## CloudFormation `Conditions`
+
+* Created in the optional "Conditions" section of a template.
+* Conditions are evaluated to TRUE or FALSE, processed before resources are created.
+* Use the other intrinsic functions: `AND`, `EQUALS`, `IF`, `NOT`, `OR`.
+* Associated with logical resources to control if they are created or not.
+* Example, `ONEAZ`, `TWOAZ`, and `THREEAZ` - control how many AZs to create resources in.
+* Example. `PROD`, `DEV` - control the size of instances created within a stack.
+
+## CloudFormation `DependsOn`
+
+* CloudFormation tries to be efficient, it does things in parallel (create, update, and delete).
+* It tries to determine a dependency order (VPC, then Subnet, then EC2) using references for functions to create these.
+* `DependsOn` allows explicit definition of resources.
+
+## CloudFormation `WaitCondition`, Creation Policy, and `cfn-signal`
+
+### CloudFormation Provisioning
+
+* Logical Resources in the template are used to create a Stack.
+* It creates physical resources in AWS.
+* Logical Resource `CREATE_COMPLETE` = All OK?
+
+### CloudFormation Signal
+
+* Configure CloudFormation to hold
+* Wait for "N" number of success signals.
+* Wait for "Timeout H:M:S" for those signals (12-hour maximum).
+* If success signal received, then `CREATE_COMPLETE`.
+* If **failure** signal is received, then **creation fails**.
+* If timeout is reached, then **creation fails**.
+* ... `CreationPolicy` or `WaitCondition`.
