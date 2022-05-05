@@ -4,7 +4,7 @@
 
 * CloudFormation Template - YAML or JSON.
 * Templates contain **logical resources** - the "WHAT."
-* Templates are used to create Stacks: 1 stack, 100 stacks in different regions.
+* Templates are used to create Stacks: 1 stack or 100 stacks in different regions.
 * Stacks create **physical resources** from the logical resources.
 * If a stack template is changed, physical resources are changed.
 * If a stack is deleted, normally the physical resources are deleted.
@@ -143,7 +143,7 @@ Values can be declared in this section ...
 
 * CloudFormation tries to be efficient, it does things in parallel (create, update, and delete).
 * It tries to determine a dependency order (VPC, then Subnet, then EC2) using references for functions to create these.
-* `DependsOn` allows explicit definition of resources.
+* `DependsOn` allows the explicit definition of resources.
 
 ## CloudFormation `WaitCondition`, Creation Policy, and `cfn-signal`
 
@@ -158,7 +158,7 @@ Values can be declared in this section ...
 * Configure CloudFormation to hold
 * Wait for "N" number of success signals.
 * Wait for "Timeout H:M:S" for those signals (12-hour maximum).
-* If success signal received, then `CREATE_COMPLETE`.
-* If **failure** signal is received, then **creation fails**.
-* If timeout is reached, then **creation fails**.
+* If a success signal is received, then `CREATE_COMPLETE`.
+* If a **failure** signal is received, then **creation fails**.
+* If the timeout is reached, then **creation fails**.
 * ... `CreationPolicy` or `WaitCondition`.
