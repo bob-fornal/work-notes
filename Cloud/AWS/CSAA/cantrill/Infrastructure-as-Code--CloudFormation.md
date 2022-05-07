@@ -162,3 +162,58 @@ Values can be declared in this section ...
 * If a **failure** signal is received, then **creation fails**.
 * If the timeout is reached, then **creation fails**.
 * ... `CreationPolicy` or `WaitCondition`.
+
+## CloudFormation Nested Stacks
+
+Most Stacks are built from a single stack.
+
+* Resources in a single stack share a lifecycle.
+* Stack resource limit of 500.
+* Cannot easily reuse resources.
+* Cannot reference other stacks.
+
+Root Stack and Parent Stack ...
+
+* Parameters and Outputs.
+* Reference Output that is made visible in the nested stack: `<Nested-Stack>.Outputs.<Parameter>`.
+* Root Stack can take outputs of a nested stack as Parameters for another stack.
+* Use when the stacks form part of one solution - **lifecycle linked**.
+
+Notes ...
+
+* Overcome the 500 Resource Limit of one stack.
+* Modularizing templates; code reuse.
+* Make the installation process easier.
+* Nested stacks created by the root stack.
+* **Use only when everything is lifecycle linked**.
+
+## CloudFormation Cross-Stack References
+
+* Service Oriented, different lifecyces, and Stack reuse.
+* CloudFormation Stacks are designed to be isolated and self-contained.
+* Outputs are normally **not visible** from ohter stacks.
+* Nested stackes can reference them.
+* Outputs can be exported, making them visibile from other stacks.
+* Exports must have a unique name in the region.
+* `Fn::ImportValue` can be used instead of `Ref`.
+
+## CloudFormation StackSets
+
+* Deploy CloudFormation Stacks across many accounts and regions.
+* StackSets are containers in an admin account.
+* StackSets contain stack instances whic reference stacks.
+* Stack instances and stacks are in "target accounts."
+* Each stack is in 1 region in 1 account.
+* Security: **self-managed** or **service-managed**.
+
+Notes ...
+
+* The template for the stack set is a normal CloudFormation Template.
+* Permissions granted via self-managed IAM Roles or service-managed within an Organization.
+* StackSets gain access to Target Accounts and create stack instances and stacks.
+* Term: Concurrent Accounts.
+* Term: Failure Tolerance.
+* Term: Retain Stacks.
+* Scenario: Enable AWS Config.
+* Scenario: AWS Config Rules - MFA, EIPS, EBS Encryption.
+* Scenario: Create IAM Roles for cross-account access.
