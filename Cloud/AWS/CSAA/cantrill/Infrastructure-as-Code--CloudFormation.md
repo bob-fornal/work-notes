@@ -217,3 +217,38 @@ Notes ...
 * Scenario: Enable AWS Config.
 * Scenario: AWS Config Rules - MFA, EIPS, EBS Encryption.
 * Scenario: Create IAM Roles for cross-account access.
+
+## CloudFormation Deletion Policy
+
+* If a logical resource is **deleted** from a template, by default, the physical resource is **deleted**.
+* This can cause data-loss.
+* With deletion policy, a **Delete (Default), Retain, or (if supported) Snapshot can be defined on each resource.
+* Snapshot: EBS Volume, ElastiCache, Neptune, RDS, and Redshift.
+* Snapshots continue on past Stack lifetime - they have to be cleaned up or cost is incurred.
+* **ONLY APPLIES TO DELETE ... NOT REPLACE**.
+
+## CloudFormation Stack Roles
+
+* When a stack is created, CloudFormation creates physical resources.
+* CloudFormation uses the permissions of the logged in identity.
+* This means that the logged in user needs permissions for AWS.
+* CloudFormation can assume a role to gain the permissions.
+* This allows for role separation.
+* The identity creating the stack **doesn't need resource permissions, only PassRole**.
+
+## CloudFormation Init (`cfn-init`)
+
+* `AWS::CloudForamtion::Init` and `cfn-init`.
+* Simple configuration management system.
+* Configuration directives are stored in a template.
+* `AWS::CloudFormation::Init` is part of a logical resource.
+* Procedural - HOW (User Data) versus Desired State - WHAT (`cnf-init`).
+* `cfn-init` helper script - installed on EC2 OS.
+
+## CloudFormation `cfn-hup`
+
+* `cfn-init` is run once as part of bootstrapping (user data).
+* If `CloudForamation::Init` is updated it is not rerun.
+* `cfn-hup` helper is a daemon which can be installed; it detects changes in resource metadata.
+* It can run configurable actions when a change is detected.
+* `UpdateStack` allows updating the configuration on EC2 Instances.
