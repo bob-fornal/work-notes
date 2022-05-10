@@ -252,3 +252,20 @@ Notes ...
 * `cfn-hup` helper is a daemon which can be installed; it detects changes in resource metadata.
 * It can run configurable actions when a change is detected.
 * `UpdateStack` allows updating the configuration on EC2 Instances.
+
+## CloudFormation Change Sets
+
+* Take a Template which is used to create a Stack which then creates Physical Resources (CREATE).
+* Stack (DELETE) which (DELETE) Physical Resources.
+* New version of the template can modify an Existing Stack and change Resources (CHANGE).
+* Stack Change: No Interruption, Some Interruption, or Replacement.
+* Change Sets allow changes to be previewed; multiple different versions.
+* Chosen changes can be applie by executing the change set.
+
+## CloudFormation Custom Resources
+
+* Logical Resources in a template - WHAT.
+* CloudFormation uses logical resources to CREATE, UPDATE, and DELETE physical resources.
+* CloudFormation **does not support everything**.
+* Custom Resources let CloudFormation integrate with anything it does not integrate with yet, or does not natively support.
+* Passes data to a defined endpoint and gets data back from that endpoint.
