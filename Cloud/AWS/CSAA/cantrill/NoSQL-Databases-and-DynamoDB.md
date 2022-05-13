@@ -34,3 +34,39 @@ Capacity (SPEED) is set on a Table ...
 * Key/Value, preference DynamoDB.
 * Access via the console, CLI, API ... 'NO SQL.'
 * Billed based on RCU, WCU, Storage, and Features.
+
+## DynamoDB Operations, Consistency, and Performance
+
+Reading and Writing ...
+
+* On-Demand - unknown, unpredictable, or low administration overhead.
+* On-Demand - price per million Read or Write Units.
+* Provisioned Capacity, RCU and WCU set on a per table basis.
+* Every operation consumes at least 1 RCU/WCU.
+* 1 RCU is 1 x 4KB read operation per second.
+* 1 WCU is 1 x 1KB write operation per second.
+* Every table has a RCU and WCU burst pool (300-seconds).
+
+Query ...
+
+* Query accepts a single Primary Key (PK) value and optionally a Secondary Key (SK) or tange.
+* Capacity consumed is the size of all returned items.
+* Further filtering discards data - capacity is still consumed.
+* **Can ONLY query on PK or PK and SK**.
+
+Scan ...
+
+* Scan moves through a table consuming the capacity of every ITEM.
+* Complete control on what data is selected, any attributes can be used and any filters applied but SCAN consumes capacity for every ITEM scanned through.
+
+Consistency Model ...
+
+* Eventually Consistent Reads and Strongly Consistent Reads.
+* Writes are directed at the leader node. The leader node is elected from all storage notes.
+* The leader node replicates data to other nodes.
+* Strongly consistent reads connect to the leader node to get the most up-to-date copy of the data.
+* Not every application or access type **tolerates** eventually consistency.
+
+Calculating WCU and RCU ...
+
+* Notes **[HERE](https://dev.to/rfornal/aws-database-request-units-a7i)**
