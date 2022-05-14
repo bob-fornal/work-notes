@@ -18,6 +18,7 @@
 
 ## Git Cheat Sheets
 
+* [GitHub: Git Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet.pdf) ![Link](../../foreign.png)
 * [Git Cheat Sheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf) ![Link](../../foreign.png)
 * [GitExplorer](https://gitexplorer.com/) ![Link](../../foreign.png)
 * [Dynamic Cheat Sheet](http://ndpsoftware.com/git-cheatsheet.html) ![Link](../../foreign.png)
