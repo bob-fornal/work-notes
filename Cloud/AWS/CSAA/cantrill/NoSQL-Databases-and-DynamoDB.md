@@ -70,3 +70,37 @@ Consistency Model ...
 Calculating WCU and RCU ...
 
 * Notes **[HERE](https://dev.to/rfornal/aws-database-request-units-a7i)**
+
+## DynamoDB Local (LSI) and Global (GSI) Secondary Index
+
+* Query is the most efficient operation in DynamoDB.
+* Query can only work on one Partition Key (PK) at a time and optionally a single, or range of Sort Key (SK) values.
+* Indexes are alternative views on table data.
+* Different SK (LSI) or Different PK and SK (GSI).
+* Some or all attributes (projection).
+
+Local Secondary Indexes (LSI) ...
+
+* LSI is an alternative view for a table.
+* **MUST be created with a table**.
+* 5 LSIs per base table.
+* Alternative SK on the table.
+* Share the RCU and WCU with the table.
+* Attributes: `ALL`, `KEYS_ONLY`, or `INCLUDE`.
+* Indexes are sparse which means that only items which have a value in the index alternative sort key are added to the index.
+
+Global Secondary Index (GSI) ...
+
+* Can be created at any time.
+* Default limit of 20 per base table.
+* Alternative PK and SK.
+* GSIs have their own RCU and WCU allocations.
+* Indexes are sparse which means that only items which have a value in the new PK and optional SK are added.
+* GSIs are **ALWAYS** eventually consistent, replication between base and GSI is asynchronous.
+
+Considerations ...
+
+* Careful with projections (`KEYS_ONLY`, `INCLUDE`, and `ALL`).
+* Queries on attributes NOT projected are expensive.
+* Use GSIs by default. LSI when **strong consistency** is required.
+* Use indexes for alternative access patterns.
