@@ -104,3 +104,39 @@ Considerations ...
 * Queries on attributes NOT projected are expensive.
 * Use GSIs by default. LSI when **strong consistency** is required.
 * Use indexes for alternative access patterns.
+
+## DynamoDB Streams and Triggers
+
+Stream Concepts ...
+
+* Time ordered list of ITEM CHANGES in a table.
+* 24-hour rolling window.
+* Enabled an a per table basis.
+* Records INSERTS, UPDATES, and DELETES.
+* Different view types influence what is in the stream.
+
+View Types ...
+
+* `KEYS_ONLY`
+* `NEW_IMAGE`
+* `OLD_IMAGE`
+* `NEW_AND_OLD_IMAGE`
+
+Trigger Concepts ...
+
+* ITEM changes generate an event.
+* That event contains the data that changed.
+* An action is taken using that data.
+* AWS = Streams and Lambda.
+* Reporting and Analytics.
+* Aggregation, Messaging, or Notifications.
+
+## DynamoDB Global Tables
+
+* Global tables provide multi-master cross-region replication.
+* Tables are created in multiple regions and added to the same global table (becomes replica tables).
+* Last writer wins is used for conflict resolution.
+* Reads and Writes can occur in any region.
+* Generally sub-second replication between regions.
+* Strongly consistent reads ONLY in the same region as writes.
+* Globally, eventually consistent.
