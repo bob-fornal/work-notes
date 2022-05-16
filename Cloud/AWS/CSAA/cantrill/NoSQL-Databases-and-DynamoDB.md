@@ -140,3 +140,54 @@ Trigger Concepts ...
 * Generally sub-second replication between regions.
 * Strongly consistent reads ONLY in the same region as writes.
 * Globally, eventually consistent.
+
+## DynamoDB Accelerator (DAX)
+
+Traditional Caches versus DAX ...
+
+1. Application checks cache for data - a CACHE MISS occurs if it isn't cached.
+2. Data is loaded from the database with a separate operation and SDK.
+3. Cache is updated with retrieved data. Subsequent queries will load data from cache as a CACHE HIT.
+
+DAX ...
+
+1. Application uses the DAX SDK and makes a single call for the data which is returned by DAX.
+2. DAX either returns the data from its cache or retrieves is from the database and then caches is.
+
+* Less complexity for the application developer and tighter integration.
+
+DAX Architecture ...
+
+* DAX is a cluster service where nodes are placed into different AZs.
+* PRIMARY RW Node and other nodes are READ-REPLICAS.
+* Item Cache holds results of (BATCH) `GetItem`.
+* Query Cache holds data based on query/scan parameters.
+* DAX is accessed via endpoint. Cache HITS are returned in microseconds. **MISSES are returned in milliseconds**.
+* Write-Through is supported, data is written to DynamoDB then DAX.
+* If a CACHE MISS occurs data is also written to the primary node of the cluster.
+
+DAX Considerations ...
+
+* Primary NODE (Writes) and Replicas (Read).
+* Nodes are Highly Available, Primary failure performs an election.
+* In-Memory cache - Scaling: Much faster reads and reduced cost.
+* Scale UP and Scale OUT (Better or More).
+* Supports write-through.
+* DAX is deployed WITHIN a VPC.
+
+## Amazon Athena
+
+* Serverless Interactive Querying Service.
+* Ad-hoc queries on data - pay only for data consumed.
+* **Schema-on-read** - table-like translation.
+* Original data never changes - remains on S3.
+* Schema translates data and it becomes relational-like when read.
+* Output can be sent to other services.
+
+Notes ...
+
+* Supports standard formats of structured, semi-structured, and unstructured data. Source data is stored in S3.
+* Athena can directly read many AWS data formats such as CloudTrail, ELB Logs, and Flow Logs.
+* "Tables" are defined in advance in a data catalog and data is projected through when read. It allows SQL-like queries on data without transforming the source data.
+* Billed based on data consumed during the query.
+* Output can be sent to visualization tools.
