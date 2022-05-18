@@ -191,3 +191,31 @@ Notes ...
 * "Tables" are defined in advance in a data catalog and data is projected through when read. It allows SQL-like queries on data without transforming the source data.
 * Billed based on data consumed during the query.
 * Output can be sent to visualization tools.
+
+## ElastiCache
+
+An in-memory cache allows cost effective scaling of READ-HEAVY workloads and performance improvements at scale.
+
+* In-memory database with high performance.
+* Managed Redis or Memcached as a service.
+* Can be used to cache data - for READ HEAVY workloads with low latency requirements.
+* Reduces database workloads (**expensive**).
+* Can be used to store Session Data (Stateless Servers).
+* **Requires application code changes**.
+
+Session State Data ...
+
+* Session State is written to ElastiCache.
+* Session State loaded from cache, session continues without interruption.
+
+Redis versus Memcached ...
+
+| Memcached | Redis |
+|-----------|-------|
+| Simple data structures | Advanced structures |
+| No replication | Multi-AZ |
+| Multiple Nodes (Sharding) | Replication (Scale Reads) |
+| No backup | Backup and Restore |
+| Multi-threaded | Transactions |
+
+## Redshift Architecture
