@@ -219,3 +219,26 @@ Redis versus Memcached ...
 | Multi-threaded | Transactions |
 
 ## Redshift Architecture
+
+* Petabyte-scale Data Warehouse.
+* OLAP (Column-based) not OLTP (row/transaction).
+* Pay as you use, similar structure to RDS.
+* Direct Query S3 using Redshift Spectrum.
+* Direct Query other databases using Federated Query.
+* Integrates with AWS tooling such as Quicksight.
+* SQL-like interface JDBC/ODBC connections.
+
+Architecture ...
+
+* Server-based (not serverless), provisioned product.
+* **One AZ** in a VPC - network cost/performance.
+* Leader Node - Query input, planning, and aggregation.
+* Compute Node - performing queries of data.
+* VPC Security, IAM Permissions, KMS at-rest Encryption, CW Monitoring.
+* Redshift Enhanced VPC Routing - VPC Networking.
+
+## Redshift Disaster Recovery and Resilience
+
+* Automatic incremental backups occur every ~8-hours or 5 GB of data and by defauly have a 1-day retention period (configurable up to 35 days).
+* Redshift backups into S3 protecting against AZ failure.
+* Redshift can be configured to copy snapshots to another region for Disaster Recovery - with a separate configurable retention period.
