@@ -70,7 +70,7 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 * [Other Services](maarek/Other-Services.md)
 * [Whitepapers and Architectures](maarek/Whitepapers-and-Architectures.md)
 
-Exam Preparation
+### Exam Preparation
 
 * [Exam Review and Tips](maarek/Exam-Review-and-Tips.md)
 
@@ -98,3 +98,7 @@ Exam Preparation
 * [Security, Deployment, and Operations](cantrill/Security-Deployment-and-Operations.md)
 * [Infrastructure as Code (CloudFormation)](cantrill/Infrastructure-as-Code--CloudFormation.md)
 * [NoSQL Databases and DynamoDB](cantrill/NoSQL-Databases-and-DynamoDB.md)
+
+### Exam Technique
+
+* [Exam Technique](cantrill/Exam-Technique.md)
