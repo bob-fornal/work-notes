@@ -11,12 +11,12 @@
 function testFunctionScope1 () {
   var a = 5;
 }
-console.log(a);
+// console.log(a);
 
 const testFunctionScope2 = () => {
   var b = 6;
 }
-console.log(b);
+// console.log(b);
 
 // 9c. Block Scope - Block scope is related to the variables
 // declared using let and const. Variables declared with var
@@ -28,17 +28,18 @@ console.log(b);
   var c = 7;
   let d = 8;
 }
-console.log(c);
-console.log(d);
+// console.log(c);
+// console.log(d);
+
 const testBlockScope = () => {
   for (let i = 0, len = 2; i < len; i++) {
     let j = i * 2;
-    console.log(j);
+    console.log('inside', j);
   }
-  console.log(i);
-  console.log(j);  
+  console.log('outside', i);
+  console.log('outside', j);  
 };
-testBlockScope();
+// testBlockScope();
 
 // 9d. Scope Chain
 var sc1 = 24;
@@ -46,6 +47,7 @@ const testScopeChain = () => {
   var sc2 = 667;
 
   var anotherTestScopeChain = function() {
+    var sc3 = 'Bob';
     console.log(sc2);
   };
 
@@ -55,5 +57,6 @@ const testScopeChain = () => {
 
   anotherTestScopeChain();
   andAnotherTestScopeChain();
+  // console.log(sc3);
 };
-testScopeChain();
+// testScopeChain();

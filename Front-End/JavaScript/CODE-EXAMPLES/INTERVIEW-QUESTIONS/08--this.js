@@ -5,7 +5,7 @@
 const testThisOne = () => {
   console.log(this);
 };
-testThisOne();
+// testThisOne();
 
 class TestThis {
   keepValue = 0;
@@ -20,8 +20,8 @@ class TestThis {
 }
 const testThisTwo = new TestThis(2);
 const testThisThree = new TestThis(3);
-testThisTwo.trigger();
-testThisThree.trigger();
+// testThisTwo.trigger();
+// testThisThree.trigger();
 
 const testThisFour = {
   name: 'Bob',

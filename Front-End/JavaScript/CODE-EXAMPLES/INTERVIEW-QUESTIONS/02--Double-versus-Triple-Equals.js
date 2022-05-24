@@ -9,7 +9,7 @@ const testEqualsOperators = () => {
   console.log({ doubleEquals: x == y});
   console.log({ tripeEquals: x === y});
 };
-testEqualsOperators();
+// testEqualsOperators();
 
 const testExplicitComparison = () => {
   const x = 2;

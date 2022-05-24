@@ -11,3 +11,18 @@ const outerFn = (function name() {
 })();
 console.log(outerFn);
 outerFn.trigger();
+
+(function () {
+  var Array = {};
+})();
+
+function name2 () {
+  innerFn = () => {
+    console.log('one');
+  };
+  return {
+    trigger: innerFn
+  };
+}
+
+const outerFn2 = name2();

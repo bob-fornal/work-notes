@@ -10,7 +10,7 @@ const passByValue = () => {
   b = b + 2;
   console.log({ a, b });
 };
-passByValue();
+// passByValue();
 
 const passByReference = () => {
   let c = [ 1 ];
@@ -20,7 +20,7 @@ const passByReference = () => {
   d.push(2);
   console.log({ c, d });
 };
-passByReference();
+// passByReference();
 
 const compareByReference = () => {
   let e = [ 1 ];
