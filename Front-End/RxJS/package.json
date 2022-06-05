@@ -1,0 +1,51 @@
+{
+  "name": "rxjs",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sample001": "node -r esm ./code/rxjs--001-simple-example.js",
+    "sample002": "node -r esm ./code/rxjs--002-observer.js",
+    "sample003": "node -r esm ./code/rxjs--003-Observable-observer.js",
+    "sample004": "node -r esm ./code/rxjs--004-Observable-subscriber.js",
+    "sample005": "node -r esm ./code/rxjs--005-subscriber-unsubscribe.js",
+
+    "sample006": "node -r esm ./code/rxjs--006-pipe.js",
+    "sample007": "node -r esm ./code/rxjs--007-concat.js",
+    "sample008": "node -r esm ./code/rxjs--008-merge.js",
+    "sample009": "node -r esm ./code/rxjs--009-forkJoin-object.js",
+    "sample010": "node -r esm ./code/rxjs--010-forkJoin-array.js",
+    "sample011": "node -r esm ./code/rxjs--011-fromEvent.js",
+    "sample012": "node -r esm ./code/rxjs--012-iif.js",
+    "sample013": "node -r esm ./code/rxjs--013-defer.js",
+    "sample014": "node -r esm ./code/rxjs--014-partition.js",
+    "sample015": "node -r esm ./code/rxjs--015-range.js",
+    "sample016": "node -r esm ./code/rxjs--016-interval.js",
+    "sample017": "node -r esm ./code/rxjs--017-timer.js",
+    "sample018": "node -r esm ./code/rxjs--018-bindCallBack.js",
+    "sample019": "node -r esm ./code/rxjs--019-bindNodeCallback.js",
+    "sample020": "node -r esm ./code/rxjs--020-generate.js",
+    "sample021": "node -r esm ./code/rxjs--021-onErrorResumeNext.js",
+    "sample022": "node -r esm ./code/rxjs--022-combineLatest.js",
+    "sample023": "node -r esm ./code/rxjs--023-isObservable.js",
+    "sample024": "node -r esm ./code/rxjs--024-pairs--DEPRECATED.js",
+    "sample025": "node -r esm ./code/rxjs--025-race.js",
+    "sample026": "node -r esm ./code/rxjs--026-zip.js",
+    "sample027": "node -r esm ./code/rxjs--027-zip.js",
+    "sample028": "node -r esm ./code/rxjs--028-ajax.js",
+
+    "sample029": "node -r esm ./code/rxjs--029-Subject.js",
+    "sample030": "node -r esm ./code/rxjs--030-BehaviorSubject.js",
+    "sample031": "node -r esm ./code/rxjs--031-ReplaySubject.js",
+    "sample032": "node -r esm ./code/rxjs--032-AsyncSubject.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "rxjs": "^7.5.5"
+  },
+  "dependencies": {
+    "xhr2": "^0.2.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
