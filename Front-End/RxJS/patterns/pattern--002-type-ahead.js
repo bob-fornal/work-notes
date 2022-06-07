@@ -5,7 +5,7 @@ export class TypeAhead {
 
   rxjs = rxjs;
 
-  continents = (keys) => [
+  continents = [
     'africa',
     'antarctica',
     'asia',
@@ -13,7 +13,12 @@ export class TypeAhead {
     'europe',
     'north america',
     'south america'
-  ].filter(e => e.indexOf(keys.toLowerCase()) > -1);
+  ];
+
+  getContinents = (keys) => {
+    if (keys === '') return [];
+    return this.continents.filter(continent => continent.includes(keys.toLowerCase()));
+  };
 
   // <input type="text" (input)="term$.next($event.target.value)" /> {{ term$ | async }}
   term$ = new this.rxjs.BehaviorSubject('');
@@ -30,15 +35,12 @@ export class TypeAhead {
 
   init = () => {
     this.result$.subscribe(this.handleInputResults.bind(this));
-    this.term$.next('a');
-    this.term$.next('am');
-    console.log('=== init', `"${ this.term$.value }" triggered at ${ new Date() }`);
   };
 
   handleInputResults = (data) => console.log('--- result', data);
 
   getAutoCompleteSuggestions(keys) {
-    return this.rxjs.of(this.continents(keys)).pipe(
+    return this.rxjs.of(this.getContinents(keys)).pipe(
       this.rxjs.tap(_ => console.log(`--- API Call at ${ new Date() }`))
     );
   };

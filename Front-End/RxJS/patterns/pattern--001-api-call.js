@@ -7,7 +7,7 @@ export class DemoComponent {
 
   constructor() {
     this.apiService = new ApiService();
-    this.apiService.data.subscribe(this.handleData.bind(this));
+    this.apiService.data$.subscribe(this.handleData.bind(this));
   }
 
   handleData = (data) => {

@@ -6,7 +6,7 @@ import XHR2 from 'xhr2';
 
 export class ApiService {
 
-  data = new BehaviorSubject({});
+  data$ = new BehaviorSubject({});
   rxjs = { ajax, lastValueFrom };
 
   ajaxURLObject = {
@@ -22,7 +22,7 @@ export class ApiService {
   getCatFactData = async () => {
     const apiCall$ = this.rxjs.ajax(this.ajaxURLObject);
     const res = await this.rxjs.lastValueFrom(apiCall$);
-    this.data.next(res.response);
+    this.data$.next(res.response);
   };
 
 }

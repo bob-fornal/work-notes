@@ -19,13 +19,13 @@ describe('Api Calls Test Coverage', () => {
     const res = { response: 'RESPONSE' };
     spyOn(service.rxjs, 'ajax').and.returnValue(rxjs.of(data));
     spyOn(service.rxjs, 'lastValueFrom').and.returnValue(Promise.resolve(res));
-    spyOn(service.data, 'next').and.stub();
+    spyOn(service.data$, 'next').and.stub();
     
     await service.getCatFactData();
   
     expect(service.rxjs.ajax).toHaveBeenCalled();
     expect(service.rxjs.lastValueFrom).toHaveBeenCalled();
-    expect(service.data.next).toHaveBeenCalledWith('RESPONSE');
+    expect(service.data$.next).toHaveBeenCalledWith('RESPONSE');
   });
 
 });
