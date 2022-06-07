@@ -2,13 +2,13 @@
   "name": "rxjs",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "sample001": "node -r esm ./code/rxjs--001-simple-example.js",
     "sample002": "node -r esm ./code/rxjs--002-observer.js",
     "sample003": "node -r esm ./code/rxjs--003-Observable-observer.js",
     "sample004": "node -r esm ./code/rxjs--004-Observable-subscriber.js",
     "sample005": "node -r esm ./code/rxjs--005-subscriber-unsubscribe.js",
-
     "sample006": "node -r esm ./code/rxjs--006-pipe.js",
     "sample007": "node -r esm ./code/rxjs--007-concat.js",
     "sample008": "node -r esm ./code/rxjs--008-merge.js",
@@ -36,12 +36,18 @@
     "sample029": "node -r esm ./code/rxjs--029-Subject.js",
     "sample030": "node -r esm ./code/rxjs--030-BehaviorSubject.js",
     "sample031": "node -r esm ./code/rxjs--031-ReplaySubject.js",
-    "sample032": "node -r esm ./code/rxjs--032-AsyncSubject.js"
+    "sample032": "node -r esm ./code/rxjs--032-AsyncSubject.js",
+
+    "pattern001": "node ./patterns/pattern--001-api-call.js",
+    "pattern002": "node ./patterns/pattern--002-type-ahead.js",
+    
+    "test": "jasmine"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "esm": "^3.2.25",
+    "jasmine": "^4.1.0",
     "rxjs": "^7.5.5"
   },
   "dependencies": {

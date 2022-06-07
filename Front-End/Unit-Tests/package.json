@@ -1,0 +1,16 @@
+{
+  "name": "unit-tests",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "runner01": "node ./src/file01.js",
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "jasmine": "^4.1.0"
+  }
+}
