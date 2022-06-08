@@ -27,4 +27,11 @@ describe('TypeAhead', () => {
     expect(result).toEqual(expected);
   });
 
+  it('expects "handleInputResults" to take data and simple console.log it out', () => {
+    const data = 'DATA';
+
+    component.handleInputResults(data);
+    expect(console.log).toHaveBeenCalledWith('--- result', data);
+  });
+
 });

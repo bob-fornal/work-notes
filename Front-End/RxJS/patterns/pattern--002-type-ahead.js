@@ -29,6 +29,12 @@ export class TypeAhead {
     this.rxjs.tap(results => console.log('--- tapped', results))
   );
 
+  getAutoCompleteSuggestions (keys) {
+    return this.rxjs.of(this.getContinents(keys)).pipe(
+      this.rxjs.tap(_ => console.log(`--- API Call at ${ new Date() }`))
+    );
+  }
+
   constructor() {
     this.init()
   }
@@ -38,12 +44,6 @@ export class TypeAhead {
   };
 
   handleInputResults = (data) => console.log('--- result', data);
-
-  getAutoCompleteSuggestions(keys) {
-    return this.rxjs.of(this.getContinents(keys)).pipe(
-      this.rxjs.tap(_ => console.log(`--- API Call at ${ new Date() }`))
-    );
-  };
 
 }
 
