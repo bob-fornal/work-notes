@@ -3,6 +3,44 @@
 * Code Samples [HERE](./code/README.md)
 * Code Patterns [HERE](./patterns/README.md)
 
+## Notes
+
+Basically, RxJS Observables use a Pub/Sub Model.
+
+> We don't know how the data arrives; just that it does.
+
+### Data as Streams
+
+A stream will not be activated until something subscribes to it.
+
+* Events can be streams (mouse/keyboard).
+* Arrays can be streams (individual items).
+* Value changes can be streams.
+* Promises can be streams (resolution).
+
+### Modifying Data Streams
+
+* Filter (keep/remove).
+* Map (transform).
+* Debounce (speed).
+* Distinct (remove duplicates).
+
+### Why Data as Streams
+
+* Watch for when a value changes.
+* Wait until values arrive.
+* Throw away unwanted data simply.
+* One stream can have multiple side-effects.
+* Direct data as needed without `switch`.
+* Cleaner code.
+
+### Observable Lifecycle
+
+* Creation
+* Subscription
+* Execution
+* Destruction
+
 ## From the **RxJS Documentation** ...
 
 [Documentation HERE](https://rxjs.dev/guide/observable)
