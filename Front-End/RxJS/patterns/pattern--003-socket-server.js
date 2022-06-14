@@ -1,25 +1,46 @@
 
 import WebSocket, { WebSocketServer } from 'ws';
 
-const wss = new WebSocketServer({
-  port: 8080
-});
- 
-wss.on('connection', (ws) => {
-  console.log('new client connected');
-  ws.on('message', (data, isBinary) => {
-    console.log(`Client has sent: ${ data }`);
-    wss.clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(data, { binary: isBinary });
-      }
-    })
-  });
-  ws.on('close', () => {
-    console.log('Client has connected');
-  });
-  ws.onerror = function () {
-    console.log('Error has occurred');
+export class SocketServer {
+
+  wss = null;
+
+  constructor() {
+    this.wss = new WebSocketServer({ port: 8080 });
+    this.init();
   }
-});
-console.log('WebSocket server is running on port 8080');
+
+  init = () => {
+    this.wss.on('connection', (ws) => this.handleConnection(ws));
+    console.log('WebSocket server is running on port 8080');
+  };
+
+  handleConnection = (ws) => {
+    console.log('New client connected');
+    ws.on('message', this.handleMessage.bind(this));
+    ws.on('close', this.handleClose.bind(this));
+    ws.onerror = this.handleError.bind(this);
+  };
+
+  handleMessage = (data, isBinary) => {
+    console.log(`Client has sent: ${ data }`);
+    this.wss.clients.forEach((client) => this.handleIndividualMessages(client, data, isBinary));
+  };
+
+  handleIndividualMessages = (client, data, isBinary) => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(data, { binary: isBinary });
+    }
+  };
+
+  handleClose = () => {
+    console.log('Client has closed');
+  };
+
+  handleError = () => {
+    console.log('Error has occurred');
+  };
+
+}
+
+const server = new SocketServer();
