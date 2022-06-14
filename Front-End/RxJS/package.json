@@ -32,15 +32,12 @@
     "sample026": "node -r esm ./code/rxjs--026-zip.js",
     "sample027": "node -r esm ./code/rxjs--027-zip.js",
     "sample028": "node -r esm ./code/rxjs--028-ajax.js",
-
     "sample029": "node -r esm ./code/rxjs--029-Subject.js",
     "sample030": "node -r esm ./code/rxjs--030-BehaviorSubject.js",
     "sample031": "node -r esm ./code/rxjs--031-ReplaySubject.js",
     "sample032": "node -r esm ./code/rxjs--032-AsyncSubject.js",
-
     "pattern001": "node ./patterns/pattern--001-api-call.js",
     "pattern002": "node ./patterns/pattern--002-type-ahead.js",
-    
     "test": "jasmine"
   },
   "author": "",
@@ -51,6 +48,7 @@
     "rxjs": "^7.5.5"
   },
   "dependencies": {
+    "ws": "^8.8.0",
     "xhr2": "^0.2.1",
     "xmlhttprequest": "^1.8.0"
   }
