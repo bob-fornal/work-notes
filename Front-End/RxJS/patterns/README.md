@@ -16,3 +16,20 @@ Using a `BehaviorSubject` both ensures that we have a default value for the subs
 * Runner: `npm run pattern002`
 
 This pattern sets up an observable that can be used in conjunction with an input change event to query some source with a debounce time in place.
+
+## WebSockets
+
+There are two versions here; one using RxJS and one using WS WebSockets for NodeJS integration.
+
+Server ...
+
+* [Server HERE (pattern--003-socket-server.js)](./pattern--003-socket-server.js)
+* Runner: `node pattern--003-socket-server.js`
+
+Versions (MUST HAVE SERVER RUNNING) ...
+
+* [RxJS WebSockets HERE (pattern--003-websocket-via-rxjs.js)](./pattern--003-websocket-via-rxjs.js)
+* Runner: `node pattern--003-websocket-via-rxjs.js`
+* [WS WebSockets HERE (pattern--003-websocket-via-ws.js)](./pattern--003-websocket-via-ws.js)
+* Runner: `node pattern--003-websocket-via-ws.js`
+

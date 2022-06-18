@@ -3,16 +3,22 @@ import WebSocket, { WebSocketServer } from 'ws';
 
 export class SocketServer {
 
+  webSocket = null;
+  webSocketServer = null;
+
   wss = null;
 
-  constructor() {
-    this.wss = new WebSocketServer({ port: 8080 });
+  constructor(_WebSocketServer, _WebSocket) {
+    this.webSocket = _WebSocket;
+    this.webSocketServer = _WebSocketServer;
+    
+    this.wss = new this.webSocketServer({ port: 8080 });
     this.init();
   }
 
   init = () => {
     this.wss.on('connection', (ws) => this.handleConnection(ws));
-    console.log('WebSocket server is running on port 8080');
+    console.log('WebSocket server is running on port 8081');
   };
 
   handleConnection = (ws) => {
@@ -28,7 +34,7 @@ export class SocketServer {
   };
 
   handleIndividualMessages = (client, data, isBinary) => {
-    if (client.readyState === WebSocket.OPEN) {
+    if (client.readyState === this.webSocket.OPEN) {
       client.send(data, { binary: isBinary });
     }
   };
@@ -43,4 +49,4 @@ export class SocketServer {
 
 }
 
-const server = new SocketServer();
+const server = new SocketServer(WebSocketServer, WebSocket);

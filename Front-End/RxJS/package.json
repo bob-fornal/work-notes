@@ -36,8 +36,12 @@
     "sample030": "node -r esm ./code/rxjs--030-BehaviorSubject.js",
     "sample031": "node -r esm ./code/rxjs--031-ReplaySubject.js",
     "sample032": "node -r esm ./code/rxjs--032-AsyncSubject.js",
+
     "pattern001": "node ./patterns/pattern--001-api-call.js",
     "pattern002": "node ./patterns/pattern--002-type-ahead.js",
+    "pattern004": "node ./patterns/pattern--004-broadcast-channel.js",
+    "pattern005": "node ./patterns/pattern--005-input-filters.js",
+
     "test": "jasmine"
   },
   "author": "",

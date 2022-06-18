@@ -29,12 +29,14 @@ export class FilterContent {
       this.products$,
       this.categoryFilter$,
       this.countryFilter$
-    ]).subscribe(([ products, selectedCategory, selectedCountry ]) => {
-      this.filtered = products.filter((product) => {
-        return product.category.includes(selectedCategory) && product.country.includes(selectedCountry);
-      });
-      console.log(this.filtered);
+    ]).subscribe(this.handleFilter.bind(this));
+  };
+
+  handleFilter = ([ products, selectedCategory, selectedCountry]) => {
+    this.filtered = products.filter((product) => {
+      return product.category.includes(selectedCategory) && product.country.includes(selectedCountry);
     });
+    console.log(this.filtered);
   };
 
   onCategoryFilterChange = (category) => {

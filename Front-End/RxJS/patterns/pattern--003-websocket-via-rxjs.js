@@ -8,7 +8,7 @@ export class SocketService {
   messages = new Subject();
 
   socket = webSocket({
-    url: 'ws://localhost:8080',
+    url: 'ws://localhost:8081',
     WebSocketCtor: WebSocket
   });
   

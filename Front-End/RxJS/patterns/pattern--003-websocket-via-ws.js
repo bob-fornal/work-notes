@@ -4,7 +4,7 @@ import WebSocket from 'ws';
 
 export class SocketService {
 
-  ws = new WebSocket('ws://localhost:8080');
+  ws = new WebSocket('ws://localhost:8081');
   
   messages = new Subject();
 
