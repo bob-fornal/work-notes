@@ -1,7 +1,7 @@
 
 import { SocketServer } from "./pattern--003-socket-server.js";
 
-import { MockWebSocket, MockWebSocketServer } from './_spec/mock-websocket-server.js';
+import { MockWebSocket, MockWebSocketServer } from './_spec/mock-websocket-server.spec.js';
 
 describe('SocketServer', () => {
   let server;
