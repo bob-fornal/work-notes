@@ -27,10 +27,12 @@ export class SocketService {
 
 }
 
-const config = {
-  url: 'ws://localhost:8080',
-  WebSocketCtor: WebSocket
+const initializer = () => {
+  const config = {
+    url: 'ws://localhost:8080',
+    WebSocketCtor: WebSocket
+  };
+  const service = new SocketService(webSocket, config);
+  service.send('first message');
+  service.send('second message');  
 };
-const service = new SocketService(webSocket, config);
-service.send('first message');
-service.send('second message');

@@ -27,16 +27,18 @@ export class BroadcastService {
 
 }
 
-const service1 = new BroadcastService('channel-one');
-const service2 = new BroadcastService('channel-one');
-
-const messages = service1.messageOfType('sending');
-messages.subscribe({
-  next: (data) => console.log('service 1 receiving', data),
-  error: (error) => console.log(error),
-  complete: () => console.log('done')
-});
-
-service2.publish({ type: 'sending', data: 'DATA HERE' });
-service2.publish({ type: 'sending', data: 'AND HERE' });
-service2.publish({ type: 'not-sending', data: 'AND HERE' });
+const initializer = () => {
+  const service1 = new BroadcastService('channel-one');
+  const service2 = new BroadcastService('channel-one');
+  
+  const messages = service1.messageOfType('sending');
+  messages.subscribe({
+    next: (data) => console.log('service 1 receiving', data),
+    error: (error) => console.log(error),
+    complete: () => console.log('done')
+  });
+  
+  service2.publish({ type: 'sending', data: 'DATA HERE' });
+  service2.publish({ type: 'sending', data: 'AND HERE' });
+  service2.publish({ type: 'not-sending', data: 'AND HERE' });  
+};

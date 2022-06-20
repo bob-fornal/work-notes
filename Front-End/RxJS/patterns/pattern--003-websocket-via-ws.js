@@ -8,13 +8,13 @@ export class SocketService {
   socket = null;
 
   constructor(_webSocket, _config) {
-    this.socket = new WebSocket(_config);
+    this.socket = new _webSocket(_config);
 
     this.messages.subscribe(this.handleMessages.bind(this));
-    this.socket.on('message', this.receieveMessage.bind(this));
+    this.socket.on('message', this.receiveMessage.bind(this));
   }
 
-  receieveMessage = (data) => this.messages.next(data);
+  receiveMessage = (data) => this.messages.next(data);
   handleMessages = (data) => console.log(`received: ${ data }`);
   handleSendMessage = (data) => this.socket.send(data);
 
@@ -24,9 +24,11 @@ export class SocketService {
 
 }
 
-const config = {
-  host: 'ws://localhost:8080'
+const initializer = () => {
+  const config = {
+    host: 'ws://localhost:8080'
+  };
+  const service = new SocketService(WebSocket, config);
+  service.send('first message');
+  service.send('second message');  
 };
-const service = new SocketService(WebSocket, config);
-service.send('first message');
-service.send('second message');

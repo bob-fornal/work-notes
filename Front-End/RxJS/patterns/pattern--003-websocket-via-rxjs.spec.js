@@ -19,4 +19,19 @@ describe('SocketService', () => {
     expect(service).toBeTruthy()
   });
 
+  it('expects "handleMessages" to take data and console', () => {
+    const data = 'data';
+
+    service.handleMessages(data);
+    expect(console.log).toHaveBeenCalledWith('received: data');
+  });
+
+  it('exects "send" to take data and pass it to the socket', () => {
+    const data = 'data';
+    spyOn(service.socket, 'next').and.stub();
+
+    service.send(data);
+    expect(service.socket.next).toHaveBeenCalledWith(data);
+  });
+
 });

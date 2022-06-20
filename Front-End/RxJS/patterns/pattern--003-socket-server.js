@@ -49,4 +49,6 @@ export class SocketServer {
 
 }
 
-const server = new SocketServer(WebSocketServer, WebSocket);
+const initializer = () => {
+  const server = new SocketServer(WebSocketServer, WebSocket);
+};
