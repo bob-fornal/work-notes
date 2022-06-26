@@ -7,19 +7,19 @@
 
 // 1. Hoisting (Variables)
 const testHoising = () => {
-  // console.log({ first });
+  console.log({ first });
   var first = 'Bob';
-  // console.log({ first });
+  console.log({ first });
   
   // console.log({ second });
   const second = 'Bob';
-  // console.log({ second });  
+  console.log({ second });  
 
   // console.log({ third });
   let third = 'Bob';
-  // console.log({ third });  
+  console.log({ third });  
 };
-testHoising();
+// testHoising();
 
 // 1. Hoisting (Functions)
 

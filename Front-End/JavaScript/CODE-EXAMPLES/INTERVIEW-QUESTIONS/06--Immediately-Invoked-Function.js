@@ -1,8 +1,8 @@
 
-// 6. Immediately Invoked Function (IIFE)
+// 6. Immediately Invoked Function Execution (IIFE)
 // (function(){})();
 const outerFn = (function name() {
-  innerFn = () => {
+  const innerFn = () => {
     console.log('one');
   };
   return {
@@ -12,13 +12,13 @@ const outerFn = (function name() {
 console.log(outerFn);
 outerFn.trigger();
 
-(function () {
-  var Array = {};
-})();
+// (function () {
+//   var Array = {};
+// })();
 
 function name2 () {
-  innerFn = () => {
-    console.log('one');
+  const innerFn = () => {
+    console.log('two');
   };
   return {
     trigger: innerFn
@@ -26,3 +26,4 @@ function name2 () {
 }
 
 const outerFn2 = name2();
+outerFn2.trigger();

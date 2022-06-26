@@ -32,8 +32,8 @@ const testFunctionScope2 = () => {
 // console.log(d);
 
 const testBlockScope = () => {
-  for (let i = 0, len = 2; i < len; i++) {
-    let j = i * 2;
+  for (var i = 0, len = 2; i < len; i++) {
+    var j = i * 2;
     console.log('inside', j);
   }
   console.log('outside', i);
@@ -59,4 +59,4 @@ const testScopeChain = () => {
   andAnotherTestScopeChain();
   // console.log(sc3);
 };
-// testScopeChain();
+testScopeChain();
