@@ -1,5 +1,15 @@
 # Promise Examples
 
+## Promise states
+
+There are 3 possible states ...
+
+1. Pending
+2. Resolved
+3. Rejected
+
+One promise is originally **Pending**. When we call resolve then the promise becomes **Resolved**, if we call reject it becomes **Rejected**, usually when it is rejected we get an error that will indicate the reason for the rejection. When a promise is resolved then the function we pass to the .then method is executed, if the promise is rejected then the function we pass to `.catch` is executed, this way we can control the data flow.
+
 ## Notes
 
 ### Promise.all()
