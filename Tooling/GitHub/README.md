@@ -14,6 +14,7 @@
 ## Presentations
 
 * [Advanced GitHub Actions](Advanced-GitHub-Actions.md)
+* [Best Practices](Best-Practices.md)
 * [GitHub Actions](GitHub-Actions.md)
 
 ## Git Cheat Sheets
