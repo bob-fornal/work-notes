@@ -19,6 +19,7 @@ const newWork = [
 
 const isUserAndActive1 = (username) => {
   const data = work.filter((item) => item.username === username && item.status === 'Active');
+  console.log(data);
   return data.length > 0;
 };
 console.log('filter', isUserAndActive1('bob.fornal'));
