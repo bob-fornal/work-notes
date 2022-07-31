@@ -21,11 +21,13 @@ function hasUsername(item) {
   return item.username.length > 0;
 }
 
+// Shortest and testable
 const allHaveUsername1 = work.every((item) => item.username.length > 0);
 const allHaveUsername2 = work.every(hasUsername);
 console.log('--------------------------');
 console.log('All have username', allHaveUsername2);
 
+// Shortest, Speed, Readable 
 const allHaveUsername3 = () => work.every((item) => item.username.length > 0);
 const allHaveUsername4 = () => {
   let have = true;

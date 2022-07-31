@@ -15,11 +15,10 @@ const newWork = [
   { id: 5, username: 'tim.fornal', status: 'Unknown' }
 ];
 
-// === Array.prototype.filter
+// === Array.prototype.at (new)
 
-const isUserAndActive1 = (username) => {
-  const data = work.filter((item) => item.username === username && item.status === 'Active');
-  console.log(data);
-  return data.length > 0;
-};
-console.log('filter', isUserAndActive1('bob.fornal'));
+console.log(work[1]);
+console.log(work.at(1));
+
+console.log(work[work.length - 1]);
+console.log(work.at(-1));
