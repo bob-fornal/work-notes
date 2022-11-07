@@ -6,13 +6,13 @@ Using `Object.assign()` ...
 
 ```javascript
 function testing(args) {
-	let { name, job, type, isActive } = Object.assign({
-		job: 'Developer',
-		type: null,
-		isActive: false
-	}, args);
+  let { name, job, type, isActive } = Object.assign({
+    job: 'Developer',
+    type: null,
+    isActive: false
+  }, args);
 
-	console.log(name, job, type, isActive);
+  console.log(name, job, type, isActive);
 }
 ```
 
@@ -20,7 +20,7 @@ Implemented in parameter assignment
 
 ```javascript
 function testing({ name, job = 'Developer', type, isActive = false} = {}) {
-	console.log(name, job, type, isActive);
+  console.log(name, job, type, isActive);
 }
 ```
 
