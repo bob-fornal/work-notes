@@ -31,4 +31,15 @@ const compareByReference = () => {
   let h = [ ...g ];
   console.log({ g, h, value: g === h });
 };
-compareByReference();
+// compareByReference();
+
+const compareByReferenceObjects = () => {
+  let e = [{ value: 1 }];
+  let f = e;
+  console.log({ e, f, reference: e === f });
+
+  let g = [{ value: 2 }];
+  let h = [ ...g ];
+  console.log({ g, h, value: g === h });
+};
+compareByReferenceObjects();
