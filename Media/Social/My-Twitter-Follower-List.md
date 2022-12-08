@@ -29,6 +29,13 @@
 | Ashlee M Boyer | @AshleeMBoyer | Web Engineer at HashiCorp |
 | Sara Soueidan | @SaraSoueidan | Independent Web UI, Design Engineer |
 
+## Developer Relations
+
+| Name | Twitter | Content Area |
+|------|---------|--------------|
+| Guy Royse | @guyroyse | Developer Advocate Redis |
+| Lewis Meyers | @DevRelLewis | Developer Advocate |
+
 ## UI/UX
 
 | Name | Twitter | Content Area |
@@ -68,4 +75,3 @@
 | Matthew D. Groves | @mgroves | Product Marketing Manager at Couchbase |
 | Calvin Allen | @_CalvinAllen | Lead Software Engineer, Microsoft MVP |
 | Baskar Rao | @baskarmib | JavaScript and Friends |
-| Guy Royse | @guyroyse | Developer Advocate Redis |
