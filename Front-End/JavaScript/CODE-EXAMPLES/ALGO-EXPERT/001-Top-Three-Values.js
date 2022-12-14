@@ -19,7 +19,6 @@ function findTopThree2(check) {
   return checkNoDuplicates;
 }
 
-
 function findTopThree1(check) {
   let result = [];
 
