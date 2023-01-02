@@ -88,3 +88,4 @@ var peanutButter = new Product("Peanut Butter", "ACME", 400, true);
 ## Language
 
 * [Variables](./Java-SE--Notes--Variables.md)
+* [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
