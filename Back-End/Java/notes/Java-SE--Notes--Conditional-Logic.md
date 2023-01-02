@@ -25,9 +25,61 @@ System.out.println(maxValue); // 7
 
 ## If-Else
 
+```java
+int value1 = 10;
+int value2 = 4;
+if (value1 > value2)
+  System.out.println("value 1 is bigger");
+else
+  System.out.println("value 1 is not bigger");
+```
+
 ## Chaining If-Else
 
+```java
+int value1 = 10;
+int value2 = 40;
+if (value1 > value2)
+  System.out.println("value 1 is bigger");
+else if (value1 < value2)
+  System.out.println("value 2 is bigger");
+else
+  System.out.println("value 1 and value 2 are equal");
+```
+
 ## Logical Operators
+
+Produce a single `true` or `false` from two `true` or `false` values.
+
+* May combine two relational tests.
+
+```java
+int a = 20, b = 14, c = 5;
+
+if (a > b & b > c)
+  System.out.println("a is greater than c");
+
+boolean done = false;
+
+if (!done)
+  System.out.println("Keep going");
+```
+
+| | Operator | What Resolves to True |
+|-|----------|-----------------------|
+| And | & | `true` & `true` |
+| Or | \| | `false` \| `true`, `true` \| `false` , `true` \| `true` |
+| Exclusive or (XOR) | ^ | `false` ^ `true`, `true` ^ `false` |
+| Negation | ! | `false` |
+
+## Conditional Logical Operators
+
+* Only executes the right-side of the condition when needed.
+
+| | Operator | What Resolves to True |
+|-|----------|-----------------------|
+| And | && | executes right when left is `true` |
+| Or | \|\| | executes right when left is `false` |
 
 ## Block Statements
 
