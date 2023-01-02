@@ -4,6 +4,11 @@
 
 These are my notes as I work through my refresher training.
 
+## Resources
+
+* [University of Helsinki’s free massive open online course (MOOC)](https://java-programming.mooc.fi/)
+* [LearnJavaOnline.org Interactive Java Tutorial](https://www.learnjavaonline.org/)
+
 ## Types
 
 * [Java SE (Standard Edition)](./notes/Java-SE.md)
