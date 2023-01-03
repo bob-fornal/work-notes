@@ -83,4 +83,42 @@ if (!done)
 
 ## Block Statements
 
-## Switch
+Groups statements together, creating a compound statement.
+
+* Enclosing statements in opening and closing brackets.
+
+```java
+int v1 = 10, v2 = 4;
+final int diff;
+if (v1 > v2) {
+  diff = v1 - v2;
+  System.out.println("v1 is bigger than v2, diff = " + diff);
+}
+else {
+  diff = v2 - v1;
+  System.out.println("v1 is not bigger than v2, diff = " + diff);
+}
+```
+
+### Variable Scope
+
+* Describes range of visibility.
+
+```java
+double students = 30.d, rooms = 4.0d;
+if (rooms > 0.0d) {
+  System.out.println(students);
+  System.out.println(rooms);
+  double avg = students / rooms;
+  System.out.println(avg);
+}
+// System.out.println(avg); - not accessible here.
+```
+
+## Switch Statements
+
+Test a value against multiple matches and transfer control based on a match.
+
+* Primitives: `byte`, `short`, `int`, `long`, and `char`.
+* A match can have multiple statements.
+* End each match with a `break`; otherwise it will "fall through" to the next match.
