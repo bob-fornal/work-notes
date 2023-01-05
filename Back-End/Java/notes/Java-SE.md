@@ -15,6 +15,7 @@
 * [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
 * [Methods](./Java-SE--Notes--Methods.md)
 * [Strings](./Java-SE--Notes--Strings.md)
+* [Static Members](./Java-SE--Notes--Static-Members.md)
 
 ### Acronyms
 
