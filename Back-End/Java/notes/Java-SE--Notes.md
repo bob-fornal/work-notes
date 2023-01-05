@@ -84,11 +84,3 @@ record Product(String name, String vendor, int price, boolean inStock) {};
 var peanutButter = new Product("Peanut Butter", "ACME", 400, true);
 // Product[name=Peanut Butter, vendor=ACME, price=400, inStock=true]
 ```
-
-## Language
-
-* [Variables](./Java-SE--Notes--Variables.md)
-* [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
-* [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
-* [Methods](./Java-SE--Notes--Methods.md)
-* [Strings](./Java-SE--Notes--Strings.md)

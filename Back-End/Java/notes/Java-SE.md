@@ -8,7 +8,13 @@
 
 ## Java Notes
 
-[NOTES](./Java-SE--Notes.md)
+[GENERAL NOTES](./Java-SE--Notes.md)
+
+* [Variables](./Java-SE--Notes--Variables.md)
+* [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
+* [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
+* [Methods](./Java-SE--Notes--Methods.md)
+* [Strings](./Java-SE--Notes--Strings.md)
 
 ### Acronyms
 
