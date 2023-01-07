@@ -16,6 +16,7 @@
 * [Methods](./Java-SE--Notes--Methods.md)
 * [Strings](./Java-SE--Notes--Strings.md)
 * [Static Members](./Java-SE--Notes--Static-Members.md)
+* [Wrapper Classes, Enums, and Records](./Java-SE--Notes--Wrapper-Classes-Enums-and-Records.md)
 
 ### Acronyms
 
