@@ -19,6 +19,10 @@
 * [Wrapper Classes, Enums, and Records](./Java-SE--Notes--Wrapper-Classes-Enums-and-Records.md)
 * [Annotations](./Java-SE--Notes--Annotations.md)
 
+## Java Debugging
+
+* [Debugging Mindset](./Java-SE--Notes--Debugging-Mindset.md)
+
 ### Acronyms
 
 * JRE - Java Runtime Environment
