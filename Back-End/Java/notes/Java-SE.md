@@ -10,14 +10,15 @@
 
 [GENERAL NOTES](./Java-SE--Notes.md)
 
-* [Variables](./Java-SE--Notes--Variables.md)
+* [Annotations](./Java-SE--Notes--Annotations.md)
 * [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
+* [Debugging](./Java-SE--Notes--Debugging-Mindset.md)
 * [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
 * [Methods](./Java-SE--Notes--Methods.md)
-* [Strings](./Java-SE--Notes--Strings.md)
 * [Static Members](./Java-SE--Notes--Static-Members.md)
+* [Strings](./Java-SE--Notes--Strings.md)
+* [Variables](./Java-SE--Notes--Variables.md)
 * [Wrapper Classes, Enums, and Records](./Java-SE--Notes--Wrapper-Classes-Enums-and-Records.md)
-* [Annotations](./Java-SE--Notes--Annotations.md)
 
 ## Java Debugging
 
