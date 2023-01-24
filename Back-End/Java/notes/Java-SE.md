@@ -15,6 +15,7 @@
 * [Debugging](./Java-SE--Notes--Debugging-Mindset.md)
 * [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
 * [Methods](./Java-SE--Notes--Methods.md)
+* [Object-Oriented Programming](./Java-SE--Notes--OOP.md)
 * [Static Members](./Java-SE--Notes--Static-Members.md)
 * [Strings](./Java-SE--Notes--Strings.md)
 * [Variables](./Java-SE--Notes--Variables.md)
