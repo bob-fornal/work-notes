@@ -11,8 +11,11 @@
 [GENERAL NOTES](./Java-SE--Notes.md)
 
 * [Annotations](./Java-SE--Notes--Annotations.md)
+* [Classes and Objects](./Java-SE--Notes--Classes-and-Objects.md)
+* [Classes: Defining](./Java-SE--Notes--Classes-Definining.md)
 * [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
 * [Debugging](./Java-SE--Notes--Debugging-Mindset.md)
+* [Hiding Fields and Methods](./Java-SE--Notes--Hiding-Fields-and-Methods.md)
 * [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
 * [Methods](./Java-SE--Notes--Methods.md)
 * [Object-Oriented Programming](./Java-SE--Notes--OOP.md)
