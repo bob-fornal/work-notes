@@ -81,7 +81,7 @@ class Alarm {
       return "";
   }
 
-  sendReport() {
+  void sendReport() {
     System.out.println(getReport(true));
   }
 }
