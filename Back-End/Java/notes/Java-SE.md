@@ -16,6 +16,7 @@
 * [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
 * [Debugging](./Java-SE--Notes--Debugging-Mindset.md)
 * [Hiding Fields and Methods](./Java-SE--Notes--Hiding-Fields-and-Methods.md)
+* [Inheritance](./Java-SE--Notes--Inheritance.md)
 * [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
 * [Methods](./Java-SE--Notes--Methods.md)
 * [Object-Oriented Programming](./Java-SE--Notes--OOP.md)
@@ -32,3 +33,12 @@
 
 * JRE - Java Runtime Environment
 * JDK - Java Development Kit
+
+## Design Guidelines
+
+*These are not absolute rules*.
+
+* `private` is better than not. If something isn't needed elsewhere, keep it local.
+* Keep interfaces small.
+* Encapsulated fields are good. Make fields `private` and only write setters that are needed.
+* `final` fields are also good. If a field doesn't need to change, make it `final`.
