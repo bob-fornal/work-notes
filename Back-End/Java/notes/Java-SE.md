@@ -14,6 +14,7 @@
 * [Annotations](./Java-SE--Notes--Annotations.md)
 * [Classes and Objects](./Java-SE--Notes--Classes-and-Objects.md)
 * [Classes: Defining](./Java-SE--Notes--Classes-Definining.md)
+* [Collections](./Java-SE--Notes--Collections.md)
 * [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
 * [Debugging](./Java-SE--Notes--Debugging-Mindset.md)
 * [Designing with Inheritance and Polymorphism](./Java-SE--Notes--Designing-with-Inheritance-and-Polymorphism.md)
