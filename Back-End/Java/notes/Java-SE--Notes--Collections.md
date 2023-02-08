@@ -52,3 +52,84 @@ Collection extend the Iterable interface.
 | `contains(element)` | `true` if the element is in this collection, `false` otherwise. |
 | `containsAll(collection)` | `true` if all the elements of the argument collection are in this collection. |
 | `clear` | Remove all elements from this collection. |
+
+## Lists: Collections with Iteration Order
+
+### Features
+
+Lists are collections with an iteration order.
+
+Each element has an index.
+
+```java
+void add(int index, E element);
+E get(int index);
+E remove(int index);
+E set(int index, E element);
+boolean addAll(int index, Collection collection);
+```
+
+Look up indices by value;
+
+```java
+int indexOf(Object o);
+int lastIndexOf(Object o);
+```
+
+Sublists are views over ranges of lists.
+
+* Modifying the view modifies the list.
+
+```java
+List subList(int fromIndex, int toIndex);
+```
+
+Sorting
+
+```java
+list.sort(Comparator<? Super E> comparator)
+```
+
+List Static Factory Methods
+
+* Creates unmodifiable List instances.
+* Overloads for 0-10 arguments.
+* Varargs constructor for more than 10 arguments.
+* Creates and unmodifiable copy of an existing collection.
+
+```java
+List<E> of()
+List<E> of(E e1)
+List<E> of(E e1, E e2)
+
+List<E> of(E ... elements)
+
+List<E> copyOf(Collection<E>)
+```
+
+### Implementations
+
+`ArrayList` is an implementation of a List.
+
+Doubling Strategy versus incrementing an array by 1 as elements are added.
+
+* Good, general purpose implementation.
+* Use as default.
+* CPU Cache Sympathetic.
+
+`LinkedList` is a non-concurrent List (doubly-linked list).
+
+* Worst performance in MOST cases.
+* Use when adding elements at the start.
+* Or when adding and removing elements a lot.
+
+### Performance Comparison
+
+|           | get() | add() | contains() | next() | remove() |
+|-----------|-------|-------|------------|--------|----------|
+| ArrayList | O(1) | O(N), $\Omega$(1) | O(N) | O(1) | O(N) |
+| LinkedList | O(N) | O(1) | O(N) | O(1) | O(N) |
+
+### Legacy Implementations
+
+* `Vector` and `Stack`
