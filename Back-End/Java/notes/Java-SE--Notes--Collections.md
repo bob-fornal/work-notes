@@ -133,3 +133,40 @@ Doubling Strategy versus incrementing an array by 1 as elements are added.
 ### Legacy Implementations
 
 * `Vector` and `Stack`
+
+## Maps
+
+Maps are collections of Key/Value pairs.
+
+### Map API
+
+Map is the only collections that do not extend or implement the Collection interface.
+
+| | |
+|-|-|
+| `V put(K key, V value)` | Adding and replacing in a map. |
+| `void putAll(Map<? extends K, ? extends V> values)` | Buld update. |
+| `V get(Object key)` | Looking up elements. |
+| `boolean containsKey(Object key)`<br/> `boolean containsValue(Object value)` | Separate contains methods for key and value. |
+| `V remove(Object key)` | Removing a key/value pair. |
+| `int size()` | Querying size. |
+| `boolean isEmpty()` | Is empty. |
+
+Can create immutable Map Factories.
+
+```java
+// Individual key/value pairs
+Map.Entry<String, Integer> entry = Map.entry("Richard", 38);
+// Up to 10 value specific overload Factories
+Map<String, Integer> personToAge = Map.of("Richard", 38);
+// For greater than 10 varargs factory takes entry objects
+personToAge = Map.ofEntries(Map.entry("Richard", 38));
+// Immutable Copies of an existing Map
+Map<String, Integer> copy = Map.copyOf(personToAge);
+```
+
+### Views over Maps
+
+### Advanced Operations
+
+### Implementations
