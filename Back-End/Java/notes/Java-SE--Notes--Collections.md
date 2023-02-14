@@ -167,6 +167,89 @@ Map<String, Integer> copy = Map.copyOf(personToAge);
 
 ### Views over Maps
 
+* `.keyset()`: Keys
+* `.values()`: Values
+* `.entrySet()`: Entries
+
 ### Advanced Operations
 
+Altering and Removing
+
+| | |
+|-|-|
+| `replace(key, value)` | Update a single value. |
+| `replaceAll(BiFunction<K, V, V>)` | Replace elements using a function. |
+| `remove(key, value)` | Remove a key ONLY if iti has a value. |
+
+Updating
+
+| | |
+|-|-|
+| `getOrDefault` | Returns a default if get has no value to return. |
+| `computeIfAbsent` | Returns the value or calls the function if absent. |
+| `putIfAbsent` | Puts a value if it isn't present already or the key is associated with `null`. |
+| `computeIfPresent` | If the value exists, replace with computed value. |
+| `compute` |  |
+| `merge` | Takes a key/value and replaces with a function. |
+| `forEach` | Iterates over key/value pairs with callback based iteration. |
+
 ### Implementations
+
+General Purpose Implementations
+
+| | |
+|-|-|
+| `HashMap` | Good general purpose implementation. |
+| `TreeMap` | Defines sort order and adds functionality. |
+
+#### `HashMap`
+
+* Good general purpose implementation.
+* Uses the `.hashCode()` method.
+* Maintains an array of buckets.
+* `rehash(hash) % bucket_count`
+* Buckets are linked lists to accommodate collisions.
+* Buckets can be trees.
+* The number of buckets increases with more elements.
+
+#### `TreeMaps`
+
+* Comparator: Key elements have a sort order.
+* Red / Black Tree: A balanced binary tree.
+* Navigable & Sorted: Provides functionality that `HashMap` doesn't.
+
+#### Performance Comparison
+
+| | `put` | `get` | `containsKey` | `next` |
+|-|-|-|-|-|
+| `HashMap` | O(N), $\Omega$(1) | O(N), $\Omega$(1) | O(N), $\Omega$(1) | O(Capacity/N) |
+| `TreeMap` | O(log(N)) | O(log(N)) | O(log(N)) | O(log(N)) |
+
+### Special Purpose Implementations
+
+`LinkedHashMap`
+
+* **When**: Useful for implementing Size-based caches.
+* Maintains Order: Either insertion or access.
+* `removeEldestEntry`: Subclass and Override method in order to control cache.
+
+`IdentityHashMap`
+
+| `IdentityHashMap` | `HashMap` |
+|-------------------|-----------|
+| `System.identityHashCode()` | `obj.equals()` & `obj.hashCode()` |
+| **Useful for Serialization or Graphs** | **Use normally** |
+| Faster & Lower Memory | Avoids coupling Map to Keys |
+| Low Collision Likelyhood | |
+| Violates Map Contract | |
+
+`WeakHashMap`
+
+* **When**: Useful for a Memory Bounded Cache.
+* Keys have weak references, can be collected if nothing else references them.
+* Entries can be removed fater the key is collected.
+
+`EnumMap`
+
+* Keys are Enums: Faster and Low memory usage.
+* Bitset Implementation: Only a single long if less than 64 elements.
