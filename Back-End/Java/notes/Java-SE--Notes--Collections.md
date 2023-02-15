@@ -253,3 +253,83 @@ General Purpose Implementations
 
 * Keys are Enums: Faster and Low memory usage.
 * Bitset Implementation: Only a single long if less than 64 elements.
+
+## Java Streams
+
+Abstraction that allows for processing changes over an entire Collection at once.
+
+A stream is a way of supporting functional-style operations on Collections; aggregate operations that work on sequences of values.
+
+* For loops and iterators are low-level and error prone constructs.
+
+Example ...
+
+```java
+// This code is NOT using Streams
+private static List<String> namesOfLightProductsWeightSortedLoop(List<Product> products) {
+  List<Product> lightProducts = new ArrayList<>();
+
+  for (Product product : products) {
+    if (product.getWeight() < 30) {
+      lightProducts.add(product);
+    }
+  }
+
+  lightProducts.sort(comparingInt(Product::getWeight));
+
+  List<String> productNames = new ArrayList<>();
+  for (Product product : lightProducts) {
+    productNames.add(product.getName());
+  }
+
+  return Collections.unmodifiableList(productNames);
+}
+```
+
+```java
+// This code is doing the same thing WITH Streams
+private static List<String> namesOfLightProductsWeightSortedStreams(final List<Product> products) {
+  return products
+    .stream()
+    .filter(product -> product.getWeight() < 30)
+    .sorted(comparingInt(Product::getWeight))
+    .map(Product::getName)
+    .toList();
+}
+```
+
+### Types of Stream Operations
+
+* **Intermediate**: Everything but the last return `Stream <T>` (eg. `filter()`).
+* **Terminal**: Last in the pipeline; return values (eg. `toList()`).
+
+#### Intermediate Operations
+
+| Operation | Description |
+|-----------|-------------|
+| `filter` | Remove element from the Stream that do not match a predicate.<br/>`streamOfProducts.filter(product -> product.getWeight() > 20)` |
+| `map` | Transform elements from one value into another.<br/>`streamOfProducts.map(Product::getName)` |
+| `skip` and `limit` | Discards / keeps elements respectively (pagination).<br/>SEE CODE <sup>1</sup> |
+| `sorted` | Sort comparable objects with default order.<br/>`products.map(Product::getName).sorted()`<br/>SEE CODE <sup>2</sup> |
+| `flatMap` | Transform elements from one value into zero, one or many values.<br>`streamOfShipments.flatMap(shipment -> shipment.getLightVanProducts().stream())` |
+
+**CODE 1**
+```java
+streamOfProducts
+  // Discard next N elements
+  .skip(elementsOnPage * pageNumber)
+  // Only keep next N elements
+  .limit(elementsOnPage)
+```
+
+**CODE 2**
+```java
+products.map(Product::getName).sorted();
+
+Comarator<Product> byName = Comparator.comparing(Product::getName);
+products.sorted(byName);
+```
+
+#### Terminal Operations
+
+
