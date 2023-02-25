@@ -109,8 +109,128 @@ Possibly use LinkedIn reference language / wording.
 
 ## Networking and Relationships
 
+> Many people avoid networking because they feel they are too good for it.
 
+* Network doesn't sound fun.
+* Feels like a waste of time.
+* Inefficient.
+* Talking gives anxiety.
+* Growing a list feels fake.
+
+> It's networking **and relationships**.
+
+* Power of one-on-one deeper relationships.
+
+### Books
+
+* [Dig Your Well Before You're Thirsty](https://www.amazon.com/Your-Well-Before-Youre-Thirsty/dp/0385485433) ![](../foreign.png)
+* [How To Win Friends and Influence People](https://www.amazon.com/How-Win-Friends-Influence-People/dp/9357400729) ![](../foreign.png)
+* [Never Eat Alone](https://www.amazon.com/Never-Eat-Alone-Expanded-Updated-ebook/dp/B00H6JBFOS) ![](../foreign.png)
+
+
+### Network Your Wait In
+
+> Find someone on the team on LinkedIn to see if you know someone that knows us well and then use them for an introduction. - Kayak
+
+### Networker
+
+> "The **best networkers** are listeners rather than talkers. They have a clear agenda and are not shy about asking for feedback and guidance." - Martin Buckland, Career Professional
+
+Listeners ...
+
+* You have two ears and one mouth for a reason.
+* We are often anxious to feel heard.
+
+Clear Agenda ...
+
+* Know your purpose.
+* Create a list of objectives.
+
+Ask for Feedback and Guidance ...
+
+* What am I doing well?
+* What do I need to fix?
+* Who should I talk to?
+
+Giving and Taking ...
+
+* Giving: When I give more, I receive more.
+* Taking: Know when it's time to receive; "How can I help you?"
+
+### Quantity versus Quality: The Great Debate
+
+> LinkedIn highlights this issue.
+
+* Circumstances should impact where an individual's networking focus is.
+
+Networking with a Focus on Quantity ...
+
+* Relevant contacts: Profession, Industry, and/or Geography.
+* Right size (50 relevant or 5,000 not relevant).
+
+Networking with a Focus on Quality ...
+
+* Strength of each relationship.
+* Nurture each relationship over time.
+
+### Networking Strategies
+
+> Job seeker networking strategies are different than happy worker networking strategies.
+
+What networking strategy works best based on the circumstances?
+
+Happy workers ...
+
+* Often neglect networking.
+* Missing sense of urgency.
+
+### Strategic Networking
+
+> Practice makes progress.
+
+* Strategic: Do this on purpose, not by chance.
+* Relevance: Leads to effectiveness.
+* IMPORTANT: Nurture long-term relationships.
+
+Example:
+
+LinkedIn: Accept or Invite to connect (healthy combination).
+
+### Power Connectors
+
+> Someone who has a lot of real relationships, and readily makes introductions between their contacts.
 
 ## Tactics and Tools
 
+> Start from where you are and add what you can.
 
+### Personal Newsletter
+
+> Personal newsletters can be an excellent way to stay in touch with contacts in influence how they perceive you.
+
+* Update people on relevant news.
+* Just an email (BCC).
+* Keeps relationships fresh.
+* Ensures consistent communication.
+* Gives a chance to ask for help.
+
+### Accountability Partner and Coaches
+
+> Seriously consider being accountable to someone.
+
+* Formal relationship.
+* Regular check-ins.
+* Explicitly define check-in and what to ask.
+* Honesty is critical.
+* Understand the role.
+
+Professional Coaches ...
+
+> Will help to identify and best address problems.
+
+> Helps keep you pointed in the right direction.
+
+* Could be your accountability partner.
+* Should understand your challenges.
+* Should understand your goals.
+* Should help you implement proper strategies and tactics.
