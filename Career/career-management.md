@@ -234,3 +234,57 @@ Professional Coaches ...
 * Should understand your challenges.
 * Should understand your goals.
 * Should help you implement proper strategies and tactics.
+
+### Mentors
+
+> Mentors don't have to be coaches or accountability partners. They can have done something you are striving towards. Sometimes they have no idea that they were mentors.
+
+> These relationships will change.
+
+* Learn through observation.
+* Formal coversations.
+* Scheduled meetings.
+* Formal sit-down meetings.
+* Frequency can adjust
+
+The Value Mentors Bring ...
+
+* Hold you accountable.
+* Help gather information.
+* Make important introductions.
+* Help see from a new perspective.
+* Walk through a thought process.
+* Help you think differently.
+* Invite you to question things.
+* Help develop thinking, systems, and processes.
+
+Giving Value to Mentors
+
+* Show respect and gratitude.
+* Information, insights, or introductions.
+* Following up: One of the best ways to return value.
+
+### Informational Interviews
+
+> "Informational interviews are the most important tactical thing you should do every day in your job search." - Jason Alba
+
+* Go into each meeting with a purpose.
+* Be prepared with talking points.
+* You want introductions and referrals.
+* Build trust during the meeting.
+
+### Volunteering
+
+> Can give you a sense of contributing to a greater good.
+
+* Helps fill gaps in a resume.
+* Gives you a sense of purpose.
+* Can help keep skills relevant.
+* Should lead to networking opportunities.
+* Gives reason to communicate with others.
+
+### Managing and Tracking Relationships
+
+> Relationship Management is hard.
+
+
