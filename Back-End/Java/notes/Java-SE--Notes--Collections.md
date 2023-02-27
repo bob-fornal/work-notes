@@ -332,4 +332,46 @@ products.sorted(byName);
 
 #### Terminal Operations
 
+Create containers ...
 
+| Function | Description |
+|----------|-------------|
+| `productStream.toList();` | Creates a List with elements of the Stream.<br/>List is unmodifiable. |
+| `productStream.toArray();` | Creates an Object[] Array. |
+| `productStream.toArray(Product[]::new);` | Pass a function to create the specific array type.<br/> Normally used with method reference. |
+
+Match family ...
+
+* Terminal Operations
+* Returns a Boolean
+* If any/none/all elements match a Predicate.
+
+```java
+products.anyMatch(prod -> prod.getWeight() > 20);
+products.noneMatch(prod -> prod.getWeight() > 20);
+products.allMatch(prod -> prod.getWeight() > 20);
+```
+
+Minimum and maximum ...
+
+```java
+products.max(Comparator.comparingInt(Product::getWeight));
+```
+
+Side effects ...
+
+```java
+products.forEach(prod -> System.out.println(prod.getName()));
+```
+
+`findFirst` and `findAny` ...
+
+```java
+products.filter(prod -> prod.getName().contains("Chair")).findFirst();
+```
+
+Count the number of elements in a stream ...
+
+```java
+products.filter(prod -> prod.getName().contains("Chair")).count();
+```
