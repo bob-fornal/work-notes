@@ -15,6 +15,7 @@
 | Eleftheria Batsou | @batsouelef | Community Manager at Hashnode |
 | Lucy Mac | @codingwithlucy | Developer |
 | Sarah Drasner | @sarah_edo | Director of Engineering, Web at Google |
+| Chris Fernandi | @ChrisFerdinandi | Vanilla JS guy, [NEWSLETTER](https://gomakethings.com/) |
 
 ## JavaScript
 
