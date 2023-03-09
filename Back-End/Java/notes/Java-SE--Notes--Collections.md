@@ -375,3 +375,76 @@ Count the number of elements in a stream ...
 ```java
 products.filter(prod -> prod.getName().contains("Chair")).count();
 ```
+
+Reduce: Combine elements together using a combining function.
+
+```java
+streamOfProducts.reduce(0, (acc, product) -> acc + product.getWeight());
+```
+
+#### Collector
+
+`collect` is a terminal operation.
+
+```java
+public static void main(String[] args) {
+  var door = new Product(1, "Wooden Door", 35);
+  var floorPanel = new Product(2, "Floor Panel", 25);
+  var window = new Product(3, "Glass Window", 10);
+
+  var products = List.of(
+    door, floorPanel, window, floorPanel, window, floorPanel);
+  
+  var result = products
+    .stream()
+    .filter(product -> product.getWeight() < 30)
+    .sorted(comparingInt(Product::getWeight))
+    .toList();
+
+  System.out.println("result = " + result);
+}
+```
+
+```java
+public static void main(String[] args) {
+  var door = new Product(1, "Wooden Door", 35);
+  var floorPanel = new Product(2, "Floor Panel", 25);
+  var window = new Product(3, "Glass Window", 10);
+
+  var products = List.of(
+    door, floorPanel, window, floorPanel, window, floorPanel);
+  
+  var result = products
+    .stream()
+    .filter(product -> product.getWeight() < 30)
+    .sorted(comparingInt(Product::getWeight))
+    // .collect(Collectors.toList());
+    // .collect(Collectors.groupingBy(Product::getName));
+    // .collect(groupingBy(Product::getName, Collectors.toList()));
+    .collect(groupingBy(Product::getName, counting()));
+
+  System.out.println("result = " + result);
+}
+```
+
+### Performance and Implementation
+
+* Primitives versus Boxed Implementations (int versus Integer).
+* Primitive Streams
+* Parallel Streams
+
+### Conclusion
+
+Are Streams always better?
+
+| Streams | Loops |
+|---------|-------|
+| High Level construct | Low level construct |
+| Optimized framework | Can be faster |
+| General better readability | Readability is subjective |
+| Some edge cases are worse | Nicer with checked Exceptions |
+
+## Collection Operations and Factories
+
+* Factories: How to make unmodifiable, immutable, empty, or wrapping collections.
+* Operations: Useful collection algorithms.
