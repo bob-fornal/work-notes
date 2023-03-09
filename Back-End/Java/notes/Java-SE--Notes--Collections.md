@@ -448,3 +448,159 @@ Are Streams always better?
 
 * Factories: How to make unmodifiable, immutable, empty, or wrapping collections.
 * Operations: Useful collection algorithms.
+
+### Factory Methods
+
+#### Empty Collections
+
+**Immutable**
+
+Use when you want to pass no values to a method that takes a collection.
+
+```java
+List<String> list = Collections.emptyList();
+Map<Integer, String> map = Collections.emptyMap();
+Set<Integer> set = Collections.emptySet();
+```
+
+#### Singletons
+
+**Immutable single value of collection.**
+
+Use when you want to pass a single value to a method that takes a collection.
+
+```java
+List<String> list = Collections.singletonList("one");
+Map<Integer, String> map = Collections.singletonMap(1, "one");
+Set<Integer> set = Collections.singleton(1);
+```
+
+#### Collection Factories
+
+* Alternative to collection literals.
+* Runtime immutable - add throws an exception.
+* Overloads for performance.
+
+```java
+List<String> list = List.of("UK", "USA");
+
+// Alternative Map
+Map<String, Integer> map = Map.of("UK", 67, "USA", 328);
+
+Map<String, Integer> entries =
+  Map.ofEntries(
+    Map.entry("UK", 67),
+    Map.entry("USA", 328)
+  );
+```
+
+#### Immutable Copies
+
+```java
+// Modifying countries does not modify immutableCountries
+Collection<String> countries = new ArrayList();
+countries.add("UK");
+countries.add("USA");
+
+List<String> immutableCountries = List.copyOf(countries);
+
+Map<String, Integer> populations = new HashMap<>();
+populations.put("UK", 67);
+populations.put("USA", 328);
+
+Map<String, Integer> immutablePopulations = Map.copyOf(populations);
+```
+
+#### Unmodifiable Views
+
+```java
+// Modifying countries is the only way to modify countriesView
+List<String> countries = new ArrayList<>();
+countries.add("UK");
+countries.add("USA");
+
+List<String> countriesView = Collections.unmodifiableList(countries);
+
+Map<String, Integer> populations = new HashMap<>();
+populations.put("UK", 67);
+populations.put("USA", 328);
+
+Map<String, Integer> populationsView = Collections.unmodifiableMap(populations);
+```
+
+## Collection Operations
+
+### Disjoint
+
+Disjoint means there are no common elements in the collection.
+
+```java
+var _1to3 = List.of(1, 2, 3);
+var _2to4 = List.of(2, 3, 4);
+var _4to6 = List.of(4, 5, 6);
+
+System.out.println(Collections.disjoint(_1to3, _4to6)); // true
+System.out.println(Collections.disjoint(_1to3, _2to4)); // false
+```
+
+### Frequency
+
+Returns the number of elements within a collection equal to the object.
+
+```java
+var letters = "ABCDEFAADSEA".chars().mapToObject(x -> (char)x).toList();
+int count = Collections.frequency(letters, 'A');
+System.out.println(count); // 4
+```
+
+### Addall
+
+Adds multiple elements to a collection.
+
+```java
+var door = new Product("Wooden Door", 35);
+var floorPanel = new Product("Floor Panel", 25);
+var window = new Product("Glass Window", 10);
+
+var products = new ArrayList<Product>();
+Collections.addAll(products, door, floorPanel, window);
+```
+
+### Max and Min
+
+Find the maximum or minimum value in a collection based upon a comparator.
+
+```java
+var door = new Product("Wooden Door", 35);
+var floorPanel = new Product("Floor Panel", 25);
+var window = new Product("Glass Window", 10);
+
+var products = List.of(door, floorPanel, window);
+var max = Collections.max(products, Product.BY_WEIGHT);
+System.out.println(max == door);
+```
+
+## Collections with Uniqueness: Sets
+
+Sets are collections of distinct elements. There are no duplicates.
+
+### Hashcode and Equals
+
+> **Equality**: It can be reference-based or value-based. Reference-based just needs to inherit equals from Object. Value-based requres a custom equals method.
+
+```java
+// Combine hashcode information form each field
+// Prime number times result, added to Hash Code
+result = 31 * result + obj.hashCode();
+
+// Arrays - reference-based Hash Code
+Array.hashCode();
+
+// Primitives (Java 8+) - returns a good value
+Long.hashCode(longValue);
+```
+
+* IDE can auto-generate.
+* Always use the same fields as `equals()`.
+
+### Set Implementations
