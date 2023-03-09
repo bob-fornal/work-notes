@@ -604,3 +604,64 @@ Long.hashCode(longValue);
 * Always use the same fields as `equals()`.
 
 ### Set Implementations
+
+`HashSet`
+
+* Based on `HashMap`: Uses `hashcode()` and looks up the location.
+* Good General Purpose Implementation: Use by default.
+
+`TreeSet`
+
+* Base on `TreeMap`: Red/Black binary trees with defined sort order.
+* Provides Extra Features: Implements `SortedSet` and `NavigableSet`.
+
+Performancce Comparison
+
+|           | `add` | `contains` | `next` |
+|-----------| ------|------------|--------|
+| `HashSet` | O(N), $\Omega$(1) | O(log(N)), $\Omega$(1) | O(Capacity/N) |
+| `TreeSet` | O(log(N)) | O(log(N)) | O(log(N)) |
+
+`LinkedHashSet`
+
+* When: Copying Set to modify, Deduping List or Queue.
+* Maintains Order: Only on insertion.
+* Overhead: Slower than `HashSet`, less memory than `TreeSet`.
+
+`EnumSet`
+
+* Keys are Enums: Faster and lower memory usage.
+* Bitset Implementation: Only a single long if less than 64 elements.
+
+## `SortedSet` and `NavigableSet`
+
+`SortedSet`
+
+* Defines an order.
+* No indexes, but subset views are possible.
+
+```java
+E first();
+E last();
+
+SortedSet tailSet(E fromElement);
+SortedSet headSet(E toElement);
+SortedSet subSet(E fromElement, E toElement);
+```
+
+`NavigableSet`
+
+* Extends `SortedSet`.
+* Provides means to move through the order.
+* Implemented by `TreeSet`.
+
+```java
+E lower(E e); // elements lower
+E higher(E e); // elements higher
+
+E floor(E e); // return an element <= to
+E ceiling(E e); // return an element >= to
+
+E pollFirst(); // return first element from the set, removing it
+E pollLast(); // return the last element from the set, removing it
+```
