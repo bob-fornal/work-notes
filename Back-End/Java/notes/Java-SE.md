@@ -18,6 +18,7 @@
 * [Conditional Logic and Block Statements](./Java-SE--Notes--Conditional-Logic.md)
 * [Debugging](./Java-SE--Notes--Debugging-Mindset.md)
 * [Designing with Inheritance and Polymorphism](./Java-SE--Notes--Designing-with-Inheritance-and-Polymorphism.md)
+* [Exception Handling](./Java-SE--Notes--Exception-Handling.md)
 * [Hiding Fields and Methods](./Java-SE--Notes--Hiding-Fields-and-Methods.md)
 * [Inheritance](./Java-SE--Notes--Inheritance.md)
 * [Looping and Arrays](./Java-SE--Notes--Looping-and-Arrays.md)
