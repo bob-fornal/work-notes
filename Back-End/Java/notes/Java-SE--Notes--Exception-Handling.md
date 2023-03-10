@@ -5,6 +5,27 @@
 
 Exception handling relies on `try`/`catch` blocks.
 
+```java
+// Main.java
+int i = 12;
+int j = 5;
+
+try {
+  int result = i / (j - 2);
+  System.out.println(result);
+} catch (Exception ex) {
+  System.out.println("ErrorL " + ex.getMessage());
+  ex.printStackTrace();
+}
+```
+
+### Handling Cleanup
+
+* Tasks often require cleanup: Close file, database, etc.
+* May be needed, even if exception occurs.
+
+`finally` block: runs in all cases following `try` or `catch`.
+
 ## Handling Exceptions
 
 ## Exception Types
