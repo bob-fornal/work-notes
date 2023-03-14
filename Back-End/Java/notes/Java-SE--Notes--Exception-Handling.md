@@ -26,6 +26,20 @@ try {
 
 `finally` block: runs in all cases following `try` or `catch`.
 
+### Automated Cleanup
+
+* `try-with-resources`
+
+```java
+try (BufferedReader reader = new BufferedReader(new FileReader(args[0]))) {
+  String inputLine = null;
+  while((inputLine = reader.readLine()) != null)
+    performOperation(inputLine);
+} catch (Exception ex) {
+  System.out.println("ErrorL " + ex.getMessage());
+}
+```
+
 ## Handling Exceptions
 
 ## Exception Types
