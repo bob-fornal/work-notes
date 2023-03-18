@@ -10,3 +10,4 @@
 | Sophia Harper | @SophiaArtistic | [SITE](https://www.artstation.com/sophiaharper) |
 | Adam Jones | @Adamjoness13 | [SITE](https://www.behance.net/adamjones37) |
 | Destiny Theresa | @DesiiDZN | [SITE](https://www.behance.net/DesiiDZN) |
+| | @thehustle8460 | | |
