@@ -1,5 +1,7 @@
 # Twitter Follower List
 
+* [The Painfully Shy Developer's Guide to Networking for a Better Job (Without Being Creepy)](https://www.samjulien.com/shy-dev-networking)
+
 ## General
 | Name | Twitter | Content Area |
 |------|---------|--------------|
