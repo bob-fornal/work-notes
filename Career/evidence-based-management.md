@@ -101,4 +101,10 @@ What should be measured? "It depends."
 
 ## Applying EBM
 
+* Making a Dashboard (as simple as spreadsheet); use Template.
 
+1. Goals: Strategic, Intermediate, and Immediate Tactical
+2. KVAs (Key Value Areas)
+3. KVMs (Key Value Measures)
+
+Frequency: Sprint-based, every two weeks.
