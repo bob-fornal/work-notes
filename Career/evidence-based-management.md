@@ -108,3 +108,64 @@ What should be measured? "It depends."
 3. KVMs (Key Value Measures)
 
 Frequency: Sprint-based, every two weeks.
+
+### Experimentation
+
+The sprint goal is the Immediate Tactical Goal.
+
+The sprint goal/backlog is hypthesis (the cards on the scrum board). The sprint itself is the experiment to prove the hypothesis (what we thing we can accomplish) right or wrong.
+
+### Goals
+
+### Setting Goals
+
+A good, well developed goal is:
+
+* Outcome focused
+* Specific
+* Success is clearly defined (measurable)
+* Focused on delivering value to the customer
+
+Implement Strategic, Intermediate (product), and Immediate Tactical (sprint) Goals against the needs of the client.
+
+Add this information to the Dashboard.
+
+### Key Value Areas
+
+![KVAs: Unrealized Value, Current Value, Ability to Innovate, and Time to Market](./images/kva-sprint.png)
+
+KVAs: Current Value, Unrealized Value, Ability to Innovate, and Time to Market
+
+### Key Value Measures
+
+Ask these questions:
+
+* What is hindering the team from doing great work?
+* How do we know our customers like and want what we are delivering?
+
+### Interpreting a Dashboard
+
+1. Review Key Value Areas (KVAs) and Key Value Measures (KVMs)
+
+    * KVMs are the data points to measure and track.
+    * There are 4 KVAs that act as groups to categorize KVMs.
+    * What story are the metrics telling?
+
+2. Review Goals
+
+    * How do the KVAs/KVMs support the goals?
+    * Are there any behaviors that need to be changed or metrics that need to be adjusted when looking at the complete picture?
+
+### Without a Dashboard
+
+Start asking questions about the goals, direction, and value of the project.
+
+* Figure out what the goals are and document them.
+* Ask the Scrum Master, Product Owner, and stakeholders to help the team determine and document the goals.
+* Are the goals outcome focused?
+* Ask "why?" - and keep asking until you get to the root of what you are trying to accomplish.
+
+Measure things independently.
+
+* Use that data to provide and explanation for things (not an excuse).
+* Measure time spent in meetings, context switching, requirements approval, etc.
