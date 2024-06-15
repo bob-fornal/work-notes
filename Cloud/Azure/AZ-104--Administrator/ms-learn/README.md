@@ -9,3 +9,5 @@
 ## Prerequisites for Azure Administrators
 
 * [Use Azure Resource Manager](./prerequisites-for-azure-admin--01-use-azure-resource-manager.md)
+* [Introduction to Azure Cloud Shell](./prerequisites-for-azure-admin--02-intro-to-azure-cloud-shell.md)
+* [Introduction to Bash](./prerequisites-for-azure-admin--03-intro-to-bash.md)

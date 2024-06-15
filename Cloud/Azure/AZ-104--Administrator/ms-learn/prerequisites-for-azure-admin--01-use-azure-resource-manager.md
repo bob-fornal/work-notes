@@ -43,4 +43,80 @@ The following suggestions help you take full advantage of Azure Resource Manager
 
 Each resource provider offers a set of resources and operations for working with an Azure service. For example, if you want to store keys and secrets, you work with the Microsoft.KeyVault resource provider. This resource provider offers a resource type called vaults for creating the key vault.
 
-The name of a resource type is in the format: {resource-provider}/{resource-type}. For example, the key vault type is Microsoft.KeyVault/vaults.
+The name of a resource type is in the format: `{resource-provider}/{resource-type}`. For example, the key vault type is `Microsoft.KeyVault/vaults`.
+
+## Creating Resource Groups
+
+Resources can be deployed to any new or existing resource group. Deployment of resources to a resource group becomes a job where you can track the template execution. If deployment fails, the output of the job can describe why the deployment failed. Whether the deployment is a single resource to a group or a template to a group, you can use the information to fix any errors and redeploy. Deployments are incremental; if a resource group contains two web apps and you decide to deploy a third, the existing web apps will not be removed.
+
+### Considerations
+
+Resource Groups are at their simplest a logical collection of resources. There are a few rules for resource groups.
+
+* Resources can only exist in one resource group.
+* Resource Groups cannot be renamed.
+* Resource Groups can have resources of many different types (services).
+* Resource Groups can have resources from many different regions.
+
+### Creating resource groups
+
+There are some important factors to consider when defining your resource group:
+
+* All the resources in your group should share the same lifecycle. You deploy, update, and delete them together. If one resource, such as a database server, needs to exist on a different deployment cycle it should be in another resource group.
+* Each resource can only exist in one resource group.
+* You can add or remove a resource to a resource group at any time.
+* You can move a resource from one resource group to another group. Limitations do apply to moving resources.
+* A resource group can contain resources that reside in different regions.
+* A resource group can be used to scope access control for administrative actions.
+* A resource can interact with resources in other resource groups. This interaction is common when the two resources are related but don't share the same lifecycle (for example, web apps connecting to a database).
+
+When creating a resource group, you need to provide a location for that resource group. You may be wondering, "Why does a resource group need a location? And, if the resources can have different locations than the resource group, why does the resource group location matter at all?" The resource group stores metadata about the resources. Therefore, when you specify a location for the resource group, you're specifying where that metadata is stored. For compliance reasons, you may need to ensure that your data is stored in a particular region.
+
+### Crating Resource Manager Locks
+
+A common concern with resources provisioned in Azure is the ease with which they can be deleted. An over-zealous or careless administrator can accidentally erase months of work with a few steps. Resource Manager locks allow organizations to put a structure in place that prevents the accidental deletion of resources in Azure.
+
+* You can associate the lock with a subscription, resource group, or resource.
+* Locks are inherited by child resources.
+
+#### Lock types
+
+There are two types of resource locks.
+
+* Read-Only locks, which prevent any changes to the resource.
+* Delete locks, which prevent deletion.
+
+## Reorganize Azure Resources
+
+When moving resources, both the source group and the target group are locked during the operation. Write and delete operations are blocked on the resource groups until the move completes. This lock means you can't add, update, or delete resources in the resource groups. Locks don't mean the resources aren't available. For example, if you move a virtual machine to a new resource group, an application can still access the virtual machine.
+
+### Limitations
+
+Before beginning this process be sure to read the Move operation support for resources page. This page details what resources can be moved between resources group, subscriptions, and regions.
+
+### Implementation
+
+To move resources, select the resource group containing those resources, and then select the Move button. Select the resources to move and the destination resource group. Acknowledge that you need to update scripts.
+
+## Remove Resources and Resource Groups
+
+Use caution when deleting a resource group. Deleting a resource group deletes all the resources contained within it. That resource group might contain resources that resources in other resource groups depend on.
+
+### Using PowerShell to delete resource groups
+
+To remove a resource group use, `Remove-AzResourceGroup`. In this example, we are removing the `ContosoRG01` resource group from the subscription. The cmdlet prompts you for confirmation and returns no output.
+
+```powershell
+Remove-AzResourceGroup -Name "ContosoRG01"
+```
+
+### Removing resources
+
+You can also delete individual resources within a resource group. For example, here we are deleting a virtual network. Instead, of deleting you can move the resource to another resource group.
+
+## Determine Resource Limits
+
+* The limits shown are the limits for your subscription.
+* When you need to increase a default limit, there is a Request Increase link.
+* All resources have a maximum limit listed in Azure limits.
+* If you are at the maximum limit, the limit can't be increased.
