@@ -1,0 +1,184 @@
+# Deploy to multiple Azure environments by using JSON ARM template features
+
+Manage multiple Azure environment deployments of your Azure Resource Manager templates by using functions, variables, tags, and parameter files.
+
+## Introduction
+
+JSON Azure Resource Manager (ARM) templates provide a few features that can help you deploy software to different environments.
+
+## Add flexibility to your Azure Resource Manager template by using template functions
+
+### What are ARM template functions?
+
+ARM template functions add flexibility to your ARM template by dynamically getting values during deployment.
+
+To understand functions, you first need to understand expressions. Expressions are values that are evaluated when the template is deployed. They start and end with brackets `[]`, and can return a string, integer, Boolean, array, or object.
+
+```json
+"parameters": {
+  "location": {
+    "type": "string",
+    "defaultValue": "[resourceGroup().location]"
+  }
+},
+```
+
+The expression is the value of the `defaultValue:` attribute. Notice that this expression holds the *ARM template function* `resourceGroup()`. This function returns information about the resource group to which this template is deploying. The `.location` retrieves one property from the object returned by the function. Functions allow you to construct values you need dynamically.
+
+### Working with ARM template functions?
+
+There are a few rules to follow when you work with functions:
+
+* Use single quotation marks when you pass a string value into a function. Here's an example: `concat('storage',uniqueString(resourceGroup().id))`. The function is `concat`, and the string you're passing in to the function is `'storage'`.
+* To work with literal values in template functions, you need *escape characters*. The escape character varies depending on what you're escaping.
+* To set a property to `null`, you can use `null` or `[json('null')]`. The JSON function returns an empty object when you provide null as the parameter.
+
+```json
+"stringValue": null,
+"objectValue": "[json('null')]"
+```
+
+Resource Manager provides several ARM template functions for you. The functions are listed in groups based on their type:
+
+* Array functions for working with arrays. For example, `first` and `last`.
+* Comparison functions for making comparisons in your templates. For example, `equals` and `greater`.
+* Date functions for working with dates. For example, `utcNow` and `dateTimeAdd`.
+* Deployment value functions for getting values from sections of the template and values related to the deployment. For example, `environment` and `parameters`.
+* Logical functions for working with logical conditions. For example, `if` and `not`.
+* Numeric functions for working with integers. For example, `max` and `mod`.
+* Object functions for working with objects. For example, `contains` and `length`.
+* Resource functions for getting resource values. For example, `resourceGroup` and `subscription`.
+* String functions for working with strings. For example, `length` and `startsWith`.
+
+### Working with several functions in one expression?
+
+You can use several template functions together to create your own expressions. In this scenario, you need to create an expression that creates a unique name for each resource group by combining a prefix input with a hash of the resource group ID. This expression results in storage account names like `dev2hu6fktr577wh` and `staging5his8hgr67tt5`. You can use four functions to construct this string value. For example:
+
+```json
+"[toLower(concat('Storage',uniqueString(resourceGroup().id)))]"
+```
+
+Let's walk through this expression.
+
+Beginning with `concat`, this function takes any number of arguments, and can accept either strings or arrays for the parameters. Here, you use a literal string `"Storage"` and concatenate it with the result of another function, `uniqueString`. The `uniqueString` function creates a deterministic hash string based on the parameters. In this expression, you create a hash of the current resource group ID by using another function, resourceGroup.
+
+To comply with the naming conventions, you need this string to be all lowercase. Here, you add the `toLower` function as the outer function.
+
+### What is an ARM template variable?
+
+An ARM template variable is a construct that holds a value for later use. Variables are best used when a value needs to be specified in several places in a template. Wherever the variable is used in the template, Resource Manager replaces it with the resolved value.
+
+#### Advantages to using ARM template variables
+
+ARM template variables allow you to write an expression once and then use it in several places. Also, maintenance of the expression is in one place, and the template is more readable.
+
+#### How do I use ARM template variables?
+
+ARM template variables are defined in the `variables: {}` section of a template. For example, here's the expression for the storage account name you defined in the last unit. It's now defining the value for the storageName variable.
+
+```json
+"variables": {
+  "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
+},
+```
+
+You then use the variable in the template wherever you need the storage account name:
+
+```json
+"resources": [
+  {
+    "type": "Microsoft.Storage/storageAccounts",
+    "name": "[variables('storageName')]",
+    ...
+  }
+]
+```
+
+#### Recommendations for ARM template variables
+
+Template variables are specified in camel case. They're best used for values that you need to specify more than once, especially if that value is a complex expression.
+
+Don't use the reference function in the variables section of a template. The reference function is resolved at runtime, and variables are resolved when the template is parsed. Also, don't use variables for apiVersion on a resource. The API version determines the schema of the resource, and often you can't change the version without changing the properties for the resource.
+
+## Maintain multiple Azure deployments by using Azure Resource Manager template tags and parameter files
+
+There are two features of Azure Resource Manager (ARM) templates that you want to use when you deploy to more than one Azure environment. These features are *resource tags and ARM template parameter files*.
+
+As you add more resources to your environments, you quickly find that you need a way to identify the purpose of these resources. Resources have a `tags:` attribute for this purpose. As you deploy to more environments, you need an efficient way to keep track of the input parameters. ARM templates can use parameter files to manage parameters for each deployment environment.
+
+### What is an Azure resource tag?
+
+You can tag resources to add values that help you identify their use. For example, you can add tags that list the environment and the project to which a resource belongs. Or, you can add tags that identify a cost center or the team that owns a resource. Add any values that make sense for your organization.
+
+The tag value is displayed on the overview page for the Azure resource and in cost reports.
+
+#### How do I create an Azure resource tag?
+
+Each resource has a tags: attribute. So far, you've been using the default displayName for the tag for your storage account:
+
+```json
+"tags": {
+  "displayName": "[parameters('storageName')]"
+},
+```
+
+To make this attribute more useful, you can define a parameter that has more information and then use that parameter in the tags: attribute. For example, you can create a parameter to hold an object called resourceTags:
+
+```json
+"resourceTags": {
+  "type": "object",
+  "defaultValue": {
+    "Environment": "Dev",
+    "Project": "Inventory"
+  }
+}
+```
+
+Here, you created an object to hold values for an environment name and a project name, but you could define anything you want.
+
+Then, you can use that parameter for any resource that's for the Dev environment and the Inventory project; for example, your storage account.
+
+```json
+"resources": [{
+  "name": "[variables('uniqueStorageName')]",
+  "type": "Microsoft.Storage/storageAccounts",
+  "apiVersion": "2019-06-01",
+  "tags": "[parameters('resourceTags')]",
+  ...
+}],
+```
+
+### What is an ARM template parameter file?
+
+An ARM template parameter file holds values that are passed in to the ARM template when the template is executed. By using a parameter file for each environment to which an ARM template is deployed, you ensure that the correct parameters are set for that specific environment. You also ensure that you can track the history and maintenance of those parameter values in source control.
+
+### How do I use ARM template parameter files?
+
+ARM template parameter files are JSON files that hold parameter values. For example, for the parameters you used in the ARM template so far, you could create a template parameter file as follows:
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storagePrefix": {
+      "value": "storage"
+    },
+    "storageSKU": {
+      "value": "Standard_LRS"
+    },
+    "resourceTags": {
+      "value": {
+        "Environment": "Dev",
+        "Project": "Learn"
+      }
+    }
+  }
+}
+```
+
+You could then create a file similar to this file for each environment. For example, these files might be called azuredeploy.parameters.dev.json and azuredeploy.parameters.prod.json, and hold different values for the parameters.
+
+To deploy an ARM template by using a parameter file, specify the path to the parameter file in the deployment command. In Azure CLI, you use `--parameters {path to parameter file}`. In PowerShell, you use `-TemplateParameterFile {path to parameter file}`.
+
+
