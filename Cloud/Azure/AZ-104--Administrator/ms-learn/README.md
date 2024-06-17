@@ -17,6 +17,7 @@
 * [Introduction to PowerShell](./prerequisites-for-azure-admin--04-intro-to-powershell.md)
 * [Configure resources with Azure Resource Manager templates](./prerequisites-for-azure-admin--05-configure-resources-with-azure-resource-manager-templates.md)
 
-## Deploy and manage resources in Azure by using JSON ARM templates
+## Templates
 
-* [Deploy to multiple Azure environments by using JSON ARM template features](./deploy-and-manage-json-arm-templates--01-deploy-using-template-features.md)
+* [Deploy to multiple Azure environments by using JSON ARM template features](./templates--01-deploy-using-template-features)
+* [Deploy Azure infrastructure by using JSON ARM templates](./templates--02-deploy-azure-infrastructure-using-json-arm-templates.md)
