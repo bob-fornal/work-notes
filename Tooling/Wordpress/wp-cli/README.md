@@ -206,3 +206,7 @@ source /home/[username]/bash_scripts/wp_bash_completion.bash
 ```script
 source .bashrc
 ```
+
+## Installing a WordPress Site with /wp-cli
+
+
