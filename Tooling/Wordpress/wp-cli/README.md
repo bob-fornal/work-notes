@@ -164,3 +164,45 @@ sudo crontab -l
 1. Create a script file.
 2. Add the script file to the `.bashrc` file.
 3. "source" the `.bashrc` file.
+
+wp_bash_completion.bash
+```bash
+# bash completion for the `wp` command
+
+_wp_complete() {
+  local OLD_IFS="$IFS"
+  local cur=${COMP_WORDS[COMP_CWORD]}
+
+  IFS=$'\n';  # want to preserve spaces at the end
+  local opts="$(wp cli completions --line="$COMP_LINE" --point="$COMP_POINT")"
+
+  if [[ "$opts" =~ \<file\>\s* ]]
+  then
+    COMPREPLY=( $(compgen -f -- $cur) )
+  elif [[ $opts = "" ]]
+  then
+    COMPREPLY=( $(compgen -f -- $cur) )
+  else
+    COMPREPLY=( ${opts[*]} )
+  fi
+
+  IFS="$OLD_IFS"
+  return 0
+}
+
+complete -o nospace -F _wp_complete wp
+```
+
+```script
+cd ~
+nano .bashrc
+```
+
+```bash
+# ... at EOF
+source /home/[username]/bash_scripts/wp_bash_completion.bash
+```
+
+```script
+source .bashrc
+```
