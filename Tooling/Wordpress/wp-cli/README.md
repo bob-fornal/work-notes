@@ -141,8 +141,26 @@ chmod -x [filename].sh
 
 ## Updating
 
+* `sudo wp cli update` command needs to be run as root.
+* Recommend: cron job 3x per week.
 
+```bash
+sudo crontab -e
+```
+
+```script
+# m h dom mon command
+00 11 * * 1,3,5 /usr/local/bin/wp cli update --yes >/dev/nill 2>&1
+```
+
+```bash
+sudo crontab -l
+```
 
 ## /wp-cli Command Completion
 
+### "tab" completion
 
+1. Create a script file.
+2. Add the script file to the `.bashrc` file.
+3. "source" the `.bashrc` file.
