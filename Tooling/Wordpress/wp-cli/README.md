@@ -30,13 +30,119 @@ With WP CLI you are able to automate the entire update process and even configur
 
 ### nginx & Apache
 
-wp-cli runs as non-root server user
+wp-cli runs as ***non-root server user***
 
 `www-data` is the web-server user.
 
-1. www-data is owner and group owner (non-root, no rights or permissions): cannot administer without changing ownership and permission.
-2. user is owner and www-data is the group owner: right and permission.
+1. `www-data` is owner and group owner (non-root, no write permissions): cannot administer without changing ownership and permission.
+2. `user` is owner and `www-data` is the group owner: write permissions.
 
 ### LiteSpeed
+
+* LiteSpeed is the owner and group owner of the wp files and directories.
+* ***non-root server user*** (no write permissions). Must change ownership and permissions.
+
+#### Ownership and Permissions Issue
+
+* Install a plugin with the dashboard; cannot delete it using wp-cli.
+* Install a plugin with the wp-cli, cannot delete it using dashboard.
+
+Solve: Bash Scripts
+
+Principal of least privelege.
+
+* Prior to using wp-cli
+* After using wp-cli
+
+### Template Files (Apache & Nginx)
+
+BEFORE ...
+
+```bash
+#!/bin/bash
+
+# Set Ownership and Permissions to Allow Administration using both wp-cli and the Dasbhoard
+# Replace example.com with your domain name
+
+sudo chown -R $USER:www-data /var/www/example.com/public_html/
+sudo find /var/www/example.com/public_html -type d -exec chmod 775 {} \;
+sudo find /var/www/example.com/public_html -type f -exec chmod 664 {} \;
+```
+
+AFTER (www-data:www-data ownership scheme) ...
+
+```bash
+#!/bin/bash
+
+# Set Ownership and Permissions to Allow for www-data:www-data ownership scheme
+# Replace example.com with your domain name
+
+sudo chown -R www-data:www-data /var/www/example.com/public_html/
+sudo find /var/www/example.com/public_html -type d -exec chmod 755 {} \;
+sudo find /var/www/example.com/public_html -type f -exec chmod 644 {} \;
+```
+
+... OR ($USER:www-data ownership scheme) ...
+
+```bash
+#!/bin/bash
+
+# Set Ownership and Permissions to Allow for www-data:www-data ownership scheme
+# Replace example.com with your domain name
+
+sudo chown -R $USER:www-data /var/www/example.com/public_html/
+sudo find /var/www/example.com/public_html -type d -exec chmod 755 {} \;
+sudo find /var/www/example.com/public_html -type f -exec chmod 644 {} \;
+sudo find /var/www/example.com/public_html/wp-content/ -type d -exec chmod 775 {} \;
+sudo find /var/www/example.com/public_html/wp-content/ -type f -exec chmod 664 {} \;
+```
+
+### Template Files (LiteSpeed)
+
+BEFORE ...
+
+```bash
+#!/bin/bash
+
+# Set Ownership and Permissions to Allow Administration using both wp-cli and the Dasbhoard
+# Replace example.com with your domain name
+
+sudo chown -R nobody:nogroup /usr/local/lsws/example.com/html/
+sudo find /usr/local/lsws/example.com/html/ -type d -exec chmod 775 {} \;
+sudo find /usr/local/lsws/example.com/html/ -type f -exec chmod 664 {} \;
+```
+
+AFTER (nobody:nogroup ownership scheme) ...
+
+```bash
+#!/bin/bash
+
+# Set Ownership and Permissions to Allow for nobody:nogroup ownership scheme
+# Replace example.com with your domain name
+
+sudo chown -R nobody:nogroup /usr/local/lsws/example.com/html/
+sudo find /usr/local/lsws/example.com/html/ -type d -exec chmod 755 {} \;
+sudo find /usr/local/lsws/example.com/html/ -type f -exec chmod 644 {} \;
+```
+### Execution
+
+```bash
+chmod -x [filename].sh
+```
+
+## Installation
+
+1. Download the wp-cli phar file.
+2. Confirm it runs correctly.
+3. Set executable permissions.
+4. Move wp-cli into the "path."
+
+`phar` file is a PHP Archive file
+
+## Updating
+
+
+
+## /wp-cli Command Completion
 
 
