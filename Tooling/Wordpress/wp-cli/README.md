@@ -209,6 +209,6 @@ source .bashrc
 
 ## Installing a WordPress Site with /wp-cli
 
-/wp-cli can replace the browser-based installation process.
+**/wp-cli** can replace the browser-based installation process.
 
 
