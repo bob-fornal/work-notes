@@ -4,12 +4,13 @@
 
 ## Developer Notes
 
-* [Getting Started with TypeScript](Getting-Started/README.md)
-* [Introducing TypeScript](Introducing/README.md)
-* [Migrating from JavaScript to TypeScript](Migrating/README.md)
-* [Practical Examples](Practical-Examples/README.md)
-* [TypeScript](General/README.md)
-* [Why Use TypeScript](Why-Use/README.md)
+* [Getting Started with TypeScript](./Getting-Started/README.md)
+* [Introducing TypeScript](./Introducing/README.md)
+* [Migrating from JavaScript to TypeScript](./Migrating/README.md)
+* [Practical Examples](./Practical-Examples/README.md)
+* [TypeScript](./General/README.md)
+* [Why Use TypeScript](./Why-Use/README.md)
+* [Deep TypeScript Tips & Tricks](./Deep-TypeScript-Tips-&-Tricks/README.md/)
 
 ## Articles
 
