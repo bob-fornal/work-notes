@@ -3,6 +3,7 @@
 ## Notes
 
 * [Anti-Patterns](Anti-Patterns/README.md)
+* [Best Practices](Best-Practices/README.md)
 
 ## Articles
 

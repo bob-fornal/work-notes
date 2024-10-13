@@ -49,6 +49,8 @@ Some large partitions versus some smaller partitions. This generates "hot" parti
 
 #### Choosing a Partition Key
 
+Need to be looking for absolute uniqueness between the `id` and partition key, while grouping on the partition key itself.
+
 Know the operations:
 
 1. Creating a record.
