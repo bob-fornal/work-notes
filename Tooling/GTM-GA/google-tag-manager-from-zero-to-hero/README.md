@@ -198,3 +198,18 @@ The conditions to fire the tags.
 
 * Percent Visible
 * On-Screen Duration
+
+## Preview Mode in GTM
+
+1. Preview
+2. Google Tag Assistant (Include debug signal in the URL before "Connect"); can be used with Google Tag Assistant Plugin installed.
+3. (new window opens on site) click Continue on original window.
+4. Values at various states are provided.
+
+### Google Tag Assistant (Plugin)
+
+1. Add to Chrome (link to plugin is top, right).
+
+## Event Tracking in GA4
+
+
