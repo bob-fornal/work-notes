@@ -229,3 +229,19 @@ The Configuration Tag tracks ...
 1. Add to Chrome (link to plugin is top, right).
 
 ## Event Tracking in GA4
+
+### Obtain the Measurement ID in GA.
+
+1. Select Admin > Data Collection and Modification > Data Streams.
+2. Select the Stream and copy the Measurement ID.
+
+### Storing Measurement ID in User-Defined Variables
+
+1. In GTM, select Variables.
+2. Select New User-Defined Variable.
+3. Select Constant.
+4. Paste value in and Save.
+
+### Tracking Clicks
+
+
