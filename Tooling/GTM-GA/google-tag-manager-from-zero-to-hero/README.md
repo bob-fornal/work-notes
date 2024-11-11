@@ -171,6 +171,8 @@ The conditions to fire the tags.
 
 ### History
 
+(generally used to track SPA)
+
 * New History Fragment
 * Old History Fragment
 * New History State
@@ -179,25 +181,41 @@ The conditions to fire the tags.
 
 ### Videos
 
-* Video Provider
-* Video Status
+* Video Provider (name, always YouTube)
+* Video Status (state: play, pause, stop, etc.)
 * Video URL
 * Video Title
-* Video Duration
+* Video Duration (length in seconds)
 * Video Current Time
 * Video Percent
 * Video Visible
 
 ### Scrolling
 
-* Scroll Depth Threshold
-* Scroll Depth Units
-* Scroll Direction
+* Scroll Depth Threshold (percent or pixels scrolled)
+* Scroll Depth Units (percent or pixels)
+* Scroll Direction (horizontal or vertical)
 
 ### Visibility
 
-* Percent Visible
+* Percent Visible (of element)
 * On-Screen Duration
+
+## User-Defined Variables
+
+1. Click New
+2. Click in middle for options.
+
+* See Community Templates Gallery.
+
+## Implementing GA4 Tags
+
+The Configuration Tag tracks ...
+
+* Initialize Google Analytics
+* Cookies
+* Common Settings
+* Enhanced Measurement Events (page views, scrolls, outbound clicks, site search, video engagement, and file downloads)
 
 ## Preview Mode in GTM
 
@@ -211,5 +229,3 @@ The conditions to fire the tags.
 1. Add to Chrome (link to plugin is top, right).
 
 ## Event Tracking in GA4
-
-
