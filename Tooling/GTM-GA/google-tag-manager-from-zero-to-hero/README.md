@@ -244,4 +244,94 @@ The Configuration Tag tracks ...
 
 ### Tracking Clicks
 
+1. Triggers > New
+2. All Elements (all clicks, all elements)
+3. Name: Click - All Events
+4. Save
+5. Tags > New
+6. Tag Configuration > GA > GA4 Event
+7. Select Measurement ID
+8. Event Name: all_clicks
+9. Name for Event: GA4 All Clicks Event
+10. Triggering > Click - All Events
+11. Save
+12. Preview
+13. Submit
+
+### Sending Click Details to GA4
+
+1. Variables > Configure > Click Section
+2. Enable All Click Variables
+3. Preview
+4. Submit
+
+#### Built in Click Variables
+
+1. Tags > GA4 All Click Event (tag)
+2. Tag Configuration > Event Parameters
+3. Add Click Variables to Values
+4. Event Parameter (name, lowercase with underscore)
+5. Save
+6. Preview (select Display Variables as Values)
+7. Submit
+
+### Tracking Button clicks
+
+1. Triggers > New
+2. All Elements (sometimes Just Links can work)
+3. Determine Conditions (Click Classes contains [find button class in All Click Event data])
+4. Name: Button Clicks
+5. Save
+6. Tags > GA4 All Click Event (tag) > (menu) copy
+7. Change Both Names
+8. Edit Trigger > Delete
+9. Select Button Clicks
+10. Save
+11. Preview
+12. Submit
+
+## Tracking Link Trigger
+
+* Internal or externally connected links.
+
+1. Triggers > New
+2. Just links
+3. Name: Click - Link
+4. Save
+5. Tags > Ga4 All Click Event (tag) > (menu) copy
+6. Change Both Names
+7. Edit Trigger > Delete
+8. Select Click - Link
+9. Save
+10. Preview
+11. Submit
+
+### Internal Link Clicks
+
+1. Triggers > Click - Link
+2. Choose Some Link Clicks
+3. Click URL contains [current domain]
+4. Save
+5. Preview
+6. Submit
+
+## Capturing JavaScript Errors with GTM
+
+1. Variables > Built In Variables > Configure
+2. Errors: Enable Error Message, URL, and Line.
+3. Triggers > New > Other > JavaScript Error
+4. All JavaScript Errors
+5. Name: JavaScript Error
+6. Save
+7. Tags > New > Tag Configuration
+8. Select GA4 Event
+9. Select Measurement ID
+10. Name: javascript_error, 
+11. Add Error Parameters
+12. Add Trigger (JavaScript Error)
+13. Save
+14. Submit
+
+## Tracking Scroll Depth on Page
+
 
