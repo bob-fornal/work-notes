@@ -6,5 +6,5 @@
 
 ## Courses
 
-1. [Google Tag Manager (GTM) Training Course - From Zero to Hero]()
+1. [Google Tag Manager (GTM) Training Course - From Zero to Hero](./google-tag-manager-from-zero-to-hero/README.md)
 2. [Using Google Analytics 4](./using-google-analytics-4/README.md)

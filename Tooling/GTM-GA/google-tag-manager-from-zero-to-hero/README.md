@@ -334,4 +334,9 @@ The Configuration Tag tracks ...
 
 ## Tracking Scroll Depth on Page
 
+* GA4 automatically tracks whether the user scrolls down to the 90% mark via Enhanced Measurement.
 
+1. Variables > Built In Variables > Configure
+2. Scrolling: Depth Threshold, Depth Units, Scroll Direction
+3. Triggers > New > User Engagement > Scroll Depth (Vertical and/or Horizontal)
+4. Name: 
