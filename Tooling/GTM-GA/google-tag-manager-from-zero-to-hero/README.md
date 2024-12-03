@@ -339,4 +339,72 @@ The Configuration Tag tracks ...
 1. Variables > Built In Variables > Configure
 2. Scrolling: Depth Threshold, Depth Units, Scroll Direction
 3. Triggers > New > User Engagement > Scroll Depth (Vertical and/or Horizontal)
-4. Name: 
+4. Name: Scroll Depth
+5. Save
+6. Tags > New
+7. Configuration > GA4 Event
+8. Select Measurement ID
+9. Name: Scroll OR scroll_25percent, scroll50percent, ...
+10. Add Percent Parameters: percent_scrolled, value: Scroll Depth Threshold
+11. Add Trigger (Scroll Depth)
+12. Name: Scroll Depth Event
+13. Save
+14. Preview
+15. Submit
+
+## Tracking Page Element Visibility
+
+> Below the fold.
+
+1. Variables > Built In Variables Configure
+2. Visibility: Percent Visible & On-Screen Duration
+3. Triggers > New > User Engagement: Element Visibility
+4. Selection Method: ID or CSS Selector
+5. When to Fire: Once per page, once per element, every time an element appears
+6. Name: Visibility Event
+7. Save
+8. Tags > New > Tag Configuration > GA4 Event
+9. Select Measurement ID
+10. Name: visibility
+11. Add Parameters: on_screen_duration, value: On Screen Duration; percent_visible, value: Percent Visible
+12. Add Trigger: Visibility Event
+13. Name: GA4 Visibility Event
+14. Save
+15. Preview
+16. Submit
+
+## Data Layer
+
+> A Data Layer is a JavaScript object. It contains all data/information that should be passed from the website to other applications or tools that need it.
+
+```html
+<script>
+  dataLayer = [{
+    'key': 'value',
+  }];
+</script>
+```
+
+### Pulling Data from the Data Layer
+
+1. Variables > User Defined Variables > New
+2. Select Data Layer Variable
+3. Data Layer Variable Name: `ecommerce`
+4. Name: dl-ecommerce
+5. REPEAT for dl-pagePostType as `pagePostType`
+6. Save
+7. Preview
+8. Submit
+
+### Pulling Nested Data from the Data Layer
+
+1. Variables > User Defined Variables > New
+2. Select Data Layer Variable
+3. Data Layer Variable Name: `ecommerce.currencyCode`
+4. Name: dl-ecommerce-currency-code
+5. REPEAT for dl-ecommerce-detail as `ecommerce.detail`
+6. REPEAT for dl-ecommerce-detail-products as `ecommerce.detail.products`
+7. REPEAT for dl-ecommerce-detail-products-name as `ecommerce.detail.products.0.name` (notice, no square brackets for the index)
+8. Save
+9. Preview
+10. Submit
