@@ -408,3 +408,122 @@ The Configuration Tag tracks ...
 8. Save
 9. Preview
 10. Submit
+
+### Dynamic Data Addition to Data Layer
+
+> Via Custom Event in GTM
+
+```javascript
+dataLayer.push({
+  'items': [{
+    'item_id': '123',
+    // ...
+  }],
+  // ...
+  'event': 'add_to_cart',
+})
+```
+
+* When "Add To Cart" button is clicked Data Layer is not changed.
+* An `add_to_cart` event triggered.
+
+1. Triggers > New > Configuration > Other (Custom Event)
+2. Event Name: add_to_cart
+3. Name: Add To Cart (CE)
+4. Save
+5. Variables > User Defined Variables > New
+6. Configuration > Data Layer Variable
+7. Data Layer Variable Name: `ecommerce.items`
+8. Name: dl-items
+9. Save
+10. REPEAT (from 5) for dl-currency as `ecommerce.currency`
+11. REPEAT (from 5) for dl-value as `ecommerce.value`
+12. Tags > New > Configuration > GA4 Event
+13. Select GA4 Configuration Tag
+14. Event Name: `add_to_cart`
+15. Event Parameters: currency, `dl-currency`; value, `dl-value`; items, `dl-items`
+16. Triggering: Add To Card (CE)
+17. Name: Add To Cart
+18. Save
+19. Preview
+20. Submit
+
+## Custom HTML Tag
+
+> Executing HTML and JavaScript
+
+```html
+<div style="text-align: center; font-weight: bold;">
+  This is a demo site.
+</div>
+```
+
+1. New Tag > Configuration > Custom HTML
+2. Add ANY HTML (CSS & JavaScript)
+3. Triggering: All Pages
+4. Name: cHTML-Example
+5. Save
+6. Preview
+7. Submit
+
+## Google Ads Conversion Tracker
+
+> Conversion can be any action; defined by the business needs.
+
+1. Tools > Measurement > Conversions
+2. Add Conversion Action (Website, Add, Phone Calls, Import)
+3. Website
+4. Category (segment)
+5. Adjust the Name (i.e. Member Registration)
+6. Select Value
+7. How many to count per user
+8. Adjust as needed: Conversion Window, View-Through Conversion Window, Include in "Conversions," and Attribution Model
+9. Create and Continue
+10. Tag setup: Install, Email, or Use GTM > Use GTM.
+11. Go to GTM
+12. Tags > New
+13. Name: Google Ads Conversion - Member Save
+14. Configuration > Google Ads Conversion Tracking
+15. Provide: Conversion ID and Label (value set from GA)
+16. Triggering: Select (+) New
+17. Name: Member Save
+18. Configure Trigger: Page View
+19. Click URL contains member-save.appears
+20. Save
+21. Save
+22. New > Name: Google Ads Conversion Linker
+23. Tag Configuration: Conversion Linker
+24. Trigger: All Pages
+25. Save
+26. Preview > Submit
+
+## Export and Import GTM Containers
+
+> Exported as JSON files: Can be modified, shared, stored externally, and imported back into Google Tag Manager.
+
+Uses:
+
+* Bulk changes to tag configuration
+* Setup new site with identical structure
+* Share containers with others (sharing GTM Recipe)
+* Store website configuration data in a central location
+
+Export
+
+1. In GTM, go to Admin
+2. Export Container > Choose a version or workspace
+3. Select one
+4. Click Export button (file downloads)
+
+Import
+
+1. In GTM, go to Admin
+2. Import Container > Choose container file
+3. Choose workspace: New or Existing
+4. Choose import options: Overwrite or Merge
+5. Select New > Name and Description
+6. Save
+7. Select Overwrite
+8. Select file
+9. Verify details and click Confirm button
+10. Preview > Submit
