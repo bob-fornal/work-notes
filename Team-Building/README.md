@@ -13,7 +13,7 @@
 
 ### [TBDM-002]
 
-    “If you think you are too small to be effective, you have never been  in the dark with a mosquito.” – Betty Reese
+    "If you think you are too small to be effective, you have never been  in the dark with a mosquito." – Betty Reese
 
 ### [TBDM-003]
 
@@ -89,4 +89,8 @@
 
     I've reached the age where my train of thought often leaves the station without me ...
 
-    
+### [TBDM-017]
+
+    "When in doubt, look intelligent." - Garrison Keillor
+
+### 
