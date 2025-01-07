@@ -1,0 +1,21 @@
+# Azure
+
+1. [Course AZ-900T00-A - Azure Fundamentals](https://learn.microsoft.com/en-us/training/courses/az-900t00) ![](../../foreign.png) 24 HRS
+2. [Course AZ-204T00-A - Developing Solutions](https://learn.microsoft.com/en-us/training/courses/az-204t00) ![](../../foreign.png) 120 HRS
+3. [Course AZ-104T00-A - Azure Administrator](https://learn.microsoft.com/en-us/training/courses/az-104t00) ![](../../foreign.png) 96 HRS
+4. [Course AZ-140T00-A - Azure Virtual Desktop](https://learn.microsoft.com/en-us/training/courses/az-140t00) ![](../../foreign.png) 96 HRS
+5. [Course AZ-305T00-A - Azure Infrastructure Solutions](https://learn.microsoft.com/en-us/training/courses/az-305t00) ![](../../foreign.png) 96 HRS
+6. [Course AZ-400T00-A - DevOps Sulutions](https://learn.microsoft.com/en-us/training/courses/az-400t00) ![](../../foreign.png) 96 HRS
+7. [Course DB-900T00-A - Data Fundamentals](https://learn.microsoft.com/en-us/training/courses/dp-900t00) ![](../../foreign.png) 24 HRS
+8. [Course AI-900T00-A - AI Fundamentals](https://learn.microsoft.com/en-us/training/courses/ai-900t00) ![](../../foreign.png) 24 HRS
+9. [Course AI-102T00-A - AI Solutions](https://learn.microsoft.com/en-us/training/courses/ai-102t00) ![](../../foreign.png) 96 HRS
+10. [Course SC-900T00-A - Security, Compliance, and Identity Fundamentals](https://learn.microsoft.com/en-us/training/courses/sc-900t00) ![](../../foreign.png) 24 HRS
+11. [Course DP-203T00-A - Data Engineering](https://learn.microsoft.com/en-us/training/courses/dp-203t00) ![](../../foreign.png) 96 HRS
+12. [Course SC-200T00-A - Security Operations Analyst](https://learn.microsoft.com/en-us/training/courses/sc-200t00) ![](../../foreign.png) 96 HRS
+13. [Course AZ-700T00-A - Networking Solutions](https://learn.microsoft.com/en-us/training/courses/az-700t00) ![](../../foreign.png) 72 HRS
+14. [Course DP-100T01-A - Data Science Solution](https://learn.microsoft.com/en-us/training/courses/dp-100t01) ![](../../foreign.png) 96 HRS
+15. [Course DP-300T00-A - SQL Solutions](https://learn.microsoft.com/en-us/training/courses/dp-300t00) ![](../../foreign.png) 96 HRS
+16. [Course SC-100T00-A - Cybersecurity Architect](https://learn.microsoft.com/en-us/training/courses/sc-100t00) ![](../../foreign.png) 96 HRS
+17. [Course AZ-500T00-A - Security Technologies](https://learn.microsoft.com/en-us/training/courses/az-500t00) ![](../../foreign.png) 96 HRS
+18. [Course AZ-800T00-A - Administering Windows Server Hybrid Core Infreastructure](https://learn.microsoft.com/en-us/training/courses/az-800t00) ![](../../foreign.png) 96 HRS
+19. [Course AZ-801T00-A - Configuring Windows Server Hybrid Advanced Services](https://learn.microsoft.com/en-us/training/courses/az-801t00) ![](../../foreign.png) 96 HRS
