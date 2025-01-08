@@ -4,23 +4,23 @@
 
 ### Monday
 
-#### [TBDM-Monday-001] (Monday Specific)
+#### [TB-MON-0001] (Monday Specific)
 
 ![Donald - Monday](./images/tbdm-004.png)
 
-#### [TBDM-Monday-002]
+#### [TB-MON-0002]
 
     May your clothes be comfy, your coffee strong, and your Monday short.
 
 ### Friday
 
-#### [TBDM-Friday-001]
+#### [TB-FRI-0001]
 
     Tomorrow is National Grey Haired Grumpy Old Man Day and I expected to be recognized!
 
 ### Christmas
 
-#### [TBDM-Christmas-001]
+#### [TB-XMAS-0001]
 
     Four stages of a man's life:
     1. You believe in Santa.
@@ -28,37 +28,41 @@
     3. You are Santa.
     4. You look like Santa.
 
-#### [TBDM-Christmas-002]
+#### [TB-XMAS-0002]
 
     I'm no longer allowed to go caroling at the mental hospital. I guess "Do you hear what I hear" was a bad song choice.
 
-#### [TBDM-Christmas-003]
+#### [TB-XMAS-0003]
 
     What do Santa's elves listen to while they work? Wrap music.
 
-#### [TBDM-Christmas-004]
+#### [TB-XMAS-0004]
 
     Do not drink and wrap presents. Also, if someone gets a remove control for Christmas ... I'm going to need that back.
 
-### [TBDM-Christmas-005]
+#### [TB-XMAS-0005]
 
     No matter how old you are, an empty Christmas wrapping paper tube is still a fun thing to bonk someone over the head with!
 
+#### [TB-XMAS-0006]
+
+    I've reached the age where I'm excited for time off at Christmas, just so I can catch up on my sleep.
+
 ### New Year
 
-#### [TBDM-New-Year-001]
+#### [TB-NEW-YEAR-0001]
 
     I was going to quit all my bad habits for the New Year, but then I remembered that nobody likes a quitter.
 
-#### [TBDM-New-Year-002]
+#### [TB-NEW-YEAR-0002]
 
     This year should be named, "Things I never thought could happen."
 
-#### [TBDM-New-Year-003]
+#### [TB-NEW-YEAR-0003]
 
 ![DQ: Resolutions](./images/dq-ruining-resolutions.jpg)
 
-#### [TBDM-New-Year-004]
+#### [TB-NEW-YEAR-0004]
 
     Remember: Having a drink every now and then will keep your memory sharp. Have a great 2016!
 
