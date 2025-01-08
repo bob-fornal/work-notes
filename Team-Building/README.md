@@ -658,4 +658,20 @@
     New co-worker: It's nice to meet you.
     Me: Give it time.
 
+### [TBDM-0133]
+
+    Apart from being exhausted, financially unstable, nearing a mental breakdown, and fat, everything is great. Thanks.
+
+### [TBDM-0134]
+
+    A walk in the woods helps me to relax and ease tension. The fact that I'm dragging a body behind me should be irrelevant.
+
+### [TBDM-0135]
+
+    There's that awkward moment when a zombie is looking for brains and walks right past you.
+
+### [TBDM-0136]
+
+    It's very important to keep fit. My grandmother started walking 5 miles a day when she was 50. She's 72 not and we don't know where she is.
+
 
