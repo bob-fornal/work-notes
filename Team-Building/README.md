@@ -8,6 +8,10 @@
 
 ![Donald - Monday](./images/tbdm-004.png)
 
+#### [TBDM-Monday-002]
+
+    May your clothes be comfy, your coffee strong, and your Monday short.
+
 ### Friday
 
 #### [TBDM-Friday-001]
@@ -36,6 +40,10 @@
 
     Do not drink and wrap presents. Also, if someone gets a remove control for Christmas ... I'm going to need that back.
 
+### [TBDM-Christmas-005]
+
+    No matter how old you are, an empty Christmas wrapping paper tube is still a fun thing to bonk someone over the head with!
+
 ### New Year
 
 #### [TBDM-New-Year-001]
@@ -48,7 +56,7 @@
 
 #### [TBDM-New-Year-003]
 
-    ![DQ: Resolutions](./images/dq-ruining-resolutions.jpg)
+![DQ: Resolutions](./images/dq-ruining-resolutions.jpg)
 
 #### [TBDM-New-Year-004]
 
@@ -361,4 +369,161 @@
 ### [TBDM-064]
 
     Someone tried to tell me that spending hundreds of dollars on a keyboard won't make me a better developer. Can you believe they would like to me like that?
+
+### [TBDM-065]
+
+    I walk around like everything is fine, but deep down, inside my shoe, my sock is sliding off.
+
+### [TBDM-066]
+
+    I just want to know why my clothes only get stuck on the door handle when I'm in a bad mood.
+
+### [TBDM-067]
+
+    Holy cr*p guys! I'm so lovable that the doctors gave me a special jacket so that I can hug myself!
+
+### [TBDM-068]
+
+    Most people have "Ah-ha" moments. I mostly have "Oh, for f**k sake, are you kidding me?!?" moments.
+
+### [TBDM-069]
+
+    Just because I give you advice doesn't mean that I'm smarter than you. It means that I've done more stupid stuff than you.
+
+### [TBDM-070]
+
+    May your coffee be strong, your worries light, and your morning be filled with a thousand reasons to smile.
+
+### [TBDM-071]
+
+    Me: I'm still tired from all the crossfit this morning.
+    Co-Worker: It's pronounced "croissant" and you ate four of them.
+
+### [TBDM-072]
+
+    Some people think that I'm going crazy. The jokes on them, I went there years ago, fell in love with the place and decided to stay.
+
+### [TBDM-073]
+
+    I may not have lost all of my marbles yet. But, there is definitely a small hole in the bag somewhere.
+
+### [TBDM-074]
+
+    Last year, I joined a support group for antisocial people. We still haven't met yet.
+
+### [TBDM-075]
+
+    Tongue Twister:
+    If two witches would watch two watches,
+    which witch would watch which watch?
+
+### [TBDM-076]
+
+    Legend says that when you can't sleep, it's because you're awake in someone else's dream. So, if everyone could stop dreaming about me, that would be great!
+
+### [TBDM-077]
+
+    I wish that I had met some people a little earlier, some a little later, and some never at all.
+
+### [TBDM-078]
+
+    My wife tells me that I can be an idiot sometimes. That was so cool of her to give me permission like that!
+
+### [TBDM-079]
+
+    I don't like making plans for the day because then, the word "premeditated" gets thrown around in the courtroom.
+
+### [TBDM-080]
+
+    Can I order a replacement body, please? This one is constantly malfunctioning.
+
+### [TBDM-081]
+
+    Keep calm and be crazy, laugh, love, and live it up because this is the oldest you've ever been and the youngest you'll ever be again.
+
+### [TBDM-082]
+
+    I sat quietly with my own thoughts today. Remind me to never do that again.
+
+### [TBDM-083]
+
+    I have always wanted to walk up to a stranger, hand him a briefcase and whisper, "You know what to do," and walk away.
+
+### [TBDM-084]
+
+    If you ate it in the car before you got home, it never existed.
+
+### [TBDM-085]
+
+    Patience. What you have where there are too many witnesses present.
+
+### [TBDM-086]
+
+    Not to brag, but I just went into another room and remembered why I went in there. It was the bathroom, but still ...
+
+### [TBDM-087]
+
+    I am the kind of person who will restart a song because I got distracted and wasn't appreciating it enough.
+
+### [TBDM-088]
+
+    I'm a proud supporter of messy hair and sweatpants.
+
+### [TBDM-089]
+
+    Sometimes, getting out of bed just ruins the whole day.
+
+### [TBDM-090]
+
+    Does anyone else put things in a safe place and then forget where that safe place is?
+
+### [TBDM-091]
+
+    I don't like to think before I speak. I like to be just as surprised as everyone else about what some out of my mouth.
+
+### [TBDM-092]
+
+    The biggest lie I tell myself is "I don't need to write that down, I'll remember it."
+
+### [TBDM-093]
+
+    Talk to yourself at least once a day; otherwise, you may miss a meeting with an excellent person in this world. - Swami Vivekananda
+
+### [TBDM-094]
+
+    If you ever get locked out of your house, talk to your lock calmly. Because communication is the key.
+
+### [TBDM-095]
+
+    My son has been eating electrical cords. What can I do?
+    Ground him until he conducts himself properly.
+    Shocking!
+
+### [TBDM-096]
+
+    My kids put together a PowerPoint presentation explaining why we should go to the water part. It has several slides.
+
+### [TBDM-097]
+
+    I got myself and emotional support pet. It's a chicken. It's crispy and came with a biscuit.
+
+### [TBDM-098]
+
+    8:00 AM: Too tired to think.
+    Noon: Too tired to think.
+    5:00 PM: Too tired to think.
+    Midnight: How do dragons blow out candles?
+
+### [TBDM-099]
+
+    I can't even imagine the self control required to work at a bubble wrap factory.
+
+### [TBDM-100]
+
+    I know. I don't have to be this sarcastic. But the world has given me so much material to work with. And, I'm not one to be wasteful.
+
+### [TBDM-101]
+
+    May your path is harder because your calling is higher.
+
 
