@@ -681,3 +681,52 @@
     noun
     1. A person who does precision guess work based on unreliable data provided by those of questionable knowledge.
     see also Wizard, Magician.
+
+### [TBDM-0138]
+
+    Sometimes you can just tell it's going to be a "Does not play well with others" kind of day.
+
+### [TBDM-0139]
+
+    Sometimes I have to tell myself, "It's just not worth the jail time."
+
+### [TBDM-0140]
+
+    Please do not disturb. I am disturbed enough as it is.
+
+### [TBDM-0141]
+
+    I love it when the caffeine kicks in and I realize what an adorable badass I'm about to be.
+
+### [TBDM-0142]
+
+    I'm wearing all black today to mourn the death of my motivation.
+
+### [TBDM-0143]
+
+    Bad choices make good stories.
+
+### [TBDM-0144]
+
+    Nothing refreshes my memory of what I need at the grocery store like coming home from the grocery store.
+
+### [TBDM-0145]
+
+    I said to myself, "Self" (and I knew it was me because I recognized the voice and was was wearing my underwear). "Today is going to be a good day!"
+
+### [TBDM-0146]
+
+    My favorite mixed drink is combining half a cup of coffee with another half a cup of coffee.
+
+### [TBDM-0147]
+
+    Chocolate is vital to our survival. Dinosaurs didn't have chocolate, and look at what happened to them.
+
+### [TBDM-0148]
+
+    I bet that short girls still flip the visor in their car, like it does something.
+
+### [TBDM-0149]
+
+    I've heard people say that you don't need coffee to wake up. You also don't need a parachute to go skydiving, but it helps!
+
