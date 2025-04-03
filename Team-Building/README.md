@@ -66,6 +66,12 @@
 
     Remember: Having a drink every now and then will keep your memory sharp. Have a great 2016!
 
+### Tech / Developers
+
+#### [TB-TECH-DEVELOPERS-0001]
+
+    She pushed my spacebar for that white-space and I said, "Put it on my tab."
+
 ## Daily Messaging
 
 ### [TBDM-0001]

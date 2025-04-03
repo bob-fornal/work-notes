@@ -52,7 +52,19 @@ User ID Best Practices
 * Small Site: Install snippet below head (works for React, Angular, and Vue Frameworks).
 * CMS: Use Header Footer Code Manager (99 robots); add, activate, Add New Snippet.
 
+### Benefits of GTM
+
+* Future proof solution,
+* Easily add custom events.
+
+And
+
+* GTM Code replaces several Google Tag code segments; centralized management.
+* Provides ability to test before merging to production.
+
 ## Understanding Reports
+
+> ... and start torturing data until it tells us what we want.
 
 ## Templates, Techniques, and Use-Cases
 
