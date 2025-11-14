@@ -38,4 +38,6 @@ Then, and only then, will I sit for the test ... my notes (as I go through the [
 
 ## Developer Notes (Microsoft Learn)
 
+* [Microsoft Certified](./manage-az-identitied-and-governance.md)
+
 * [MS Learn](./ms-learn/)
