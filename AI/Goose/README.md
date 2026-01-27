@@ -20,3 +20,27 @@ An AI agent is an autonomous software system that perceives its environment, rea
 4. Choose model anthropic/claude-opus-4.5
 5. Say "hi" and see if goose responds.
 
+## Challenge I
+
+* [https://github.com/block/goose/discussions/5949](https://github.com/block/goose/discussions/5949)
+
+### Prompt
+
+> Build a choose-your-own-adventure web app with branching story paths, user choices, and beautiful winter styling. Use goose to create the application.
+
+## Challenge II
+
+Enable:
+
+* Autovisualizer Extension
+* Developer Extension
+
+### Activity
+
+* [https://github.com/block/goose/discussions/5964](https://github.com/block/goose/discussions/5964)
+
+## FAQ
+
+### MCP Context Overload
+
+Is falloff a major problem?
