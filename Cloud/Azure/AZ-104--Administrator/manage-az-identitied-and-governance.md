@@ -25,7 +25,13 @@ The ARM Connects to the resource provider (Azure Resource Provider).
 
 ### Using the Azure Portal and Cloud Shell
 
+Azure Portal
 
+* Is a GUI that can be accessed via the Internet.
+* Create and manage Azure resources.
+* Uses Cloud Shell.
+* Dashboard for Visualizations.
+* Favorites (for speed and ease).
 
 ## Governance and Compliance
 
