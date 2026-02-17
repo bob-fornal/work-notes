@@ -39,6 +39,16 @@ Enable:
 
 * [https://github.com/block/goose/discussions/5964](https://github.com/block/goose/discussions/5964)
 
+## Subagents
+
+* [Notes](https://www.canva.com/design/DAHARWem470/p7LdqUoBDP_tZuZXwc2zhw/view?utm_content=DAHARWem470&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha2f92c2446)
+
+Agents lose their place over time. Breaking the task down into smaller pieces (context management) using sub-agents to process as separate sessions.
+
+## Skills
+
+## Goose in a GitHub Action
+
 ## FAQ
 
 ### MCP Context Overload
