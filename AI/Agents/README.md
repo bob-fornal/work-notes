@@ -1,5 +1,23 @@
 # Agents
 
+## Guiding Principles
+
+To use coding agents well, you must understand context.
+
+It's easy to fool yourself into thinking that the coding agents are magical models. They have read all of the internet, developed deep levels of intuition for the structure of codebases, and been trained to write extremely correct code.
+
+But at the end of the day, the agent is doing next token prediction. And each token must fit in a context window.
+
+There are a bunch of corollaries that fall out of that...
+
+* **Your work needs to be broken down**. If the problem you are trying to solve is too big for the context window, the agent is going to spin on it for a long time and give you poor results.
+** **Compaction is a lossy technique**. When deciding what to compact and how, the agent is going to make choices on which information to include and omit. Maybe it does a good job, maybe it doesn't, In my experience, more compaction tends to lead to degradation in performance.
+* **Externalizing context into the filesystem** (e.g. a plan document with stages which are checked, or not) allows agents to selectively read and remember without filling up the full context of the conversation. This is helpful for resuming tasks and continuing to be context-efficient.
+* **Stay in the 'smart' half of the context window**. It's generally easier to train on short-context data vs long-context data. Results will tend to be better when the context window is 'less full'. Stay out of the dumb zone.
+* **You don't know what you don't know**. If the agent somehow misses a relevant file or package, it might really go in a direction you didn't anticipate. If it's not in the context window, there's no way to know. Your codebase's structure can help this, as can 'progressive disclosure' of parts of the architecture. OpenAI has a nice blog post about structuring many different markdown files to do this well.
+
+As a result, model performance and speed is governed both by the pure performance of the model, but also by how it is able to manage multiple context windows and delegate to sub-agents or teams of agents.
+
 ## Managing Multiple Agents
 
 It's all about coordinating multiple agents who work together as a team, with shared tasks, inter-agent messaging and centralized management.
