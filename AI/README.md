@@ -1,5 +1,9 @@
 # AI
 
+## Certification
+
+* [GitHub Copilot](./GitHub-Copilot/README.md)
+
 ## Topics
 
 * [Agentic Browsers](./Agentic-Browsers.md)
