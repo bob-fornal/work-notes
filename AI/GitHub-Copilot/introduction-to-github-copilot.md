@@ -107,4 +107,15 @@ Here are some common slash commands and their usage:
 
 To use a slash command, just type the command in your editor and press `Enter`.
 
+## Copilot Plan Agent
+
+| Aspect | Plan Agent |
+|--------|------------|
+| Purpose	Creates a structured implementation plan before coding starts. |
+| Context gathering | Uses read-only research to understand requirements and constraints. |
+| Collaboration style | Asks clarifying questions, then updates the plan using your answers. |
+| Iteration | Supports multiple refinement passes before implementation. |
+| Safety | Does not edit files until you approve the plan and hand off to Agent Mode. |
+| Handoff | Start implementation button hands off the approved plan to Agent Mode for coding. |
+
 
