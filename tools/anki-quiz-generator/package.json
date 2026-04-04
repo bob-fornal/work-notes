@@ -1,0 +1,14 @@
+{
+  "name": "anki-quiz-generator",
+  "version": "1.0.0",
+  "description": "Generate Anki multiple-choice quiz CSV files from Markdown notes using GitHub Models AI.",
+  "type": "module",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "dependencies": {
+    "glob": "^11.0.0",
+    "openai": "^4.0.0"
+  }
+}
