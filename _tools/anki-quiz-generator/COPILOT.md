@@ -1,6 +1,6 @@
 # Anki Quiz Generator — Copilot Instructions
 
-This document describes the `tools/anki-quiz-generator` tool so that GitHub Copilot can understand, invoke, and extend it.
+This document describes the `_tools/anki-quiz-generator` tool so that GitHub Copilot can understand, invoke, and extend it.
 
 ---
 
@@ -13,7 +13,7 @@ This document describes the `tools/anki-quiz-generator` tool so that GitHub Copi
 ## Location
 
 ```
-tools/anki-quiz-generator/
+_tools/anki-quiz-generator/
 ├── generate.js      ← main entry point
 ├── package.json     ← dependencies: openai, glob
 ├── .gitignore
@@ -27,7 +27,7 @@ tools/anki-quiz-generator/
 | Requirement | Details |
 |---|---|
 | **Node.js** | v18 or later (ES modules, `--input-type=module`) |
-| **Dependencies** | Run `npm install` inside `tools/anki-quiz-generator/` |
+| **Dependencies** | Run `npm install` inside `_tools/anki-quiz-generator/` |
 | **`GITHUB_TOKEN`** | Environment variable — a GitHub PAT with access to GitHub Models (`models.inference.ai.azure.com`) |
 
 ---
@@ -35,7 +35,7 @@ tools/anki-quiz-generator/
 ## Running the Tool
 
 ```bash
-cd tools/anki-quiz-generator
+cd _tools/anki-quiz-generator
 npm install          # first time only
 node generate.js
 ```
@@ -120,7 +120,7 @@ When a user asks to generate an Anki quiz from their notes, run the tool like th
 
 ```bash
 export GITHUB_TOKEN=<token>
-cd tools/anki-quiz-generator
+cd _tools/anki-quiz-generator
 node generate.js
 ```
 

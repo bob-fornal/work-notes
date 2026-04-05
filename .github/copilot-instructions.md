@@ -4,8 +4,8 @@
 
 This repository contains a tool for generating Anki multiple-choice quiz CSV files from Markdown notes.
 
-**Tool location:** `tools/anki-quiz-generator/`  
-**Full reference:** [`tools/anki-quiz-generator/COPILOT.md`](../tools/anki-quiz-generator/COPILOT.md)
+**Tool location:** `_tools/anki-quiz-generator/`  
+**Full reference:** [`_tools/anki-quiz-generator/COPILOT.md`](../_tools/anki-quiz-generator/COPILOT.md)
 
 ### When to use it
 
@@ -18,7 +18,7 @@ Use this tool whenever a user asks to:
 
 ```bash
 export GITHUB_TOKEN=<github-pat>
-cd tools/anki-quiz-generator
+cd _tools/anki-quiz-generator
 npm install   # first time only
 node generate.js
 ```
@@ -31,4 +31,4 @@ Respond to the three interactive prompts:
 | Deck name | Any string — becomes the Anki deck name and the base tag |
 | Output path | Absolute or relative path for the `.csv` file (Enter = default beside the deck name) |
 
-See `tools/anki-quiz-generator/COPILOT.md` for full details, examples, and extension guidance.
+See `_tools/anki-quiz-generator/COPILOT.md` for full details, examples, and extension guidance.
