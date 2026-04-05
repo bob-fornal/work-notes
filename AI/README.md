@@ -6,12 +6,11 @@
 
 ## Topics
 
-* [Agentic Browsers](./Agentic-Browsers.md)
-* [AI in Coding](./AI-in-Coding.md)
-* [Definitions](./Definitions.md)
+* [Agentic Browsers](./documetation/Agentic-Browsers.md)
+* [AI in Coding](./documetation/AI-in-Coding.md)
+* [Definitions](./documetation/Definitions.md)
 * [GitHub Copilot](./GitHub-Copilot/README.md)
-* [MCP vs RAG vs AI Agents](./MCP-v-RAG-v-AI-Agents.md)
-* [Thinking in Sandboxes](./Thinking-in-Sandboxes.md)
+* [MCP vs RAG vs AI Agents](./documetation/MCP-v-RAG-v-AI-Agents.md)
 
 ## Notes
 
