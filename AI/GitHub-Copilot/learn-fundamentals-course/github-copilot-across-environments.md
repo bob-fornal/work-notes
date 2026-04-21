@@ -115,4 +115,90 @@ GitHub Copilot agents are custom tools that you can build and integrate with Git
 
 GitHub Copilot extends beyond your local development environment to provide AI assistance directly on GitHub.com. When working with repositories, issues, pull requests, and discussions on the GitHub web interface, you can leverage Copilot's capabilities to streamline your workflow and enhance collaboration.
 
+### GitHub Copilot agent tasks on GitHub.com
+
+These tasks can run in the background for you while you focus on other work.
+
+Repository exploration and documentation
+
+* Code explanation: Ask Copilot to explain complex code sections, functions, or entire files.
+* Project overview: Get AI-generated summaries of repository purpose, architecture, and key components.
+* Documentation generation: Create or improve README files, API documentation, and code comments.
+
+Pull request assistance
+
+GitHub Copilot on GitHub.com significantly accelerates your pull request workflow by automating many time-consuming review and documentation tasks:
+
+* PR summaries: Generate comprehensive summaries of changes made in a pull request, helping reviewers quickly understand the scope and impact of modifications.
+* Review suggestions: Get recommendations for code improvements and potential issues before formal review, reducing review cycles.
+* Merge conflict resolution: Receive guidance on resolving conflicts between branches, streamlining the merge process.
+* Documentation updates: Automatically suggest updates to README files, changelogs, and other documentation based on code changes.
+
+These features help maintain development velocity by reducing the manual effort required to prepare and review pull requests, allowing teams to focus on code quality rather than administrative tasks.
+
+Issue management
+
+* Issue analysis: Break down complex problems into actionable tasks.
+* Solution brainstorming: Generate potential approaches to resolve reported issues.
+* Reproduction steps: Help create clear steps to reproduce bugs or issues.
+
+Code review and collaboration
+
+GitHub Copilot enhances your code review process by providing intelligent insights and suggestions that help maintain high code quality and catch potential issues early:
+
+* Review comments: Generate thoughtful code review comments with specific suggestions.
+* Security analysis: Identify potential security vulnerabilities or best practice violations.
+* Performance optimization: Suggest improvements for code efficiency and performance.
+
+GitHub Copilot Explain error in actions
+
+GitHub Copilot can help explain and resolve errors that occur in GitHub Actions workflows. This feature analyzes failed workflow runs and provides insights into what went wrong and how to fix it.
+
+How Copilot explains action errors
+
+* Error analysis: Copilot examines log files and identifies the root cause of failures
+* Solution suggestions: Provides specific recommendations to resolve workflow issues
+* Best practices: Offers guidance on improving workflow reliability and performance
+* Context awareness: Understands the relationship between different workflow steps and dependencies
+
+## GitHub Copilot for the Command Line
+
+GitHub Copilot isn’t just for Integrated Development Environments (IDEs) — it is now a powerful assistant in your terminal. GitHub Copilot CLI brings Copilot directly into the command line, where it can explain commands, suggest shell commands from natural language, and help you work safely and interactively with your files and projects.
+
+Copilot CLI uses GitHub authentication and runs independently from GitHub CLI, though it uses your existing credentials.
+
+Common slash commands
+
+Slash commands are explicit session-control commands. Here are the most common ones:
+
+| Slash Command | Description |
+|---------------|-------------|
+| `/help` | Show available commands and options |
+| `/explain <command>` | Ask Copilot to explain any shell command |
+| `/suggest <task>` | Ask Copilot to suggest a shell command for a task |
+| `/revise` | Revise the last suggestion based on your instructions |
+| `/feedback` | Submit feedback on a response or suggestion |
+| `/exit` | Exit interactive mode |
+| `/model <model>` | Select which AI model to use |
+| `/theme [auto|dark|light]` | Change terminal theme |
+| `/skills` | Manage skills for enhanced capabilities |
+| `/mcp` | Manage MCP server configuration |
+| `/list-dirs` | Show allowed directories for file operations |
+| `/reset-allowed-tools` | Reset allowed tools list |
+
+Common configuration options include:
+
+* Trusted directories – Control where Copilot can read, edit, and run files.
+* Tool permissions – Allow or restrict Copilot from running shell commands or modifying files using flags like `--allow-tool` or `--deny-tool`.
+* Path permissions – Control which directories Copilot can access.
+* URL permissions – Manage which external domains Copilot can connect to.
+
+Tips for effective use
+
+* Use interactive mode (copilot) for exploratory tasks.
+* Use one-shot mode (copilot -i) for quick answers.
+* Natural language input works—you don’t always need slash commands.
+* Always review commands before execution.
+* Combine Copilot CLI with GitHub CLI (gh) for repository and issue management.
+* Use slash commands when you want structured actions or feedback.
 
