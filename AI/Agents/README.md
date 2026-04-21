@@ -1,5 +1,7 @@
 # Agents
 
+* [Create an AI Agent in Minutes with Microsoft Azure](./events/create-an-ai-agent-in-minutes-with-microsoft-azure.md)
+
 ## Guiding Principles
 
 To use coding agents well, you must understand context.
