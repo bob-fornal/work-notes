@@ -17,6 +17,7 @@
 ### Part 2 of 2
 
 * [Building applications with GitHub Copilot Agent Mode](./learn-fundamentals-course/building-applications-with-github-copilot-agent-mode.md)
+* [Accelerate development with GitHub Copilot Cloud Agent](./learn-fundamentals-course/accelerate-development-with-github-copilot-cloud-agent.md)
 
 ## Webinars
 
