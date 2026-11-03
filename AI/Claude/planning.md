@@ -1,4 +1,4 @@
-# planning
+# Planning
 
 1. [STUDY: Anthropic Courses](https://anthropic.skilljar.com/) ![Foreign](./foreign.png)
 2. [STUDY: Claude Cookbooks](https://github.com/anthropics/claude-cookbooks#table-of-recipes) ![Foreign](./foreign.png)
