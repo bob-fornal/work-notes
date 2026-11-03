@@ -1,4 +1,4 @@
 # Claude
 
-* [Training](./training.md)
+* [Planning](./planning.md)
 * [Implementing a Script](./implementing-a-script.md)
