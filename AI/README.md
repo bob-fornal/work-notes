@@ -10,6 +10,7 @@
 * [AI in Coding](./documetation/AI-in-Coding.md)
 * [Definitions](./documetation/Definitions.md)
 * [GitHub Copilot](./GitHub-Copilot/README.md)
+* [Harnesses](./Harnesses/README.md)
 * [MCP vs RAG vs AI Agents](./documetation/MCP-v-RAG-v-AI-Agents.md)
 
 ## Notes
